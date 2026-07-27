@@ -34,6 +34,14 @@ jobs:
           node-version: 20
           cache: pnpm
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          # Aktiviert GitHub Pages automatisch (Source = GitHub Actions),
+          # damit kein manueller Schritt in den Repo-Settings nötig ist.
+          enablement: true
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
