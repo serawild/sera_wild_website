@@ -288,7 +288,14 @@ Vor jedem Commit sinnvoll: `pnpm check` + `pnpm format`.
 - [x] Vollkorn & Roboto self-hosten (via `@fontsource`, inkl. Vollkorn SemiBold Italic).
 - [x] Content-Schema `geschichten` in `src/content/config.ts` definiert (Felder gem. §6).
 - [x] Footer (Desktop + Mobile) als `src/components/Footer.astro` umgesetzt.
-- [ ] Weitere Komponenten: Navigation, CTA-Button, Card (Designs aus Figma vorhanden).
-- [ ] Seiten anlegen: Startseite, Angebot, Geschichten (Übersicht + Detail), Sera Wild, Kontakt — je DE/EN.
+- [x] Komponenten: Navigation, CTA-Button (`Button.astro`) umgesetzt.
+- [x] Startseite (erster Durchgang) — alle Abschnitte, Texte, Farben.
+- [x] Echte Fotos aus `assets/Images` in die Startseite eingebaut (`src/assets/*.jpg`).
+- [x] Fotos exakt per MD5 den Figma-Bildstellen zugeordnet (Quellbild == Repo-Datei).
+- [ ] Rest-Bildstellen: W-Erläbnis-Seitenfotos ergänzen; Seraina-Quelle prüfen (matchte keine Repo-Datei).
+- [x] Foto-Collagen (Prozess, Gesehen, Für alle) mit exakten Figma-Überlappungen umgesetzt.
+- [ ] Card-Komponente (Hover-Overlay) für Geschichten-Teaser ausbauen.
+- [ ] Mobile-Menü in der Navigation (aktuell nur Logo + Kontakt auf Mobile).
+- [ ] Weitere Seiten: Angebot, Geschichten (Übersicht + Detail), Sera Wild, Kontakt — je DE/EN.
 - [ ] i18n-Grundgerüst (Routing + Übersetzungs-Strings) vervollständigen.
 - [ ] GitHub-Actions-Workflow für Pages-Deploy einrichten (mit pnpm).

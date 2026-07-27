@@ -1,19 +1,255 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import Photo from '../components/Photo.astro';
+
+import bildmarkeWhite from '../assets/bildmarke-white.svg';
+import decoBranch from '../assets/deco-branch-rust.png';
+import decoTulip from '../assets/deco-tulip-rust.png';
+import decoEucalyptus from '../assets/deco-eucalyptus-rust.png';
+import decoFlower from '../assets/deco-flower-rust.png';
+import seraina from '../assets/seraina-portrait.png';
+
+import hero from '../assets/hero.jpg';
+import prozess1 from '../assets/prozess-1.jpg';
+import prozess2 from '../assets/prozess-2.jpg';
+import prozess3 from '../assets/prozess-3.jpg';
+import gesehen1 from '../assets/gesehen-1.jpg';
+import gesehen2 from '../assets/gesehen-2.jpg';
+import geschichte1 from '../assets/geschichte-1.jpg';
+import geschichte2 from '../assets/geschichte-2.jpg';
+import geschichte3 from '../assets/geschichte-3.jpg';
+import geschichte4 from '../assets/geschichte-4.jpg';
+import fueralle1 from '../assets/fueralle-1.jpg';
+import fueralle2 from '../assets/fueralle-2.jpg';
+
+const geschichten = [geschichte1, geschichte2, geschichte3, geschichte4];
+
+// Startseite nach Figma (node 13:285). Erster Durchgang:
+// echte Texte + Farben + Layout + Komponenten; Fotos vorerst als Platzhalter.
 ---
 
-<Base title="sera Wild — Footer-Vorschau">
-  <!-- Platzhalter-Inhalt, damit der Footer am Seitenende sitzt -->
-  <main class="flex flex-1 items-center justify-center px-sm py-xl text-center">
-    <div class="max-w-2xl">
-      <h1 class="font-display text-h1">sera Wild</h1>
-      <p class="mt-md font-body text-body">
-        Vorschau-Seite. Der eigentliche Inhalt folgt — unten der aus Figma
-        umgesetzte Footer (Desktop &amp; Mobile). Fenster schmaler ziehen für die
-        Mobile-Variante.
-      </p>
-    </div>
+<Base title="sera Wild — prozessorientierte Fotografie">
+  <Navigation />
+
+  <main class="flex-1">
+    {/* ===== 1 · Hero — vollflächiges Bild (Figma 1728×1117), Headline überlagert ===== */}
+    <section class="relative overflow-hidden bg-cream">
+      <img
+        src={decoBranch.src}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute right-0 top-0 z-20 w-28 opacity-90 md:w-44"
+      />
+      <div class="relative mx-auto max-w-content">
+        <Image
+          src={hero}
+          alt="Frau mit Strohhut im Lavendelfeld"
+          widths={[640, 1024, 1440, 1728, 2000]}
+          sizes="100vw"
+          class="aspect-[4/5] w-full object-cover object-[35%_center] md:aspect-[1728/1117] md:object-[28%_center]"
+        />
+        {/* Headline-Overlay (Desktop) */}
+        <div class="absolute inset-0 hidden items-center justify-end md:flex">
+          <div class="mr-lg max-w-xl text-right">
+            <h1 class="font-display text-h2 text-dark">
+              Hier beginnt die Begegnung mit dir selbst: Du zeigst dich. Ich mach's sichtbar.
+            </h1>
+            <Button href="/angebot" variant="rust" class="mt-md">Los geht's!</Button>
+          </div>
+        </div>
+      </div>
+      {/* Headline (Mobile, unter dem Bild) */}
+      <div class="flex flex-col gap-md px-sm py-lg md:hidden">
+        <h1 class="font-display text-h2 text-dark">
+          Hier beginnt die Begegnung mit dir selbst: Du zeigst dich. Ich mach's sichtbar.
+        </h1>
+        <Button href="/angebot" variant="rust" class="self-start">Los geht's!</Button>
+      </div>
+    </section>
+
+    {/* ===== 2 · Prozess (cream) ===== */}
+    <section class="relative overflow-hidden bg-cream">
+      <img
+        src={decoBranch.src}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute bottom-0 left-0 z-10 w-32 opacity-80 md:w-40"
+      />
+      <div class="mx-auto grid max-w-content items-center gap-lg px-sm py-xl md:grid-cols-2 md:px-lg">
+        {/* Collage exakt nach Figma-Koordinaten (13:604/605/606) */}
+        <div class="relative aspect-[689/780] w-full">
+          <Photo src={prozess2} alt="Porträt am Fenster" class="absolute left-[46.6%] top-0 h-[62.6%] w-[53.4%] ring-4 ring-cream" />
+          <Photo src={prozess1} alt="Prozess: Schreiben und Festhalten" class="absolute left-0 top-[7.4%] h-[47.9%] w-[41.1%] ring-4 ring-cream" />
+          <Photo src={prozess3} alt="Porträt, entspannt" class="absolute left-[14.9%] top-[48.5%] h-[51.5%] w-[44%] ring-4 ring-cream" />
+        </div>
+        <div class="flex flex-col gap-md">
+          <h2 class="font-display text-h3 text-dark">Bei Sera Wild steht der Prozess im Mittelpunkt.</h2>
+          <p class="font-body text-body text-dark">
+            <span class="font-display font-semibold italic">Mir geht's um dich. Das Bild kommt von selbst.</span>
+            Um den Moment, in dem du aufhörst, dich von aussen zu betrachten und beginnst, dich wirklich zu
+            sehen. Trau dich vor die Kamera und erlebe den Moment, in dem du dich zeigst, ohne Rücksicht auf
+            Erwartungen aus der Aussenwelt.
+          </p>
+          <Button href="/angebot" variant="rust" class="self-start">Mehr dazu</Button>
+        </div>
+      </div>
+    </section>
+
+    {/* ===== 3 · W-Erläbnis (dark, zentriert) ===== */}
+    <section class="relative overflow-hidden bg-dark text-cream">
+      <img
+        src={decoEucalyptus.src}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute bottom-0 right-0 z-10 w-40 opacity-70 md:w-56"
+      />
+      <div class="mx-auto flex max-w-4xl flex-col items-center gap-md px-sm py-xl text-center md:px-lg">
+        <div class="flex items-center gap-xs">
+          <img src={bildmarkeWhite.src} alt="" aria-hidden="true" class="h-14 w-auto md:h-20" />
+          <span class="font-display text-h3">– Erläbnis</span>
+        </div>
+        <p class="max-w-2xl font-body text-body">
+          Du weisst, da steckt mehr in dir. Du hast nur noch nicht den Raum gehabt, es zu zeigen. Ich biete
+          dir einen Raum, in dem du mutig, spontan und kreativ sein darfst.
+        </p>
+        <Button href="/angebot" variant="beige">Zum W-Erläbnis</Button>
+      </div>
+    </section>
+
+    {/* ===== 4 · Gesehen werden (dark) ===== */}
+    <section class="relative overflow-hidden bg-dark text-cream">
+      <img
+        src={decoTulip.src}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute bottom-0 left-1/2 z-10 w-28 -translate-x-1/2 opacity-70 md:w-36"
+      />
+      <div class="mx-auto grid max-w-content items-center gap-lg px-sm py-xl md:grid-cols-2 md:px-lg">
+        <div class="flex flex-col gap-md">
+          <h2 class="font-display text-h3">Du musst nicht jemand anderes sein, um gesehen zu werden.</h2>
+          <p class="font-body text-body">
+            Viele Menschen kommen zu mir und sagen: <span class="font-display font-semibold italic"
+              >Ich bin nicht fotogen.</span
+            > Was sie eigentlich meinen: <span class="font-display font-semibold italic"
+              >Ich habe mich noch nie wirklich gesehen.</span
+            > Und genau dort beginnen wir.
+          </p>
+          <Button href="/kontakt" variant="rust" class="self-start">Schreib mir!</Button>
+        </div>
+        {/* Collage nach Figma (13:641 gross rechts, 13:650 überlappt links) */}
+        <div class="relative aspect-[800/700] w-full">
+          <Photo src={gesehen1} alt="Porträt, lachend" class="absolute left-[32.5%] top-0 h-[78.6%] w-[67.5%] ring-4 ring-dark" />
+          <Photo src={gesehen2} alt="Porträt vor Steinwand" class="absolute left-0 top-[42.9%] h-[57.1%] w-[37.5%] ring-4 ring-dark" />
+        </div>
+      </div>
+    </section>
+
+    {/* ===== 5 · Veränderung (rust, zentriert) ===== */}
+    <section class="relative overflow-hidden bg-rust text-cream">
+      <img
+        src={decoEucalyptus.src}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute left-0 top-1/2 z-10 w-28 -translate-y-1/2 opacity-40 md:w-40"
+      />
+      <img
+        src={decoTulip.src}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute right-0 top-1/2 z-10 w-28 -translate-y-1/2 opacity-40 md:w-40"
+      />
+      <div class="mx-auto flex max-w-4xl flex-col items-center gap-md px-sm py-xl text-center md:px-lg">
+        <h2 class="font-display text-h3">
+          Veränderung beginnt dort, wo du in Kontakt gehst. Mit dir selbst und mit anderen.
+        </h2>
+        <p class="max-w-2xl font-body text-body">
+          Ich biete dir den Raum. Du probierst aus, folgst deinen Impulsen und entdeckst Schritt für Schritt,
+          was entsteht, wenn du dir selbst Raum gibst.
+        </p>
+        <Button href="/kontakt" variant="beige">Kontaktiere mich</Button>
+      </div>
+    </section>
+
+    {/* ===== 6 · Geschichten (cream) ===== */}
+    <section class="bg-cream">
+      <div class="mx-auto flex max-w-content flex-col items-center gap-lg px-sm py-xl md:px-lg">
+        <h2 class="max-w-3xl text-center font-display text-h3 text-dark">
+          Jede Begegnung hinterlässt Spuren. Hier findest du Momente, die geblieben sind.
+        </h2>
+        <ul class="grid w-full grid-cols-2 gap-sm md:grid-cols-4">
+          {
+            geschichten.map((bild, i) => (
+              <li>
+                <a href="/geschichten" class="group block">
+                  <Photo
+                    src={bild}
+                    alt={`Geschichte ${i + 1}`}
+                    class="aspect-[2/3] transition duration-300 group-hover:opacity-90"
+                  />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <Button href="/geschichten" variant="rust">Zu den Geschichten</Button>
+      </div>
+    </section>
+
+    {/* ===== 7 · Seraina (dark) — echtes Foto ===== */}
+    <section class="relative overflow-hidden bg-dark text-cream">
+      <img
+        src={decoBranch.src}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute bottom-0 left-0 z-10 w-32 opacity-70 md:w-40"
+      />
+      <div class="mx-auto grid max-w-content items-center gap-lg px-sm py-xl md:grid-cols-2 md:px-lg">
+        <div class="flex flex-col gap-md">
+          <h2 class="font-display text-h3">
+            Wenn du etwas willst, das du noch nie hattest, musst du etwas tun, das du noch nie getan hast.
+          </h2>
+          <p class="font-body text-body">
+            Ich bin Seraina und ich begleite dich hinter der Kamera durch diesen wunder&shy;vollen Prozess.
+            Ich freue mich auf dich!
+          </p>
+          <Button href="/sera-wild" variant="beige" class="self-start">Über SeraWild</Button>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <Image
+            src={seraina}
+            alt="Seraina Wild, Fotografin"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 80vw, 40vw"
+            class="max-h-[70vh] w-auto rounded-lg object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* ===== 8 · Für alle (beige) ===== */}
+    <section class="relative overflow-hidden bg-beige text-cream">
+      <img
+        src={decoFlower.src}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute bottom-0 right-0 z-10 w-32 opacity-80 md:w-44"
+      />
+      <div class="mx-auto grid max-w-content items-center gap-lg px-sm py-xl md:grid-cols-2 md:px-lg">
+        {/* Collage nach Figma (39:925 oben-rechts, 39:926 überlappt unten-links) */}
+        <div class="relative aspect-[720/417] w-full">
+          <Photo src={fueralle1} alt="Porträt am Wasser" class="absolute left-[35.8%] top-0 h-[77.5%] w-[64.2%] ring-4 ring-beige" />
+          <Photo src={fueralle2} alt="Porträt am See" class="absolute left-0 top-[34.5%] h-[65.5%] w-[57.4%] ring-4 ring-beige" />
+        </div>
+        <div class="flex flex-col items-start gap-md md:items-end md:text-right">
+          <h2 class="font-display text-h2">Für alle, die sich selbst zurückfinden möchten.</h2>
+          <Button href="/kontakt" variant="rust">Kontakt</Button>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />

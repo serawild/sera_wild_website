@@ -1,0 +1,41 @@
+---
+import Button from './Button.astro';
+import logoDark from '../assets/logo-primary-dark.svg';
+
+/**
+ * Navigation nach Figma (node 13:410).
+ * Liegt als transparente Leiste über dem Hero (absolute). Logo links,
+ * Links + Kontakt-CTA rechts. Mobile: Logo + Kontakt (volles Menü: TODO).
+ */
+const links = [
+  { label: 'W-Experience', href: '/angebot' },
+  { label: 'Geschichten', href: '/geschichten' },
+  { label: 'Sera Wild', href: '/sera-wild' },
+];
+---
+
+<header class="absolute inset-x-0 top-0 z-50">
+  <div class="mx-auto flex max-w-content items-center justify-between px-sm py-sm md:px-lg">
+    <a href="/" aria-label="sera Wild – Startseite">
+      <img src={logoDark.src} alt="sera Wild – prozessorientierte Fotografie" class="h-12 w-auto md:h-16" />
+    </a>
+
+    <nav aria-label="Hauptnavigation" class="flex items-center gap-md">
+      <ul class="hidden items-center gap-md md:flex">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="font-body text-small uppercase tracking-wide text-dark transition-colors hover:text-rust"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <Button href="/kontakt" variant="rust" class="text-small md:text-cta">Kontakt</Button>
+    </nav>
+  </div>
+</header>

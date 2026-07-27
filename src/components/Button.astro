@@ -1,0 +1,30 @@
+---
+/**
+ * CTA-Button nach Figma (node 5:118 „CTA Primary").
+ * Abgerundetes Rechteck, Roboto uppercase mit Laufweite.
+ * Rendert als <a> (Link). Varianten decken die Flächen-/Hover-Farben ab.
+ */
+interface Props {
+  href: string;
+  variant?: 'rust' | 'beige' | 'dark' | 'outline';
+  class?: string;
+  target?: string;
+  rel?: string;
+}
+
+const { href, variant = 'rust', class: className = '', target, rel } = Astro.props;
+
+const base =
+  'inline-flex items-center justify-center rounded-lg px-md py-xs text-cta font-body uppercase transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current';
+
+const variants: Record<string, string> = {
+  rust: 'bg-rust text-cream hover:bg-orange',
+  beige: 'bg-beige text-cream hover:bg-olive',
+  dark: 'bg-dark text-cream hover:bg-olive',
+  outline: 'border-2 border-rust text-rust hover:bg-rust hover:text-cream',
+};
+---
+
+<a href={href} target={target} rel={rel} class:list={[base, variants[variant], className]}>
+  <slot />
+</a>
