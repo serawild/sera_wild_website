@@ -1,0 +1,20 @@
+/* Self-hosted Fonts (via @fontsource) — siehe CLAUDE.md §4 */
+/* Vollkorn (Display, Serif): Regular + SemiBold + SemiBold Italic */
+@import '@fontsource/vollkorn/400.css';
+@import '@fontsource/vollkorn/600.css';
+@import '@fontsource/vollkorn/600-italic.css';
+/* Roboto (Body/UI, Sans): Regular */
+@import '@fontsource/roboto/400.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream font-body text-dark antialiased;
+  }
+}

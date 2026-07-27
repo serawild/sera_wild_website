@@ -1,0 +1,11 @@
+# Freigabe nativer Build-Skripte für vertrauenswürdige Pakete:
+#   esbuild — Astro/Vite-Bundler-Binary
+#   sharp   — Bildoptimierung (astro:assets)
+# allowBuilds: lokaler Supply-Chain-Wrapper dieser Umgebung.
+allowBuilds:
+  esbuild: true
+  sharp: true
+# onlyBuiltDependencies: Standard-pnpm (CI/andere Rechner).
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
