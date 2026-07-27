@@ -1,20 +1,54 @@
 ---
 import Base from '../layouts/Base.astro';
-import Footer from '../components/Footer.astro';
+import logoWhite from '../assets/logo-primary-white.svg';
+import flower from '../assets/deco-flower-rust.png';
 ---
 
-<Base title="sera Wild — Footer-Vorschau">
-  <!-- Platzhalter-Inhalt, damit der Footer am Seitenende sitzt -->
-  <main class="flex flex-1 items-center justify-center px-sm py-xl text-center">
-    <div class="max-w-2xl">
-      <h1 class="font-display text-h1">sera Wild</h1>
-      <p class="mt-md font-body text-body">
-        Vorschau-Seite. Der eigentliche Inhalt folgt — unten der aus Figma
-        umgesetzte Footer (Desktop &amp; Mobile). Fenster schmaler ziehen für die
-        Mobile-Variante.
-      </p>
+<Base
+  title="sera Wild — prozessorientierte Fotografie"
+  description="Die neue Website von sera Wild entsteht. Bald mehr zu sehen."
+>
+  <main
+    class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-dark px-sm py-xl text-center text-cream"
+  >
+    {/* botanische Akzente */}
+    <img
+      src={flower.src}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute -bottom-8 -right-8 w-40 opacity-70 md:w-64"
+    />
+    <img
+      src={flower.src}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute -left-10 -top-12 w-28 rotate-180 opacity-30 md:w-44"
+    />
+
+    <div class="flex max-w-xl flex-col items-center gap-md">
+      <img
+        src={logoWhite.src}
+        alt="sera Wild – prozessorientierte Fotografie"
+        class="w-64 md:w-80"
+      />
+
+      <div class="flex flex-col gap-sm">
+        <h1 class="font-display text-h2">Die neue Website entsteht.</h1>
+        <p class="font-body text-small leading-relaxed text-cream/80">
+          Schön, dass du da bist. Meine neue Website wird gerade mit viel Sorgfalt
+          aufgebaut — bald findest du hier Geschichten, Angebote und mehr.
+        </p>
+      </div>
+
+      <div class="mt-sm flex flex-col items-center gap-xs">
+        <p class="font-body text-small text-cream/70">Bis dahin erreichst du mich hier:</p>
+        <a
+          href="mailto:info@serawild.com"
+          class="font-body text-h4 text-cream underline underline-offset-4 transition-colors hover:text-orange"
+        >
+          info@serawild.com
+        </a>
+      </div>
     </div>
   </main>
-
-  <Footer />
 </Base>
