@@ -234,7 +234,7 @@ Rohwert), Struktur an bestehende Komponenten anlehnen.
 
 ## 8. Befehle
 
-> Paketmanager: **pnpm** (via `packageManager`-Feld gepinnt, Corepack). Node ≥ 20.
+> Paketmanager: **pnpm** (via `packageManager`-Feld gepinnt, Corepack). Node ≥ 22.13.
 
 ```bash
 pnpm install        # Abhängigkeiten installieren
