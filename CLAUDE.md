@@ -175,6 +175,39 @@ Spacing-Tokens hinterlegen (responsiv umsetzen, z.B. `clamp()` oder `md:`):
 - Seiten: `Elements` (Komponenten) und `Archiv` (fertige Seiten-Designs:
   Startseite, Angebot/„Experience", Geschichten, Sera Wild/„Simona", Sitemap).
 
+### Verbindliche Design-Grundsätze (von Seraina festgelegt)
+Diese Regeln gelten für **jede** Seite/Komponente:
+
+1. **Bilder**: **immer rechteckig** (keine abgerundeten Ecken). Der sichtbare
+   **Ausschnitt/Zoom** (object-position/scale) soll dem der Figma-Datei
+   entsprechen — Bilder so einzoomen, dass der Crop wie im Design sitzt.
+2. **Abschnitts-Abstände**: möglichst **immer gleich** (einheitlicher vertikaler
+   Rhythmus, `py-xl`; Token aus §4-Spacing).
+3. **Illustrationen** (Markenelemente, in mehreren Farben verfügbar):
+   **abwechslungsreich** einsetzen — mal **überlappend** über zwei Abschnitte
+   hinweg, mal nicht; **Grösse variieren** (einzoomen), **drehen**, teils nur als
+   **Ausschnitt** ins Bild hineinragend, teils **klein als ganze Illustration**.
+   Verteilung **unabhängig von Figma** gestalten → Abwechslung + Wiedererkennung.
+   **Ausnahme**: die **Header-Illustration der Startseite** exakt wie Figma
+   (Rostorange-Zweig von oben rechts hereinragend, Quelle node `13:629`,
+   Datei `src/assets/deco-hero.png`).
+4. **Buttons**: Farbe darf **variieren**, grundsätzlich in der **Akzentfarbe**
+   (`rust`/`orange`); Varianten in `Button.astro`.
+5. **Typografie**:
+   - **Überschriften & Zitate immer Vollkorn**. Bei jeder neuen Verwendung
+     **Seraina fragen**: *kursiv / fett / grösser / standard?*
+   - Fliesstext/UI: **Roboto**, Grössen/Stile wie in Figma (§4-Skala).
+6. **Nutzerführung**: Der/die Besucher:in soll aktiv **durch die Website geführt**
+   werden. **Wichtig**: aktiv darauf hinweisen, wenn Nutzer irgendwo **„hängen
+   bleiben"** könnten (Sackgassen, fehlende CTA/Weiterführung, unklarer nächster
+   Schritt).
+7. **Footer**: **immer identisch** auf allen Seiten. Muss enthalten:
+   **Telefonnummer** (mit **WhatsApp-Icon** links daneben, Direktlink
+   `https://wa.me/41797905701`) und **E-Mail** (`mailto:info@serawild.com`) —
+   beide verlinkt. Umsetzung: `src/components/Footer.astro`.
+8. **Favicon**: das dunkle „W" (Bildmarke) — `public/favicon.svg`
+   (dunkles W auf Cream-Grund), eingebunden in `Base.astro`.
+
 ---
 
 ## 5. Figma-Workflow (MCP)

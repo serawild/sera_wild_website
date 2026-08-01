@@ -15,7 +15,7 @@ const legalLinks = [
 ];
 
 const phone = '+41 79 790 57 01';
-const phoneHref = 'tel:+41797905701';
+const whatsappHref = 'https://wa.me/41797905701';
 const email = 'info@serawild.com';
 const linkedInUrl = 'https://www.linkedin.com/';
 ---
@@ -63,7 +63,20 @@ const linkedInUrl = 'https://www.linkedin.com/';
           ></path>
         </svg>
       </a>
-      <a href={phoneHref} class="font-display text-2xl transition-colors hover:text-rust">{phone}</a>
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`WhatsApp: ${phone}`}
+        class="inline-flex items-center gap-xs font-display text-2xl transition-colors hover:text-rust"
+      >
+        <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M17.5 14.38c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.18.28-.72.9-.88 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.83-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.54-.46-.47-.63-.48h-.54c-.18 0-.47.07-.72.35-.25.28-.95.93-.95 2.26 0 1.33.97 2.62 1.1 2.8.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32zM12 2a10 10 0 0 0-8.53 15.3L2 22l4.8-1.26A10 10 0 1 0 12 2zm0 18.18a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-2.95.78.79-2.88-.2-.3A8.18 8.18 0 1 1 12 20.18z"
+          ></path>
+        </svg>
+        {phone}
+      </a>
       <a href={`mailto:${email}`} class="font-display text-2xl transition-colors hover:text-rust">{email}</a>
     </div>
   </div>
@@ -79,7 +92,20 @@ const linkedInUrl = 'https://www.linkedin.com/';
       <!-- Kontakt + LinkedIn -->
       <div class="flex items-end justify-between">
         <div class="flex flex-col gap-sm">
-          <a href={phoneHref} class="font-display text-2xl transition-colors hover:text-rust">{phone}</a>
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`WhatsApp: ${phone}`}
+            class="inline-flex items-center gap-xs font-display text-2xl transition-colors hover:text-rust"
+          >
+            <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.5 14.38c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.18.28-.72.9-.88 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.83-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.54-.46-.47-.63-.48h-.54c-.18 0-.47.07-.72.35-.25.28-.95.93-.95 2.26 0 1.33.97 2.62 1.1 2.8.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.11-.25-.18-.53-.32zM12 2a10 10 0 0 0-8.53 15.3L2 22l4.8-1.26A10 10 0 1 0 12 2zm0 18.18a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-2.95.78.79-2.88-.2-.3A8.18 8.18 0 1 1 12 20.18z"
+              ></path>
+            </svg>
+            {phone}
+          </a>
           <a href={`mailto:${email}`} class="font-display text-2xl transition-colors hover:text-rust">{email}</a>
         </div>
         <a

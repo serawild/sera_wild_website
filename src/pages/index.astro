@@ -7,6 +7,7 @@ import Button from '../components/Button.astro';
 import Photo from '../components/Photo.astro';
 
 import bildmarkeWhite from '../assets/bildmarke-white.svg';
+import decoHero from '../assets/deco-hero.png';
 import decoBranch from '../assets/deco-branch-rust.png';
 import decoTulip from '../assets/deco-tulip-rust.png';
 import decoEucalyptus from '../assets/deco-eucalyptus-rust.png';
@@ -39,10 +40,10 @@ const geschichten = [geschichte1, geschichte2, geschichte3, geschichte4];
     {/* ===== 1 · Hero — vollflächiges Bild (Figma 1728×1117), Headline überlagert ===== */}
     <section class="relative overflow-hidden bg-cream">
       <img
-        src={decoBranch.src}
+        src={decoHero.src}
         alt=""
         aria-hidden="true"
-        class="pointer-events-none absolute right-0 top-0 z-20 w-28 opacity-90 md:w-44"
+        class="pointer-events-none absolute -right-16 -top-24 z-10 w-64 rotate-[125deg] md:-right-24 md:-top-32 md:w-[30rem]"
       />
       <div class="relative mx-auto max-w-content">
         <Image
@@ -50,7 +51,7 @@ const geschichten = [geschichte1, geschichte2, geschichte3, geschichte4];
           alt="Frau mit Strohhut im Lavendelfeld"
           widths={[640, 1024, 1440, 1728, 2000]}
           sizes="100vw"
-          class="aspect-[4/5] w-full object-cover object-[35%_center] md:aspect-[1728/1117] md:object-[28%_center]"
+          class="aspect-[4/5] w-full object-cover object-[30%_center] md:aspect-[1728/1117] md:object-center"
         />
         {/* Headline-Overlay (Desktop) */}
         <div class="absolute inset-0 hidden items-center justify-end md:flex">
@@ -224,7 +225,7 @@ const geschichten = [geschichte1, geschichte2, geschichte3, geschichte4];
             alt="Seraina Wild, Fotografin"
             widths={[400, 600, 800]}
             sizes="(max-width: 768px) 80vw, 40vw"
-            class="max-h-[70vh] w-auto rounded-lg object-cover"
+            class="max-h-[70vh] w-auto object-cover"
           />
         </div>
       </div>
