@@ -1,0 +1,75 @@
+---
+import type { ImageMetadata } from 'astro';
+import Button from '../Button.astro';
+
+interface Props {
+  quote: string;
+  italic?: boolean;
+  title?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  bg?: 'cream' | 'dark' | 'rust';
+  variant?: 'quote' | 'titled';
+  illustrationLeft?: ImageMetadata;
+  illustrationRight?: ImageMetadata;
+}
+
+const {
+  quote,
+  italic = false,
+  title,
+  ctaText,
+  ctaHref,
+  bg = 'cream',
+  variant = 'quote',
+  illustrationLeft,
+  illustrationRight,
+} = Astro.props;
+
+const isDark = bg !== 'cream';
+const bgClass = { cream: 'bg-cream', dark: 'bg-dark', rust: 'bg-rust' }[bg];
+const textColor = isDark ? 'text-cream' : 'text-dark';
+const btnVariant: 'rust' | 'beige' | 'outline' =
+  bg === 'cream' ? 'rust' : 'beige';
+---
+
+<section class:list={['relative overflow-hidden', bgClass]}>
+  {illustrationLeft && (
+    <img
+      src={illustrationLeft.src}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute left-0 top-1/2 z-10 w-24 -translate-y-1/2 opacity-70 md:w-40"
+    />
+  )}
+  {illustrationRight && (
+    <img
+      src={illustrationRight.src}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute right-0 top-1/2 z-10 w-24 -translate-y-1/2 opacity-70 md:w-40"
+    />
+  )}
+
+  <div class="relative mx-auto max-w-4xl px-sm py-xl text-center md:px-lg">
+    {variant === 'titled' ? (
+      <>
+        {title && (
+          <h2 class:list={['font-display text-h2 font-semibold', textColor]}>{title}</h2>
+        )}
+        <p class:list={['mt-lg font-body text-body leading-normal', textColor]}>{quote}</p>
+      </>
+    ) : (
+      <p class:list={[
+        'font-display text-h3 font-semibold leading-snug',
+        italic && 'italic',
+        textColor,
+      ]}>
+        „{quote}"
+      </p>
+    )}
+    {ctaText && ctaHref && (
+      <Button href={ctaHref} variant={btnVariant} class="mt-lg">{ctaText}</Button>
+    )}
+  </div>
+</section>

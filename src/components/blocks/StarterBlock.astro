@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Button from '../Button.astro';
+
+interface Props {
+  image: ImageMetadata;
+  imageAlt: string;
+  title: string;
+  subtitle?: string;
+  ctaText: string;
+  ctaHref: string;
+  deco?: ImageMetadata;
+}
+
+const { image, imageAlt, title, subtitle, ctaText, ctaHref, deco } = Astro.props;
+---
+
+<section class="relative overflow-hidden">
+  {deco && (
+    <img
+      src={deco.src}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute right-0 top-0 z-10 w-48 md:w-80"
+    />
+  )}
+  <div class="relative w-full">
+    <Image
+      src={image}
+      alt={imageAlt}
+      widths={[640, 1024, 1440, 1920]}
+      sizes="100vw"
+      class="aspect-[4/5] w-full object-cover object-center md:aspect-[1728/1118]"
+    />
+    <div class="absolute inset-0 hidden items-center justify-end md:flex">
+      <div class="mr-lg max-w-2xl text-right">
+        <h1 class="font-display text-h1 text-dark">{title}</h1>
+        {subtitle && <p class="mt-sm font-body text-body text-dark">{subtitle}</p>}
+        <Button href={ctaHref} variant="rust" class="mt-md">{ctaText}</Button>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-md px-sm py-lg md:hidden">
+    <h1 class="font-display text-h1 text-dark">{title}</h1>
+    {subtitle && <p class="font-body text-body text-dark">{subtitle}</p>}
+    <Button href={ctaHref} variant="rust" class="self-start">{ctaText}</Button>
+  </div>
+</section>

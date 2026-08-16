@@ -1,0 +1,80 @@
+---
+import type { ImageMetadata } from 'astro';
+import Button from '../Button.astro';
+import Photo from '../Photo.astro';
+
+interface PhotoItem {
+  src: ImageMetadata;
+  alt: string;
+}
+
+interface Props {
+  title: string;
+  ctaText: string;
+  ctaHref: string;
+  images: PhotoItem[];
+  imagesSide?: 'left' | 'right';
+  illustration?: ImageMetadata;
+  illustrationSide?: 'left' | 'right';
+}
+
+const {
+  title,
+  ctaText,
+  ctaHref,
+  images,
+  imagesSide = 'left',
+  illustration,
+  illustrationSide = 'right',
+} = Astro.props;
+
+const count = images.length;
+const collageAspect =
+  count === 1 ? 'aspect-[3/4]' : count === 2 ? 'aspect-[800/700]' : 'aspect-[689/780]';
+---
+
+<section class="relative overflow-hidden bg-rust text-cream">
+  {illustration && (
+    <img
+      src={illustration.src}
+      alt=""
+      aria-hidden="true"
+      class:list={[
+        'pointer-events-none absolute z-10 w-32 opacity-50 md:w-44',
+        illustrationSide === 'right' ? 'bottom-0 right-0' : 'bottom-0 left-0',
+      ]}
+    />
+  )}
+
+  <div class="mx-auto grid max-w-content items-center gap-lg px-sm py-lg md:grid-cols-2 md:px-lg">
+    <div
+      class:list={[
+        'relative w-full',
+        collageAspect,
+        imagesSide === 'right' && 'md:order-last',
+      ]}
+    >
+      {count === 1 && (
+        <Photo src={images[0].src} alt={images[0].alt} class="h-full w-full" />
+      )}
+      {count === 2 && (
+        <>
+          <Photo src={images[0].src} alt={images[0].alt} class="absolute left-[32.5%] top-0 h-[78.6%] w-[67.5%]" />
+          <Photo src={images[1].src} alt={images[1].alt} class="absolute left-0 top-[42.9%] h-[57.1%] w-[37.5%]" />
+        </>
+      )}
+      {count >= 3 && (
+        <>
+          <Photo src={images[0].src} alt={images[0].alt} class="absolute left-0 top-[7.4%] h-[47.9%] w-[41.1%]" />
+          <Photo src={images[1].src} alt={images[1].alt} class="absolute left-[14.9%] top-[48.5%] h-[51.5%] w-[44%]" />
+          <Photo src={images[2].src} alt={images[2].alt} class="absolute left-[46.6%] top-0 h-[62.6%] w-[53.4%]" />
+        </>
+      )}
+    </div>
+
+    <div class:list={['flex flex-col gap-md', imagesSide === 'right' && 'md:order-first']}>
+      <h2 class="font-display text-h2 font-semibold leading-snug text-cream md:-ml-sm">{title}</h2>
+      <Button href={ctaHref} variant="beige" class="self-start">{ctaText}</Button>
+    </div>
+  </div>
+</section>

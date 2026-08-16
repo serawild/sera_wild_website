@@ -1,5 +1,4 @@
 ---
-import Button from './Button.astro';
 import logoDark from '../assets/logo-primary-dark.svg';
 
 /**
@@ -8,9 +7,10 @@ import logoDark from '../assets/logo-primary-dark.svg';
  * Links + Kontakt-CTA rechts. Mobile: Logo + Kontakt (volles Menü: TODO).
  */
 const links = [
-  { label: 'W-Experience', href: '/angebot' },
+  { label: 'W-Erläbnis', href: '/angebot' },
   { label: 'Geschichten', href: '/geschichten' },
   { label: 'Sera Wild', href: '/sera-wild' },
+  { label: 'Kontakt', href: '/kontakt' },
 ];
 ---
 
@@ -35,7 +35,6 @@ const links = [
           ))
         }
       </ul>
-      <Button href="/kontakt" variant="rust" class="text-small md:text-cta">Kontakt</Button>
     </nav>
   </div>
 </header>

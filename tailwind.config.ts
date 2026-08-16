@@ -24,12 +24,13 @@ export default {
       },
       fontSize: {
         // [size, { lineHeight, letterSpacing }] — Werte mobile → desktop
-        h1: ['clamp(2.75rem, 1.96rem + 3.38vw, 5rem)', { lineHeight: '1' }], // 44 → 80 (H1 mobile korrigiert)
-        h2: ['clamp(2.5rem, 2.15rem + 1.5vw, 3.5rem)', { lineHeight: '1' }], // 40 → 56
-        h3: ['clamp(1.75rem, 1.49rem + 1.13vw, 2.5rem)', { lineHeight: '1' }], // 28 → 40
-        h4: ['clamp(1rem, 0.74rem + 1.13vw, 1.75rem)', { lineHeight: '1' }], // 16 → 28
+        h1: ['clamp(2.75rem, 1.96rem + 3.38vw, 5rem)', { lineHeight: '1.2' }], // 44 → 80 (H1 mobile korrigiert)
+        h2: ['clamp(2.5rem, 2.15rem + 1.5vw, 3.5rem)', { lineHeight: '1.2' }], // 40 → 56
+        h3: ['clamp(1.75rem, 1.49rem + 1.13vw, 2.5rem)', { lineHeight: '1.2' }], // 28 → 40
+        h4: ['clamp(1rem, 0.74rem + 1.13vw, 1.75rem)', { lineHeight: '1.2' }], // 16 → 28
         cta: ['clamp(1.5rem, 1.41rem + 0.38vw, 1.75rem)', { lineHeight: '1', letterSpacing: '0.06em' }], // 24 → 28, LS 6
         body: ['clamp(1.25rem, 1.01rem + 1.05vw, 2rem)', { lineHeight: '2' }], // 20 → 32
+        highlight: ['clamp(1.75rem, 1.49rem + 1.13vw, 2.5rem)', { lineHeight: '1.4' }], // 28 → 40 (Body Hervorgehoben: Vollkorn Semibold Italic)
         small: ['1.5rem', { lineHeight: '1.3' }], // 24 (inkl. Navigation)
       },
       spacing: {

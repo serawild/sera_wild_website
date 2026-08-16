@@ -191,12 +191,25 @@ Diese Regeln gelten für **jede** Seite/Komponente:
    **Ausnahme**: die **Header-Illustration der Startseite** exakt wie Figma
    (Rostorange-Zweig von oben rechts hereinragend, Quelle node `13:629`,
    Datei `src/assets/deco-hero.png`).
-4. **Buttons**: Farbe darf **variieren**, grundsätzlich in der **Akzentfarbe**
-   (`rust`/`orange`); Varianten in `Button.astro`.
+   **Reihenfolge**: Illustrationen werden **ganz zum Schluss** verteilt — zuerst
+   alle Abschnitte/Seiten vollständig mit **Bild + Text** aufbauen.
+4. **Buttons** (exakt nach Figma node `55:1508`):
+   - Farbe: variiert je Kontext (`rust`/`beige`/`dark`); Varianten in `Button.astro`.
+   - Form: `rounded-[17px]` (17 px Radius — deutlich gerundet, aber kein Pill).
+   - Padding: `px-md py-sm` (40 px / 20 px — Button deutlich grösser als die Schrift).
+   - Schrift: **Roboto Regular**, Uppercase, Letter-Spacing 0.06 em, 28 px (= `text-cta`).
+   - Niemals `rounded-lg`, `py-xs` oder andere Grössen verwenden.
 5. **Typografie**:
-   - **Überschriften & Zitate immer Vollkorn**. Bei jeder neuen Verwendung
-     **Seraina fragen**: *kursiv / fett / grösser / standard?*
+   - **Überschriften (h1–h3) immer Vollkorn, fett (`font-semibold`), Zeilenabstand 1.2**.
+     Bei jeder neuen Verwendung **Seraina fragen**: *kursiv oder regular?*
+   - **Fliesstext**: **Roboto Regular** (`font-body`), `text-body`, `leading-normal` bis `leading-relaxed`.
+   - **Zeilenumbrüche**: wo möglich am Figma-Zeilenumbruch orientieren (Desktop 1728 px).
+   - **W-Erläbnis**: «W» wird **immer** durch die W-Bildmarke (SVG/PNG, selbe Farbe wie Text)
+     ersetzt; optisch an Schriftgrösse anpassen; Rest des Titels Vollkorn bold.
    - Fliesstext/UI: **Roboto**, Grössen/Stile wie in Figma (§4-Skala).
+5a. **Karussell-Abstände**: Abstand zwischen Bildern **immer 4 px** (`gap: 4px`),
+    Hintergrund der Section scheint durch (ergibt farbige Trennlinie).
+    Galerie-Bilder: Hochformat `aspect-[5/6]` (Figma: 576 × 692 px pro Karte).
 6. **Nutzerführung**: Der/die Besucher:in soll aktiv **durch die Website geführt**
    werden. **Wichtig**: aktiv darauf hinweisen, wenn Nutzer irgendwo **„hängen
    bleiben"** könnten (Sackgassen, fehlende CTA/Weiterführung, unklarer nächster

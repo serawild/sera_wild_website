@@ -1,0 +1,47 @@
+---
+import type { ImageMetadata } from 'astro';
+import Button from '../Button.astro';
+import Photo from '../Photo.astro';
+
+interface Props {
+  title: string;
+  text: string;
+  ctaText: string;
+  ctaHref: string;
+  imageLeft?: { src: ImageMetadata; alt: string };
+  imageRight?: { src: ImageMetadata; alt: string };
+  bg?: 'cream' | 'dark';
+}
+
+const { title, text, ctaText, ctaHref, imageLeft, imageRight, bg = 'cream' } = Astro.props;
+const isDark = bg === 'dark';
+const bgClass = isDark ? 'bg-dark' : 'bg-cream';
+const titleColor = isDark ? 'text-cream' : 'text-dark';
+const btnVariant: 'rust' | 'beige' = isDark ? 'beige' : 'rust';
+const hasImages = imageLeft || imageRight;
+---
+
+<section class:list={['overflow-hidden py-xl', bgClass]}>
+  <div class:list={[
+    'mx-auto max-w-content px-sm md:px-lg',
+    hasImages && 'grid items-center gap-md md:grid-cols-[1fr_2fr_1fr]',
+  ]}>
+    {imageLeft ? (
+      <Photo src={imageLeft.src} alt={imageLeft.alt} class="aspect-[3/4] w-full" />
+    ) : hasImages ? (
+      <div />
+    ) : null}
+
+    <div class="flex flex-col items-center gap-md text-center">
+      <h2 class:list={['font-display text-h2 font-semibold', titleColor]}>{title}</h2>
+      <p class:list={['font-body text-body leading-normal', titleColor]}>{text}</p>
+      <Button href={ctaHref} variant={btnVariant}>{ctaText}</Button>
+    </div>
+
+    {imageRight ? (
+      <Photo src={imageRight.src} alt={imageRight.alt} class="aspect-[3/4] w-full" />
+    ) : hasImages ? (
+      <div />
+    ) : null}
+  </div>
+</section>

@@ -1,0 +1,220 @@
+---
+import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+import StarterBlock from '../components/blocks/StarterBlock.astro';
+import FokusBlock from '../components/blocks/FokusBlock.astro';
+import PresentBlock from '../components/blocks/PresentBlock.astro';
+import ZitatBlock from '../components/blocks/ZitatBlock.astro';
+import GalerieBlock from '../components/blocks/GalerieBlock.astro';
+import ShimmerBlock from '../components/blocks/ShimmerBlock.astro';
+import ReferenzBlock from '../components/blocks/ReferenzBlock.astro';
+
+import hero from '../assets/hero.jpg';
+import prozess1 from '../assets/prozess-1.jpg';
+import prozess2 from '../assets/prozess-2.jpg';
+import prozess3 from '../assets/prozess-3.jpg';
+import gesehen1 from '../assets/gesehen-1.jpg';
+import gesehen2 from '../assets/gesehen-2.jpg';
+import fueralle1 from '../assets/fueralle-1.jpg';
+import fueralle2 from '../assets/fueralle-2.jpg';
+import geschichte1 from '../assets/geschichte-1.jpg';
+import geschichte2 from '../assets/geschichte-2.jpg';
+import geschichte3 from '../assets/geschichte-3.jpg';
+import geschichte4 from '../assets/geschichte-4.jpg';
+import seraina from '../assets/seraina-portrait.png';
+import decoBranch from '../assets/deco-branch-rust.png';
+import decoTulip from '../assets/deco-tulip-rust.png';
+import decoEucalyptus from '../assets/deco-eucalyptus-rust.png';
+import decoFlower from '../assets/deco-flower-rust.png';
+import decoHero from '../assets/deco-hero.png';
+---
+
+<Base title="Bausteine — sera Wild (intern)">
+  <Navigation />
+  <main class="flex-1">
+
+    <div class="bg-dark px-sm py-xs text-center font-body text-small text-cream">
+      Baustein-Demo (nur lokal)
+    </div>
+
+    <!-- ===== 1 · STARTER ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">1 · Starter</div>
+      <StarterBlock
+        image={hero}
+        imageAlt="Frau mit Strohhut im Lavendelfeld"
+        title="Hier beginnt die Begegnung mit dir selbst: Du zeigst dich. Ich mach's sichtbar."
+        ctaText="Los geht's!"
+        ctaHref="/angebot"
+        deco={decoHero}
+      />
+    </div>
+
+    <!-- ===== 2 · FOKUS — 3 Bilder links ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">2 · Fokus (3 Bilder links)</div>
+      <FokusBlock
+        images={[
+          { src: prozess1, alt: 'Skizzenbuch' },
+          { src: prozess3, alt: 'Porträt lachend' },
+          { src: prozess2, alt: 'Porträt am Fenster' },
+        ]}
+        imagesSide="left"
+        title="Bei Sera Wild steht der Prozess im Mittelpunkt."
+        lead="Mir geht's um dich. Das Bild kommt von selbst."
+        text="Um den Moment, in dem du aufhörst, dich von aussen zu betrachten und beginnst, dich wirklich zu sehen."
+        ctaText="Mehr dazu"
+        ctaHref="/angebot"
+        bg="cream"
+        illustration={decoBranch}
+        illustrationSide="left"
+      />
+    </div>
+
+    <!-- ===== 2b · FOKUS — 2 Bilder rechts, dark ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">2 · Fokus (2 Bilder rechts, dark)</div>
+      <FokusBlock
+        images={[
+          { src: gesehen1, alt: 'Porträt lachend' },
+          { src: gesehen2, alt: 'Porträt vor Mauer' },
+        ]}
+        imagesSide="right"
+        title="Du musst nicht jemand anderes sein, um gesehen zu werden."
+        text="Viele kommen zu mir und sagen: Ich bin nicht fotogen. Was sie meinen: Ich habe mich noch nie wirklich gesehen."
+        ctaText="Schreib mir!"
+        ctaHref="/kontakt"
+        bg="dark"
+        illustration={decoTulip}
+        illustrationSide="left"
+      />
+    </div>
+
+    <!-- ===== 2c · FOKUS — 1 Bild links, beige ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">2 · Fokus (1 Bild links, beige)</div>
+      <FokusBlock
+        images={[{ src: seraina, alt: 'Seraina Wild' }]}
+        imagesSide="left"
+        title="Wenn du etwas willst, das du noch nie hattest."
+        text="Ich bin Seraina und begleite dich durch diesen wundervollen Prozess. Ich freue mich auf dich!"
+        ctaText="Über Sera Wild"
+        ctaHref="/sera-wild"
+        bg="beige"
+      />
+    </div>
+
+    <!-- ===== 3 · PRESENT ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">3 · Present</div>
+      <PresentBlock
+        title="Das W-Erläbnis"
+        text="Du weisst, da steckt mehr in dir. Du hast nur noch nicht den Raum gehabt, es zu zeigen. Ich biete dir einen Raum, in dem du mutig, spontan und kreativ sein darfst."
+        ctaText="Zum W-Erläbnis"
+        ctaHref="/angebot"
+        imageRight={{ src: prozess2, alt: 'Porträt am Fenster' }}
+        imageLeft={{ src: fueralle2, alt: 'Porträt am See' }}
+        bg="cream"
+      />
+    </div>
+
+    <!-- ===== 4 · ZITAT — quote variant ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">4 · Zitat (quote)</div>
+      <ZitatBlock
+        quote="Veränderung beginnt dort, wo du in Kontakt gehst. Mit dir selbst und mit anderen."
+        ctaText="Kontaktiere mich"
+        ctaHref="/kontakt"
+        bg="rust"
+        variant="quote"
+        illustrationLeft={decoEucalyptus}
+        illustrationRight={decoTulip}
+      />
+    </div>
+
+    <!-- ===== 4b · ZITAT — titled variant ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">4 · Zitat (titled, dark)</div>
+      <ZitatBlock
+        title="Warum Prozess?"
+        quote="Ich biete dir den Raum. Du probierst aus, folgst deinen Impulsen und entdeckst Schritt für Schritt, was entsteht."
+        ctaText="Mehr erfahren"
+        ctaHref="/angebot"
+        bg="dark"
+        variant="titled"
+        illustrationLeft={decoBranch}
+      />
+    </div>
+
+    <!-- ===== 5 · GALERIE ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">5 · Galerie</div>
+      <GalerieBlock
+        title="Jede Begegnung hinterlässt Spuren. Hier findest du Momente, die geblieben sind."
+        images={[
+          { src: geschichte1, alt: 'Geschichte 1' },
+          { src: geschichte2, alt: 'Geschichte 2' },
+          { src: geschichte3, alt: 'Geschichte 3' },
+          { src: geschichte4, alt: 'Geschichte 4' },
+          { src: gesehen1, alt: 'Gesehen 1' },
+          { src: fueralle1, alt: 'Für alle 1' },
+        ]}
+        ctaText="Zu den Geschichten"
+        ctaHref="/geschichten"
+        bg="cream"
+      />
+    </div>
+
+    <!-- ===== 6 · SHIMMER ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">6 · Shimmer</div>
+      <ShimmerBlock
+        title="Für alle, die sich selbst zurückfinden möchten."
+        ctaText="Kontakt"
+        ctaHref="/kontakt"
+        images={[
+          { src: fueralle1, alt: 'Porträt am Wasser' },
+          { src: fueralle2, alt: 'Porträt am See' },
+        ]}
+        imagesSide="left"
+        illustration={decoFlower}
+        illustrationSide="right"
+      />
+    </div>
+
+    <!-- ===== 7 · REFERENZ ===== -->
+    <div class="relative border-b-4 border-rust">
+      <div class="absolute left-sm top-xs z-20 bg-rust px-xs py-[2px] font-body text-small text-cream">7 · Referenz</div>
+      <ReferenzBlock
+        title="Kunden, die den Weg schon gegangen sind"
+        imageSide="left"
+        ctaText="Alle Geschichten"
+        ctaHref="/geschichten"
+        testimonials={[
+          {
+            image: gesehen1,
+            imageAlt: 'Kundin Porträt',
+            ausgangslage: 'Ausgangslage',
+            ausgangslageZitat: 'Ich wollte mich endlich so sehen, wie andere mich schon längst sehen.',
+            ergebnis: 'Ergebnis',
+            ergebnisZitat: 'Der Prozess war für mich mindestens so wertvoll wie das Ergebnis.',
+            mainQuote: 'Ich habe mich gesehen, gehalten, ernst genommen und frei gefühlt. Man merkt, dass du nicht nur Bilder machst, sondern Räume öffnest, in denen etwas entstehen darf.',
+          },
+          {
+            image: prozess2,
+            imageAlt: 'Kundin am Fenster',
+            ausgangslage: 'Ausgangslage',
+            ausgangslageZitat: 'Ich hatte immer das Gefühl, vor der Kamera zu erstarren.',
+            ergebnis: 'Ergebnis',
+            ergebnisZitat: 'Zum ersten Mal habe ich Bilder von mir gesehen und mich darin erkannt.',
+            mainQuote: 'Seraina hat mir einen Raum gegeben, in dem ich ich sein durfte. Das war ein Geschenk.',
+          },
+        ]}
+      />
+    </div>
+
+  </main>
+  <Footer />
+</Base>

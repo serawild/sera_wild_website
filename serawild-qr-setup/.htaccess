@@ -1,0 +1,17 @@
+# === QR-WEITERLEITUNGEN START (generiert von qr/build.py – nicht von Hand bearbeiten) ===
+RewriteEngine On
+RewriteBase /
+
+# flyer: Flyer A6, Auflage 200, Sommer 2026
+RewriteRule ^go/flyer/?$ /w-erlaebnis/?utm_source=flyer&utm_medium=qr&utm_campaign=flyer-a6-2026 [R=302,L,NE]
+
+# visitenkarte: Rückseite Visitenkarte
+RewriteRule ^go/visitenkarte/?$ /kontakt/?utm_source=visitenkarte&utm_medium=qr&utm_campaign=visitenkarte-2026 [R=302,L,NE]
+
+# messe: Aufsteller am Messestand
+RewriteRule ^go/messe/?$ /geschichten/?utm_source=messe&utm_medium=qr&utm_campaign=hochzeitsmesse [R=302,L,NE]
+
+# Unbekannter oder vertippter Code -> Startseite statt 404
+RewriteRule ^go/.*$ / [R=302,L]
+
+# === QR-WEITERLEITUNGEN ENDE ===
