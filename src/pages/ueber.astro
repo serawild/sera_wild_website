@@ -1,0 +1,317 @@
+---
+import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import BildPicture from '../components/BildPicture.astro';
+---
+
+<Base
+  title="Meine Geschichte — sera Wild"
+  description="Seraina Stettler ist Fotografin mit Hintergrund in Individualpsychologie. Erfahre mehr über ihren Weg und ihre Überzeugung: echte Bilder entstehen, wenn die Seele strahlt."
+>
+
+  <!-- ===== 1. HERO ===== -->
+  <section class="relative h-[100svh] min-h-[600px] overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden opacity-[0.87]">
+      <BildPicture
+        id="hero-ueber"
+        class="absolute inset-0 h-full w-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+        widths={[768, 1280, 1728, 2560]}
+        sizes="100vw"
+      />
+    </div>
+    <div class="absolute inset-0 bg-black/[0.39]"></div>
+    <Navigation theme="light" />
+
+    <div class="absolute bottom-[10rem] right-6 max-w-[73.5rem] text-right md:right-[7.5rem]">
+      <h1 class="font-display text-h1 font-semibold leading-tight text-cream">
+        Meine Geschichte
+      </h1>
+      <p class="font-display text-h2 font-semibold leading-tight text-cream">
+        Für alle, die mehr vom Leben wollen – und den Mut entwickeln, es zu leben.
+      </p>
+    </div>
+  </section>
+
+  <div class="relative overflow-x-hidden">
+
+  <!-- ===== 2. FAKTEN ===== -->
+  <section class="bg-olive py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[3.5rem] px-6 md:px-[7.5rem]">
+
+      <div class="grid w-full grid-cols-2 gap-8 md:grid-cols-5 md:gap-6">
+
+        <!-- 1: 10 Jahre (Kamera) -->
+        <div class="flex flex-col items-center gap-[1.125rem]">
+          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
+            <svg class="h-12 w-12 text-cream" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
+            </svg>
+          </div>
+          <p class="font-display text-[2.125rem] font-semibold leading-tight text-cream text-center">10 Jahre</p>
+          <p class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
+            Fotografie – outdoor,<br>Event und klassisches Studio
+          </p>
+        </div>
+
+        <!-- 2: Diplom AAI (Diplom) — Figma stagger: pt-36 -->
+        <div class="flex flex-col items-center gap-[1.125rem] md:pt-[2.25rem]">
+          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
+            <svg class="h-12 w-12 text-cream" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.905 59.905 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+            </svg>
+          </div>
+          <p class="font-display text-[2.125rem] font-semibold leading-tight text-cream text-center">Diplom AAI</p>
+          <p class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
+            Individualpsychologie,<br>aus Interesse am Menschen
+          </p>
+        </div>
+
+        <!-- 3: 4 Jahre (Kalender) -->
+        <div class="flex flex-col items-center gap-[1.125rem]">
+          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
+            <svg class="h-12 w-12 text-cream" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+          </div>
+          <p class="font-display text-[2.125rem] font-semibold leading-tight text-cream text-center">4 Jahre</p>
+          <p class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
+            Eventmanagerin,<br>nebenbei und mittendrin
+          </p>
+        </div>
+
+        <!-- 4: Ein Jahrzehnt (Herz) — Figma stagger: pt-36 -->
+        <div class="flex flex-col items-center gap-[1.125rem] md:pt-[2.25rem]">
+          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
+            <svg class="h-12 w-12 text-cream" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+            </svg>
+          </div>
+          <p class="font-display text-[2.125rem] font-semibold leading-tight text-cream text-center">Ein Jahrzehnt</p>
+          <p class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
+            Mami von zwei Töchtern,<br>die mich täglich erden
+          </p>
+        </div>
+
+        <!-- 5: Um die Welt (Globus) -->
+        <div class="flex flex-col items-center gap-[1.125rem]">
+          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
+            <svg class="h-12 w-12 text-cream" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+          </div>
+          <p class="font-display text-[2.125rem] font-semibold leading-tight text-cream text-center">Um die Welt</p>
+          <p class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
+            Jahre als Flight Attendant,<br>eine Weile in den USA daheim
+          </p>
+        </div>
+
+      </div>
+
+      <p class="font-body text-h4 leading-[1.7] text-cream text-center max-w-[73.75rem]">
+        Das Diplom habe ich aus Interesse gemacht, nicht um zu therapieren – ich wollte Menschen einfach besser verstehen. Der Rest ist über die Jahre zusammengekommen. Ein gerader Lebenslauf ist das nicht, eher ein Zickzack. Aber genau daraus schöpfe ich heute: Jeder Umweg hat etwas dagelassen, das ich jetzt brauchen kann.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===== 3. GESCHICHTE SERAINA ===== -->
+  <section class="relative bg-cream-warm py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-[7.5rem]">
+
+      <!-- Bild links -->
+      <div class="w-full shrink-0 overflow-hidden md:w-[35rem]" style="aspect-ratio: 560/740;">
+        <BildPicture
+          id="ueber-geschichte"
+          class="h-full w-full object-cover"
+          widths={[560, 1120]}
+          sizes="(max-width: 768px) 100vw, 560px"
+        />
+      </div>
+
+      <!-- Text rechts -->
+      <div class="flex flex-col gap-6">
+        <h2 class="font-display text-h2 font-semibold italic leading-tight text-dark">
+          Ich mache meinen eigenen Weg – und ich lade dich ein, deinen zu gehen.
+        </h2>
+        <div class="font-body text-body leading-[2] text-dark">
+          <p class="font-bold">
+            Neugierig seit ich denken kann, unterwegs wo immer es mich hinzieht – und Mama von zwei Töchtern, die mich jeden Tag erden.
+          </p>
+          <p>
+            Ich bin fröhlich und unkompliziert – und gleichzeitig jemand, der lieber einmal tief taucht als zehnmal an der Oberfläche bleibt. Tiefe Gespräche, echte Begegnungen, ein gutes Lied – das sind meine Momente. Ich habe viel erlebt, viele Menschen getroffen, viele Orte gesehen. Und überall dieselbe Frage mitgenommen: Was treibt Menschen wirklich an? Was lässt sie strahlen? Wo steckt das wahre Leben – und was ist unsere Aufgabe?
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 4. GESCHICHTE SERAINA UNTEN ===== -->
+  <section class="relative bg-cream-warm py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-end md:px-[7.5rem]">
+
+      <!-- Text links -->
+      <div class="flex flex-col gap-[2.5rem] md:flex-1">
+        <h2 class="font-display text-h2 font-semibold italic leading-tight text-dark md:max-w-[40.625rem]">
+          Meine Aufgabe ist nicht, zu glänzen. Sondern dich zum Strahlen zu bringen.
+        </h2>
+        <div class="font-body text-body leading-[2] text-dark">
+          <p>
+            Aus echtem Interesse habe ich eine Ausbildung in Individualpsychologie nach Alfred Adler gemacht – nicht um zu therapieren, sondern um Menschen tiefer zu verstehen.
+          </p>
+          <p>
+            Heute mache ich mich selbständig. Mit meiner Kamera, meiner Neugier und dem tiefen Glauben: Die besten Bilder entstehen, wenn jemand kurz vergisst, dass ich da bin. Und wenn die Seele strahlt – dann strahlt das Bild.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bilder rechts: überlappend -->
+      <div class="relative h-[43.75rem] w-full shrink-0 md:w-[35rem]">
+        <!-- Bild gross: 380×540, links unten (top 80px) -->
+        <div class="absolute left-0 top-[5rem] h-[33.75rem] w-[23.75rem] overflow-hidden">
+          <BildPicture
+            id="ueber-geschichte-unten-01"
+            class="h-full w-full object-cover"
+            widths={[380, 760]}
+            sizes="(max-width: 768px) 100vw, 380px"
+          />
+        </div>
+        <!-- Bild klein: 260×380, rechts oben -->
+        <div class="absolute left-[17.5rem] top-0 h-[23.75rem] w-[16.25rem] overflow-hidden">
+          <BildPicture
+            id="ueber-geschichte-unten-02"
+            class="h-full w-full object-cover"
+            widths={[260, 520]}
+            sizes="(max-width: 768px) 50vw, 260px"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 5. ZITAT ===== -->
+  <section class="bg-dark py-xl">
+    <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
+      <p class="font-display text-h2 font-semibold leading-tight text-cream-warm text-center">
+        Ich glaube daran, dass jeder Mensch das in sich trägt, was er braucht. Manchmal braucht es einfach jemanden, der den Raum hält.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 6. ECHTES PORTRAIT ===== -->
+  <section class="relative bg-cream-warm py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-[7.5rem]">
+
+      <!-- Bilder links: überlappend -->
+      <div class="relative h-[37.5rem] w-full shrink-0 md:w-[35rem]">
+        <!-- Bild 1: 450×300, oben links -->
+        <div class="absolute left-0 top-0 h-[18.75rem] w-[28.125rem] overflow-hidden">
+          <BildPicture
+            id="echtes-portrait-01"
+            class="h-full w-full object-cover"
+            widths={[450, 900]}
+            sizes="(max-width: 768px) 100vw, 450px"
+          />
+        </div>
+        <!-- Bild 2: 450×300, unten rechts (offset 110px) -->
+        <div class="absolute left-[6.875rem] top-[17.5rem] h-[18.75rem] w-[28.125rem] overflow-hidden">
+          <BildPicture
+            id="echtes-portrait-02"
+            class="h-full w-full object-cover"
+            widths={[450, 900]}
+            sizes="(max-width: 768px) 100vw, 450px"
+          />
+        </div>
+      </div>
+
+      <!-- Text rechts -->
+      <div class="flex flex-1 flex-col gap-6 min-w-0">
+        <h2 class="font-display text-h2 font-semibold leading-tight text-dark">
+          Überlege dir nicht, was schön aussieht, sondern worin du dich am wohlsten fühlst.
+        </h2>
+        <div class="font-body text-body leading-[2] text-dark">
+          <p>
+            Ein strahlendes Portrait lächelt nicht zwingend. Es zeigt etwas Echtes – einen Moment, in dem jemand sich zeigen durfte. Ganz. Ohne Maske.
+          </p>
+          <p>
+            Diesen Moment halte ich fest. Und setze ihn in Szene – mit Farbe, Ausschnitt, Licht. Nicht um zu verschönern, sondern um sichtbar zu machen was schon da war.
+          </p>
+          <p>
+            Das fertige Bild soll dich berühren. Nicht weil es perfekt ist – sondern weil es du bist.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 7. KONTAKT-TEASER ===== -->
+  <section class="bg-rust py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-[7.5rem]">
+
+      <!-- Foto-Collage links: überlappend -->
+      <div class="relative h-[31.25rem] w-full shrink-0 md:w-[37.5rem]">
+        <!-- Bild 1: 460×320, rechts oben (left 140px) -->
+        <div class="absolute left-[8.75rem] top-0 h-[20rem] w-[28.75rem] overflow-hidden">
+          <BildPicture
+            id="kontakt-teaser-01"
+            class="h-full w-full object-cover"
+            widths={[460, 920]}
+            sizes="(max-width: 768px) 100vw, 460px"
+          />
+        </div>
+        <!-- Bild 2: 358×239, links unten (top 241px) -->
+        <div class="absolute left-0 top-[15.0625rem] h-[14.9375rem] w-[22.375rem] overflow-hidden">
+          <BildPicture
+            id="kontakt-teaser-02"
+            class="h-full w-full object-cover"
+            widths={[358, 716]}
+            sizes="(max-width: 768px) 100vw, 358px"
+          />
+        </div>
+      </div>
+
+      <!-- Text rechts -->
+      <div class="flex flex-1 flex-col gap-8 min-w-0">
+        <h2 class="font-display text-h2 font-semibold leading-tight text-cream">
+          Für alle, die sich selbst zurückfinden möchten.
+        </h2>
+        <div class="font-body text-body leading-[2] text-cream/[0.92]">
+          <p>
+            Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.
+          </p>
+          <p>
+            Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.
+          </p>
+        </div>
+        <a
+          href="/kontakt"
+          class="inline-flex self-start items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange"
+        >
+          Kontakt
+        </a>
+        <p class="font-body text-body-klein leading-[1.7] text-cream/[0.7]">
+          Die Antwort kommt von mir persönlich, nicht aus einer Vorlage.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Illustrationen — kommen zum Schluss (deko.json slug "ueber") -->
+  <!--
+    mohn    Beige     breite=215  drehung=-29  ankerIndex=2  obenAbAnker=974  links  abstand=-111
+    blattzweig Hellgrün breite=211 drehung=30  ankerIndex=3  obenAbAnker=615  rechts abstand=-106
+    eukalyptus Hellorange breite=313 drehung=-29 ankerIndex=5 obenAbAnker=680 links abstand=-154
+  -->
+
+  </div>
+
+  <Footer />
+
+</Base>
