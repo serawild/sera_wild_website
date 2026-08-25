@@ -22,17 +22,18 @@ const svgFiles = import.meta.glob<string>(
 
 interface Props {
   motiv: 'mohn' | 'tulpe' | 'eukalyptus' | 'blattzweig';
-  farbe: string;       // Hex-Farbe aus deko.json
-  breite: number;      // px bei 1728px Design-Breite
-  cssRotate: number;   // CSS-Grad direkt aus deko.json (positiv = Uhrzeigersinn)
-  top: number;         // px — Figma Bounding-Box-Oberkante ab Anker
+  farbe: string;                  // Hex-Farbe aus deko.json
+  breite: number;                 // px bei Design-Breite
+  cssRotate: number;              // CSS-Grad direkt aus deko.json (positiv = Uhrzeigersinn)
+  top?: number;                   // px — Figma Bounding-Box-Oberkante ab Anker (Desktop)
+  obenAbAnkerAnteil?: number;     // 0–1 Anteil der Abschnittshöhe (Mobil, aus mobil.seiten)
   seite: 'links' | 'rechts';
-  abstand: number;     // px — Figma Bounding-Box-Rand (negativ = ausserhalb)
-  mobil?: boolean;     // true → nur mobile (block md:hidden), false → nur desktop (hidden md:block)
-  deckkraft?: number;  // Deckkraft 0–1 (Standard 1)
+  abstand: number;                // px — Figma Bounding-Box-Rand (negativ = ausserhalb)
+  mobil?: boolean;                // true → nur mobile (block md:hidden), false → nur desktop (hidden md:block)
+  deckkraft?: number;             // Deckkraft 0–1 (Standard 1)
 }
 
-const { motiv, farbe, breite, cssRotate, top, seite, abstand, mobil = false, deckkraft = 1 } = Astro.props;
+const { motiv, farbe, breite, cssRotate, top, obenAbAnkerAnteil, seite, abstand, mobil = false, deckkraft = 1 } = Astro.props;
 
 const rawSvg = svgFiles[`/spec/illustrationen/${motiv}.svg`];
 if (!rawSvg) throw new Error(`DekoIllustration: Motiv nicht gefunden — "${motiv}"`);
@@ -54,7 +55,6 @@ const containerH = breite * Math.sin(θ) + displayH * Math.cos(θ);
 const bbOffsetX = (containerW - breite) / 2;
 const bbOffsetY = (containerH - displayH) / 2;
 const cssAbstand = abstand + bbOffsetX;
-const cssTop = top + bbOffsetY;
 
 // width/height entfernen und durch width="100%" ersetzen.
 const svg = rawSvg
@@ -65,9 +65,14 @@ const svg = rawSvg
 // px ÷ 16 = rem
 const rem = (px: number) => `${(px / 16).toFixed(3)}rem`;
 
+// top-Berechnung: Pixelwert (Desktop) oder Anteil der Abschnittshöhe (Mobil)
+const topStyle = obenAbAnkerAnteil !== undefined
+  ? `calc(${(obenAbAnkerAnteil * 100).toFixed(2)}% - ${rem(bbOffsetY)})`
+  : rem((top ?? 0) + bbOffsetY);
+
 const style = [
   'position:absolute',
-  `top:${rem(cssTop)}`,
+  `top:${topStyle}`,
   seite === 'links' ? `left:${rem(cssAbstand)}` : `right:${rem(cssAbstand)}`,
   `width:${rem(breite)}`,
   'height:auto',

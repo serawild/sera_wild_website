@@ -54,7 +54,6 @@ const neugierH2 = 'Neugierig auf mehr?';
     />
     <div class="absolute inset-0 bg-black/25 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute bottom-10 left-6 max-w-[21rem]">
-      <p class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/70 mb-[0.625rem]">DER ERSTE SCHRITT</p>
       <h1 aria-label="W-Momänt">
         <Wortmarke wort="Momänt" breite={15.1875} klasse="text-cream" />
       </h1>
@@ -76,8 +75,7 @@ const neugierH2 = 'Neugierig auf mehr?';
     </div>
     <div class="absolute inset-0 bg-black/40 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute bottom-[10rem] right-[7.5rem] flex max-w-[73.4375rem] flex-col items-end text-right">
-      <p class="font-display text-h1 font-semibold leading-normal text-cream">Der erste Schritt</p>
-      <h1 class="mt-[0.75rem] mb-[0.75rem]" aria-label="W-Momänt">
+      <h1 class="mb-[0.75rem]" aria-label="W-Momänt">
         <Wortmarke wort="Momänt" breite={27.875} klasse="text-cream" />
       </h1>
       <p class="font-display text-h2 font-semibold leading-normal text-cream">Vier Kulissen, eine Stimmung, ganz du.</p>
@@ -116,9 +114,9 @@ const neugierH2 = 'Neugierig auf mehr?';
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
       <div class="flex flex-1 min-w-0 flex-col gap-[1.5rem]">
         <h2 class="font-display text-h2 font-semibold leading-normal">{raumH2}</h2>
-        <p class="font-body text-body font-bold leading-[2]">{raumBold}</p>
-        <p class="font-body text-body leading-[2]">{raumP1}</p>
-        <p class="font-body text-body leading-[2]">{raumP2}</p>
+        <p class="font-body text-body font-bold leading-[1.65]">{raumBold}</p>
+        <p class="font-body text-body leading-[1.65]">{raumP1}</p>
+        <p class="font-body text-body leading-[1.65]">{raumP2}</p>
       </div>
       <div class="relative shrink-0" style="width:35rem;height:43.75rem">
         <div class="absolute" style="left:0;top:0;width:28.125rem;height:18.75rem">
@@ -165,13 +163,13 @@ const neugierH2 = 'Neugierig auf mehr?';
       </h2>
       <div class="flex flex-col max-w-[44rem]">
         <div class="border-t border-beige/50 py-5">
-          <p class="font-body text-body leading-[2] text-dark/85">Du willst wissen, wie sich das anfühlt – ohne dich gleich auf einen halben Tag einzulassen.</p>
+          <p class="font-body text-body leading-[1.65] text-dark/85">Du willst wissen, wie sich das anfühlt – ohne dich gleich auf einen halben Tag einzulassen.</p>
         </div>
         <div class="border-t border-beige/50 py-5">
-          <p class="font-body text-body leading-[2] text-dark/85">Für dein Profil, als Geschenk, oder gar deine Website.</p>
+          <p class="font-body text-body leading-[1.65] text-dark/85">Für dein Profil, als Geschenk, oder gar deine Website.</p>
         </div>
         <div class="border-t border-beige/50 py-5">
-          <p class="font-body text-body leading-[2] text-dark/85">Du liebäugelst mit dem W-Erläbnis und möchtest mich vorher kennenlernen.</p>
+          <p class="font-body text-body leading-[1.65] text-dark/85">Du liebäugelst mit dem W-Erläbnis und möchtest mich vorher kennenlernen.</p>
         </div>
       </div>
     </div>
@@ -276,15 +274,15 @@ const neugierH2 = 'Neugierig auf mehr?';
           {kulissen.map(k => (
             <div class="flex flex-col gap-[0.25rem]">
               <p class="font-body text-body uppercase tracking-[0.08em]">{k.name}</p>
-              <p class="font-body text-body leading-[2]">{k.text}</p>
+              <p class="font-body text-body leading-[1.65]">{k.text}</p>
             </div>
           ))}
           <div class="flex flex-col gap-[0.25rem]">
             <p class="font-body text-body uppercase tracking-[0.08em]">Leinen &amp; Licht</p>
-            <p class="font-body text-body leading-[2]">...mit einem Hauch Boho in Szene gesetzt</p>
+            <p class="font-body text-body leading-[1.65]">...mit einem Hauch Boho in Szene gesetzt</p>
           </div>
           <div class="h-px w-full bg-[#5b5c4f]"></div>
-          <p class="font-body text-body font-bold leading-[2]">{kulissenBold}</p>
+          <p class="font-body text-body font-bold leading-[1.65]">{kulissenBold}</p>
         </div>
         <a
           href="/kontakt"
@@ -386,7 +384,7 @@ const neugierH2 = 'Neugierig auf mehr?';
       <h2 class="font-display text-[2.75rem] font-semibold leading-normal text-cream">{neugierH2}</h2>
       <p class="font-body text-small leading-[2] text-cream/90">
         <span>Manche merken nach fünfzehn Minuten, dass sie mehr Zeit wollen. </span>
-        <span class="font-display font-semibold italic text-[2rem] leading-[2]">Nicht mehr Bilder – mehr Zeit. </span>
+        <span class="font-display font-semibold italic text-h3 leading-[2]">Nicht mehr Bilder – mehr Zeit. </span>
         <span>Dafür gibt es das W-Erläbnis: zwei bis drei Stunden, draussen, an einem Ort, der dir etwas bedeutet.</span>
       </p>
       <a

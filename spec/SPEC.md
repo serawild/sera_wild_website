@@ -101,24 +101,22 @@ Text auf hellem Grund `--dunkelgruen`, auf dunklem und rostorangem Grund `--hell
 
 **Vollkorn SemiBold** für Überschriften, **Roboto Regular** für alles andere.
 
-| Stil | Familie | px | Besonderheit |
-|---|---|---|---|
-| H1 | Vollkorn SemiBold | 80 | Hero-Titel |
-| H2 | Vollkorn SemiBold | 56 | Abschnittstitel |
-| H2 Klein | Vollkorn SemiBold | 44 | |
-| H3 | Vollkorn SemiBold | 40 | |
-| H3 Klein | Vollkorn SemiBold | 32 | |
-| H4 | Roboto Regular | 28 | |
-| Body | Roboto Regular | 32 | Fliesstext |
-| Body Klein | Roboto Regular | 22 | |
-| CTA | Roboto Regular | 28 | Grossbuchstaben, 6 % Laufweite |
-| Navigation | Roboto Regular | 24 | |
-| Small | Roboto Regular | 24 | |
-| Label | Roboto Regular | 16 | Grossbuchstaben, 8 % Laufweite |
-| Label Gross | Roboto Regular | 32 | Grossbuchstaben, 8 % Laufweite |
-| H1 Mobile | Vollkorn SemiBold | 36 | unter 640 px |
-| H2 Mobile | Vollkorn SemiBold | 40 | unter 640 px |
-| Body Mobile | Roboto Regular | 20 | unter 640 px |
+Fünf Desktop-Grössen, keine Zwischenwerte. Genau diese Tokens verwenden — keine text-[Xrem]-Klassen.
+
+| Stil | Familie | px (1728px) | lineHeight | clamp |
+|---|---|---|---|---|
+| H1 | Vollkorn SemiBold | 80 | 1.2 | `clamp(2.75rem, 1.96rem + 3.38vw, 5rem)` |
+| H2 | Vollkorn SemiBold | 48 | 1.2 | `clamp(2.5rem, 2.1rem + 0.83vw, 3rem)` |
+| H3 | Vollkorn SemiBold | 32 | 1.2 | `clamp(1.75rem, 1.55rem + 0.42vw, 2rem)` |
+| H4 | Roboto Regular | 28 | 1.2 | `clamp(1rem, 0.74rem + 1.13vw, 1.75rem)` |
+| Body | Roboto Regular | 32 | 1.65 | `clamp(1.25rem, 1.01rem + 1.05vw, 2rem)` |
+| Body Klein | Roboto Regular | 22 | 1.6 | 1.375rem fix |
+| CTA | Roboto Regular | 28 | 1 | `clamp(1.5rem, 1.41rem + 0.38vw, 1.75rem)` · 6 % Laufweite |
+| Small | Roboto Regular | 22 | 1.3 | 1.375rem fix |
+| Label | Roboto Regular | 16 | 1.5 | 1rem fix · Grossbuchstaben · 8 % Laufweite |
+| Label Gross | Roboto Regular | 32 | 1.5 | 2rem fix · Grossbuchstaben · 8 % Laufweite |
+
+Mobile ändert sich nicht. Body am Handy: Roboto Regular 17px (1.0625rem), leading 1.68.
 
 Schriften als `.woff2` in `assets/fonts/`, eingebunden mit `font-display: swap`.
 

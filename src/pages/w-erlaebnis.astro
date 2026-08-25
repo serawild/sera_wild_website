@@ -235,10 +235,10 @@ const faqFragen = [
         </div>
       </div>
       <div class="flex flex-1 min-w-0 flex-col gap-[3rem]">
-        <h2 class="font-display text-[3rem] font-semibold leading-normal">{begegnungH2}</h2>
+        <h2 class="font-display text-h2 font-semibold leading-normal">{begegnungH2}</h2>
         <div class="flex flex-col gap-[1.5rem]">
-          <p class="font-body text-body leading-[2]">{begegnungP1}</p>
-          <p class="font-body text-body leading-[2]">{begegnungP2}</p>
+          <p class="font-body text-body leading-[1.65]">{begegnungP1}</p>
+          <p class="font-body text-body leading-[1.65]">{begegnungP2}</p>
         </div>
       </div>
     </div>
@@ -284,7 +284,7 @@ const faqFragen = [
         <h2 class="font-display text-h2 font-semibold leading-normal">Wofür das W steht</h2>
         <div class="flex flex-col gap-[0.75rem]">
           {dasWFragen.map((f) => (
-            <p class="font-display text-[2rem] font-semibold leading-[1.45]">
+            <p class="font-display text-h3 font-semibold leading-[1.45]">
               <span class="text-orange">{f.w}</span>{f.rest}
             </p>
           ))}
@@ -390,7 +390,7 @@ const faqFragen = [
       <div class="flex gap-[2rem]">
         <div class="flex flex-1 flex-col gap-[2rem] bg-cream-warm px-[2.5rem] py-[3rem]">
           <div class="flex flex-col items-center gap-[0.75rem] bg-cream px-[2rem] py-[2.5rem] text-center shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
-            <p class="font-display text-[3rem] font-semibold text-dark">CHF 950.–</p>
+            <p class="font-display text-h2 font-semibold text-dark">CHF 950.–</p>
             <p class="font-body text-[1rem] font-medium text-[#b08257]">2–3 Fotospots · 2–3 Stunden</p>
             <p class="font-display text-[1.125rem] italic text-dark">Ein Ort, den du liebst – und vielleicht noch einer gleich um die Ecke.</p>
           </div>
@@ -417,7 +417,7 @@ const faqFragen = [
           </div>
         </div>
         <div class="flex flex-1 flex-col gap-[1.25rem] bg-cream-warm px-[2.5rem] py-[3rem]">
-          <p class="font-display text-[2rem] font-semibold text-dark">Das ist immer dabei</p>
+          <p class="font-display text-h3 font-semibold text-dark">Das ist immer dabei</p>
           <div class="flex flex-col gap-[0.75rem]">
             {angebotLeistungen.map((item) => (
               <div class="flex items-start gap-[0.75rem]">
@@ -515,7 +515,7 @@ const faqFragen = [
   <section class="relative isolate z-10 bg-rust px-6 py-[52px] md:py-xl md:px-[7.5rem]">
     <DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={181} cssRotate={-22.1} top={12} seite="rechts" abstand={-62} />
     <div class="mx-auto max-w-inhalt text-center">
-      <p class="font-display text-[1.6875rem] font-semibold leading-[1.3] text-cream md:text-[2.5rem] md:font-bold md:leading-[1.5]">
+      <p class="font-display text-[1.6875rem] font-semibold leading-[1.3] text-cream md:text-h2 md:font-bold md:leading-[1.5]">
         Lebendigkeit ist keine Pose, sondern ein Puls.
       </p>
     </div>
@@ -682,13 +682,13 @@ const faqFragen = [
         <div class="flex max-w-[45.25rem] flex-col">
           {richtigItems.map((item) => (
             <>
-              <p class="font-body text-body leading-[2] py-[0.75rem]">{item}</p>
+              <p class="font-body text-body leading-[1.65] py-[0.75rem]">{item}</p>
               <div class="h-px bg-dark"></div>
             </>
           ))}
         </div>
         <div class="h-px bg-dark"></div>
-        <p class="font-body text-body font-bold leading-[2] max-w-[45.25rem]">{richtigBold}</p>
+        <p class="font-body text-body font-bold leading-[1.65] max-w-[45.25rem]">{richtigBold}</p>
         <div class="h-px bg-dark"></div>
         <a href="/kontakt" class="self-start rounded-[17px] bg-[#b08257] px-md py-sm font-body text-small font-medium uppercase tracking-[1.5px] text-cream">
           MEHR DAZU
@@ -716,8 +716,8 @@ const faqFragen = [
     <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[2.5rem] text-center">
       <h2 class="font-display text-h2 font-semibold leading-normal max-w-[75rem]">{ctaH2}</h2>
       <div class="flex flex-col gap-[0] max-w-[75rem]">
-        <p class="font-body text-body leading-[2]">{ctaP1}</p>
-        <p class="font-body text-body leading-[2] mt-[2em]">{ctaP2}</p>
+        <p class="font-body text-body leading-[1.65]">{ctaP1}</p>
+        <p class="font-body text-body leading-[1.65] mt-[2em]">{ctaP2}</p>
       </div>
       <a href="/w-momaent" class="rounded-[17px] bg-beige px-md py-sm font-body text-small font-medium text-cream">
         Zum W-Momänt

@@ -9,13 +9,22 @@
   "svg": "spec/illustrationen/<motiv>.svg. Die Pfade nutzen fill=currentColor, also die Farbe ueber color setzen, nicht ueber fill.",
   "inline": "Die SVG muss inline im HTML stehen, sonst greift currentColor nicht. Kein <img>.",
   "regeln": [
-   "aria-hidden=true und pointer-events:none",
-   "Illustration ist das hinterste Element im Abschnitt: hinter Text und hinter Bildern",
-   "Sie darf hinter Text liegen. Sie darf nie ueber einer Bildflaeche liegen",
-   "body oder Seitencontainer braucht overflow-x:hidden",
-   "unter 768px Fensterbreite alle ausblenden",
-   "alle Werte in rem umrechnen, damit sie mit der Seite mitskalieren"
-  ]
+   "Mindestens drei Illustrationen pro Unterseite.",
+   "Eine Illustration liegt auf hoechstens zwei Abschnitten. Ueber drei oder mehr hinweg nie.",
+   "So gross wie moeglich — begrenzt allein durch die beiden Verbote darunter.",
+   "Nie ueber einer Bildflaeche.",
+   "Nie hinter Text. Gemessen wird gegen die Buchstabenumrisse, nicht gegen den Textrahmen. Mindestabstand 16 px am Rechner, 10 px am Handy.",
+   "Keine zwei Illustrationen einer Seite sind gleich gross.",
+   "Keine zwei Illustrationen einer Seite haben denselben Drehwinkel. Mindestens 6 Grad Unterschied.",
+   "Ueber den linken oder rechten Seitenrand hinauslaufen ist erlaubt und erwuenscht. Der abgeschnittene Teil zaehlt nicht zur Groesse, nur der sichtbare Teil muss frei liegen.",
+   "Illustration ist das hinterste Element ihres Abschnitts.",
+   "Deckkraft 0.6.",
+   "Zwei benachbarte Illustrationen tragen nie dasselbe Motiv.",
+   "Nie gespiegelt.",
+   "Farbe richtet sich nach dem Untergrund: auf creme Beige, auf dunkel und oliv Hellgruen, auf terracotta Hellorange."
+  ],
+  "freiraum": "Freier Raum entsteht fast nur an drei Orten: in den Polsterzonen zwischen zwei Abschnitten, seitlich neben schmalen Textspalten, und ausserhalb des Seitenrands. Dort gehoeren die Illustrationen hin. Wer im Inhaltsbereich sucht, findet nichts.",
+  "aenderung": "Bis August 2026 galt: hinter Text erlaubt. Das gilt nicht mehr. Alle bestehenden Positionen muessen daran neu geprueft werden."
  },
  "farben": {
   "Hellgrün": "#5B5C4F",
@@ -81,7 +90,8 @@
      "hoehe": 70
     }
    },
-   "kontrolle": "Der Schwung des W laeuft als Dach ueber das Er und endet beim l. Die Buchstaben sitzen senkrecht mittig zum W, gemessen an der Druckflaeche, drei Pixel unter der geometrischen Mitte."
+   "kontrolle": "Der Schwung des W laeuft als Dach ueber das Er und endet beim l. Die Buchstaben sitzen senkrecht mittig zum W, gemessen an der Druckflaeche, drei Pixel unter der geometrischen Mitte.",
+   "hinweis": "Bauanleitung fuer W Erlaebnis. Die Schwesterfassung W Momaent steht darunter und ist gleich gebaut."
   },
   "einsatz": [
    {
@@ -120,7 +130,52 @@
     "deckkraft": 0.07,
     "hinweis": "Block braucht position:relative und overflow:hidden."
    }
-  ]
+  ],
+  "wortmarkeMomaent": {
+   "was": "Bildmarke W plus das Wort Momaent. Gleich gebaut wie die Wortmarke W Erlaebnis, gleiche Schriftgroesse, gleiche Grundlinie, gleicher Abstand vom W. Im Code echter Text, nicht als Bild einsetzen.",
+   "bezugsrahmen": {
+    "breite": 539,
+    "hoehe": 222
+   },
+   "w": {
+    "datei": "spec/marken/w.svg",
+    "vonLinks": 0,
+    "vonOben": 0,
+    "breite": 308,
+    "hoehe": 222
+   },
+   "text": {
+    "inhalt": "Momänt",
+    "schrift": "Vollkorn SemiBold",
+    "groesse": 96,
+    "vonLinks": 160,
+    "druckflaeche": {
+     "vonLinks": 163,
+     "vonOben": 83,
+     "breite": 376,
+     "hoehe": 66
+    },
+    "grundlinie": 149
+   },
+   "kontrolle": "Die Grundlinie liegt bei 149, genau wie bei Erlaebnis — die beiden Wortmarken stehen nebeneinander auf derselben Linie. Der Schwung des W laeuft als Dach ueber das Mo und endet beim m. Das Wort ist 66 hoch statt 70, weil Momaent keine so hohen Oberlaengen hat wie Erlaebnis. Das ist richtig, nicht korrigieren.",
+   "kurvenfassung": {
+    "datei": "spec/marken/w-momaent.svg",
+    "viewBox": "0 0 539 222",
+    "wofuer": "Druck, Flyer, alles wo keine Schrift eingebettet werden kann. Auf der Website nicht verwenden."
+   },
+   "figma": {
+    "componentSet": "2745:75",
+    "seite": "03 Sections",
+    "varianten": [
+     "Dunkelgrün",
+     "Hellgrün",
+     "Rostorange",
+     "Hellorange",
+     "Beige",
+     "Hell"
+    ]
+   }
+  }
  },
  "seiten": [
   {
@@ -578,50 +633,436 @@
  ],
  "geprueft": "Positionen exakt wie in Figma. Regel: Illustrationen liegen nie ueber Bildflaechen. Hinter Text duerfen sie liegen – dort gehoeren sie in die hinterste Ebene des Abschnitts.",
  "mobil": {
-  "hinweis": "Mobile Startseite, Rahmen M1c_Startseite Mischung auf der Figma-Seite 'Mobile | Designs'. Bezugsbreite 390 px. Gleiche Einbauregeln wie Desktop.",
+  "hinweis": "Mobile Illustrationen, Bezugsbreite 390. 'obenAbAnkerAnteil' ist der Anteil der Abschnittshoehe, an dem die Oberkante sitzt — die Angabe bleibt gueltig, auch wenn ein Abschnitt durch Umbrueche waechst. 'abstandVomRand' ist negativ: die Illustration laeuft ueber den Seitenrand hinaus und wird dort beschnitten. Wo 'bildzoneImAbschnitt' true ist, enthaelt der Abschnitt Bilder — sie sitzen dort immer unten, deshalb sitzt die Illustration im oberen Drittel.",
   "breite": 390,
   "seiten": {
-   "index": [
-    {
-     "motiv": "mohn",
-     "farbe": "Beige",
-     "breite": 240,
-     "hoehe": 383,
-     "drehung": -26,
-     "cssRotate": 26,
-     "deckkraft": 0.6,
-     "ankerAbschnitt": "01 Haltung",
-     "seite": "rechts",
-     "abstandVomRand": 20,
-     "obenAbAnker": 124
-    },
-    {
-     "motiv": "eukalyptus",
-     "farbe": "Hellgrün",
-     "breite": 135,
-     "hoehe": 218,
-     "drehung": 28,
-     "cssRotate": -28,
-     "deckkraft": 0.6,
-     "ankerAbschnitt": "02 Angebot",
-     "seite": "rechts",
-     "abstandVomRand": -12,
-     "obenAbAnker": 667
-    },
-    {
-     "motiv": "tulpe",
-     "farbe": "Hellorange",
-     "breite": 126,
-     "hoehe": 248,
-     "drehung": 24,
-     "cssRotate": -24,
-     "deckkraft": 0.6,
-     "ankerAbschnitt": "05 Kontakt",
-     "seite": "rechts",
-     "abstandVomRand": 13,
-     "obenAbAnker": -31
-    }
-   ]
+   "index": {
+    "rahmen": "M1_Startseite",
+    "deko": [
+     {
+      "motiv": "tulpe",
+      "farbe": "Beige",
+      "breite": 186,
+      "hoehe": 367,
+      "drehung": 27,
+      "cssRotate": -27,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "01 Haltung",
+      "seite": "rechts",
+      "abstandVomRand": -86,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "mohn",
+      "farbe": "Hellgrün",
+      "breite": 162,
+      "hoehe": 259,
+      "drehung": -21,
+      "cssRotate": 21,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "02 Angebot",
+      "seite": "links",
+      "abstandVomRand": -75,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "eukalyptus",
+      "farbe": "Beige",
+      "breite": 140,
+      "hoehe": 226,
+      "drehung": 33,
+      "cssRotate": -33,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "03 Arbeiten",
+      "seite": "rechts",
+      "abstandVomRand": -64,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "blattzweig",
+      "farbe": "Hellgrün",
+      "breite": 122,
+      "hoehe": 229,
+      "drehung": -15,
+      "cssRotate": 15,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "04 Stimmen",
+      "seite": "links",
+      "abstandVomRand": -56,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     }
+    ]
+   },
+   "w-erlaebnis": {
+    "rahmen": "M2_W-Erläbnis",
+    "deko": [
+     {
+      "motiv": "tulpe",
+      "farbe": "Beige",
+      "breite": 186,
+      "hoehe": 367,
+      "drehung": 27,
+      "cssRotate": -27,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "01 Begegnung",
+      "seite": "rechts",
+      "abstandVomRand": -86,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "mohn",
+      "farbe": "Beige",
+      "breite": 162,
+      "hoehe": 259,
+      "drehung": -21,
+      "cssRotate": 21,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "03 Wonach wir suchen",
+      "seite": "links",
+      "abstandVomRand": -75,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "eukalyptus",
+      "farbe": "Hellorange",
+      "breite": 140,
+      "hoehe": 226,
+      "drehung": 33,
+      "cssRotate": -33,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "Zitat",
+      "seite": "rechts",
+      "abstandVomRand": -64,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "blattzweig",
+      "farbe": "Beige",
+      "breite": 122,
+      "hoehe": 229,
+      "drehung": -15,
+      "cssRotate": 15,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "07 Richtig",
+      "seite": "links",
+      "abstandVomRand": -56,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     }
+    ]
+   },
+   "w-momaent": {
+    "rahmen": "M2.1_Scheune",
+    "deko": [
+     {
+      "motiv": "tulpe",
+      "farbe": "Beige",
+      "breite": 186,
+      "hoehe": 367,
+      "drehung": 27,
+      "cssRotate": -27,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "01 Raum mit Geschichte",
+      "seite": "rechts",
+      "abstandVomRand": -86,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "mohn",
+      "farbe": "Hellorange",
+      "breite": 162,
+      "hoehe": 259,
+      "drehung": -21,
+      "cssRotate": 21,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "Zitat",
+      "seite": "links",
+      "abstandVomRand": -75,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "eukalyptus",
+      "farbe": "Beige",
+      "breite": 140,
+      "hoehe": 226,
+      "drehung": 33,
+      "cssRotate": -33,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "03 Pakete",
+      "seite": "rechts",
+      "abstandVomRand": -64,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "blattzweig",
+      "farbe": "Hellgrün",
+      "breite": 122,
+      "hoehe": 229,
+      "drehung": -15,
+      "cssRotate": 15,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "04 Neugier",
+      "seite": "links",
+      "abstandVomRand": -56,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     }
+    ]
+   },
+   "geschichten": {
+    "rahmen": "M3_Geschichten",
+    "deko": [
+     {
+      "motiv": "tulpe",
+      "farbe": "Beige",
+      "breite": 186,
+      "hoehe": 367,
+      "drehung": 27,
+      "cssRotate": -27,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "01 Foto-Story",
+      "seite": "rechts",
+      "abstandVomRand": -86,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "mohn",
+      "farbe": "Hellgrün",
+      "breite": 162,
+      "hoehe": 259,
+      "drehung": -21,
+      "cssRotate": 21,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "02 Authentizität",
+      "seite": "links",
+      "abstandVomRand": -75,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "eukalyptus",
+      "farbe": "Hellgrün",
+      "breite": 140,
+      "hoehe": 226,
+      "drehung": 33,
+      "cssRotate": -33,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "04 Kundenstory",
+      "seite": "rechts",
+      "abstandVomRand": -64,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "blattzweig",
+      "farbe": "Hellorange",
+      "breite": 122,
+      "hoehe": 229,
+      "drehung": -15,
+      "cssRotate": 15,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "Zitat",
+      "seite": "links",
+      "abstandVomRand": -56,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     }
+    ]
+   },
+   "simona": {
+    "rahmen": "M3.1_Simona",
+    "deko": [
+     {
+      "motiv": "tulpe",
+      "farbe": "Beige",
+      "breite": 186,
+      "hoehe": 367,
+      "drehung": 27,
+      "cssRotate": -27,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "01 Geschichte oben",
+      "seite": "rechts",
+      "abstandVomRand": -86,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "mohn",
+      "farbe": "Hellgrün",
+      "breite": 162,
+      "hoehe": 259,
+      "drehung": -21,
+      "cssRotate": 21,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "02 Foto-Story",
+      "seite": "links",
+      "abstandVomRand": -75,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "eukalyptus",
+      "farbe": "Beige",
+      "breite": 140,
+      "hoehe": 226,
+      "drehung": 33,
+      "cssRotate": -33,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "03 Was geblieben ist",
+      "seite": "rechts",
+      "abstandVomRand": -64,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "blattzweig",
+      "farbe": "Hellgrün",
+      "breite": 122,
+      "hoehe": 229,
+      "drehung": -15,
+      "cssRotate": 15,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "04 Collage",
+      "seite": "links",
+      "abstandVomRand": -56,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     }
+    ]
+   },
+   "ueber": {
+    "rahmen": "M4_Über",
+    "deko": [
+     {
+      "motiv": "tulpe",
+      "farbe": "Hellgrün",
+      "breite": 186,
+      "hoehe": 367,
+      "drehung": 27,
+      "cssRotate": -27,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "01 Fakten",
+      "seite": "rechts",
+      "abstandVomRand": -86,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "mohn",
+      "farbe": "Beige",
+      "breite": 162,
+      "hoehe": 259,
+      "drehung": -21,
+      "cssRotate": 21,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "02 Mein Weg",
+      "seite": "links",
+      "abstandVomRand": -75,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     },
+     {
+      "motiv": "eukalyptus",
+      "farbe": "Hellorange",
+      "breite": 140,
+      "hoehe": 226,
+      "drehung": 33,
+      "cssRotate": -33,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "Zitat",
+      "seite": "rechts",
+      "abstandVomRand": -64,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "blattzweig",
+      "farbe": "Beige",
+      "breite": 122,
+      "hoehe": 229,
+      "drehung": -15,
+      "cssRotate": 15,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "04 Echtes Portrait",
+      "seite": "links",
+      "abstandVomRand": -56,
+      "obenAbAnkerAnteil": 0.16,
+      "bildzoneImAbschnitt": true
+     }
+    ]
+   },
+   "kontakt": {
+    "rahmen": "M5_Kontakt",
+    "deko": [
+     {
+      "motiv": "tulpe",
+      "farbe": "Beige",
+      "breite": 186,
+      "hoehe": 367,
+      "drehung": 27,
+      "cssRotate": -27,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "01 Kontaktdaten",
+      "seite": "rechts",
+      "abstandVomRand": -86,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "mohn",
+      "farbe": "Hellgrün",
+      "breite": 162,
+      "hoehe": 259,
+      "drehung": -21,
+      "cssRotate": 21,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "02 Nach deiner Nachricht",
+      "seite": "links",
+      "abstandVomRand": -75,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "eukalyptus",
+      "farbe": "Beige",
+      "breite": 140,
+      "hoehe": 226,
+      "drehung": 33,
+      "cssRotate": -33,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "04 Karte",
+      "seite": "rechts",
+      "abstandVomRand": -64,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     },
+     {
+      "motiv": "blattzweig",
+      "farbe": "Beige",
+      "breite": 122,
+      "hoehe": 229,
+      "drehung": -15,
+      "cssRotate": 15,
+      "deckkraft": 0.6,
+      "ankerAbschnitt": "05 Wo ich fotografiere",
+      "seite": "links",
+      "abstandVomRand": -56,
+      "obenAbAnkerAnteil": 0.42,
+      "bildzoneImAbschnitt": false
+     }
+    ]
+   }
   },
   "footer": {
    "hoehe": 356,
@@ -637,6 +1078,12 @@
   "leiste": {
    "hoehe": 82,
    "position": "fix am unteren Seitenrand"
-  }
+  },
+  "regelnAbweichend": [
+   "Am Handy darf die Illustration hinter Text liegen. Auf 390 px Breite mit 24 px Rand gibt es sonst keinen Platz. Die Regel 'nie hinter Text' gilt nur fuer die Fassung am Rechner.",
+   "Ueber einer Bildflaeche liegt sie auch am Handy nie.",
+   "Deckkraft 0.6, hinterstes Element im Abschnitt.",
+   "Kleiner als am Rechner: 122 bis 186 px statt 130 bis 450 px."
+  ]
  }
 }
