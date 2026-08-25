@@ -19,7 +19,7 @@
       "text": {
         "ausrichtung": "rechts",
         "zeilen": [
-          { "text": "rustikal & echt", "groesse": "h1", "px": 80 },
+          { "text": "Der erste Schritt", "groesse": "h1", "px": 80 },
           { "text": "Dein Fotoshooting: vier Kulissen,", "groesse": "h2", "px": 56 },
           { "text": "eine Stimmung, ganz du.", "groesse": "h2", "px": 56 }
         ]
@@ -47,7 +47,7 @@
             "stil": "bold"
           },
           {
-            "text": "Hier darfst du dich austoben – mit deinen Lieblingsoutfits, deinen Ideen, deiner Energie. Es geht um Bilder, um Darstellung, um Spass vor der Kamera. Und wer weiss – vielleicht entdeckst du dabei den Wunsch nach mehr. Nach Bildern, die nicht nur zeigen wie du aussiehst, sondern wer du bist.",
+            "text": "Hier darfst du dich austoben – mit deinen Lieblingsoutfits, deinen Ideen, deiner Energie. Es geht ums Ausprobieren: eine Viertelstunde, in der du herausfindest, wie es ist, vor einer Kamera zu stehen, ohne etwas darstellen zu müssen. Und wer weiss – vielleicht entdeckst du dabei den Wunsch nach mehr. Nach Bildern, die nicht nur zeigen wie du aussiehst, sondern wer du bist.",
             "stil": "normal"
           },
           {
@@ -63,6 +63,25 @@
           { "id": "raum-mit-geschichte-02", "left": 100, "top": 280, "breite": 450, "hoehe": 300 }
         ]
       }
+    },
+    {
+      "id": "fuer-wen",
+      "name": "Ein kleiner Schritt, kein grosser Entscheid",
+      "figmaNode": "",
+      "typ": "text-liste",
+      "hintergrund": "cream",
+      "padding": "py-xl px-[7.5rem]",
+      "text": {
+        "kapitelmarke": "FÜR WEN",
+        "h2": "Ein kleiner Schritt, kein grosser Entscheid.",
+        "items": [
+          "Du willst wissen, wie sich das anfühlt – ohne dich gleich auf einen halben Tag einzulassen.",
+          "Du brauchst ein gutes Bild von dir. Für dein Profil, deine Website, deine Bewerbung.",
+          "Du liebäugelst mit dem W-Erläbnis und möchtest mich vorher kennenlernen."
+        ],
+        "trennlinie": "beige/50"
+      },
+      "cta": null
     },
     {
       "id": "zitat",
@@ -172,11 +191,9 @@
       "text": {
         "h2": "Neugierig auf mehr?",
         "fliesstext": [
-          { "text": "Viele Menschen kommen zu mir und sagen: ", "stil": "normal", "groesse": 32 },
-          { "text": "Ich bin nicht fotogen. ", "stil": "vollkorn-kursiv", "groesse": 40 },
-          { "text": "Was sie eigentlich meinen: ", "stil": "normal", "groesse": 32 },
-          { "text": "Ich habe mich noch nie wirklich gesehen. ", "stil": "vollkorn-kursiv", "groesse": 40 },
-          { "text": "Und genau dort beginnen wir beim W-Erläbnis! ", "stil": "normal", "groesse": 32 }
+          { "text": "Manche merken nach fünfzehn Minuten, dass sie mehr Zeit wollen. ", "stil": "normal", "groesse": 32 },
+          { "text": "Nicht mehr Bilder – mehr Zeit. ", "stil": "vollkorn-kursiv", "groesse": 40 },
+          { "text": "Dafür gibt es das W-Erläbnis: zwei bis drei Stunden, draussen, an einem Ort, der dir etwas bedeutet.", "stil": "normal", "groesse": 32 }
         ]
       },
       "cta": {

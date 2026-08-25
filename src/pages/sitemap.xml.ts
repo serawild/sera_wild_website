@@ -17,6 +17,7 @@ const seiten: { pfad: string; prioritaet: string }[] = [
   { pfad: '/geschichten/simona', prioritaet: '0.7' },
   { pfad: '/ueber', prioritaet: '0.7' },
   { pfad: '/kontakt', prioritaet: '0.9' },
+  { pfad: '/reportage', prioritaet: '0.7' },
   { pfad: '/impressum', prioritaet: '0.3' },
   { pfad: '/datenschutz', prioritaet: '0.3' },
   { pfad: '/agb', prioritaet: '0.3' },

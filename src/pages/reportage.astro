@@ -1,0 +1,460 @@
+---
+import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import BildPicture from '../components/BildPicture.astro';
+
+const phone = '+41 79 790 57 01';
+const phoneHref = 'tel:+41797905701';
+const email = 'info@serawild.com';
+
+const anlassTags = [
+  'Firmenjubiläen',
+  'Mitarbeiteranlässe',
+  'Kongresse und Tagungen',
+  'Preisverleihungen',
+  'Eröffnungen',
+  'Generalversammlungen',
+];
+
+const leistungen = [
+  { titel: 'Vorgespräch', text: 'Ablauf, Räume, Lichtverhältnisse — und die Menschen, die auf keinem Bild fehlen dürfen.' },
+  { titel: 'Reportage vor Ort', text: 'So lange wie vereinbart. Ich bin früh da und kenne den Ablauf, bevor er beginnt.' },
+  { titel: 'Auswahl und Bearbeitung', text: 'Licht, Farbe und Ausschnitt bei jedem einzelnen Bild. Keine Filter von der Stange.' },
+  { titel: 'Webgalerie in voller Auflösung', text: 'Passwortgeschützt, teilbar. Ihre Gäste laden ihre Bilder selber herunter.' },
+  { titel: 'Nutzungsrechte', text: 'Für Ihre Kommunikation — intern wie extern, zeitlich unbegrenzt.' },
+  { titel: 'Lieferung', text: 'In der Regel innert zwei Wochen. Einzelne Bilder für die Kommunikation auch früher.' },
+];
+
+const ablaufSchritte = [
+  { nr: '1', titel: 'Anfrage', text: 'Datum, Ort, Dauer, Anlass. Ein paar Zeilen genügen.' },
+  { nr: '2', titel: 'Offerte', text: 'Sie bekommen ein schriftliches Angebot, in dem alles steht. Keine Positionen, die später dazukommen.' },
+  { nr: '3', titel: 'Reportage', text: 'Ich bin vor Ort, bevor es losgeht.' },
+  { nr: '4', titel: 'Galerie', text: 'Passwortgeschützt, in voller Auflösung, zum Weitergeben.' },
+];
+---
+
+<Base
+  title="Event-Reportage — sera Wild"
+  description="Reportagen für Firmenanlässe und private Feste. Unaufdringlich fotografiert, geliefert in einer passwortgeschützten Webgalerie in voller Auflösung."
+>
+  <Navigation farbe="hell" />
+
+  <!-- ===== HERO ===== -->
+
+  <!-- Mobile -->
+  <section class="relative md:hidden h-[43.75rem] overflow-hidden bg-olive">
+    <div
+      class="absolute inset-0 flex items-center justify-center"
+      style="background:#A0886D;"
+      aria-hidden="true"
+    >
+      <span style="color:#F5F3ED;font-size:0.75rem;opacity:0.45;">hero-reportage</span>
+    </div>
+    <div class="absolute inset-0 pointer-events-none" style="background:rgba(47,50,45,0.42);" aria-hidden="true"></div>
+    <div class="absolute bottom-10 left-6 max-w-[21rem]">
+      <p class="font-body text-[0.75rem] font-bold uppercase tracking-[0.15em] text-cream/60 mb-2">EVENT-REPORTAGE</p>
+      <h1 class="font-display text-[1.9375rem] leading-[1.3] font-semibold text-cream">
+        «Ich fotografiere, was passiert.»<br />«Nicht, was gestellt ist.»
+      </h1>
+      <p class="font-body text-[1rem] leading-[1.6] text-cream/80 mt-3">
+        Reportagen für Firmenanlässe und private Feste — im Aareland und weit darüber hinaus.
+      </p>
+      <a
+        href="/kontakt"
+        class="mt-5 inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream"
+      >
+        Anfrage senden
+      </a>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="hidden md:block relative h-[100svh] min-h-[600px] overflow-hidden bg-olive">
+    <div
+      class="absolute inset-0"
+      style="background:#A0886D;"
+      aria-hidden="true"
+    ></div>
+    <div class="absolute inset-0 pointer-events-none" style="background:rgba(47,50,45,0.42);" aria-hidden="true"></div>
+    <div class="absolute bottom-[10rem] left-6 max-w-[50rem] md:left-[7.5rem]">
+      <p class="font-body text-label font-bold uppercase text-cream/60 mb-4">EVENT-REPORTAGE</p>
+      <h1 class="font-display text-h1 font-semibold leading-tight text-cream">
+        «Ich fotografiere, was passiert.»<br />«Nicht, was gestellt ist.»
+      </h1>
+      <p class="font-body text-body leading-[1.8] text-cream/80 mt-6 max-w-[36rem]">
+        Reportagen für Firmenanlässe und private Feste — im Aareland und weit darüber hinaus.
+      </p>
+      <a
+        href="/kontakt"
+        class="mt-8 inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange"
+      >
+        Anfrage senden
+      </a>
+    </div>
+  </section>
+
+  <div class="relative isolate">
+
+  <!-- ===== 01 WER FOTOGRAFIERT ===== -->
+
+  <!-- Mobile -->
+  <section class="md:hidden bg-cream-warm py-[52px]">
+    <div class="px-6 flex flex-col gap-[1.125rem] mb-[1.5rem]">
+      <div class="flex items-center gap-2">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">01</span>
+        <span class="w-5 h-px bg-dark/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">WER FOTOGRAFIERT</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-dark">Seraina Wild</h2>
+    </div>
+    <div class="w-full overflow-hidden" style="aspect-ratio:4/5;">
+      <BildPicture
+        id="seraina-portrait"
+        class="h-full w-full object-cover"
+        mobil={true}
+        widths={[390, 780]}
+        sizes="100vw"
+      />
+    </div>
+    <div class="px-6 mt-[1.5rem] flex flex-col gap-[1.125rem]">
+      <p class="font-display text-[1.25rem] font-semibold italic leading-[1.5] text-dark">
+        «Zehn Jahre Fotografie, vier Jahre Eventmanagement — und ein echtes Interesse an Menschen.»
+      </p>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">
+        Ich fotografiere seit zehn Jahren: draussen, an Anlässen und im klassischen Studio. Vier Jahre davon habe ich selber Events organisiert. Ich weiss deshalb, wie so ein Abend von innen aussieht — wo es eng wird, wann der Moment kommt und wann man besser einen Schritt zurücktritt.
+      </p>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">
+        Dazu habe ich aus Interesse ein Diplom in Individualpsychologie gemacht. Nicht um zu therapieren, sondern um Menschen besser zu verstehen. Das sieht man den Bildern an.
+      </p>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="hidden md:block bg-cream-warm py-xl">
+    <div class="mx-auto max-w-inhalt px-[7.5rem]">
+      <div class="flex gap-[5rem] items-start">
+        <div class="w-[26.25rem] shrink-0">
+          <BildPicture
+            id="seraina-portrait"
+            class="w-full h-auto"
+            widths={[420, 840]}
+            sizes="26.25rem"
+          />
+        </div>
+        <div class="flex flex-col gap-6 pt-[2rem]">
+          <div class="flex items-center gap-2">
+            <span class="font-body text-label font-bold uppercase text-dark/50">01</span>
+            <span class="w-8 h-px bg-dark/50"></span>
+            <span class="font-body text-label uppercase text-dark/50">WER FOTOGRAFIERT</span>
+          </div>
+          <h2 class="font-display text-h2 font-semibold leading-tight text-dark">Seraina Wild</h2>
+          <p class="font-display text-h4 font-semibold italic leading-[1.5] text-dark">
+            «Zehn Jahre Fotografie, vier Jahre Eventmanagement — und ein echtes Interesse an Menschen.»
+          </p>
+          <p class="font-body text-body leading-[2] text-dark/85">
+            Ich fotografiere seit zehn Jahren: draussen, an Anlässen und im klassischen Studio. Vier Jahre davon habe ich selber Events organisiert. Ich weiss deshalb, wie so ein Abend von innen aussieht — wo es eng wird, wann der Moment kommt und wann man besser einen Schritt zurücktritt.
+          </p>
+          <p class="font-body text-body leading-[2] text-dark/85">
+            Dazu habe ich aus Interesse ein Diplom in Individualpsychologie gemacht. Nicht um zu therapieren, sondern um Menschen besser zu verstehen. Das sieht man den Bildern an.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 ARBEITSWEISE ===== -->
+  <section class="bg-dark py-[52px] md:py-xl">
+    <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
+      <div class="flex items-center gap-2 mb-5">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50 md:text-label">02</span>
+        <span class="w-5 h-px bg-cream/50 md:w-8"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50 md:text-label">ARBEITSWEISE</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-tight font-semibold text-cream mb-10 md:mb-12">
+        Ich bin da, aber ich stehe nicht im Weg.
+      </h2>
+      <div class="flex flex-col gap-5 md:grid md:grid-cols-3 md:gap-[2.5rem]">
+        <div class="flex flex-col gap-4 rounded-lg bg-olive px-[1.5rem] py-[2rem] md:px-[2rem] md:py-[2.5rem]">
+          <p class="font-display text-[1.375rem] md:text-[1.75rem] font-semibold text-cream">Unauffällig</p>
+          <p class="font-body text-[1.0625rem] md:text-small leading-[1.68] md:leading-[2] text-cream/85">
+            Ich arbeite so lange wie möglich mit dem Licht, das da ist. Kein Blitzgewitter, keine Kommandos, keine unterbrochenen Gespräche.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 rounded-lg bg-olive px-[1.5rem] py-[2rem] md:px-[2rem] md:py-[2.5rem]">
+          <p class="font-display text-[1.375rem] md:text-[1.75rem] font-semibold text-cream">Vorbereitet</p>
+          <p class="font-body text-[1.0625rem] md:text-small leading-[1.68] md:leading-[2] text-cream/85">
+            Vier Jahre Eventmanagement haben mir beigebracht, wie so ein Abend von innen aussieht. Ich weiss, wann der Moment kommt.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 rounded-lg bg-olive px-[1.5rem] py-[2rem] md:px-[2rem] md:py-[2.5rem]">
+          <p class="font-display text-[1.375rem] md:text-[1.75rem] font-semibold text-cream">Nah bei den Leuten</p>
+          <p class="font-body text-[1.0625rem] md:text-small leading-[1.68] md:leading-[2] text-cream/85">
+            Gruppenbilder gehören dazu. Aber die Bilder, die bleiben, entstehen dazwischen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 BILDSTRECKE ===== -->
+  <section class="bg-cream-warm py-[52px] md:py-xl">
+    <div class="px-6 md:px-[7.5rem] md:mx-auto md:max-w-inhalt flex flex-col gap-[1.125rem] mb-6">
+      <div class="flex items-center gap-2">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50 md:text-label">03</span>
+        <span class="w-5 h-px bg-dark/50 md:w-8"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50 md:text-label">EIN BLICK</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] font-semibold text-dark">Aus vergangenen Anlässen</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/60">
+        Wischbare Bildstrecke. Die Auswahl folgt, sobald die Bilder freigegeben sind.
+      </p>
+    </div>
+
+    <!-- Mobile: Wischleiste -->
+    <div class="md:hidden">
+      <div
+        id="galerie-track"
+        class="overflow-x-auto"
+        style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;"
+      >
+        <div class="flex gap-3 px-6" style="width:max-content;">
+          {[1, 2, 3, 4, 5].map((n) => {
+            const label = `reportage-galerie-0${n}`;
+            return (
+              <div
+                class="shrink-0 flex items-center justify-center rounded-lg"
+                style="scroll-snap-align:start;width:16.25rem;height:21.25rem;background:#A0886D;"
+              >
+                <span style="color:#F5F3ED;font-size:0.75rem;opacity:0.45;">{label}</span>
+              </div>
+            );
+          })}
+          <div class="shrink-0 w-3" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="flex justify-center gap-[0.5rem] mt-[1.25rem]">
+        {[0, 1, 2, 3, 4].map((i) => (
+          <span
+            class:list={['galerie-dot h-[0.375rem] w-[0.375rem] rounded-full bg-dark transition-opacity', i === 0 ? 'opacity-100' : 'opacity-30']}
+          ></span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Desktop: horizontale Reihe -->
+    <div class="hidden md:flex gap-5 mx-auto max-w-inhalt px-[7.5rem] overflow-x-auto pb-2">
+      {[1, 2, 3, 4, 5].map((n) => {
+        const label = `reportage-galerie-0${n}`;
+        return (
+          <div
+            class="shrink-0 flex items-center justify-center rounded-lg"
+            style="width:18.75rem;height:23.75rem;background:#A0886D;"
+          >
+            <span style="color:#F5F3ED;font-size:0.875rem;opacity:0.45;">{label}</span>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- ===== 04 ANGEBOT ===== -->
+  <section class="bg-olive py-[52px] md:py-xl">
+    <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
+      <div class="flex items-center gap-2 mb-5">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50 md:text-label">04</span>
+        <span class="w-5 h-px bg-cream/50 md:w-8"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50 md:text-label">ANGEBOT</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-tight font-semibold text-cream mb-10 md:mb-12">
+        Was enthalten ist
+      </h2>
+      <div class="flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-[5rem]">
+
+        <!-- Links: Leistungsliste -->
+        <div class="flex flex-col">
+          {leistungen.map((item) => (
+            <div class="border-t border-cream/20 py-5">
+              <p class="font-display text-[1.125rem] md:text-[1.375rem] font-semibold text-cream mb-2">{item.titel}</p>
+              <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/80">{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Rechts: 2 Kästen -->
+        <div class="flex flex-col gap-5">
+          <div class="rounded-lg bg-cream-warm p-7 md:p-9">
+            <p class="font-display text-[1.375rem] md:text-[1.75rem] font-semibold text-dark mb-4">Die Webgalerie</p>
+            <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85 mb-3">
+              Alle Bilder in voller Auflösung, hinter einem Passwort. Sie erhalten einen Link, den Sie weitergeben können — an Gäste, an die Geschäftsleitung, an die Agentur.
+            </p>
+            <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">
+              Jede Person lädt sich selber herunter, was sie braucht. Kein Versand von Ordnern, keine geschrumpften Bilder in E-Mails.
+            </p>
+          </div>
+          <div class="rounded-lg bg-rust p-7 md:p-9">
+            <p class="font-body text-[1.0625rem] leading-[1.68] text-cream">
+              Jeder Anlass ist anders. Sagen Sie mir Datum, Ort und Dauer — Sie bekommen eine Offerte, in der alles steht.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 05 ANLÄSSE ===== -->
+  <section class="bg-cream-warm py-[52px] md:py-xl">
+    <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
+      <div class="flex items-center gap-2 mb-5">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50 md:text-label">05</span>
+        <span class="w-5 h-px bg-dark/50 md:w-8"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50 md:text-label">ANLÄSSE</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-tight font-semibold text-dark mb-8">
+        Wofür ich gebucht werde
+      </h2>
+      <div class="flex flex-wrap gap-3 mb-10">
+        {anlassTags.map((tag) => (
+          <span class="inline-block rounded-full border border-beige px-4 py-2 font-body text-[0.9375rem] text-dark">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <div class="border-l-[3px] border-rust pl-5">
+        <p class="font-body text-[1.0625rem] md:text-body leading-[1.8] text-dark/85">
+          Und privat? Hochzeiten, runde Geburtstage, Taufen, Familienfeste. Dieselbe Haltung, derselbe Ablauf — nur mit mehr Umarmungen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 06 ABLAUF ===== -->
+  <section class="bg-dark py-[52px] md:py-xl">
+    <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
+      <div class="flex items-center gap-2 mb-5">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50 md:text-label">06</span>
+        <span class="w-5 h-px bg-cream/50 md:w-8"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50 md:text-label">ABLAUF</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-tight font-semibold text-cream mb-10 md:mb-12">
+        Von der Anfrage bis zur Galerie
+      </h2>
+      <div class="flex flex-col gap-8 md:grid md:grid-cols-4 md:gap-[2.5rem]">
+        {ablaufSchritte.map((step) => (
+          <div class="flex flex-col gap-[0.625rem]">
+            <div class="flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full bg-orange">
+              <span class="font-display text-[1.125rem] font-semibold text-cream">{step.nr}</span>
+            </div>
+            <p class="font-display text-[1.375rem] md:text-[1.75rem] font-semibold text-cream mt-[0.25rem]">{step.titel}</p>
+            <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/90">{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ZITAT ===== -->
+  <section class="bg-rust py-[52px] md:py-xl text-center">
+    <div class="mx-auto max-w-inhalt px-6 md:px-[15rem]">
+      <p class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-normal font-semibold text-cream">
+        «Die besten Bilder entstehen, wenn jemand kurz vergisst, dass ich da bin.»
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 07 KONTAKT ===== -->
+
+  <!-- Mobile -->
+  <section class="md:hidden bg-cream-warm py-[52px] px-6">
+    <div class="flex items-center gap-2 mb-5">
+      <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">07</span>
+      <span class="w-5 h-px bg-dark/50"></span>
+      <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">KONTAKT</span>
+    </div>
+    <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-dark mb-5">
+      Erzählen Sie mir von Ihrem Anlass.
+    </h2>
+    <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85 mb-4">
+      Datum, Ort, ungefähre Dauer und worum es geht. Ich melde mich innert zwei Arbeitstagen mit einer Offerte.
+    </p>
+    <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85 mb-7">
+      Wenn Sie lieber reden: rufen Sie an. Ein Anlass lässt sich in fünf Minuten besser klären als in fünf E-Mails.
+    </p>
+    <a
+      href="/kontakt"
+      class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream mb-7"
+    >
+      Anfrage senden
+    </a>
+    <div class="flex flex-col gap-3 mb-8">
+      <a href={phoneHref} class="font-body text-[1.0625rem] font-semibold text-dark/70 transition-colors hover:text-dark">{phone}</a>
+      <a href={`mailto:${email}`} class="font-body text-[1.0625rem] font-semibold text-dark/70 transition-colors hover:text-dark">{email}</a>
+    </div>
+    <div
+      class="w-full rounded-lg overflow-hidden flex items-center justify-center"
+      style="aspect-ratio:4/5;background:#A0886D;"
+    >
+      <span style="color:#F5F3ED;font-size:0.75rem;opacity:0.45;">reportage-kontakt</span>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="hidden md:block bg-cream-warm py-xl">
+    <div class="mx-auto max-w-inhalt px-[7.5rem]">
+      <div class="flex gap-[5rem] items-start">
+        <div class="flex-1 flex flex-col gap-6">
+          <div class="flex items-center gap-2">
+            <span class="font-body text-label font-bold uppercase text-dark/50">07</span>
+            <span class="w-8 h-px bg-dark/50"></span>
+            <span class="font-body text-label uppercase text-dark/50">KONTAKT</span>
+          </div>
+          <h2 class="font-display text-h2 font-semibold leading-tight text-dark">
+            Erzählen Sie mir von Ihrem Anlass.
+          </h2>
+          <p class="font-body text-body leading-[2] text-dark/85">
+            Datum, Ort, ungefähre Dauer und worum es geht. Ich melde mich innert zwei Arbeitstagen mit einer Offerte.
+          </p>
+          <p class="font-body text-body leading-[2] text-dark/85">
+            Wenn Sie lieber reden: rufen Sie an. Ein Anlass lässt sich in fünf Minuten besser klären als in fünf E-Mails.
+          </p>
+          <a
+            href="/kontakt"
+            class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange"
+          >
+            Anfrage senden
+          </a>
+          <div class="flex flex-col gap-3">
+            <a href={phoneHref} class="font-body text-body font-semibold text-dark/70 transition-colors hover:text-dark">{phone}</a>
+            <a href={`mailto:${email}`} class="font-body text-body font-semibold text-dark/70 transition-colors hover:text-dark">{email}</a>
+          </div>
+        </div>
+        <div
+          class="w-[30rem] shrink-0 rounded-lg overflow-hidden flex items-center justify-center"
+          style="aspect-ratio:4/5;background:#A0886D;"
+        >
+          <span style="color:#F5F3ED;font-size:0.875rem;opacity:0.45;">reportage-kontakt</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <Footer />
+</Base>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('galerie-track') as HTMLElement | null;
+  const dots = Array.from(document.querySelectorAll<HTMLElement>('.galerie-dot'));
+  if (!track || !dots.length) return;
+  track.addEventListener('scroll', () => {
+    const cardWidth = 260 + 12;
+    const idx = Math.min(Math.round(track.scrollLeft / cardWidth), dots.length - 1);
+    dots.forEach((d, i) => {
+      d.classList.toggle('opacity-100', i === idx);
+      d.classList.toggle('opacity-30', i !== idx);
+    });
+  });
+});
+</script>

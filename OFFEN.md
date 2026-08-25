@@ -1,5 +1,15 @@
 # Offene Punkte
 
+## Reportage-Seite (/reportage)
+
+Seite: reportage.astro — vor dem Livegang zu erledigen:
+
+- **hero-reportage** – Bild fehlt. Platzhalter Beige. Datei und ALT-Text in bilder.json eintragen, aktiv auf true setzen.
+- **reportage-galerie-01 bis -05** – Alle fünf Bilder fehlen. Wischbare Bildstrecke in Sektion 03. Grösse: 300×380 (Desktop), 260×340 (Mobil). Dateien und ALT-Texte in bilder.json eintragen, aktiv auf true setzen.
+- **reportage-kontakt** – Bild fehlt (Sektion 07, rechts). Verhältnis 4:5. Datei und ALT-Text in bilder.json eintragen, aktiv auf true setzen.
+- **Bildstrecke Hinweistext** – Sektion 03 enthält den Satz «Die Auswahl folgt, sobald die Bilder freigegeben sind.» — dieser muss vor dem Livegang durch den echten Beschrieb ersetzt werden.
+- **Logo Secondary** – Hero und Seite sollen die Fassung ohne Untertitel («Secondary White.svg» / «Secondary Dark.svg») verwenden. Derzeit zeigt Navigation das Primärlogo. Entweder Navigation einen optionalen Logo-Prop geben oder für diese Seite eine eigene Kopfzeile ohne Navigation.astro bauen.
+
 ## Fehlende -hoch-Dateien (Mobile Bilder)
 
 Seite: index.astro — Abschnitt: 01 Haltung

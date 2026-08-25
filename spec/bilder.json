@@ -2297,6 +2297,90 @@
     "hoehe": 2234
    },
    "deckungsfaktor": 1.94
+  },
+  {
+   "id": "hero-reportage",
+   "figmaEbene": "",
+   "baustein": "Hero Reportage",
+   "seite": "Reportage",
+   "anzeige": { "breite": 1728, "hoehe": 1117 },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+   "aktiv": false,
+   "datei": null
+  },
+  {
+   "id": "reportage-galerie-01",
+   "figmaEbene": "",
+   "baustein": "Bildstrecke Reportage",
+   "seite": "Reportage",
+   "anzeige": { "breite": 300, "hoehe": 380 },
+   "verhaeltnis": "300 : 380",
+   "ausrichtung": "hoch",
+   "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+   "aktiv": false,
+   "datei": null
+  },
+  {
+   "id": "reportage-galerie-02",
+   "figmaEbene": "",
+   "baustein": "Bildstrecke Reportage",
+   "seite": "Reportage",
+   "anzeige": { "breite": 300, "hoehe": 380 },
+   "verhaeltnis": "300 : 380",
+   "ausrichtung": "hoch",
+   "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+   "aktiv": false,
+   "datei": null
+  },
+  {
+   "id": "reportage-galerie-03",
+   "figmaEbene": "",
+   "baustein": "Bildstrecke Reportage",
+   "seite": "Reportage",
+   "anzeige": { "breite": 300, "hoehe": 380 },
+   "verhaeltnis": "300 : 380",
+   "ausrichtung": "hoch",
+   "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+   "aktiv": false,
+   "datei": null
+  },
+  {
+   "id": "reportage-galerie-04",
+   "figmaEbene": "",
+   "baustein": "Bildstrecke Reportage",
+   "seite": "Reportage",
+   "anzeige": { "breite": 300, "hoehe": 380 },
+   "verhaeltnis": "300 : 380",
+   "ausrichtung": "hoch",
+   "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+   "aktiv": false,
+   "datei": null
+  },
+  {
+   "id": "reportage-galerie-05",
+   "figmaEbene": "",
+   "baustein": "Bildstrecke Reportage",
+   "seite": "Reportage",
+   "anzeige": { "breite": 300, "hoehe": 380 },
+   "verhaeltnis": "300 : 380",
+   "ausrichtung": "hoch",
+   "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+   "aktiv": false,
+   "datei": null
+  },
+  {
+   "id": "reportage-kontakt",
+   "figmaEbene": "",
+   "baustein": "Kontakt Reportage",
+   "seite": "Reportage",
+   "anzeige": { "breite": 480, "hoehe": 600 },
+   "verhaeltnis": "4 : 5",
+   "ausrichtung": "hoch",
+   "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+   "aktiv": false,
+   "datei": null
   }
  ],
  "mobil": {
