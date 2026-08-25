@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="Impressum — sera Wild"
+  description="Impressum von Sera Wild – Prozessorientierte Fotografie, Gretzenbach."
+>
+
+  <!-- Titelleiste -->
+  <section class="relative bg-dark px-6 md:px-[7.5rem] pb-[3.5rem] md:pb-[6rem] pt-[7rem] md:pt-[15rem]">
+    <Navigation farbe="hell" />
+    <div class="mx-auto max-w-inhalt">
+      <h1 class="font-display text-[2rem] md:text-h2 font-semibold leading-[1.2] text-cream">Impressum</h1>
+    </div>
+  </section>
+
+  <!-- Inhalt -->
+  <section class="bg-cream px-6 md:px-[7.5rem] pb-[4rem] md:pb-[10rem] pt-[3rem] md:pt-[7.5rem]">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[2.125rem] md:gap-[5rem]">
+
+      <div class="flex flex-col gap-[1.5rem]">
+        <h2 class="font-display text-[1.25rem] md:text-h3 font-semibold leading-[1.2] text-dark">Verantwortlich für den Inhalt</h2>
+        <div class="font-body text-[1rem] md:text-small leading-[1.7] md:leading-[2] text-dark">
+          <p>Seraina Wild</p>
+          <p>Sera Wild – Prozessorientierte Fotografie</p>
+          <p>Pfarrmattstrasse 9</p>
+          <p>5014 Gretzenbach</p>
+          <p>Schweiz</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-[1.5rem]">
+        <h2 class="font-display text-[1.25rem] md:text-h3 font-semibold leading-[1.2] text-dark">Kontakt</h2>
+        <div class="font-body text-[1rem] md:text-small leading-[1.7] md:leading-[2] text-dark">
+          <p>Telefon: +41 79 790 57 01</p>
+          <p>E-Mail: info@serawild.com</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-[1.5rem]">
+        <h2 class="font-display text-[1.25rem] md:text-h3 font-semibold leading-[1.2] text-dark">Rechtsform und Steuern</h2>
+        <div class="font-body text-[1rem] md:text-small leading-[1.7] md:leading-[2] text-dark">
+          <p>Einzelunternehmen ohne Handelsregistereintrag</p>
+          <p>Nicht mehrwertsteuerpflichtig</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-[1.5rem]">
+        <h2 class="font-display text-[1.25rem] md:text-h3 font-semibold leading-[1.2] text-dark">Urheberrecht</h2>
+        <p class="font-body text-[1rem] md:text-small leading-[1.7] md:leading-[2] text-dark">
+          Die auf dieser Website veröffentlichten Inhalte – Texte, Bilder und grafischen Elemente – sind
+          urheberrechtlich geschützt. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung
+          ausserhalb der gesetzlichen Schranken des Urheberrechts bedürfen der schriftlichen Zustimmung der
+          Autorin. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch
+          gestattet.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-[1.5rem]">
+        <h2 class="font-display text-[1.25rem] md:text-h3 font-semibold leading-[1.2] text-dark">Bildnachweis</h2>
+        <p class="font-body text-[1rem] md:text-small leading-[1.7] md:leading-[2] text-dark">
+          Alle auf dieser Website verwendeten Fotografien stammen aus meiner eigenen Arbeit als Fotografin.
+          Dritte haben keine Rechte an den Bildern.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-[1.5rem]">
+        <h2 class="font-display text-[1.25rem] md:text-h3 font-semibold leading-[1.2] text-dark">Haftung für Inhalte</h2>
+        <p class="font-body text-[1rem] md:text-small leading-[1.7] md:leading-[2] text-dark">
+          Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit
+          und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Anbieterin bin ich für
+          eigene Inhalte nach den allgemeinen Gesetzen verantwortlich.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-[1.5rem]">
+        <h2 class="font-display text-[1.25rem] md:text-h3 font-semibold leading-[1.2] text-dark">Haftung für Links</h2>
+        <p class="font-body text-[1rem] md:text-small leading-[1.7] md:leading-[2] text-dark">
+          Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe.
+          Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
+          verantwortlich. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-[1.5rem]">
+        <h2 class="font-display text-[1.25rem] md:text-h3 font-semibold leading-[1.2] text-dark">Streitbeilegung</h2>
+        <p class="font-body text-[1rem] md:text-small leading-[1.7] md:leading-[2] text-dark">
+          Für Streitigkeiten aus dem Nutzungsverhältnis dieser Website gilt Schweizer Recht. Als Gerichtsstand
+          gilt Olten-Gösgen, Kanton Solothurn.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+
+</Base>

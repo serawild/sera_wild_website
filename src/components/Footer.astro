@@ -1,127 +1,177 @@
 ---
-import { Image } from 'astro:assets';
-import logoDark from '../assets/logo-primary-dark.svg';
-import flowerRust from '../assets/deco-flower-rust.png';
-
 /**
- * Footer — responsiv nach Figma:
- *  - Desktop (node 13:258): Rechtslinks | Logo | Kontakt+LinkedIn, Mohn-Illu in der Ecke
- *  - Mobile  (node 85:1409): Logo, Kontakt+LinkedIn, dunkler Balken mit Rechtslinks, Mohn-Illu überlappend
+ * Footer — identisch auf allen Seiten (SPEC §7).
+ * Desktop (3 Spalten): Rechtslinks | Logo | Kontakt + LinkedIn
+ * Mobile: Logo, Kontakt, LinkedIn, dann dunkler Balken mit Rechtslinks
  */
+import logoDark  from '../assets/logo-primary-dark.svg';
+import logoWhite from '../assets/logo-primary-white.svg';
+
+const markenFiles = import.meta.glob<string>(
+  '/spec/marken/*.svg',
+  { query: '?raw', import: 'default', eager: true }
+);
+const wRaw = markenFiles['/spec/marken/w.svg'] ?? '';
+const wSvg = wRaw
+  .replace(/\s+width="[^"]*"/g, '')
+  .replace(/\s+height="[^"]*"/g, '')
+  .replace('<svg ', '<svg width="100%" height="100%" style="display:block" ');
+
+const svgFiles = import.meta.glob<string>(
+  '/spec/illustrationen/*.svg',
+  { query: '?raw', import: 'default', eager: true }
+);
+const mohnRaw = svgFiles['/spec/illustrationen/mohn.svg'] ?? '';
+const mohnSvg = mohnRaw
+  .replace(/\s+width="[^"]*"/g, '')
+  .replace(/\s+height="[^"]*"/g, '')
+  .replace('<svg ', '<svg width="100%" style="display:block" ');
+
 const legalLinks = [
   { label: 'Datenschutz', href: '/datenschutz' },
-  { label: 'Impressum', href: '/impressum' },
-  { label: 'AGB', href: '/agb' },
+  { label: 'Impressum',   href: '/impressum' },
+  { label: 'AGB',         href: '/agb' },
 ];
 
-const phone = '+41 79 790 57 01';
-const phoneHref = 'tel:+41797905701';
-const email = 'info@serawild.com';
-const linkedInUrl = 'https://www.linkedin.com/';
+const phone      = '+41 79 790 57 01';
+const phoneHref  = 'tel:+41797905701';
+const whatsapp   = 'https://wa.me/41797905701';
+const email      = 'info@serawild.com';
+const linkedIn   = 'https://www.linkedin.com/in/seraina-stettler-a7b3a32a3/';
 ---
 
 <footer class="relative overflow-hidden bg-cream text-dark">
+
+  <!-- Illustration Mohn (Figma: bottom -243.47px, right 1063.67px, inner 273.853×396.782px, rotate 156.87deg + scaleY(-1)) -->
+  <div
+    aria-hidden="true"
+    class="hidden md:flex absolute items-center justify-center pointer-events-none"
+    style="bottom:-14.092vw; right:61.554vw; width:23.596vw; height:27.342vw; z-index:1;"
+  >
+    <div style="transform:rotate(156.87deg) scaleY(-1); flex-shrink:0; width:15.854vw; height:22.963vw; color:#BC541F;">
+      <Fragment set:html={mohnSvg} />
+    </div>
+  </div>
+
   <!-- ===== Desktop ===== -->
-  <div class="hidden md:grid md:grid-cols-3 md:items-center md:gap-md md:px-xl md:py-lg">
+  <div class="hidden md:grid md:grid-cols-3 md:items-center md:gap-md md:px-[7.5rem] md:py-[5rem]">
+
     <!-- Rechtslinks -->
     <nav aria-label="Rechtliches">
       <ul class="flex flex-col gap-sm">
-        {
-          legalLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class="text-base uppercase tracking-wider underline underline-offset-4 transition-colors hover:text-rust"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))
-        }
+        {legalLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="font-body text-h4 uppercase text-dark/40 underline underline-offset-4 transition-colors hover:text-rust"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
 
     <!-- Logo -->
     <div class="flex justify-center">
       <a href="/" aria-label="sera Wild – Startseite">
-        <img src={logoDark.src} alt="sera Wild – prozessorientierte Fotografie" class="w-[22rem] max-w-full" />
+        <img
+          src={logoDark.src}
+          alt="sera Wild – prozessorientierte Fotografie"
+          class="w-[28.625rem] max-w-full"
+          width={logoDark.width}
+          height={logoDark.height}
+        />
       </a>
     </div>
 
-    <!-- Kontakt + LinkedIn -->
-    <div class="flex flex-col items-end gap-sm text-right">
+    <!-- Kontakt + Social -->
+    <div class="flex flex-col items-end gap-[2.8rem] text-right">
+      <!-- LinkedIn -->
       <a
-        href={linkedInUrl}
+        href={linkedIn}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-md bg-dark text-cream transition-colors hover:bg-rust"
+        class="inline-flex h-14 w-14 items-center justify-center rounded-lg bg-dark text-cream transition-colors hover:bg-rust"
       >
-        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path
-            d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.56 4.78 5.9V21h-4v-5.9c0-1.41-.03-3.22-2-3.22-2 0-2.31 1.53-2.31 3.11V21h-4V9Z"
-          ></path>
+        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.56 4.78 5.9V21h-4v-5.9c0-1.41-.03-3.22-2-3.22-2 0-2.31 1.53-2.31 3.11V21h-4V9Z" />
         </svg>
       </a>
-      <a href={phoneHref} class="font-display text-2xl transition-colors hover:text-rust">{phone}</a>
-      <a href={`mailto:${email}`} class="font-display text-2xl transition-colors hover:text-rust">{email}</a>
+      <!-- Telefon + Mail -->
+      <div class="flex flex-col gap-1">
+        <a
+          href={phoneHref}
+          class="font-display font-semibold text-h3klein text-dark/50 transition-colors hover:text-rust"
+        >
+          {phone}
+        </a>
+        <a
+          href={`mailto:${email}`}
+          class="font-display font-semibold text-h3klein text-dark/50 transition-colors hover:text-rust"
+        >
+          {email}
+        </a>
+      </div>
     </div>
   </div>
 
   <!-- ===== Mobile ===== -->
-  <div class="md:hidden">
-    <div class="flex flex-col gap-lg px-sm pb-lg pt-md">
-      <!-- Logo -->
-      <a href="/" aria-label="sera Wild – Startseite">
-        <img src={logoDark.src} alt="sera Wild – prozessorientierte Fotografie" class="w-64 max-w-[70%]" />
-      </a>
+  <div class="md:hidden relative overflow-hidden bg-dark text-cream" style="min-height:356px">
 
-      <!-- Kontakt + LinkedIn -->
-      <div class="flex items-end justify-between">
-        <div class="flex flex-col gap-sm">
-          <a href={phoneHref} class="font-display text-2xl transition-colors hover:text-rust">{phone}</a>
-          <a href={`mailto:${email}`} class="font-display text-2xl transition-colors hover:text-rust">{email}</a>
-        </div>
-        <a
-          href={linkedInUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          class="inline-flex h-14 w-14 items-center justify-center rounded-md bg-dark text-cream transition-colors hover:bg-rust"
-        >
-          <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path
-              d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.56 4.78 5.9V21h-4v-5.9c0-1.41-.03-3.22-2-3.22-2 0-2.31 1.53-2.31 3.11V21h-4V9Z"
-            ></path>
-          </svg>
-        </a>
-      </div>
+    <!-- W-Wasserzeichen -->
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute"
+      style="left:12px;top:56px;width:370px;height:265px;opacity:0.1;color:#F5F3ED"
+    >
+      <Fragment set:html={wSvg} />
     </div>
 
-    <!-- Dunkler Balken mit Rechtslinks -->
-    <nav aria-label="Rechtliches" class="relative z-10 bg-dark px-sm py-sm">
-      <ul class="flex flex-wrap items-center justify-center gap-x-md gap-y-xs">
-        {
-          legalLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class="text-base uppercase tracking-wider text-cream underline underline-offset-4 transition-colors hover:text-orange"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <!-- Inhalt -->
+    <div class="relative flex flex-col gap-6 px-6 pb-10 pt-[52px]">
+
+      <!-- Logo weiss, 150 px -->
+      <a href="/" aria-label="sera Wild – Startseite">
+        <img
+          src={logoWhite.src}
+          alt="sera Wild – prozessorientierte Fotografie"
+          class="w-[150px]"
+          width={logoWhite.width}
+          height={logoWhite.height}
+        />
+      </a>
+
+      <!-- Telefon -->
+      <a
+        href={phoneHref}
+        class="font-body text-[1.0625rem] font-semibold text-cream/70 transition-colors hover:text-cream"
+      >
+        {phone}
+      </a>
+
+      <!-- E-Mail -->
+      <a
+        href={`mailto:${email}`}
+        class="font-body text-[1.0625rem] font-semibold text-cream/70 transition-colors hover:text-cream"
+      >
+        {email}
+      </a>
+
+      <!-- Rechtslinks in einer Zeile -->
+      <nav aria-label="Rechtliches">
+        <p class="font-body text-[0.75rem] text-cream/50">
+          {legalLinks.map((link, i) => (
+            <>
+              {i > 0 && <span aria-hidden="true"> · </span>}
+              <a href={link.href} class="transition-colors hover:text-cream/80">{link.label}</a>
+            </>
+          ))}
+        </p>
+      </nav>
+
+    </div>
   </div>
 
-  <!-- Mohn-Illustration (dekorativ, Markenelement) -->
-  <Image
-    src={flowerRust}
-    alt=""
-    aria-hidden="true"
-    class="pointer-events-none absolute bottom-0 right-0 z-20 w-28 select-none md:w-36"
-  />
 </footer>

@@ -1,0 +1,358 @@
+{
+  "seite": "Über",
+  "slug": "ueber",
+  "datei": "src/pages/ueber.astro",
+  "figmaNode": "2013:854",
+  "stand": "2026-08-17",
+  "hinweis": "Alle Texte wörtlich aus Figma. Nicht ändern.",
+
+  "abschnitte": [
+
+    {
+      "id": "hero",
+      "name": "Sektion – Hero",
+      "figmaNode": "2236:260",
+      "hintergrund": "dunkel (Videobild + schwarz 84 % Overlay)",
+      "layout": "position:relative, 100svh, min-h-[600px], overflow-hidden",
+      "padding": "pt-[40px] pb-[160px] pl-[60px] pr-[120px]",
+      "inhalt": {
+        "bild": {
+          "id": "hero-ueber",
+          "hinweis": "In Figma liegt ein 6s-Video (hero-ueber.mp4 ohne Ton). Im Repo liegt das Standbild hero-ueber.jpg als Poster. Opacity 91 % auf dem Bild-Container, zusätzlich bg-black/84 Overlay."
+        },
+        "navigation": "Navigation theme='light' (wie auf Kontakt-Seite)",
+        "text": {
+          "position": "absolute, unten rechts — bottom-[160px] right-[120px]",
+          "textAlign": "right",
+          "maxBreite": "1175px",
+          "h1": {
+            "text": "Meine Geschichte",
+            "stil": "Vollkorn SemiBold 80px, #F5F3ED, leading-normal"
+          },
+          "h2": {
+            "text": "Für alle, die mehr vom Leben wollen – und den Mut entwickeln, es zu leben.",
+            "stil": "Vollkorn SemiBold 56px, #F5F3ED, leading-normal"
+          }
+        }
+      }
+    },
+
+    {
+      "id": "fakten",
+      "name": "Sektion – Fakten",
+      "figmaNode": "2286:775",
+      "hintergrund": "#5B5C4F",
+      "layout": "flex-col gap-[56px] items-center",
+      "padding": "py-[80px] px-[100px]",
+      "inhalt": {
+        "stationen": {
+          "layout": "flex-row gap-[24px] items-start, jede Station flex-1",
+          "hinweis": "Station 2 (Diplom AAI) und Station 4 (Ein Jahrzehnt) haben zusätzlich pt-[36px] — versetztes Layout",
+          "items": [
+            {
+              "icon": "kamera",
+              "iconQuelle": "spec/icons/kamera.svg — 104×104, stroke currentColor, inline als <IkonSvg motiv='kamera'>",
+              "iconHintergrund": "bg-[rgba(245,243,237,0.09)] rounded-full size-[104px]",
+              "titel": "10 Jahre",
+              "text": "Fotografie – outdoor,\nEvent und klassisches Studio",
+              "versatz": false
+            },
+            {
+              "icon": "diplom",
+              "iconQuelle": "spec/icons/diplom.svg — 104×104, stroke currentColor, inline als <IkonSvg motiv='diplom'>",
+              "iconHintergrund": "bg-[rgba(245,243,237,0.09)] rounded-full size-[104px]",
+              "titel": "Diplom AAI",
+              "text": "Individualpsychologie,\naus Interesse am Menschen",
+              "versatz": true
+            },
+            {
+              "icon": "kalender",
+              "iconQuelle": "spec/icons/kalender.svg — 104×104, stroke currentColor, inline als <IkonSvg motiv='kalender'>",
+              "iconHintergrund": "bg-[rgba(245,243,237,0.09)] rounded-full size-[104px]",
+              "titel": "4 Jahre",
+              "text": "Eventmanagerin,\nnebenbei und mittendrin",
+              "versatz": false
+            },
+            {
+              "icon": "herz",
+              "iconQuelle": "spec/icons/herz.svg — 104×104, stroke currentColor, inline als <IkonSvg motiv='herz'>",
+              "iconHintergrund": "bg-[rgba(245,243,237,0.09)] rounded-full size-[104px]",
+              "titel": "Ein Jahrzehnt",
+              "text": "Mami von zwei Töchtern,\ndie mich täglich erden",
+              "versatz": true
+            },
+            {
+              "icon": "globus",
+              "iconQuelle": "spec/icons/globus.svg — 104×104, stroke currentColor, inline als <IkonSvg motiv='globus'>",
+              "iconHintergrund": "bg-[rgba(245,243,237,0.09)] rounded-full size-[104px]",
+              "titel": "Um die Welt",
+              "text": "Jahre als Flight Attendant,\neine Weile in den USA daheim",
+              "versatz": false
+            }
+          ],
+          "titelStil": "Vollkorn SemiBold 34px #F5F3ED, text-center",
+          "textStil": "Roboto Regular 22px rgba(245,243,237,0.72), text-center, leading-[1.7]"
+        },
+        "abschlusstext": {
+          "text": "Das Diplom habe ich aus Interesse gemacht, nicht um zu therapieren – ich wollte Menschen einfach besser verstehen. Der Rest ist über die Jahre zusammengekommen. Ein gerader Lebenslauf ist das nicht, eher ein Zickzack. Aber genau daraus schöpfe ich heute: Jeder Umweg hat etwas dagelassen, das ich jetzt brauchen kann.",
+          "stil": "Roboto Regular 28px #F5F3ED, text-center, leading-[1.7]",
+          "maxBreite": "1180px"
+        }
+      },
+      "hinweisIcons": "Alle fünf Icons liegen als SVG in spec/icons/. Einbindung über <IkonSvg motiv='...'> — inline, currentColor erbt die Farbe #F5F3ED vom Elternelement."
+    },
+
+    {
+      "id": "geschichte-seraina",
+      "name": "Sektion – Geschichte Seraina",
+      "figmaNode": "2246:273",
+      "hintergrund": "#F5F2ED",
+      "layout": "flex-row gap-[80px] items-center",
+      "padding": "py-[80px] px-[120px]",
+      "inhalt": {
+        "bild": {
+          "id": "ueber-geschichte",
+          "breite": 560,
+          "hoehe": 740,
+          "position": "links"
+        },
+        "text": {
+          "breite": "820px (flex-1 rechts)",
+          "h2": {
+            "text": "Ich mache meinen eigenen Weg – und ich lade dich ein, deinen zu gehen.",
+            "stil": "Vollkorn SemiBold Italic 56px #2F322D, leading-normal"
+          },
+          "absatz1": {
+            "text": "Neugierig seit ich denken kann, unterwegs wo immer es mich hinzieht – und Mama von zwei Töchtern, die mich jeden Tag erden.",
+            "stil": "Roboto Bold 32px #2F322D, leading-[2]"
+          },
+          "absatz2": {
+            "text": "Ich bin fröhlich und unkompliziert – und gleichzeitig jemand, der lieber einmal tief taucht als zehnmal an der Oberfläche bleibt. Tiefe Gespräche, echte Begegnungen, ein gutes Lied – das sind meine Momente. Ich habe viel erlebt, viele Menschen getroffen, viele Orte gesehen. Und überall dieselbe Frage mitgenommen: Was treibt Menschen wirklich an? Was lässt sie strahlen? Wo steckt das wahre Leben – und was ist unsere Aufgabe?",
+            "stil": "Roboto Regular 32px #2F322D, leading-[2]"
+          }
+        }
+      }
+    },
+
+    {
+      "id": "geschichte-seraina-unten",
+      "name": "Sektion – Geschichte Seraina unten",
+      "figmaNode": "2246:278",
+      "hintergrund": "#F5F2ED",
+      "layout": "flex-row gap-[80px] items-end",
+      "padding": "py-[80px] px-[120px]",
+      "inhalt": {
+        "text": {
+          "breite": "798px (links, overflow-clip h-[786px])",
+          "h2": {
+            "text": "Meine Aufgabe ist nicht, zu glänzen. Sondern dich zum Strahlen zu bringen.",
+            "stil": "Vollkorn SemiBold Italic 56px #2F322D, leading-normal",
+            "maxBreite": "650px"
+          },
+          "absatz1": {
+            "text": "Aus echtem Interesse habe ich eine Ausbildung in Individualpsychologie nach Alfred Adler gemacht – nicht um zu therapieren, sondern um Menschen tiefer zu verstehen.",
+            "stil": "Roboto Regular 32px #2F322D, leading-[2]"
+          },
+          "absatz2": {
+            "text": "Heute mache ich mich selbständig. Mit meiner Kamera, meiner Neugier und dem tiefen Glauben: Die besten Bilder entstehen, wenn jemand kurz vergisst, dass ich da bin. Und wenn die Seele strahlt – dann strahlt das Bild.",
+            "stil": "Roboto Regular 32px #2F322D, leading-[2]"
+          }
+        },
+        "bilder": {
+          "containerBreite": 560,
+          "containerHoehe": 700,
+          "position": "rechts",
+          "items": [
+            {
+              "id": "ueber-geschichte-unten-01",
+              "breite": 380,
+              "hoehe": 540,
+              "cssLeft": 0,
+              "cssTop": 80,
+              "hinweis": "Hinteres Bild (im DOM zuerst)"
+            },
+            {
+              "id": "ueber-geschichte-unten-02",
+              "breite": 260,
+              "hoehe": 380,
+              "cssLeft": 280,
+              "cssTop": 0,
+              "hinweis": "Vorderes Bild (überlappt links oben)"
+            }
+          ]
+        }
+      }
+    },
+
+    {
+      "id": "zitat",
+      "name": "Sektion – Zitat",
+      "figmaNode": "2246:294",
+      "hintergrund": "#2F322D",
+      "layout": "flex-col items-center justify-center",
+      "padding": "py-[80px] px-[120px]",
+      "inhalt": {
+        "text": {
+          "zitat": "Ich glaube daran, dass jeder Mensch das in sich trägt, was er braucht. Manchmal braucht es einfach jemanden, der den Raum hält.",
+          "stil": "Vollkorn SemiBold 56px #F5F2ED, text-center, leading-normal, w-full"
+        }
+      }
+    },
+
+    {
+      "id": "echtes-portrait",
+      "name": "Sektion – Echtes Portrait",
+      "figmaNode": "2246:287",
+      "hintergrund": "#F5F2ED",
+      "layout": "flex-row gap-[80px] items-center",
+      "padding": "py-[80px] px-[120px]",
+      "inhalt": {
+        "bilder": {
+          "containerBreite": 560,
+          "containerHoehe": 600,
+          "position": "links",
+          "items": [
+            {
+              "id": "echtes-portrait-01",
+              "breite": 450,
+              "hoehe": 300,
+              "cssLeft": 0,
+              "cssTop": 0,
+              "hinweis": "Oberes Bild"
+            },
+            {
+              "id": "echtes-portrait-02",
+              "breite": 450,
+              "hoehe": 300,
+              "cssLeft": 110,
+              "cssTop": 280,
+              "hinweis": "Unteres Bild, leicht nach rechts versetzt, überlappt"
+            }
+          ]
+        },
+        "text": {
+          "breite": "flex-1 (rechts)",
+          "h2": {
+            "text": "Überlege dir nicht, was schön aussieht, sondern worin du dich am wohlsten fühlst.",
+            "stil": "Vollkorn SemiBold 56px #2F322D, leading-normal"
+          },
+          "absatz1": {
+            "text": "Ein strahlendes Portrait lächelt nicht zwingend. Es zeigt etwas Echtes – einen Moment, in dem jemand sich zeigen durfte. Ganz. Ohne Maske.",
+            "stil": "Roboto Regular 32px #2F322D, leading-[2]"
+          },
+          "absatz2": {
+            "text": "Diesen Moment halte ich fest. Und setze ihn in Szene – mit Farbe, Ausschnitt, Licht. Nicht um zu verschönern, sondern um sichtbar zu machen was schon da war.",
+            "stil": "Roboto Regular 32px #2F322D, leading-[2]"
+          },
+          "absatz3": {
+            "text": "Das fertige Bild soll dich berühren. Nicht weil es perfekt ist – sondern weil es du bist.",
+            "stil": "Roboto Regular 32px #2F322D, leading-[2]"
+          }
+        }
+      }
+    },
+
+    {
+      "id": "kontakt-teaser",
+      "name": "Sektion – Kontakt-Teaser",
+      "figmaNode": "2264:3433",
+      "hintergrund": "#983515",
+      "layout": "flex-row gap-[80px] items-center justify-center",
+      "padding": "py-[80px] px-[120px]",
+      "inhalt": {
+        "bilder": {
+          "containerBreite": 600,
+          "containerHoehe": 500,
+          "position": "links",
+          "items": [
+            {
+              "id": "kontakt-teaser-01",
+              "breite": 460,
+              "hoehe": 320,
+              "cssLeft": 140,
+              "cssTop": 0,
+              "hinweis": "Oberes Bild, rechts versetzt"
+            },
+            {
+              "id": "kontakt-teaser-02",
+              "breite": 358,
+              "hoehe": 239,
+              "cssLeft": 0,
+              "cssTop": 241,
+              "hinweis": "Unteres Bild, links unten"
+            }
+          ]
+        },
+        "text": {
+          "breite": "flex-1 (rechts)",
+          "h2": {
+            "text": "Für alle,\ndie sich selbst zurückfinden\nmöchten.",
+            "stil": "Vollkorn SemiBold 56px #F5F3ED, leading-normal",
+            "hinweis": "Zeilenumbrüche wie in Figma – whitespace-pre-wrap oder <br>"
+          },
+          "absatz1": {
+            "text": "Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.",
+            "stil": "Roboto Regular 24px rgba(245,243,237,0.92), leading-[2]"
+          },
+          "absatz2": {
+            "text": "Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.",
+            "stil": "Roboto Regular 24px rgba(245,243,237,0.92), leading-[2]"
+          },
+          "cta": {
+            "label": "KONTAKT",
+            "href": "/kontakt",
+            "stil": "bg-[#A0886D] rounded-[17px] px-[40px] py-[20px], Roboto Regular 28px tracking-[1.68px] uppercase #F5F3ED"
+          },
+          "subtext": {
+            "text": "Die Antwort kommt von mir persönlich, nicht aus einer Vorlage.",
+            "stil": "Roboto Regular 22px rgba(245,243,237,0.70), leading-[1.7]"
+          }
+        }
+      }
+    },
+
+    {
+      "id": "footer",
+      "name": "Footer",
+      "figmaNode": "2013:924",
+      "hinweis": "Bestehende Komponente <Footer /> aus src/components/Footer.astro verwenden. Nicht neu bauen.",
+      "layout": "flex-row items-center px-[120px] py-[80px]",
+      "hintergrund": "#F5F3ED",
+      "inhalt": {
+        "links": ["Datenschutz", "Impressum", "AGB"],
+        "mitte": "Logo (Primary Dark) 458×180px",
+        "rechts": {
+          "linkedin": "https://www.linkedin.com/in/seraina-stettler-a7b3a32a3/",
+          "telefon": "+41 79 790 57 01",
+          "email": "info@serawild.com"
+        },
+        "deko": "Illustration (Mohn-Variante?) unten rechts, aus dem Rahmen ragend, rotiert ca. -175°. Wird über deko.json gesteuert."
+      }
+    }
+
+  ],
+
+  "dekoIllustrationen": {
+    "hinweis": "Aus spec/deko.json slug='ueber'. Einbau über <DekoIllustration>-Komponente nach dem Anker-Wrapper.",
+    "items": [
+      {
+        "motiv": "mohn",
+        "farbe": "Beige",
+        "ankerAbschnitt": "Geschichte Seraina",
+        "ankerIndex": 2
+      },
+      {
+        "motiv": "blattzweig",
+        "farbe": "Hellgrün",
+        "ankerAbschnitt": "Geschichte Seraina unten",
+        "ankerIndex": 3
+      },
+      {
+        "motiv": "eukalyptus",
+        "farbe": "Hellorange",
+        "ankerAbschnitt": "Echtes Portrait",
+        "ankerIndex": 5
+      }
+    ]
+  }
+}

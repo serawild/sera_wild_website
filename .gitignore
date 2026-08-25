@@ -19,3 +19,5 @@ pnpm-debug.log*
 # Brand-Quelldateien (89 MB EPS/PDF/Print) — nicht im Website-Repo.
 # Web-Versionen liegen in src/assets/. Bei Bedarf via Git LFS versionieren.
 /assets/
+# lokale MCP-Konfiguration
+.mcp.json

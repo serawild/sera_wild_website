@@ -1,0 +1,642 @@
+{
+ "hinweis": "Positionen aller Illustrationen. Jede haengt an einem Abschnitt und ist relativ zu dessen Oberkante positioniert. Negative Randabstaende bedeuten: die Grafik laeuft aus dem Bild. Werte sind Pixel im 1728er Entwurf und muessen wie alles andere in rem umgerechnet werden.",
+ "stand": "Frisch aus Figma gelesen, nach Serainas Feinjustierung",
+ "wichtig": "Diese Datei ersetzt alle frueheren Fassungen vollstaendig. Die Zahlen stammen aus dem aktuellen Figma-Stand, nicht aus einer aelteren Lesung. Wenn eine Angabe hier von Figma abweicht, gilt diese Datei.",
+ "einbau": {
+  "elternteil": "Der Abschnitt mit ankerIndex bekommt position:relative und overflow:visible.",
+  "kind": "position:absolute, top = obenAbAnker, links bzw. rechts = abstandVomRand, width = breite, height = hoehe, transform = rotate(cssRotate deg).",
+  "drehpunkt": "transform-origin: center. Das Feld drehung ist die Figma-Angabe (positiv = gegen den Uhrzeigersinn). Fuer CSS ist cssRotate bereits umgerechnet – dieses Feld direkt verwenden.",
+  "svg": "spec/illustrationen/<motiv>.svg. Die Pfade nutzen fill=currentColor, also die Farbe ueber color setzen, nicht ueber fill.",
+  "inline": "Die SVG muss inline im HTML stehen, sonst greift currentColor nicht. Kein <img>.",
+  "regeln": [
+   "aria-hidden=true und pointer-events:none",
+   "Illustration ist das hinterste Element im Abschnitt: hinter Text und hinter Bildern",
+   "Sie darf hinter Text liegen. Sie darf nie ueber einer Bildflaeche liegen",
+   "body oder Seitencontainer braucht overflow-x:hidden",
+   "unter 768px Fensterbreite alle ausblenden",
+   "alle Werte in rem umrechnen, damit sie mit der Seite mitskalieren"
+  ]
+ },
+ "farben": {
+  "Hellgrün": "#5B5C4F",
+  "Hellorange": "#BC541F",
+  "Beige": "#A0886D",
+  "Hell": "#F5F3ED"
+ },
+ "motive": {
+  "mohn": {
+   "datei": "spec/illustrationen/mohn.svg",
+   "viewBox": "0 0 260 415",
+   "verhaeltnis": 1.5962
+  },
+  "tulpe": {
+   "datei": "spec/illustrationen/tulpe.svg",
+   "viewBox": "0 0 260 513",
+   "verhaeltnis": 1.9731
+  },
+  "blattzweig": {
+   "datei": "spec/illustrationen/blattzweig.svg",
+   "viewBox": "0 0 260 487",
+   "verhaeltnis": 1.8731
+  },
+  "eukalyptus": {
+   "datei": "spec/illustrationen/eukalyptus.svg",
+   "viewBox": "0 0 260 420",
+   "verhaeltnis": 1.6154
+  }
+ },
+ "marken": {
+  "hinweis": "Bild- und Wortmarke sind Inhalt, keine Deko. Sie stehen im Textfluss und werden nicht absolut ueber den Abschnitt gelegt.",
+  "bildmarkeW": {
+   "datei": "spec/marken/w.svg",
+   "viewBox": "0 0 1765.27 1262.84",
+   "verhaeltnis": 1.3979,
+   "farbe": "currentColor – ueber color setzen, nicht ueber fill",
+   "hinweis": "Inline einbinden, sonst greift currentColor nicht."
+  },
+  "wortmarke": {
+   "was": "Bildmarke W plus das Wort Erläbnis. In Figma sind die Buchstaben in Kurven gewandelt, im Code wird echter Text verwendet – das skaliert ueber rem und bleibt scharf.",
+   "bezugsrahmen": {
+    "breite": 532,
+    "hoehe": 222
+   },
+   "w": {
+    "datei": "spec/marken/w.svg",
+    "vonLinks": 0,
+    "vonOben": 0,
+    "breite": 308,
+    "hoehe": 222
+   },
+   "text": {
+    "inhalt": "Erläbnis",
+    "schrift": "Vollkorn SemiBold",
+    "groesse": 96,
+    "zeilenhoehe": 1.396,
+    "vonLinks": 160,
+    "vonOben": 56,
+    "druckflaeche": {
+     "vonLinks": 163,
+     "vonOben": 79,
+     "breite": 365,
+     "hoehe": 70
+    }
+   },
+   "kontrolle": "Der Schwung des W laeuft als Dach ueber das Er und endet beim l. Die Buchstaben sitzen senkrecht mittig zum W, gemessen an der Druckflaeche, drei Pixel unter der geometrischen Mitte."
+  },
+  "einsatz": [
+   {
+    "wo": "Hero der Seite w-erlaebnis, anstelle der Titelzeile",
+    "form": "wortmarke",
+    "breite": 440,
+    "hoehe": 184,
+    "farbe": "#F5F3ED",
+    "ausrichtung": "rechtsbuendig auf 1608, Unterkante 26 px ueber der ersten Zeile des Untertitels"
+   },
+   {
+    "wo": "Sektion Erläbnis auf der Startseite, anstelle der Ueberschrift",
+    "form": "wortmarke",
+    "breite": 400,
+    "hoehe": 166,
+    "farbe": "#F5F3ED",
+    "ausrichtung": "erstes Kind der Sektion, horizontal zentriert"
+   },
+   {
+    "wo": "Hero der Seite Netzwerk – geht vorerst nicht online",
+    "form": "bildmarkeW",
+    "breite": 477,
+    "hoehe": 341,
+    "farbe": "#F5F3ED",
+    "deckkraft": 0.18,
+    "ausrichtung": "hinter dem Titel, Titel rechtsbuendig darueber"
+   },
+   {
+    "wo": "Block Kontakt-Info auf der Kontaktseite, als Wasserzeichen hinter den Karten",
+    "form": "bildmarkeW",
+    "breite": 782,
+    "hoehe": 560,
+    "vonOben": 20,
+    "vonLinks": 1029,
+    "farbe": "#2E322C",
+    "deckkraft": 0.07,
+    "hinweis": "Block braucht position:relative und overflow:hidden."
+   }
+  ]
+ },
+ "seiten": [
+  {
+   "slug": "index",
+   "seitenHoehe": 8833,
+   "abschnitte": [
+    "Hero Startseite",
+    "Über mich",
+    "Erläbnis",
+    "Authentizität",
+    "Angebot (Startseite)",
+    "Galerie / Geschichten",
+    "Geschichten (gespiegelt)",
+    "Referenzen",
+    "Kontakt-Teaser",
+    "Footer"
+   ],
+   "deko": [
+    {
+     "motiv": "tulpe",
+     "farbe": "Hellgrün",
+     "breite": 261,
+     "hoehe": 409,
+     "drehung": -29,
+     "cssRotate": 29,
+     "ankerAbschnitt": "Über mich",
+     "ankerIndex": 1,
+     "obenAbAnker": 703,
+     "seite": "links",
+     "abstandVomRand": -108
+    },
+    {
+     "motiv": "mohn",
+     "farbe": "Hellgrün",
+     "breite": 450,
+     "hoehe": 718,
+     "drehung": 30,
+     "cssRotate": -30,
+     "ankerAbschnitt": "Erläbnis",
+     "ankerIndex": 2,
+     "obenAbAnker": 568,
+     "seite": "rechts",
+     "abstandVomRand": -270
+    },
+    {
+     "motiv": "blattzweig",
+     "farbe": "Hellorange",
+     "breite": 371,
+     "hoehe": 696,
+     "drehung": 30,
+     "cssRotate": -30,
+     "ankerAbschnitt": "Authentizität",
+     "ankerIndex": 3,
+     "obenAbAnker": 672,
+     "seite": "rechts",
+     "abstandVomRand": -348
+    },
+    {
+     "motiv": "eukalyptus",
+     "farbe": "Hellorange",
+     "breite": 320,
+     "hoehe": 517,
+     "drehung": -29.2,
+     "cssRotate": 29.2,
+     "ankerAbschnitt": "Angebot (Startseite)",
+     "ankerIndex": 4,
+     "obenAbAnker": 260,
+     "seite": "links",
+     "abstandVomRand": -159
+    },
+    {
+     "motiv": "mohn",
+     "farbe": "Hellorange",
+     "breite": 314,
+     "hoehe": 500,
+     "drehung": -29,
+     "cssRotate": 29,
+     "ankerAbschnitt": "Referenzen",
+     "ankerIndex": 7,
+     "obenAbAnker": 537,
+     "seite": "links",
+     "abstandVomRand": -227
+    }
+   ]
+  },
+  {
+   "slug": "w-erlaebnis",
+   "seitenHoehe": 12681,
+   "abschnitte": [
+    "Hero",
+    "Begegnung",
+    "Das W",
+    "Wonach wir suchen",
+    "Angebot",
+    "Timeline",
+    "Zitat",
+    "Orte",
+    "Verweis – Simonas Geschichte",
+    "richtig",
+    "CTA Banner",
+    "FAQ",
+    "Footer"
+   ],
+   "deko": [
+    {
+     "motiv": "mohn",
+     "farbe": "Hellgrün",
+     "breite": 130,
+     "hoehe": 207,
+     "drehung": 16.2,
+     "cssRotate": -16.2,
+     "ankerAbschnitt": "Begegnung",
+     "ankerIndex": 1,
+     "obenAbAnker": 525,
+     "seite": "links",
+     "abstandVomRand": 189
+    },
+    {
+     "motiv": "eukalyptus",
+     "farbe": "Hellorange",
+     "breite": 348,
+     "hoehe": 563,
+     "drehung": 25.3,
+     "cssRotate": -25.3,
+     "ankerAbschnitt": "Das W",
+     "ankerIndex": 2,
+     "obenAbAnker": 498,
+     "seite": "rechts",
+     "abstandVomRand": -240
+    },
+    {
+     "motiv": "mohn",
+     "farbe": "Hellorange",
+     "breite": 306,
+     "hoehe": 488,
+     "drehung": -29.4,
+     "cssRotate": 29.4,
+     "ankerAbschnitt": "Wonach wir suchen",
+     "ankerIndex": 3,
+     "obenAbAnker": 453,
+     "seite": "links",
+     "abstandVomRand": -226
+    },
+    {
+     "motiv": "tulpe",
+     "farbe": "Hellgrün",
+     "breite": 181,
+     "hoehe": 357,
+     "drehung": 22.1,
+     "cssRotate": -22.1,
+     "ankerAbschnitt": "Zitat",
+     "ankerIndex": 6,
+     "obenAbAnker": 12,
+     "seite": "rechts",
+     "abstandVomRand": -62
+    },
+    {
+     "motiv": "blattzweig",
+     "farbe": "Hellgrün",
+     "breite": 405,
+     "hoehe": 758,
+     "drehung": 34,
+     "cssRotate": -34,
+     "ankerAbschnitt": "Orte",
+     "ankerIndex": 7,
+     "obenAbAnker": 1363,
+     "seite": "rechts",
+     "abstandVomRand": -379
+    },
+    {
+     "motiv": "eukalyptus",
+     "farbe": "Hellorange",
+     "breite": 359,
+     "hoehe": 581,
+     "drehung": -30,
+     "cssRotate": 30,
+     "ankerAbschnitt": "richtig",
+     "ankerIndex": 9,
+     "obenAbAnker": 623,
+     "seite": "links",
+     "abstandVomRand": -171
+    },
+    {
+     "motiv": "mohn",
+     "farbe": "Hellgrün",
+     "breite": 348,
+     "hoehe": 558,
+     "drehung": 17.3,
+     "cssRotate": -17.3,
+     "ankerAbschnitt": "CTA Banner",
+     "ankerIndex": 10,
+     "obenAbAnker": 682,
+     "seite": "rechts",
+     "abstandVomRand": -170
+    }
+   ]
+  },
+  {
+   "slug": "scheune",
+   "seitenHoehe": 6399,
+   "abschnitte": [
+    "Hero",
+    "Raum mit Geschichte",
+    "Zitat",
+    "Kulissen",
+    "Pakete",
+    "neugier",
+    "Verweis – Zurück zum W-Erläbnis",
+    "Footer"
+   ],
+   "deko": [
+    {
+     "motiv": "mohn",
+     "farbe": "Hellgrün",
+     "breite": 146,
+     "hoehe": 233,
+     "drehung": 33.6,
+     "cssRotate": -33.6,
+     "ankerAbschnitt": "Raum mit Geschichte",
+     "ankerIndex": 1,
+     "obenAbAnker": 976,
+     "seite": "rechts",
+     "abstandVomRand": -140
+    },
+    {
+     "motiv": "eukalyptus",
+     "farbe": "Hellorange",
+     "breite": 287,
+     "hoehe": 464,
+     "drehung": -29,
+     "cssRotate": 29,
+     "ankerAbschnitt": "Kulissen",
+     "ankerIndex": 3,
+     "obenAbAnker": 922,
+     "seite": "links",
+     "abstandVomRand": -148
+    },
+    {
+     "motiv": "blattzweig",
+     "farbe": "Hellorange",
+     "breite": 284,
+     "hoehe": 533,
+     "drehung": 30,
+     "cssRotate": -30,
+     "ankerAbschnitt": "neugier",
+     "ankerIndex": 5,
+     "obenAbAnker": 697,
+     "seite": "rechts",
+     "abstandVomRand": -215
+    }
+   ]
+  },
+  {
+   "slug": "geschichten",
+   "seitenHoehe": 7029,
+   "abschnitte": [
+    "Hero",
+    "Foto-Story 2",
+    "Authentizität",
+    "Angebot (Startseite)",
+    "Kundenstory Collage",
+    "Zitat",
+    "Kontakt-Teaser",
+    "Footer"
+   ],
+   "deko": [
+    {
+     "motiv": "mohn",
+     "farbe": "Hellgrün",
+     "breite": 276,
+     "hoehe": 516,
+     "drehung": -35,
+     "cssRotate": 35,
+     "ankerAbschnitt": "Foto-Story 2",
+     "ankerIndex": 1,
+     "obenAbAnker": 51,
+     "seite": "links",
+     "abstandVomRand": -176
+    },
+    {
+     "motiv": "eukalyptus",
+     "farbe": "Hellorange",
+     "breite": 320,
+     "hoehe": 517,
+     "drehung": 16.1,
+     "cssRotate": -16.1,
+     "ankerAbschnitt": "Authentizität",
+     "ankerIndex": 2,
+     "obenAbAnker": 669,
+     "seite": "rechts",
+     "abstandVomRand": -177
+    },
+    {
+     "motiv": "blattzweig",
+     "farbe": "Hellorange",
+     "breite": 404,
+     "hoehe": 756,
+     "drehung": -29,
+     "cssRotate": 29,
+     "ankerAbschnitt": "Angebot (Startseite)",
+     "ankerIndex": 3,
+     "obenAbAnker": 443,
+     "seite": "links",
+     "abstandVomRand": -360
+    },
+    {
+     "motiv": "tulpe",
+     "farbe": "Hellgrün",
+     "breite": 245,
+     "hoehe": 484,
+     "drehung": 26.6,
+     "cssRotate": -26.6,
+     "ankerAbschnitt": "Kundenstory Collage",
+     "ankerIndex": 4,
+     "obenAbAnker": 1070,
+     "seite": "rechts",
+     "abstandVomRand": -162
+    }
+   ]
+  },
+  {
+   "slug": "simona",
+   "seitenHoehe": 7347,
+   "abschnitte": [
+    "Hero",
+    "Geschichte Oben",
+    "Foto-Story",
+    "Geschichte Unten",
+    "Collage",
+    "Zitat",
+    "Weiter-Button",
+    "Footer"
+   ],
+   "deko": [
+    {
+     "motiv": "tulpe",
+     "farbe": "Hellgrün",
+     "breite": 220,
+     "hoehe": 434,
+     "drehung": -39.8,
+     "cssRotate": 39.8,
+     "ankerAbschnitt": "Geschichte Oben",
+     "ankerIndex": 1,
+     "obenAbAnker": 919,
+     "seite": "links",
+     "abstandVomRand": -119
+    },
+    {
+     "motiv": "eukalyptus",
+     "farbe": "Hellorange",
+     "breite": 305,
+     "hoehe": 492,
+     "drehung": 30,
+     "cssRotate": -30,
+     "ankerAbschnitt": "Geschichte Unten",
+     "ankerIndex": 3,
+     "obenAbAnker": 644,
+     "seite": "rechts",
+     "abstandVomRand": -181
+    }
+   ]
+  },
+  {
+   "slug": "ueber",
+   "seitenHoehe": 6492,
+   "abschnitte": [
+    "Hero",
+    "Fakten",
+    "Geschichte Seraina",
+    "Geschichte Seraina unten",
+    "Zitat",
+    "Echtes Portrait",
+    "Kontakt-Teaser",
+    "Footer"
+   ],
+   "deko": [
+    {
+     "motiv": "mohn",
+     "farbe": "Beige",
+     "breite": 259,
+     "hoehe": 413,
+     "drehung": -29,
+     "cssRotate": 29,
+     "ankerAbschnitt": "Geschichte Seraina",
+     "ankerIndex": 2,
+     "obenAbAnker": 960,
+     "seite": "links",
+     "abstandVomRand": -121
+    },
+    {
+     "motiv": "blattzweig",
+     "farbe": "Hellgrün",
+     "breite": 226,
+     "hoehe": 424,
+     "drehung": 30,
+     "cssRotate": -30,
+     "ankerAbschnitt": "Geschichte Seraina unten",
+     "ankerIndex": 3,
+     "obenAbAnker": 786,
+     "seite": "rechts",
+     "abstandVomRand": -144
+    },
+    {
+     "motiv": "eukalyptus",
+     "farbe": "Hellorange",
+     "breite": 313,
+     "hoehe": 506,
+     "drehung": -29,
+     "cssRotate": 29,
+     "ankerAbschnitt": "Echtes Portrait",
+     "ankerIndex": 5,
+     "obenAbAnker": 680,
+     "seite": "links",
+     "abstandVomRand": -154
+    }
+   ]
+  },
+  {
+   "slug": "kontakt",
+   "seitenHoehe": 5308,
+   "abschnitte": [
+    "Hero",
+    "Sektion - Kontaktdaten",
+    "Footer"
+   ],
+   "deko": [
+    {
+     "motiv": "mohn",
+     "farbe": "Hellgrün",
+     "breite": 261,
+     "hoehe": 417,
+     "drehung": -29,
+     "cssRotate": 29,
+     "ankerAbschnitt": "Sektion - Kontaktdaten",
+     "ankerIndex": 1,
+     "obenAbAnker": 1361,
+     "seite": "links",
+     "abstandVomRand": -157
+    },
+    {
+     "motiv": "tulpe",
+     "farbe": "Hellgrün",
+     "breite": 220,
+     "hoehe": 434,
+     "drehung": -23.4,
+     "cssRotate": 23.4,
+     "ankerAbschnitt": "Sektion - Kontaktdaten",
+     "ankerIndex": 1,
+     "obenAbAnker": 2905,
+     "seite": "links",
+     "abstandVomRand": -148
+    }
+   ]
+  }
+ ],
+ "geprueft": "Positionen exakt wie in Figma. Regel: Illustrationen liegen nie ueber Bildflaechen. Hinter Text duerfen sie liegen – dort gehoeren sie in die hinterste Ebene des Abschnitts.",
+ "mobil": {
+  "hinweis": "Mobile Startseite, Rahmen M1c_Startseite Mischung auf der Figma-Seite 'Mobile | Designs'. Bezugsbreite 390 px. Gleiche Einbauregeln wie Desktop.",
+  "breite": 390,
+  "seiten": {
+   "index": [
+    {
+     "motiv": "mohn",
+     "farbe": "Beige",
+     "breite": 240,
+     "hoehe": 383,
+     "drehung": -26,
+     "cssRotate": 26,
+     "deckkraft": 0.6,
+     "ankerAbschnitt": "01 Haltung",
+     "seite": "rechts",
+     "abstandVomRand": 20,
+     "obenAbAnker": 124
+    },
+    {
+     "motiv": "eukalyptus",
+     "farbe": "Hellgrün",
+     "breite": 135,
+     "hoehe": 218,
+     "drehung": 28,
+     "cssRotate": -28,
+     "deckkraft": 0.6,
+     "ankerAbschnitt": "02 Angebot",
+     "seite": "rechts",
+     "abstandVomRand": -12,
+     "obenAbAnker": 667
+    },
+    {
+     "motiv": "tulpe",
+     "farbe": "Hellorange",
+     "breite": 126,
+     "hoehe": 248,
+     "drehung": 24,
+     "cssRotate": -24,
+     "deckkraft": 0.6,
+     "ankerAbschnitt": "05 Kontakt",
+     "seite": "rechts",
+     "abstandVomRand": 13,
+     "obenAbAnker": -31
+    }
+   ]
+  },
+  "footer": {
+   "hoehe": 356,
+   "hinweis": "40 px hoeher als zuvor, damit die Bildmarke W ueber der festen Leiste unten ganz sichtbar bleibt.",
+   "bildmarke": {
+    "breite": 370,
+    "hoehe": 265,
+    "x": 12,
+    "y": 56,
+    "deckkraft": 0.1
+   }
+  },
+  "leiste": {
+   "hoehe": 82,
+   "position": "fix am unteren Seitenrand"
+  }
+ }
+}

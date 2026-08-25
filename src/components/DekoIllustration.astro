@@ -1,0 +1,88 @@
+---
+/**
+ * DekoIllustration — platziert eine Illustrations-SVG absolut im relativen Elternelement.
+ * Positionen kommen aus deko.json, skaliert in rem (px ÷ 16).
+ *
+ * cssRotate: CSS-Grad direkt aus deko.json (bereits umgerechnet, positiv = Uhrzeigersinn).
+ *
+ * top/abstand kommen aus Figma als Begrenzungsrahmen-Position (Bounding Box des
+ * rotierten Elements). CSS braucht die Elementposition vor Rotation. Die Korrektur
+ * wird hier intern aus dem SVG-viewBox-Seitenverhältnis und dem Drehwinkel berechnet.
+ *
+ * z-index:-1 — Illustration liegt hinter Text und Bildern im Abschnitt.
+ * Der Elternabschnitt muss einen Stapelkontext bilden (isolate oder z-index gesetzt),
+ * damit -1 nicht unter den Seitenhintergrund fällt.
+ *
+ * Unter 768px immer ausgeblendet (hidden md:block).
+ */
+const svgFiles = import.meta.glob<string>(
+  '/spec/illustrationen/*.svg',
+  { query: '?raw', import: 'default', eager: true }
+);
+
+interface Props {
+  motiv: 'mohn' | 'tulpe' | 'eukalyptus' | 'blattzweig';
+  farbe: string;       // Hex-Farbe aus deko.json
+  breite: number;      // px bei 1728px Design-Breite
+  cssRotate: number;   // CSS-Grad direkt aus deko.json (positiv = Uhrzeigersinn)
+  top: number;         // px — Figma Bounding-Box-Oberkante ab Anker
+  seite: 'links' | 'rechts';
+  abstand: number;     // px — Figma Bounding-Box-Rand (negativ = ausserhalb)
+  mobil?: boolean;     // true → nur mobile (block md:hidden), false → nur desktop (hidden md:block)
+  deckkraft?: number;  // Deckkraft 0–1 (Standard 1)
+}
+
+const { motiv, farbe, breite, cssRotate, top, seite, abstand, mobil = false, deckkraft = 1 } = Astro.props;
+
+const rawSvg = svgFiles[`/spec/illustrationen/${motiv}.svg`];
+if (!rawSvg) throw new Error(`DekoIllustration: Motiv nicht gefunden — "${motiv}"`);
+
+// Seitenverhältnis aus SVG-viewBox (Format: "0 0 W H")
+const vbMatch = rawSvg.match(/viewBox="0 0 (\d+(?:\.\d+)?) (\d+(?:\.\d+)?)"/);
+const nativeW = vbMatch ? parseFloat(vbMatch[1]) : breite;
+const nativeH = vbMatch ? parseFloat(vbMatch[2]) : breite * 1.6;
+
+// Angezeigte Höhe bei der gegebenen Breite
+const displayH = breite * (nativeH / nativeW);
+
+// Begrenzungsrahmen der rotierten Illustration
+const θ = Math.abs(cssRotate) * Math.PI / 180;
+const containerW = breite * Math.cos(θ) + displayH * Math.sin(θ);
+const containerH = breite * Math.sin(θ) + displayH * Math.cos(θ);
+
+// Versatz: Figma-BB-Kante → CSS-Elementkante
+const bbOffsetX = (containerW - breite) / 2;
+const bbOffsetY = (containerH - displayH) / 2;
+const cssAbstand = abstand + bbOffsetX;
+const cssTop = top + bbOffsetY;
+
+// width/height entfernen und durch width="100%" ersetzen.
+const svg = rawSvg
+  .replace(/\s+width="[^"]*"/g, '')
+  .replace(/\s+height="[^"]*"/g, '')
+  .replace('<svg ', '<svg width="100%" style="display:block" ');
+
+// px ÷ 16 = rem
+const rem = (px: number) => `${(px / 16).toFixed(3)}rem`;
+
+const style = [
+  'position:absolute',
+  `top:${rem(cssTop)}`,
+  seite === 'links' ? `left:${rem(cssAbstand)}` : `right:${rem(cssAbstand)}`,
+  `width:${rem(breite)}`,
+  'height:auto',
+  `transform:rotate(${cssRotate}deg)`,
+  'transform-origin:center',
+  'pointer-events:none',
+  'z-index:-1',
+  `color:${farbe}`,
+  ...(deckkraft !== 1 ? [`opacity:${deckkraft}`] : []),
+].join(';');
+---
+
+<div
+  aria-hidden="true"
+  class={mobil ? 'block md:hidden' : 'hidden md:block'}
+  style={style}
+  set:html={svg}
+/>

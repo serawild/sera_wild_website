@@ -1,0 +1,72 @@
+---
+---
+
+<div id="loader" aria-hidden="true">
+  <div class="loader-clip">
+    <img src="/w-loading-icon.svg" alt="" width="120" height="86" />
+  </div>
+</div>
+
+<style>
+  #loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: #f5f3ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease;
+  }
+
+  #loader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .loader-clip {
+    width: 2px;
+    height: 86px;
+    overflow: hidden;
+    position: relative;
+    animation: w-reveal 2.3s ease infinite;
+  }
+
+  .loader-clip img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: 86px;
+    max-width: none;
+  }
+
+  @keyframes w-reveal {
+    0% {
+      animation-timing-function: ease;
+      width: 2px;
+    }
+    78.261% {
+      width: 120px;
+    }
+    100% {
+      width: 120px;
+    }
+  }
+</style>
+
+<script>
+  const loader = document.getElementById('loader');
+
+  function hideLoader() {
+    if (!loader) return;
+    loader.classList.add('fade-out');
+    loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+  }
+
+  if (document.readyState === 'complete') {
+    hideLoader();
+  } else {
+    window.addEventListener('load', hideLoader);
+  }
+</script>

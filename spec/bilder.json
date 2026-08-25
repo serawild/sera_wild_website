@@ -1,0 +1,2308 @@
+{
+ "hinweis": "Bildzuordnung fuer die Website. 'anzeige' ist die CSS-Groesse aus Figma, 'datei' der Pfad ab Repo-Wurzel. Bilder mit aktiv=false gehoeren zu Seiten, die noch nicht online gehen.",
+ "stand": "17.08.2026 – ALT-Texte ergaenzt",
+ "nichtOnline": [
+  "4.1_Sara",
+  "4.2_Emanuela",
+  "Netzwerk"
+ ],
+ "bilder": [
+  {
+   "id": "hero-startseite",
+   "figmaEbene": "hero-startseite.jpg",
+   "baustein": "Hero Startseite",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau im geblümten Sommerkleid mit Strohhut geht durch ein blühendes Lavendelfeld",
+   "aktiv": true,
+   "datei": "src/assets/images/Hero_Bilder/hero-startseite.jpg",
+   "dateiMasse": {
+    "breite": 3350,
+    "hoehe": 2234
+   },
+   "deckungsfaktor": 1.94,
+   "dateiMobil": "src/assets/images/Hero_Bilder/hero-startseite-hoch.jpg",
+   "verhaeltnisMobil": "0.63 : 1"
+  },
+  {
+   "id": "ueber-mich-01",
+   "figmaEbene": "ueber-mich-01.jpg",
+   "baustein": "Über mich",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 300,
+    "hoehe": 400
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Junge Frau im schwarzen Spitzenkleid sitzt an einem Fenster und lacht zur Seite",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/ueber-mich-01.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.99
+  },
+  {
+   "id": "ueber-mich-02",
+   "figmaEbene": "ueber-mich-02.jpg",
+   "baustein": "Über mich",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 240,
+    "hoehe": 320
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Hände zeichnen mit einem Kugelschreiber in ein aufgeschlagenes Notizbuch auf einem Holztisch",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/ueber-mich-02.jpg",
+   "dateiMasse": {
+    "breite": 1199,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 5.0
+  },
+  {
+   "id": "ueber-mich-03",
+   "figmaEbene": "ueber-mich-03.jpg",
+   "baustein": "Über mich",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 260,
+    "hoehe": 340
+   },
+   "verhaeltnis": "13 : 17",
+   "ausrichtung": "hoch",
+   "alt": "Frau liegt zurückgelehnt auf einem Sofa und lacht mit geschlossenen Augen",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/ueber-mich-03.jpg",
+   "dateiMasse": {
+    "breite": 1199,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 4.61
+  },
+  {
+   "id": "startseite-erlaebnis-01",
+   "figmaEbene": "startseite-erlaebnis-01.jpg",
+   "baustein": "Erläbnis",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 380,
+    "hoehe": 270
+   },
+   "verhaeltnis": "1.41 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau mit langen blonden Haaren steht mit gesenktem Blick in einem Lavendelfeld",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/startseite-erlaebnis-01.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1200
+   },
+   "deckungsfaktor": 4.44,
+   "dateiMobil": "src/assets/images/Galerie_3-2/startseite-erlaebnis-01-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "startseite-erlaebnis-02",
+   "figmaEbene": "startseite-erlaebnis-02.jpg",
+   "baustein": "Erläbnis",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 350,
+    "hoehe": 250
+   },
+   "verhaeltnis": "7 : 5",
+   "ausrichtung": "quer",
+   "alt": "Junge Frau im weissen Top lacht inmitten blühender Lavendelreihen",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/startseite-erlaebnis-02.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1200
+   },
+   "deckungsfaktor": 4.8,
+   "dateiMobil": "src/assets/images/Galerie_3-2/startseite-erlaebnis-02-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "referenz-simona",
+   "figmaEbene": "referenz-simona.jpg",
+   "baustein": "Referenzen",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 80,
+    "hoehe": 80
+   },
+   "verhaeltnis": "1 : 1",
+   "ausrichtung": "quadratisch",
+   "alt": "Porträt von Simona am Fenster, im Profil, lächelnd",
+   "aktiv": true,
+   "datei": "src/assets/images/Quadrat/referenz-simona.jpg",
+   "dateiMasse": {
+    "breite": 640,
+    "hoehe": 640
+   },
+   "deckungsfaktor": 8.0
+  },
+  {
+   "id": "seraina-portrait",
+   "figmaEbene": "seraina-portrait.jpg",
+   "baustein": "Geschichten (gespiegelt)",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 600,
+    "hoehe": 750
+   },
+   "verhaeltnis": "4 : 5",
+   "ausrichtung": "hoch",
+   "alt": "Seraina Wild mit Brille in heller Lederjacke, kniend vor einer Holzwand",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/seraina-portrait.jpg",
+   "dateiMasse": {
+    "breite": 1280,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.13
+  },
+  {
+   "id": "referenz-ivor",
+   "figmaEbene": "referenz-ivor.jpg",
+   "baustein": "Referenzen",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 80,
+    "hoehe": 80
+   },
+   "verhaeltnis": "1 : 1",
+   "ausrichtung": "quadratisch",
+   "alt": "Porträt von Ivor vor schwarzem Hintergrund, lachend",
+   "aktiv": true,
+   "datei": "src/assets/images/Quadrat/referenz-ivor.jpg",
+   "dateiMasse": {
+    "breite": 640,
+    "hoehe": 640
+   },
+   "deckungsfaktor": 8.0
+  },
+  {
+   "id": "referenz-beatrice",
+   "figmaEbene": "referenz-beatrice.jpg",
+   "baustein": "Referenzen",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 80,
+    "hoehe": 80
+   },
+   "verhaeltnis": "1 : 1",
+   "ausrichtung": "quadratisch",
+   "alt": "Porträt von Beatrice im geblümten Oberteil, lächelnd, Bäume im Hintergrund",
+   "aktiv": true,
+   "datei": "src/assets/images/Quadrat/referenz-beatrice.jpg",
+   "dateiMasse": {
+    "breite": 640,
+    "hoehe": 640
+   },
+   "deckungsfaktor": 8.0
+  },
+  {
+   "id": "galerie-geschichten-01",
+   "figmaEbene": "galerie-geschichten-01.jpg",
+   "baustein": "Galerie / Geschichten",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 519,
+    "hoehe": 692
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Frau im geblümten Kleid mit Strohhut steht lachend im Lavendelfeld",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/galerie-geschichten-01.jpg",
+   "dateiMasse": {
+    "breite": 1203,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.31
+  },
+  {
+   "id": "galerie-geschichten-02",
+   "figmaEbene": "galerie-geschichten-02.jpg",
+   "baustein": "Galerie / Geschichten",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 519,
+    "hoehe": 692
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Nahaufnahme einer Frau mit Strohhut, das Sonnenlicht wirft Muster auf ihr Gesicht",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/galerie-geschichten-02.jpg",
+   "dateiMasse": {
+    "breite": 1203,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.31
+  },
+  {
+   "id": "galerie-geschichten-03",
+   "figmaEbene": "galerie-geschichten-03.jpg",
+   "baustein": "Galerie / Geschichten",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 519,
+    "hoehe": 692
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Frau hält lachend ihren Strohhut fest, im Vordergrund blühender Lavendel",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/galerie-geschichten-03.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.31
+  },
+  {
+   "id": "galerie-geschichten-04",
+   "figmaEbene": "galerie-geschichten-04.jpg",
+   "baustein": "Galerie / Geschichten",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 519,
+    "hoehe": 692
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Frau im Sommerkleid von hinten, der Wind bewegt Hut und Haare über dem Lavendelfeld",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/galerie-geschichten-04.jpg",
+   "dateiMasse": {
+    "breite": 1203,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.31
+  },
+  {
+   "id": "galerie-geschichten-05",
+   "figmaEbene": "galerie-geschichten-05.jpg",
+   "baustein": "Galerie / Geschichten",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 519,
+    "hoehe": 692
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Frau mit breitkrempigem Strohhut lacht mit geschlossenen Augen im Lavendelfeld",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/galerie-geschichten-05.jpg",
+   "dateiMasse": {
+    "breite": 1203,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.31
+  },
+  {
+   "id": "authentizitaet-01",
+   "figmaEbene": "authentizitaet-01.jpg",
+   "baustein": "Authentizität",
+   "seite": "Startseite + Geschichten",
+   "anzeige": {
+    "breite": 406,
+    "hoehe": 489
+   },
+   "verhaeltnis": "0.83 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Mann im schwarzen T-Shirt sitzt entspannt in einer alten Scheune",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/authentizitaet-01.jpg",
+   "dateiMasse": {
+    "breite": 812,
+    "hoehe": 972
+   },
+   "deckungsfaktor": 1.99,
+   "hinweis": "1 Datei, 2 Seiten"
+  },
+  {
+   "id": "authentizitaet-02",
+   "figmaEbene": "authentizitaet-02.jpg",
+   "baustein": "Authentizität",
+   "seite": "Startseite + Geschichten",
+   "anzeige": {
+    "breite": 320,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.76 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Junge Frau mit langen offenen Haaren lehnt an einer Steinwand",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/authentizitaet-02.jpg",
+   "dateiMasse": {
+    "breite": 1143,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 3.57,
+   "hinweis": "1 Datei, 2 Seiten"
+  },
+  {
+   "id": "kontakt-teaser-01",
+   "figmaEbene": "kontakt-teaser-01.jpg",
+   "baustein": "Kontakt-Teaser",
+   "seite": "Startseite + Geschichten + Über + Netzwerk",
+   "anzeige": {
+    "breite": 460,
+    "hoehe": 320
+   },
+   "verhaeltnis": "1.44 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau in Jeansjacke lacht am Wasser, im Hintergrund ein Hafen",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/kontakt-teaser-01.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 3.74,
+   "hinweis": "1 Datei, 4 Seiten",
+   "dateiMobil": "src/assets/images/Galerie_3-2/kontakt-teaser-01-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "kontakt-teaser-02",
+   "figmaEbene": "kontakt-teaser-02.jpg",
+   "baustein": "Kontakt-Teaser",
+   "seite": "Startseite + Geschichten + Über + Netzwerk",
+   "anzeige": {
+    "breite": 358,
+    "hoehe": 239
+   },
+   "verhaeltnis": "1.50 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau in Jeansjacke steht im Profil am Ufer, der Wind bewegt ihr Haar",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/kontakt-teaser-02.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 5.01,
+   "hinweis": "1 Datei, 4 Seiten",
+   "dateiMobil": "src/assets/images/Galerie_3-2/kontakt-teaser-02-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "hero-erlaebnis",
+   "figmaEbene": "hero-angebot.jpg",
+   "baustein": "Hero",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau liegt zurückgelehnt und lacht, warmes Licht fällt von der Seite",
+   "aktiv": true,
+   "datei": "src/assets/images/Hero_Bilder/hero-erlaebnis.jpg",
+   "dateiMasse": {
+    "breite": 3358,
+    "hoehe": 2234
+   },
+   "deckungsfaktor": 1.94,
+   "hinweis": "Variante mit Scheune geteilt – Bild pro Instanz ueberschreiben",
+   "dateiMobil": "src/assets/images/Hero_Bilder/hero-erlaebnis-hoch.jpg",
+   "verhaeltnisMobil": "0.63 : 1"
+  },
+  {
+   "id": "begegnung-01",
+   "figmaEbene": "begegnung-01.jpg",
+   "baustein": "Begegnung",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 320,
+    "hoehe": 400
+   },
+   "verhaeltnis": "4 : 5",
+   "ausrichtung": "hoch",
+   "alt": "Frau sitzt barfuss im trockenen Gras, die Augen geschlossen",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/begegnung-01.jpg",
+   "dateiMasse": {
+    "breite": 1280,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 4.0
+  },
+  {
+   "id": "begegnung-02",
+   "figmaEbene": "begegnung-02.jpg",
+   "baustein": "Begegnung",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 320,
+    "hoehe": 400
+   },
+   "verhaeltnis": "4 : 5",
+   "ausrichtung": "hoch",
+   "alt": "Frau in einer Töpferwerkstatt hält lachend einen Pinsel in die Höhe",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/begegnung-02.jpg",
+   "dateiMasse": {
+    "breite": 1280,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 4.0
+  },
+  {
+   "id": "orte-aare",
+   "figmaEbene": "orte-aare.jpg",
+   "baustein": "Orte",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 469,
+    "hoehe": 300
+   },
+   "verhaeltnis": "1.56 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau kniet am Kiesufer eines Flusses und berührt mit der Hand das Wasser",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/orte-aare.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1200
+   },
+   "deckungsfaktor": 3.84
+  },
+  {
+   "id": "orte-wald",
+   "figmaEbene": "orte-wald.jpg",
+   "baustein": "Orte",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 469,
+    "hoehe": 300
+   },
+   "verhaeltnis": "1.56 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau lehnt an einem alten Baumstamm im Wald und blickt nach oben",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/orte-wald.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 3.84
+  },
+  {
+   "id": "orte-stadt",
+   "figmaEbene": "orte-stadt.jpg",
+   "baustein": "Orte",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 469,
+    "hoehe": 300
+   },
+   "verhaeltnis": "1.56 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau geht vor einer Altstadtfassade, im Vordergrund verwischte Bewegung",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/orte-stadt.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1200
+   },
+   "deckungsfaktor": 3.84
+  },
+  {
+   "id": "orte-atelier",
+   "figmaEbene": "orte-atelier.jpg",
+   "baustein": "Orte",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 469,
+    "hoehe": 300
+   },
+   "verhaeltnis": "1.56 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau malt in einem Atelier an einer Staffelei",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/orte-atelier.jpg",
+   "dateiMasse": {
+    "breite": 1782,
+    "hoehe": 1200
+   },
+   "deckungsfaktor": 3.8
+  },
+  {
+   "id": "orte-scheune",
+   "figmaEbene": "orte-scheune.jpg",
+   "baustein": "Orte",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 469,
+    "hoehe": 300
+   },
+   "verhaeltnis": "1.56 : 1",
+   "ausrichtung": "quer",
+   "alt": "Älterer Mann sitzt mit einem Buch auf einem gestreiften Sofa in einer Scheune",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/orte-scheune.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 3.84
+  },
+  {
+   "id": "richtig-01",
+   "figmaEbene": "richtig-01.jpg",
+   "baustein": "Du bist hier richtig",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 300,
+    "hoehe": 400
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Frau mit Brille steht neben einem Baum im Wald und lächelt",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/richtig-01.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 4.0
+  },
+  {
+   "id": "richtig-02",
+   "figmaEbene": "richtig-02.jpg",
+   "baustein": "Du bist hier richtig",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 240,
+    "hoehe": 320
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Frau mit Brille lehnt an einem Baumstamm, die Hände vor der Brust",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/richtig-02.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 5.0
+  },
+  {
+   "id": "richtig-03",
+   "figmaEbene": "richtig-03.jpg",
+   "baustein": "Du bist hier richtig",
+   "seite": "Erläbnis",
+   "anzeige": {
+    "breite": 260,
+    "hoehe": 340
+   },
+   "verhaeltnis": "13 : 17",
+   "ausrichtung": "hoch",
+   "alt": "Frau mit Brille sitzt auf einem Baumstumpf im Wald",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/richtig-03.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 4.62
+  },
+  {
+   "id": "hero-scheune",
+   "figmaEbene": "hero-angebot.jpg",
+   "baustein": "Hero",
+   "seite": "Scheune",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "Analoge Kamera zwischen getrockneten Hortensien auf einer Holzbank",
+   "aktiv": true,
+   "datei": "src/assets/images/Hero_Bilder/hero-scheune.jpg",
+   "dateiMasse": {
+    "breite": 3358,
+    "hoehe": 2234
+   },
+   "deckungsfaktor": 1.94,
+   "hinweis": "Variante mit Erlaebnis geteilt – Bild pro Instanz ueberschreiben",
+   "dateiMobil": "src/assets/images/Hero_Bilder/hero-scheune-hoch.jpg",
+   "verhaeltnisMobil": "0.63 : 1"
+  },
+  {
+   "id": "raum-mit-geschichte-01",
+   "figmaEbene": "raum-mit-geschichte-01.jpg",
+   "baustein": "Raum mit Geschichte",
+   "seite": "Scheune",
+   "anzeige": {
+    "breite": 450,
+    "hoehe": 300
+   },
+   "verhaeltnis": "3 : 2",
+   "ausrichtung": "quer",
+   "alt": "Antike Uhr und getrocknete Blüten in einer alten Holzkiste",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/raum-mit-geschichte-01.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 3.99,
+   "dateiMobil": "src/assets/images/Galerie_3-2/raum-mit-geschichte-01-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "raum-mit-geschichte-02",
+   "figmaEbene": "raum-mit-geschichte-02.jpg",
+   "baustein": "Raum mit Geschichte",
+   "seite": "Scheune",
+   "anzeige": {
+    "breite": 450,
+    "hoehe": 300
+   },
+   "verhaeltnis": "3 : 2",
+   "ausrichtung": "quer",
+   "alt": "Aufgeschlagenes Buch, zu einem Lampenschirm gefaltet, warm beleuchtet",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/raum-mit-geschichte-02.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 3.99,
+   "dateiMobil": "src/assets/images/Galerie_3-2/raum-mit-geschichte-02-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "kulissen-01",
+   "figmaEbene": "kulissen-01.jpg",
+   "baustein": "Kulissen",
+   "seite": "Scheune",
+   "anzeige": {
+    "breite": 300,
+    "hoehe": 400
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Mann im schwarzen T-Shirt steht mit verschränkten Armen vor dunklem Hintergrund",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/kulissen-01.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.99
+  },
+  {
+   "id": "kulissen-02",
+   "figmaEbene": "kulissen-02.jpg",
+   "baustein": "Kulissen",
+   "seite": "Scheune",
+   "anzeige": {
+    "breite": 240,
+    "hoehe": 320
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Älterer Mann blättert in einem Fotoalbum auf einem gestreiften Sofa",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/kulissen-02.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 4.99
+  },
+  {
+   "id": "kulissen-03",
+   "figmaEbene": "kulissen-03.jpg",
+   "baustein": "Kulissen",
+   "seite": "Scheune",
+   "anzeige": {
+    "breite": 260,
+    "hoehe": 340
+   },
+   "verhaeltnis": "13 : 17",
+   "ausrichtung": "hoch",
+   "alt": "Junge Frau mit langen offenen Haaren vor einer rauen Steinwand",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/kulissen-03.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 4.61
+  },
+  {
+   "id": "neugier-01",
+   "figmaEbene": "neugier-01.jpg",
+   "baustein": "Neugier",
+   "seite": "Scheune",
+   "anzeige": {
+    "breite": 406,
+    "hoehe": 508
+   },
+   "verhaeltnis": "0.80 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Mann holt lachend mit einem Tennisschläger zum Schlag aus",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/neugier-01.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 2.96
+  },
+  {
+   "id": "neugier-02",
+   "figmaEbene": "neugier-02.jpg",
+   "baustein": "Neugier",
+   "seite": "Scheune",
+   "anzeige": {
+    "breite": 320,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.76 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Älterer Mann mit Brille steht vor schwarzem Hintergrund, die Hände in den Taschen",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/neugier-02.jpg",
+   "dateiMasse": {
+    "breite": 1197,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.74
+  },
+  {
+   "id": "hero-geschichten",
+   "figmaEbene": "hero-geschichten.jpg",
+   "baustein": "Hero",
+   "seite": "Geschichten",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau im braunen Kleid liegt auf Felsen am Meer und blickt nach oben",
+   "aktiv": true,
+   "datei": "src/assets/images/Hero_Bilder/hero-geschichten.jpg",
+   "dateiMasse": {
+    "breite": 3358,
+    "hoehe": 2234
+   },
+   "deckungsfaktor": 1.94,
+   "hinweis": "Variante mit Simona geteilt – Bild pro Instanz ueberschreiben",
+   "dateiMobil": "src/assets/images/Hero_Bilder/hero-geschichten-hoch.jpg",
+   "verhaeltnisMobil": "0.63 : 1"
+  },
+  {
+   "id": "geschichten-fotostory-01",
+   "figmaEbene": "geschichten-fotostory-01.jpg",
+   "baustein": "Foto-Story 2",
+   "seite": "Geschichten",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 650
+   },
+   "verhaeltnis": "0.89 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Frau in Jeansjacke sitzt lachend auf einer Mauer am Wasser",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/geschichten-fotostory-01.jpg",
+   "dateiMasse": {
+    "breite": 1280,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.21
+  },
+  {
+   "id": "geschichten-fotostory-02",
+   "figmaEbene": "geschichten-fotostory-02.jpg",
+   "baustein": "Foto-Story 2",
+   "seite": "Geschichten",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 470
+   },
+   "verhaeltnis": "1.49 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau im braunen Kleid lehnt an einer Mauer, im Hintergrund ein Segelhafen",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/geschichten-fotostory-02.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 2.55,
+   "dateiMobil": "src/assets/images/Galerie_3-2/geschichten-fotostory-02-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "geschichten-fotostory-03",
+   "figmaEbene": "geschichten-fotostory-03.jpg",
+   "baustein": "Foto-Story 2",
+   "seite": "Geschichten",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 630
+   },
+   "verhaeltnis": "0.92 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Frau im geblümten Kleid lacht, der Wind fährt ihr durchs Haar",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/geschichten-fotostory-03.jpg",
+   "dateiMasse": {
+    "breite": 1280,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.21
+  },
+  {
+   "id": "kundenstory-01",
+   "figmaEbene": "kundenstory-01.jpg",
+   "baustein": "Kundenstory Collage",
+   "seite": "Geschichten",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 770
+   },
+   "verhaeltnis": "0.75 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Frau mit einem Glas Tee sitzt an einem Holztisch am Fenster",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/kundenstory-01.jpg",
+   "dateiMasse": {
+    "breite": 1280,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.08
+  },
+  {
+   "id": "kundenstory-02",
+   "figmaEbene": "kundenstory-02.jpg",
+   "baustein": "Kundenstory Collage",
+   "seite": "Geschichten",
+   "anzeige": {
+    "breite": 620,
+    "hoehe": 413
+   },
+   "verhaeltnis": "1.50 : 1",
+   "ausrichtung": "quer",
+   "alt": "Frau mit Hund in einem Café, aufgenommen durch die Fensterscheibe",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/kundenstory-02.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 2.9,
+   "dateiMobil": "src/assets/images/Galerie_3-2/kundenstory-02-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "hero-simona",
+   "figmaEbene": "hero-geschichten.jpg",
+   "baustein": "Hero",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "Simona im weinroten Oberteil lächelt in die Sonne",
+   "aktiv": true,
+   "datei": "src/assets/images/Hero_Bilder/hero-simona.jpg",
+   "dateiMasse": {
+    "breite": 3351,
+    "hoehe": 2234
+   },
+   "deckungsfaktor": 1.94,
+   "hinweis": "Variante mit Geschichten geteilt – Bild pro Instanz ueberschreiben",
+   "dateiMobil": "src/assets/images/Hero_Bilder/hero-simona-hoch.jpg",
+   "verhaeltnisMobil": "0.63 : 1"
+  },
+  {
+   "id": "simona-geschichte-oben",
+   "figmaEbene": "simona-geschichte-oben.jpg",
+   "baustein": "Geschichte Oben",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 560,
+    "hoehe": 740
+   },
+   "verhaeltnis": "0.76 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Nahaufnahme: Simona legt die Hand auf ihre Schulter, Sonnenlicht auf der Haut",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-geschichte-oben.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 2.14
+  },
+  {
+   "id": "simona-fotostory-01",
+   "figmaEbene": "simona-fotostory-01.jpg",
+   "baustein": "Foto-Story",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 650
+   },
+   "verhaeltnis": "0.89 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Simona im weinroten Blazer sitzt in einem Sessel und stützt den Kopf in die Hand",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-fotostory-01.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 2.07
+  },
+  {
+   "id": "simona-fotostory-02",
+   "figmaEbene": "simona-fotostory-02.jpg",
+   "baustein": "Foto-Story",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 470
+   },
+   "verhaeltnis": "1.49 : 1",
+   "ausrichtung": "quer",
+   "alt": "Simona liegt zurückgelehnt auf einem Sofa und lacht",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/simona-fotostory-02.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 2.55,
+   "dateiMobil": "src/assets/images/Galerie_3-2/simona-fotostory-02-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "simona-fotostory-03",
+   "figmaEbene": "simona-fotostory-03.jpg",
+   "baustein": "Foto-Story",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 630
+   },
+   "verhaeltnis": "0.92 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Simona im roten Mantel steht am Fenster und schaut hinaus",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-fotostory-03.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 2.07
+  },
+  {
+   "id": "simona-geschichte-unten-01",
+   "figmaEbene": "simona-geschichte-unten-01.jpg",
+   "baustein": "Geschichte Unten",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 380,
+    "hoehe": 540
+   },
+   "verhaeltnis": "0.70 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Simona im Spitzenkleid am Fenster, lachend im Gegenlicht",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-geschichte-unten-01.jpg",
+   "dateiMasse": {
+    "breite": 1197,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.15
+  },
+  {
+   "id": "simona-geschichte-unten-02",
+   "figmaEbene": "simona-geschichte-unten-02.jpg",
+   "baustein": "Geschichte Unten",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 260,
+    "hoehe": 380
+   },
+   "verhaeltnis": "13 : 19",
+   "ausrichtung": "hoch",
+   "alt": "Aufnahme von oben in Schwarzweiss: Simona geht über einen Platz mit hellen Linien",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-geschichte-unten-02.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 4.61
+  },
+  {
+   "id": "simona-collage-01",
+   "figmaEbene": "simona-collage-01.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Simona mit einem Glas Tee an einem Fenstertisch",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-01.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.36
+  },
+  {
+   "id": "simona-collage-02",
+   "figmaEbene": "simona-collage-02.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Simona im roten Mantel am Fenster, den Blick gesenkt",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-02.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.36
+  },
+  {
+   "id": "simona-collage-03",
+   "figmaEbene": "simona-collage-03.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Simona am Laptop an einem Holztisch, den Blick zur Seite gewandt",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-03.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.36
+  },
+  {
+   "id": "simona-collage-04",
+   "figmaEbene": "simona-collage-04.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Simona sitzt in einem Café, im Vordergrund unscharfe Lichter",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-04.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.36
+  },
+  {
+   "id": "simona-collage-05",
+   "figmaEbene": "simona-collage-05.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 788,
+    "hoehe": 440
+   },
+   "verhaeltnis": "1.79 : 1",
+   "ausrichtung": "quer",
+   "alt": "Aufnahme von oben in Schwarzweiss: Simona steht auf einem Platz mit hellen Streifen",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/simona-collage-05.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 2.28,
+   "dateiMobil": "src/assets/images/Galerie_3-2/simona-collage-05-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "simona-collage-06",
+   "figmaEbene": "simona-collage-06.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 330,
+    "hoehe": 440
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Simona im weinroten Blazer lacht mit geschlossenen Augen, Spiegelung im Fensterglas",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-06.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.63
+  },
+  {
+   "id": "simona-collage-07",
+   "figmaEbene": "simona-collage-07.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 330,
+    "hoehe": 440
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "Simona im weinroten Blazer schaut über die Schulter, Spiegelung im Fensterglas",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-07.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.63
+  },
+  {
+   "id": "simona-collage-08",
+   "figmaEbene": "simona-collage-08.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 668,
+    "hoehe": 500
+   },
+   "verhaeltnis": "1.34 : 1",
+   "ausrichtung": "quer",
+   "alt": "Simona geht vor einer Altstadtfassade, im Vordergrund verwischte Bewegung",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/simona-collage-08.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 2.4,
+   "dateiMobil": "src/assets/images/Galerie_3-2/simona-collage-08-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "simona-collage-09",
+   "figmaEbene": "simona-collage-09.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 390,
+    "hoehe": 500
+   },
+   "verhaeltnis": "0.78 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Simona im weinroten Blazer stützt das Kinn auf die Hand",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-09.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.07
+  },
+  {
+   "id": "simona-collage-10",
+   "figmaEbene": "simona-collage-10.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 390,
+    "hoehe": 500
+   },
+   "verhaeltnis": "0.78 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Simona im weinroten Kleid auf einer Treppe im Sonnenlicht",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-10.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.08
+  },
+  {
+   "id": "simona-collage-11",
+   "figmaEbene": "simona-collage-11.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 630,
+    "hoehe": 420
+   },
+   "verhaeltnis": "3 : 2",
+   "ausrichtung": "quer",
+   "alt": "Simona im weinroten Anzug lehnt an einer Glasfassade, daneben ihre Spiegelung",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/simona-collage-11.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1200
+   },
+   "deckungsfaktor": 2.86,
+   "dateiMobil": "src/assets/images/Galerie_3-2/simona-collage-11-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "simona-collage-12",
+   "figmaEbene": "simona-collage-12.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Simona im grauen Anzug lehnt an einer hellen Wand",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-12.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 4.29
+  },
+  {
+   "id": "simona-collage-13",
+   "figmaEbene": "simona-collage-13.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Simona im weinroten Anzug steht auf einer Treppe vor einem Altbau",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-13.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 4.29
+  },
+  {
+   "id": "simona-collage-14",
+   "figmaEbene": "simona-collage-14.jpg",
+   "baustein": "Collage",
+   "seite": "Simona",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Simona in weinroter Weste steht in einem hellen Durchgang",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/simona-collage-14.jpg",
+   "dateiMasse": {
+    "breite": 1200,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 4.29
+  },
+  {
+   "id": "hero-ueber",
+   "figmaEbene": "hero-ueber.mp4",
+   "baustein": "Hero",
+   "seite": "Über",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "Seraina Wild kniet in einer Wiese und fotografiert",
+   "aktiv": true,
+   "datei": "public/video/hero-ueber.mp4",
+   "dateiMasse": {
+    "breite": 3358,
+    "hoehe": 2234
+   },
+   "deckungsfaktor": 1.94,
+   "hinweis": "Video statt Bild. autoplay muted loop playsinline, poster gesetzt. Der Text aus 'alt' gehoert beim <video> in aria-label, nicht in alt. Bei prefers-reduced-motion nur das Poster zeigen.",
+   "video": {
+    "mp4": "/video/hero-ueber.mp4",
+    "webm": "/video/hero-ueber.webm",
+    "poster": "/video/hero-ueber-poster.jpg",
+    "dauer": 6.08,
+    "fps": 24,
+    "ton": false,
+    "masse": {
+     "breite": 1728,
+     "hoehe": 1118
+    },
+    "groesseMB": {
+     "mp4": 4.23,
+     "webm": 5.07
+    }
+   }
+  },
+  {
+   "id": "ueber-geschichte",
+   "figmaEbene": "ueber-geschichte.jpg",
+   "baustein": "Geschichte Seraina",
+   "seite": "Über",
+   "anzeige": {
+    "breite": 560,
+    "hoehe": 740
+   },
+   "verhaeltnis": "0.76 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Seraina Wild mit Brille im dunkelgrünen Blazer, Wald im Hintergrund",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_4-5/ueber-geschichte.jpg",
+   "dateiMasse": {
+    "breite": 1280,
+    "hoehe": 1600
+   },
+   "deckungsfaktor": 2.16
+  },
+  {
+   "id": "ueber-geschichte-unten-01",
+   "figmaEbene": "ueber-geschichte-unten-01.jpg",
+   "baustein": "Geschichte Seraina unten",
+   "seite": "Über",
+   "anzeige": {
+    "breite": 380,
+    "hoehe": 540
+   },
+   "verhaeltnis": "0.70 : 1",
+   "ausrichtung": "hoch",
+   "alt": "Seraina Wild kniet vor Holzkisten und ordnet getrocknete Hortensien in einem Korb",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/ueber-geschichte-unten-01.jpg",
+   "dateiMasse": {
+    "breite": 1197,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 3.15
+  },
+  {
+   "id": "ueber-geschichte-unten-02",
+   "figmaEbene": "ueber-geschichte-unten-02.jpg",
+   "baustein": "Geschichte Seraina unten",
+   "seite": "Über",
+   "anzeige": {
+    "breite": 260,
+    "hoehe": 380
+   },
+   "verhaeltnis": "13 : 19",
+   "ausrichtung": "hoch",
+   "alt": "Seraina Wild in heller Lederjacke sitzt vor einer Holzwand und lächelt",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_2-3/ueber-geschichte-unten-02.jpg",
+   "dateiMasse": {
+    "breite": 1198,
+    "hoehe": 1800
+   },
+   "deckungsfaktor": 4.61
+  },
+  {
+   "id": "echtes-portrait-01",
+   "figmaEbene": "echtes-portrait-01.jpg",
+   "baustein": "Echtes Portrait",
+   "seite": "Über",
+   "anzeige": {
+    "breite": 450,
+    "hoehe": 300
+   },
+   "verhaeltnis": "3 : 2",
+   "ausrichtung": "quer",
+   "alt": "Junge Frau mit weisser Mütze am Strand, im Vordergrund unscharfe Formen",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/echtes-portrait-01.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 3.99,
+   "dateiMobil": "src/assets/images/Galerie_3-2/echtes-portrait-01-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "echtes-portrait-02",
+   "figmaEbene": "echtes-portrait-02.jpg",
+   "baustein": "Echtes Portrait",
+   "seite": "Über",
+   "anzeige": {
+    "breite": 450,
+    "hoehe": 300
+   },
+   "verhaeltnis": "3 : 2",
+   "ausrichtung": "quer",
+   "alt": "Junge Frau mit weisser Mütze lächelt vor einer Backsteinwand",
+   "aktiv": true,
+   "datei": "src/assets/images/Galerie_3-2/echtes-portrait-02.jpg",
+   "dateiMasse": {
+    "breite": 1800,
+    "hoehe": 1198
+   },
+   "deckungsfaktor": 3.99,
+   "dateiMobil": "src/assets/images/Galerie_3-2/echtes-portrait-02-hoch.jpg",
+   "verhaeltnisMobil": "3 : 4",
+   "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+  },
+  {
+   "id": "hero-kontakt",
+   "figmaEbene": "hero-kontakt.jpg",
+   "baustein": "Hero",
+   "seite": "Kontakt",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "Hände blättern in einem aufgeschlagenen Buch auf einem Holztisch",
+   "aktiv": true,
+   "datei": "src/assets/images/Hero_Bilder/hero-kontakt.jpg",
+   "dateiMasse": {
+    "breite": 3366,
+    "hoehe": 2234
+   },
+   "deckungsfaktor": 1.95,
+   "dateiMobil": "src/assets/images/Hero_Bilder/hero-kontakt-hoch.jpg",
+   "verhaeltnisMobil": "0.63 : 1"
+  },
+  {
+   "id": "netzwerk-studio-benanti",
+   "figmaEbene": "netzwerk-bild-links.jpg",
+   "baustein": "Netzwerk-Eintrag",
+   "seite": "Netzwerk",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 500
+   },
+   "verhaeltnis": "7 : 5",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Wartet auf Logos – vorerst zurueckgestellt"
+  },
+  {
+   "id": "netzwerk-baravital",
+   "figmaEbene": "netzwerk-bild-rechts.jpg",
+   "baustein": "Netzwerk-Eintrag",
+   "seite": "Netzwerk",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 500
+   },
+   "verhaeltnis": "7 : 5",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Wartet auf Logos – vorerst zurueckgestellt"
+  },
+  {
+   "id": "netzwerk-esmeralda",
+   "figmaEbene": "netzwerk-bild-links.jpg",
+   "baustein": "Netzwerk-Eintrag",
+   "seite": "Netzwerk",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 500
+   },
+   "verhaeltnis": "7 : 5",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Wartet auf Logos – vorerst zurueckgestellt"
+  },
+  {
+   "id": "netzwerk-aeschbachhalle",
+   "figmaEbene": "netzwerk-bild-rechts.jpg",
+   "baustein": "Netzwerk-Eintrag",
+   "seite": "Netzwerk",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 500
+   },
+   "verhaeltnis": "7 : 5",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Wartet auf Logos – vorerst zurueckgestellt"
+  },
+  {
+   "id": "netzwerk-fotostudio-fokus",
+   "figmaEbene": "netzwerk-bild-links.jpg",
+   "baustein": "Netzwerk-Eintrag",
+   "seite": "Netzwerk",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 500
+   },
+   "verhaeltnis": "7 : 5",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Wartet auf Logos – vorerst zurueckgestellt"
+  },
+  {
+   "id": "hero-sara",
+   "figmaEbene": "hero-geschichten.jpg",
+   "baustein": "Hero",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-geschichte-oben",
+   "figmaEbene": "simona-geschichte-oben.jpg",
+   "baustein": "Geschichte Oben",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 560,
+    "hoehe": 740
+   },
+   "verhaeltnis": "0.76 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-fotostory-01",
+   "figmaEbene": "simona-fotostory-01.jpg",
+   "baustein": "Foto-Story",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 650
+   },
+   "verhaeltnis": "0.89 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-fotostory-02",
+   "figmaEbene": "simona-fotostory-02.jpg",
+   "baustein": "Foto-Story",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 470
+   },
+   "verhaeltnis": "1.49 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-fotostory-03",
+   "figmaEbene": "simona-fotostory-03.jpg",
+   "baustein": "Foto-Story",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 630
+   },
+   "verhaeltnis": "0.92 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-geschichte-unten-01",
+   "figmaEbene": "simona-geschichte-unten-01.jpg",
+   "baustein": "Geschichte Unten",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 380,
+    "hoehe": 540
+   },
+   "verhaeltnis": "0.70 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-geschichte-unten-02",
+   "figmaEbene": "simona-geschichte-unten-02.jpg",
+   "baustein": "Geschichte Unten",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 260,
+    "hoehe": 380
+   },
+   "verhaeltnis": "13 : 19",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-01",
+   "figmaEbene": "simona-collage-01.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-02",
+   "figmaEbene": "simona-collage-02.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-03",
+   "figmaEbene": "simona-collage-03.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-04",
+   "figmaEbene": "simona-collage-04.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-05",
+   "figmaEbene": "simona-collage-05.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 788,
+    "hoehe": 440
+   },
+   "verhaeltnis": "1.79 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-06",
+   "figmaEbene": "simona-collage-06.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 330,
+    "hoehe": 440
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-07",
+   "figmaEbene": "simona-collage-07.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 330,
+    "hoehe": 440
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-08",
+   "figmaEbene": "simona-collage-08.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 668,
+    "hoehe": 500
+   },
+   "verhaeltnis": "1.34 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-09",
+   "figmaEbene": "simona-collage-09.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 390,
+    "hoehe": 500
+   },
+   "verhaeltnis": "0.78 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-10",
+   "figmaEbene": "simona-collage-10.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 390,
+    "hoehe": 500
+   },
+   "verhaeltnis": "0.78 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-11",
+   "figmaEbene": "simona-collage-11.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 630,
+    "hoehe": 420
+   },
+   "verhaeltnis": "3 : 2",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-12",
+   "figmaEbene": "simona-collage-12.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-13",
+   "figmaEbene": "simona-collage-13.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "sara-collage-14",
+   "figmaEbene": "simona-collage-14.jpg",
+   "baustein": "Collage",
+   "seite": "4.1_Sara",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "hero-emanuela",
+   "figmaEbene": "hero-geschichten.jpg",
+   "baustein": "Hero",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-geschichte-oben",
+   "figmaEbene": "simona-geschichte-oben.jpg",
+   "baustein": "Geschichte Oben",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 560,
+    "hoehe": 740
+   },
+   "verhaeltnis": "0.76 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-fotostory-01",
+   "figmaEbene": "simona-fotostory-01.jpg",
+   "baustein": "Foto-Story",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 650
+   },
+   "verhaeltnis": "0.89 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-fotostory-02",
+   "figmaEbene": "simona-fotostory-02.jpg",
+   "baustein": "Foto-Story",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 700,
+    "hoehe": 470
+   },
+   "verhaeltnis": "1.49 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-fotostory-03",
+   "figmaEbene": "simona-fotostory-03.jpg",
+   "baustein": "Foto-Story",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 580,
+    "hoehe": 630
+   },
+   "verhaeltnis": "0.92 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-geschichte-unten-01",
+   "figmaEbene": "simona-geschichte-unten-01.jpg",
+   "baustein": "Geschichte Unten",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 380,
+    "hoehe": 540
+   },
+   "verhaeltnis": "0.70 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-geschichte-unten-02",
+   "figmaEbene": "simona-geschichte-unten-02.jpg",
+   "baustein": "Geschichte Unten",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 260,
+    "hoehe": 380
+   },
+   "verhaeltnis": "13 : 19",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-01",
+   "figmaEbene": "simona-collage-01.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-02",
+   "figmaEbene": "simona-collage-02.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-03",
+   "figmaEbene": "simona-collage-03.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-04",
+   "figmaEbene": "simona-collage-04.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 357,
+    "hoehe": 476
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-05",
+   "figmaEbene": "simona-collage-05.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 788,
+    "hoehe": 440
+   },
+   "verhaeltnis": "1.79 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-06",
+   "figmaEbene": "simona-collage-06.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 330,
+    "hoehe": 440
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-07",
+   "figmaEbene": "simona-collage-07.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 330,
+    "hoehe": 440
+   },
+   "verhaeltnis": "3 : 4",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-08",
+   "figmaEbene": "simona-collage-08.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 668,
+    "hoehe": 500
+   },
+   "verhaeltnis": "1.34 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-09",
+   "figmaEbene": "simona-collage-09.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 390,
+    "hoehe": 500
+   },
+   "verhaeltnis": "0.78 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-10",
+   "figmaEbene": "simona-collage-10.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 390,
+    "hoehe": 500
+   },
+   "verhaeltnis": "0.78 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-11",
+   "figmaEbene": "simona-collage-11.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 630,
+    "hoehe": 420
+   },
+   "verhaeltnis": "3 : 2",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-12",
+   "figmaEbene": "simona-collage-12.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-13",
+   "figmaEbene": "simona-collage-13.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "emanuela-collage-14",
+   "figmaEbene": "simona-collage-14.jpg",
+   "baustein": "Collage",
+   "seite": "4.2_Emanuela",
+   "anzeige": {
+    "breite": 266,
+    "hoehe": 420
+   },
+   "verhaeltnis": "0.63 : 1",
+   "ausrichtung": "hoch",
+   "alt": "",
+   "aktiv": false,
+   "datei": null,
+   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+  },
+  {
+   "id": "hero-netzwerk",
+   "figmaEbene": "hero-netzwerk.jpg",
+   "baustein": "Hero Unterseite",
+   "seite": "Netzwerk",
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
+   "verhaeltnis": "1.55 : 1",
+   "ausrichtung": "quer",
+   "alt": "",
+   "aktiv": false,
+   "datei": "src/assets/images/Hero_Bilder/hero-netzwerk.jpg",
+   "dateiMasse": {
+    "breite": 3358,
+    "hoehe": 2234
+   },
+   "deckungsfaktor": 1.94
+  }
+ ],
+ "mobil": {
+  "hinweis": "Mobile Bildvarianten. Wo 'dateiMobil' steht, wird auf schmalen Bildschirmen diese Datei genommen, sonst 'datei' mit object-fit: cover.",
+  "heroHochformat": "1170 x 1860 px, 0.63 : 1",
+  "inhaltHochformat": "mindestens 1200 px breit, 3 : 4",
+  "keinNeuerAusschnitt": "Bilder, die schon hoch sind (2:3 oder 4:5), passen ohne Zutun in die mobilen Plaetze – der Rest wird beschnitten."
+ }
+}

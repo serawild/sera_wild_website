@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <!-- 5-petal flower: circles at hexagonal vertices + filled center -->
+  <circle cx="10" cy="6"    r="3"/>
+  <circle cx="13.8" cy="8.8"  r="3"/>
+  <circle cx="12.4" cy="13.2" r="3"/>
+  <circle cx="7.6"  cy="13.2" r="3"/>
+  <circle cx="6.2"  cy="8.8"  r="3"/>
+  <circle cx="10"   cy="10"   r="3"/>
+</svg>

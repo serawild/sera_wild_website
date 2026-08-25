@@ -1,0 +1,618 @@
+{
+ "hinweis": "Aufbau der mobilen Seiten. Quelle ist die Figma-Seite 'Mobile | Designs' (2615:2). Bezugsbreite 390 px. Texte stehen woertlich in Figma, ALT-Texte in bilder.json. Diese Datei ist die Gedaechtnisstuetze, damit nach einem /clear nichts verloren geht.",
+ "stand": "2026-08-23",
+ "raster": {
+  "breite": 390,
+  "seitenrand": 24,
+  "abschnittPolsterung": {
+   "hell": 48,
+   "dunkel": 52
+  },
+  "abstandImAbschnitt": 18,
+  "wischleiste": {
+   "polsterungLinks": 24,
+   "abstand": 10,
+   "punkte": "7 px Kreise, Abstand 8, erster voll, Rest 40 % Deckkraft"
+  }
+ },
+ "farben": {
+  "creme": "#f5f3ed",
+  "dunkel": "#2f322d",
+  "oliv": "#5b5c4f",
+  "sand": "#a0886d",
+  "sandDunkel": "#7e6953",
+  "terracotta": "#983515",
+  "rost": "#bc541f"
+ },
+ "schrift": {
+  "heroTitel": "Vollkorn SemiBold 31 / 130 %",
+  "abschnittTitel": "Vollkorn SemiBold 27 / 128 %",
+  "grosserTitel": "Vollkorn SemiBold 32 / 120 %",
+  "kartenTitel": "Vollkorn SemiBold 20 / 130 %",
+  "lauftext": "Roboto Regular 17 / 168 %",
+  "lauftextKlein": "Roboto Regular 16 / 165 %",
+  "hervorgehoben": "Roboto Bold 17 / 168 %",
+  "fussnote": "Roboto Regular 13 / 160 %",
+  "kapitelmarke": "Roboto Bold 12 (Nummer, Sperrung 1) + Strich 20x1 + Roboto Regular 12 (Wort, Sperrung 2)",
+  "knopf": "Roboto Regular 14 / 110 %, Sperrung 1.4, Polsterung 15/28, Radius 8",
+  "heroUntertitel": "Roboto Regular 18 / 160 %"
+ },
+ "bausteine": {
+  "hero": "390x700. Vollflaechiges Hochformat, Verlauf darueber, helles Logo oben links (24/26). Von unten gestapelt: Knopf bei y 593, Untertitel 26 px darueber, Titel 18 px darueber, Ueberzeile 14 px darueber. Titel Vollkorn SemiBold 31, Untertitel Roboto Regular 18. Zeilenumbrueche im Titel stehen von Hand in Figma und werden uebernommen — nicht automatisch umbrechen lassen.",
+  "bildgruppe": "Rahmen 342x322. Grosses Bild 214x286 bei 0/0, kleines 178x238 bei 164/84. Unterkanten bewusst versetzt, nie buendig.",
+  "wischleiste": "Waagrechte Auto-Layout-Reihe, links 24 px eingerueckt, Karten 260 px breit, darunter Wischpunkte.",
+  "footer": "390x356, dunkel. Bildmarke W als Hintergrund 370x265 bei 12/56, Deckkraft 10 %. Darueber absolut die Kontaktdaten: helles Logo 150 px, Telefon, E-Mail, Rechtszeile.",
+  "leiste": "Feste Leiste unten 390x82, dunkel, vier Ziele (Start, Angebot, Geschichten, Kontakt). Sitzt absolut am unteren Seitenrand. Darueber der Abstandhalter 'Platz fuer Leiste' 90 px, damit der Footer nicht verdeckt wird."
+ },
+ "deko": {
+  "regel": "Illustration ist immer das hinterste Element im Abschnitt. Sie darf hinter Text liegen, nie ueber einer Bildflaeche. Deckkraft 0.6.",
+  "farbwahl": "auf creme Beige, auf dunkel und oliv Hellgruen, auf terracotta Hellorange",
+  "hinweis": "Die drei Illustrationen auf M1_Startseite hat Seraina von Hand gesetzt. Die je zwei auf den Unterseiten sind ein Vorschlag und duerfen verschoben werden."
+ },
+ "heroBilder": {
+  "hinweis": "Alle Heros brauchen einen Hochformat-Ausschnitt, 1170x1860 px (0.63:1). Dateinamen mit dem Zusatz -hoch.",
+  "liste": [
+   "hero-startseite-hoch",
+   "hero-erlaebnis-hoch",
+   "hero-scheune-hoch",
+   "hero-geschichten-hoch",
+   "hero-simona-hoch",
+   "hero-ueber-hoch (Video)",
+   "hero-kontakt-hoch"
+  ]
+ },
+ "seiten": {
+  "M0_Ladebild": {
+   "figma": "2637:29",
+   "hoehe": 844,
+   "route": "-"
+  },
+  "M1_Startseite": {
+   "figma": "2649:47",
+   "hoehe": 4535,
+   "route": "/"
+  },
+  "M2_W-Erläbnis": {
+   "figma": "2664:7",
+   "hoehe": 9235,
+   "route": "/w-erlaebnis"
+  },
+  "M2.1_Scheune": {
+   "figma": "2668:12",
+   "hoehe": 5167,
+   "route": "/scheune"
+  },
+  "M3_Geschichten": {
+   "figma": "2669:13",
+   "hoehe": 5192,
+   "route": "/geschichten"
+  },
+  "M3.1_Simona": {
+   "figma": "2670:14",
+   "hoehe": 4594,
+   "route": "/geschichten/simona"
+  },
+  "M4_Über": {
+   "figma": "2671:1025",
+   "hoehe": 6413,
+   "route": "/ueber"
+  },
+  "M5_Kontakt": {
+   "figma": "2673:16",
+   "hoehe": 3779,
+   "route": "/kontakt"
+  },
+  "M6_Impressum": {
+   "figma": "2674:1078",
+   "hoehe": 2495,
+   "route": "/impressum"
+  },
+  "M7_Datenschutz": {
+   "figma": "2674:1119",
+   "hoehe": 5705,
+   "route": "/datenschutz"
+  },
+  "M8_AGB": {
+   "figma": "2674:1165",
+   "hoehe": 5639,
+   "route": "/agb"
+  }
+ },
+ "abschnitte": {
+  "M1_Startseite": {
+   "desktopDatei": "src/pages/index.astro",
+   "liste": [
+    {
+     "name": "Hero",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Hero",
+     "bilder": [
+      "hero-startseite-hoch 390×700"
+     ]
+    },
+    {
+     "name": "01 Haltung",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Über mich",
+     "bilder": [
+      "ueber-mich-01 224×298",
+      "ueber-mich-02 160×214"
+     ]
+    },
+    {
+     "name": "02 Angebot",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Angebot",
+     "bilder": [
+      "startseite-erlaebnis-01 214×286",
+      "startseite-erlaebnis-02 178×238"
+     ]
+    },
+    {
+     "name": "03 Arbeiten",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Galerie/Geschichten",
+     "bilder": [
+      "galerie-geschichten-01…05 260×340"
+     ],
+     "wischbar": true
+    },
+    {
+     "name": "04 Stimmen",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Referenzen",
+     "bilder": [
+      "referenz-simona / -ivor / -beatrice 50×50 rund"
+     ],
+     "wischbar": true
+    },
+    {
+     "name": "05 Kontakt",
+     "bg": "#983515",
+     "quelleDesktop": "Sektion – Kontakt-Teaser",
+     "bilder": [
+      "kontakt-teaser-01 214×286",
+      "kontakt-teaser-02 176×236"
+     ]
+    },
+    {
+     "name": "Footer",
+     "bg": "#2f322d",
+     "quelleDesktop": "Footer"
+    }
+   ],
+   "weggelassen": [
+    "Sektion – Erläbnis",
+    "Sektion – Authentizität",
+    "Sektion – Geschichten gespiegelt"
+   ]
+  },
+  "M2_W-Erläbnis": {
+   "desktopDatei": "src/pages/w-erlaebnis.astro",
+   "liste": [
+    {
+     "name": "Hero",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Hero",
+     "bilder": [
+      "hero-erlaebnis-hoch 390×700"
+     ],
+     "hinweis": "Titel ist die Wortmarke W Erlaebnis in der Variante Hell (#f5f3ed), nicht Text. Aufbau und Masse stehen in deko.json unter marken."
+    },
+    {
+     "name": "01 Begegnung",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Begegnung",
+     "bilder": [
+      "begegnung-01 214×286",
+      "begegnung-02 178×238"
+     ]
+    },
+    {
+     "name": "02 Das W",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Das W",
+     "hinweis": "Die vier Fragen als gestapelte Karten."
+    },
+    {
+     "name": "03 Wonach wir suchen",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Wonach wir suchen"
+    },
+    {
+     "name": "04 Angebot",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Angebot",
+     "hinweis": "Preiskarte, Liste 'Das ist immer dabei', 'Wenn du mehr möchtest' zum Aufklappen."
+    },
+    {
+     "name": "05 Ablauf",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Timeline",
+     "hinweis": "Fünf Schritte mit nummerierten Kreisen."
+    },
+    {
+     "name": "Zitat",
+     "bg": "#983515",
+     "quelleDesktop": "Sektion – Zitat"
+    },
+    {
+     "name": "06 Orte",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Orte",
+     "bilder": [
+      "orte-aare / -wald / -stadt / -atelier / -scheune 260×180"
+     ],
+     "wischbar": true,
+     "hinweis": "Sechste Karte 'Dein eigener Ort' ohne Bild."
+    },
+    {
+     "name": "Verweis – Simona",
+     "bg": "#2f322d",
+     "quelleDesktop": "Verweis – Simonas Geschichte"
+    },
+    {
+     "name": "07 Richtig",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – richtig",
+     "bilder": [
+      "richtig-01 214×286",
+      "richtig-02 178×238"
+     ]
+    },
+    {
+     "name": "CTA – Scheune",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – CTA Banner"
+    },
+    {
+     "name": "FAQ – aufklappbar",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – FAQ",
+     "hinweis": "Neun Fragen, erste offen, Rest zugeklappt."
+    },
+    {
+     "name": "Footer",
+     "bg": "#2f322d",
+     "quelleDesktop": "Footer"
+    }
+   ]
+  },
+  "M2.1_Scheune": {
+   "desktopDatei": "src/pages/scheune.astro",
+   "liste": [
+    {
+     "name": "Hero",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Hero",
+     "bilder": [
+      "hero-scheune-hoch 390×700"
+     ],
+     "hinweis": "Der Desktop-Titel wird mobil aufgeteilt: 'Dein Fotoshooting' ist der Titel, 'Vier Kulissen, eine Stimmung, ganz du.' der Untertitel. Darueber die Ueberzeile 'RUSTIKAL & ECHT'."
+    },
+    {
+     "name": "01 Raum mit Geschichte",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Raum mit Geschichte",
+     "bilder": [
+      "raum-mit-geschichte-01 214×286",
+      "raum-mit-geschichte-02 178×238"
+     ]
+    },
+    {
+     "name": "Zitat",
+     "bg": "#983515",
+     "quelleDesktop": "Sektion – Zitat"
+    },
+    {
+     "name": "02 Kulissen",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Kulissen",
+     "bilder": [
+      "kulissen-01…03 260×340"
+     ],
+     "wischbar": true,
+     "hinweis": "Vierte Karte 'Leinen & Licht' ohne Bild."
+    },
+    {
+     "name": "03 Pakete",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Pakete",
+     "hinweis": "Drei Karten S, M, L untereinander."
+    },
+    {
+     "name": "04 Neugier",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – neugier",
+     "bilder": [
+      "neugier-01 214×286",
+      "neugier-02 178×238"
+     ]
+    },
+    {
+     "name": "Verweis – W-Erläbnis",
+     "bg": "#2f322d",
+     "quelleDesktop": "Verweis – Zurück zum W-Erläbnis"
+    },
+    {
+     "name": "Footer",
+     "bg": "#2f322d",
+     "quelleDesktop": "Footer"
+    }
+   ]
+  },
+  "M3_Geschichten": {
+   "desktopDatei": "src/pages/geschichten.astro",
+   "liste": [
+    {
+     "name": "Hero",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Hero",
+     "bilder": [
+      "hero-geschichten-hoch 390×700"
+     ]
+    },
+    {
+     "name": "01 Foto-Story",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Foto-Story 2",
+     "bilder": [
+      "geschichten-fotostory-01…03 260×340"
+     ],
+     "wischbar": true
+    },
+    {
+     "name": "02 Authentizität",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Authentizität",
+     "bilder": [
+      "authentizitaet-01 214×286",
+      "authentizitaet-02 178×238"
+     ]
+    },
+    {
+     "name": "03 Angebot",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Angebot (Startseite)"
+    },
+    {
+     "name": "04 Kundenstory",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Kundenstory Collage",
+     "bilder": [
+      "kundenstory-01 260×340",
+      "kundenstory-02 260×340"
+     ],
+     "wischbar": true
+    },
+    {
+     "name": "Zitat",
+     "bg": "#983515",
+     "quelleDesktop": "Sektion – Zitat"
+    },
+    {
+     "name": "05 Kontakt",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Kontakt-Teaser",
+     "bilder": [
+      "kontakt-teaser-01 214×286",
+      "kontakt-teaser-02 178×238"
+     ]
+    },
+    {
+     "name": "Footer",
+     "bg": "#2f322d",
+     "quelleDesktop": "Footer"
+    }
+   ]
+  },
+  "M3.1_Simona": {
+   "desktopDatei": "src/pages/geschichten/simona.astro",
+   "liste": [
+    {
+     "name": "Hero",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Hero",
+     "bilder": [
+      "hero-simona-hoch 390×700"
+     ]
+    },
+    {
+     "name": "01 Geschichte oben",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Geschichte Oben",
+     "bilder": [
+      "simona-geschichte-oben 342×456"
+     ]
+    },
+    {
+     "name": "02 Foto-Story",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Foto-Story",
+     "bilder": [
+      "simona-fotostory-01…03 260×340"
+     ],
+     "wischbar": true
+    },
+    {
+     "name": "03 Was geblieben ist",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Geschichte Unten",
+     "bilder": [
+      "simona-geschichte-unten-01 214×286",
+      "simona-geschichte-unten-02 178×238"
+     ]
+    },
+    {
+     "name": "04 Collage",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Collage",
+     "bilder": [
+      "simona-collage-01…14 220×290"
+     ],
+     "wischbar": true
+    },
+    {
+     "name": "Zitat",
+     "bg": "#983515",
+     "quelleDesktop": "Sektion – Zitat"
+    },
+    {
+     "name": "Footer",
+     "bg": "#2f322d",
+     "quelleDesktop": "Footer"
+    }
+   ],
+   "weggelassen": [
+    "Sektion – Weiter-Button"
+   ]
+  },
+  "M4_Über": {
+   "desktopDatei": "src/pages/ueber.astro",
+   "liste": [
+    {
+     "name": "Hero",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Hero",
+     "bilder": [
+      "hero-ueber-hoch 390×700"
+     ],
+     "hinweis": "Video, siehe bilder.json Eintrag hero-ueber."
+    },
+    {
+     "name": "01 Fakten",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Fakten",
+     "hinweis": "Fünf Stationen mit den Icons aus spec/icons/."
+    },
+    {
+     "name": "02 Mein Weg",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Geschichte Seraina",
+     "bilder": [
+      "ueber-geschichte 342×456"
+     ]
+    },
+    {
+     "name": "03 Meine Aufgabe",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Geschichte Seraina unten",
+     "bilder": [
+      "ueber-geschichte-unten-01 214×286",
+      "ueber-geschichte-unten-02 178×238"
+     ]
+    },
+    {
+     "name": "Zitat",
+     "bg": "#983515",
+     "quelleDesktop": "Sektion – Zitat"
+    },
+    {
+     "name": "04 Echtes Portrait",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Echtes Portrait",
+     "bilder": [
+      "echtes-portrait-01 214×286",
+      "echtes-portrait-02 178×238"
+     ]
+    },
+    {
+     "name": "05 Kontakt",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Kontakt-Teaser",
+     "bilder": [
+      "kontakt-teaser-01 214×286",
+      "kontakt-teaser-02 178×238"
+     ]
+    },
+    {
+     "name": "Footer",
+     "bg": "#2f322d",
+     "quelleDesktop": "Footer"
+    }
+   ]
+  },
+  "M5_Kontakt": {
+   "desktopDatei": "src/pages/kontakt.astro",
+   "liste": [
+    {
+     "name": "Hero",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Sektion – Hero",
+     "bilder": [
+      "hero-kontakt-hoch 390×700"
+     ]
+    },
+    {
+     "name": "01 Kontaktdaten",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion - Kontaktdaten › Kontakt-Info",
+     "hinweis": "Mail, Telefon, Adresse als dunkle Karten; Instagram und LinkedIn als zwei Kacheln mit Rahmen."
+    },
+    {
+     "name": "02 Nach deiner Nachricht",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Nach deiner Nachricht",
+     "hinweis": "Drei Schritte mit nummerierten Kreisen."
+    },
+    {
+     "name": "03 Event-Reportage",
+     "bg": "#5b5c4f",
+     "quelleDesktop": "Event-Reportage"
+    },
+    {
+     "name": "04 Karte",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Karte-Bereich",
+     "hinweis": "Google Maps erst nach Klick laden, Hinweistext bleibt."
+    },
+    {
+     "name": "05 Wo ich fotografiere",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Sektion – Wo ich fotografiere"
+    },
+    {
+     "name": "Gruss",
+     "bg": "#983515",
+     "quelleDesktop": "Sektion – Gruss"
+    },
+    {
+     "name": "Footer",
+     "bg": "#2f322d",
+     "quelleDesktop": "Footer"
+    }
+   ]
+  },
+  "Rechtstexte": {
+   "desktopDateien": [
+    "src/pages/impressum.astro",
+    "src/pages/datenschutz.astro",
+    "src/pages/agb.astro"
+   ],
+   "liste": [
+    {
+     "name": "Titelleiste",
+     "bg": "#2f322d",
+     "quelleDesktop": "Sektion – Titelleiste",
+     "hinweis": "Helles Logo, darunter der Seitentitel in Vollkorn 32."
+    },
+    {
+     "name": "Inhalt",
+     "bg": "#f5f3ed",
+     "quelleDesktop": "Inhalt",
+     "hinweis": "Gleiche Texte wie am Rechner, nur schmaler: Titel 20, Text 16/170 %, Abstand zwischen den Kapiteln 34."
+    },
+    {
+     "name": "Footer",
+     "bg": "#2f322d",
+     "quelleDesktop": "Footer"
+    }
+   ]
+  }
+ },
+ "offen": [
+  "Die sieben Hochformat-Ausschnitte fehlen noch, die Platzhalter heissen bereits -hoch.",
+  "Fuer die vierte Kulisse 'Leinen & Licht' und den sechsten Ort 'Dein eigener Ort' gibt es kein Bild – beide Karten sind bewusst reine Textkarten.",
+  "Netzwerk, Sara und Emanuela sind mobil nicht gebaut, sie gehen nicht online."
+ ]
+}

@@ -1,0 +1,70 @@
+---
+/**
+ * FotoStory — randabfallende Dreier-Bildkollage mit Überlappung.
+ * Desktop (≥1024 px): volle Fensterbreite, Bild 2 überlappt Bild 1 und 3.
+ * Mobil: untereinander, volle Breite, keine Überlappung.
+ * Positionswerte und Seitenverhältnisse: spec/SPEC.md § "Bildreihe randabfallend".
+ */
+import BildPicture from './BildPicture.astro';
+import bilderRaw from '../../spec/bilder.json';
+
+interface Props {
+  id1: string; // links, zuunterst (z 1)
+  id2: string; // mitte, überlappt (z 2)
+  id3: string; // rechts, zuoberst (z 3)
+}
+const { id1, id2, id3 } = Astro.props;
+
+type Entry = { id: string; anzeige: { breite: number; hoehe: number }; aktiv?: boolean };
+const bilder = bilderRaw.bilder as Entry[];
+function ar(id: string): number {
+  const b = bilder.find(e => e.id === id);
+  return b ? b.anzeige.hoehe / b.anzeige.breite : 1;
+}
+
+// Alle Masse in vw (Containerbreite = 100 vw)
+const W1 = 33.5, W2 = 40.5, W3 = 33.5;
+const T1 = 0,    T2 = 21,    T3 = 3;
+const H1 = W1 * ar(id1);
+const H2 = W2 * ar(id2);
+const H3 = W3 * ar(id3);
+const containerH = Math.max(T1 + H1, T2 + H2, T3 + H3);
+---
+
+<div class="fs-wrap" style={`--fs-h:${containerH.toFixed(2)}vw`}>
+  <div class="fs-1">
+    <BildPicture id={id1} class="block w-full h-auto" sizes="(max-width:1023px) 100vw, 33.5vw" />
+  </div>
+  <div class="fs-2">
+    <BildPicture id={id2} class="block w-full h-auto" sizes="(max-width:1023px) 100vw, 40.5vw" />
+  </div>
+  <div class="fs-3">
+    <BildPicture id={id3} class="block w-full h-auto" sizes="(max-width:1023px) 100vw, 33.5vw" />
+  </div>
+</div>
+
+<style>
+  /* ── Mobil: Bilder untereinander, volle Breite ── */
+  .fs-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* ── Desktop: randabfallend mit Überlappung ── */
+  @media (min-width: 1024px) {
+    .fs-wrap {
+      position: relative;
+      width: 100vw;
+      margin-inline: calc(50% - 50vw);
+      height: var(--fs-h);
+      display: block;
+    }
+    .fs-1, .fs-2, .fs-3 {
+      position: absolute;
+    }
+    .fs-1 { left: 0;      top: 0;     width: 33.5vw; z-index: 1; }
+    .fs-2 { left: 29.7vw; top: 21vw;  width: 40.5vw; z-index: 2; }
+    .fs-3 { right: 0;     top: 3vw;   width: 33.5vw; z-index: 3; }
+  }
+</style>

@@ -1,0 +1,18 @@
+{
+  "seite": "Simona",
+  "figmaNode": "85:1705",
+  "abschnitte": [
+    {
+      "id": "foto-story",
+      "name": "Foto-Story",
+      "figmaNode": "2212:3235",
+      "typ": "bildreihe-randabfallend",
+      "hintergrund": "dark",
+      "bilder": {
+        "slot1": "simona-fotostory-01",
+        "slot2": "simona-fotostory-02",
+        "slot3": "simona-fotostory-03"
+      }
+    }
+  ]
+}

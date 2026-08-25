@@ -1,0 +1,33 @@
+{
+  "_hinweis": "Einzige Wahrheitsquelle für alle QR-Codes. Nach jeder Änderung 'python3 qr/build.py' laufen lassen.",
+
+  "base_url": "https://www.serawild.com",
+
+  "farben": {
+    "vordergrund": "#2F322D",
+    "hintergrund": "#F5F3ED"
+  },
+
+  "fehlerkorrektur": "Q",
+
+  "codes": [
+    {
+      "slug": "flyer",
+      "ziel": "/w-erlaebnis/",
+      "kampagne": "flyer-a6-2026",
+      "notiz": "Flyer A6, Auflage 200, Sommer 2026"
+    },
+    {
+      "slug": "visitenkarte",
+      "ziel": "/kontakt/",
+      "kampagne": "visitenkarte-2026",
+      "notiz": "Rückseite Visitenkarte"
+    },
+    {
+      "slug": "messe",
+      "ziel": "/geschichten/",
+      "kampagne": "hochzeitsmesse",
+      "notiz": "Aufsteller am Messestand"
+    }
+  ]
+}

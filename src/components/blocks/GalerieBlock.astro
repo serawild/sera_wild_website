@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Button from '../Button.astro';
+
+interface Props {
+  title: string;
+  images: { src: ImageMetadata; alt: string }[];
+  ctaText: string;
+  ctaHref: string;
+  bg?: 'cream' | 'dark';
+}
+
+const { title, images, ctaText, ctaHref, bg = 'cream' } = Astro.props;
+const isDark = bg === 'dark';
+const bgClass = isDark ? 'bg-dark' : 'bg-cream';
+const titleColor = isDark ? 'text-cream' : 'text-dark';
+const arrowColor = isDark ? 'text-cream hover:text-beige' : 'text-dark hover:text-olive';
+const btnVariant: 'rust' | 'beige' = isDark ? 'beige' : 'rust';
+const uid = `galerie-${Math.random().toString(36).slice(2, 7)}`;
+---
+
+<section class:list={['py-xl', bgClass]} data-galerie={uid}>
+  <div class="mx-auto px-sm text-center md:px-lg">
+    <h2 class:list={['text-center font-display text-h2 font-semibold', titleColor]}>{title}</h2>
+  </div>
+
+  <div class="relative mt-lg">
+    <button
+      data-galerie-prev
+      aria-label="Vorheriges Bild"
+      class:list={['absolute left-2 top-1/2 z-10 -translate-y-1/2 text-5xl leading-none transition-colors md:left-sm', arrowColor]}
+    >
+      ‹
+    </button>
+
+    <div class="overflow-hidden" data-galerie-viewport>
+      <div
+        class="flex transition-transform duration-500 ease-in-out"
+        data-galerie-track
+        style="gap: 4px"
+      >
+        {images.map((img) => (
+          <div class="shrink-0" style="width: calc(100% / 3 - 3px)" data-galerie-slide>
+            <Image
+              src={img.src}
+              alt={img.alt}
+              widths={[400, 700, 1000]}
+              sizes="33vw"
+              class="aspect-[5/6] w-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <button
+      data-galerie-next
+      aria-label="Nächstes Bild"
+      class:list={['absolute right-2 top-1/2 z-10 -translate-y-1/2 text-5xl leading-none transition-colors md:right-sm', arrowColor]}
+    >
+      ›
+    </button>
+  </div>
+
+  <div class="mt-lg text-center">
+    <Button href={ctaHref} variant={btnVariant}>{ctaText}</Button>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-galerie]').forEach((section) => {
+    const track = section.querySelector<HTMLElement>('[data-galerie-track]')!;
+    const slides = section.querySelectorAll<HTMLElement>('[data-galerie-slide]');
+    const prev = section.querySelector<HTMLButtonElement>('[data-galerie-prev]')!;
+    const next = section.querySelector<HTMLButtonElement>('[data-galerie-next]')!;
+
+    const visible = 3;
+    let current = 0;
+    const max = Math.max(0, slides.length - visible);
+
+    function update() {
+      const slideWidth = slides[0]?.offsetWidth ?? 0;
+      const gap = 4;
+      track.style.transform = `translateX(-${current * (slideWidth + gap)}px)`;
+      prev.disabled = current === 0;
+      next.disabled = current >= max;
+      prev.style.opacity = current === 0 ? '0.3' : '1';
+      next.style.opacity = current >= max ? '0.3' : '1';
+    }
+
+    prev.addEventListener('click', () => { current = Math.max(0, current - 1); update(); });
+    next.addEventListener('click', () => { current = Math.min(max, current + 1); update(); });
+
+    update();
+    window.addEventListener('resize', update);
+  });
+</script>

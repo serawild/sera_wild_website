@@ -1,0 +1,59 @@
+---
+const rawPath = Astro.url.pathname;
+const pathname = rawPath === '/' ? '/' : rawPath.replace(/\/$/, '');
+
+const ziele = [
+  { label: 'Start',       href: '/',            match: '/' },
+  { label: 'Angebot',     href: '/w-erlaebnis', match: '/w-erlaebnis' },
+  { label: 'Geschichten', href: '/geschichten',  match: '/geschichten' },
+  { label: 'Kontakt',     href: '/kontakt',      match: '/kontakt' },
+];
+
+function aktiv(match: string): boolean {
+  if (match === '/') return pathname === '/';
+  return pathname === match || pathname.startsWith(match + '/');
+}
+---
+
+<nav
+  aria-label="Mobile Navigation"
+  class="md:hidden fixed bottom-0 inset-x-0 z-50 flex h-[82px] items-center justify-around bg-dark px-6"
+>
+  {ziele.map(({ label, href, match }) => (
+    <a
+      href={href}
+      aria-current={aktiv(match) ? 'page' : undefined}
+      class:list={[
+        'flex flex-col items-center gap-[5px] font-body text-[0.625rem] uppercase tracking-[0.1em] transition-colors',
+        aktiv(match) ? 'text-orange' : 'text-cream/70',
+      ]}
+    >
+      {match === '/' && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[22px] w-[22px]" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12L11.204 3.045a1.125 1.125 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+      )}
+      {match === '/w-erlaebnis' && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[22px] w-[22px]" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+        </svg>
+      )}
+      {match === '/geschichten' && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[22px] w-[22px]" aria-hidden="true">
+          <rect x="3" y="5" width="9" height="14" rx="0.5" stroke-linejoin="round"/>
+          <rect x="12" y="5" width="9" height="14" rx="0.5" stroke-linejoin="round"/>
+          <line x1="14" y1="9"  x2="19" y2="9"  stroke-linecap="round"/>
+          <line x1="14" y1="12" x2="19" y2="12" stroke-linecap="round"/>
+          <line x1="14" y1="15" x2="19" y2="15" stroke-linecap="round"/>
+        </svg>
+      )}
+      {match === '/kontakt' && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-[22px] w-[22px]" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+        </svg>
+      )}
+      {label}
+    </a>
+  ))}
+</nav>
