@@ -80,7 +80,8 @@
   "M2.1_Scheune": {
    "figma": "2668:12",
    "hoehe": 5167,
-   "route": "/scheune"
+   "route": "/w-momaent",
+   "hinweis": "Figma-Rahmen heisst noch M2.1_Scheune — Angebot wurde zu W-Momänt umbenannt."
   },
   "M3_Geschichten": {
    "figma": "2669:13",
@@ -279,7 +280,7 @@
    ]
   },
   "M2.1_Scheune": {
-   "desktopDatei": "src/pages/scheune.astro",
+   "desktopDatei": "src/pages/w-momaent.astro",
    "liste": [
     {
      "name": "Hero",

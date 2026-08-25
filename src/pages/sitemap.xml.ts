@@ -12,7 +12,7 @@ import type { APIRoute } from 'astro';
 const seiten: { pfad: string; prioritaet: string }[] = [
   { pfad: '/', prioritaet: '1.0' },
   { pfad: '/w-erlaebnis', prioritaet: '0.9' },
-  { pfad: '/scheune', prioritaet: '0.8' },
+  { pfad: '/w-momaent', prioritaet: '0.8' },
   { pfad: '/geschichten', prioritaet: '0.8' },
   { pfad: '/geschichten/simona', prioritaet: '0.7' },
   { pfad: '/ueber', prioritaet: '0.7' },

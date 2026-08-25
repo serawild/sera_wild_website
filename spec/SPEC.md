@@ -24,7 +24,7 @@ Figma-File-Key `L1sORBHNF7ohDq9DXjruRm`, Seite **Desktop | Designs**.
 |---|---|---|---|
 | 1_Startseite | `13:285` | `index.html` | — |
 | 2_Erläbnis | `45:932` | `w-erlaebnis.html` | Angebot |
-| 2.1_Scheune | `2018:1202` | `scheune.html` | — |
+| 2.1_Scheune | `2018:1202` | `w-momaent.html` | Angebot (W-Momänt) |
 | 3_Geschichten | `85:1428` | `geschichten.html` | Geschichten |
 | 4_Simona | `85:1705` | `geschichten/simona.html` | — |
 | 5_Über | `2013:854` | `ueber.html` | Sera Wild |
@@ -41,7 +41,7 @@ Exakt die Ebenenreihenfolge im jeweiligen Figma-Frame, von oben nach unten.
 
 - **index** — Hero Startseite · Über mich · Erläbnis · Authentizität · Angebot · Galerie/Geschichten · Geschichten (gespiegelt) · Referenzen · Kontakt-Teaser · Footer
 - **w-erlaebnis** — Hero · Begegnung · Das W · Wonach wir suchen · Angebot · Timeline · Zitat · Orte · Verweis Simona · richtig · CTA Banner · FAQ · Footer
-- **scheune** — Hero · Raum mit Geschichte · Zitat · Kulissen · Pakete · neugier · Verweis zurück · Footer
+- **w-momaent** — Hero · Raum mit Geschichte · Zitat · Kulissen · Pakete · neugier · Verweis zurück · Footer
 - **geschichten** — Hero · Foto-Story 2 · Authentizität · Angebot · Kundenstory Collage · Zitat · Kontakt-Teaser · Footer
 - **geschichten/simona** — Hero · Geschichte Oben · Foto-Story · Geschichte Unten · Collage · Zitat · Footer *(Weiter-Button entfällt)*
 - **ueber** — Hero · Fakten · Geschichte Seraina · Geschichte Seraina unten · Zitat · Echtes Portrait · Kontakt-Teaser · Footer

@@ -59,7 +59,7 @@ Der Entwurf liegt in Figma, File-Key `L1sORBHNF7ohDq9DXjruRm`, Seite **Desktop |
 |---|---|---|
 | Startseite | `index.astro` | `13:285` |
 | W-Erläbnis | `w-erlaebnis.astro` | `45:932` |
-| Scheune | `scheune.astro` | `2018:1202` |
+| W-Momänt | `w-momaent.astro` | `2018:1202` |
 | Geschichten | `geschichten.astro` | `85:1428` |
 | Simona | `geschichten/simona.astro` | `85:1705` |
 | Über | `ueber.astro` | `2013:854` |
@@ -79,7 +79,7 @@ Hero `2259:653` · Foto-Story 2 `2166:129` · Authentizität `2264:3270` · Ange
 **geschichten/simona** `85:1705`
 Hero `2260:679` · Geschichte Oben `2260:661` · Foto-Story `2212:3235` · Geschichte Unten `2260:666` · Collage `2394:958` · Zitat `2260:673` · Weiter-Button `2397:932` (entfällt) · Footer `85:1987`
 
-**scheune** `2018:1202`
+**w-momaent** `2018:1202` *(Figma-Rahmen: M2.1_Scheune)*
 Hero `2257:624` · Raum mit Geschichte `2257:547` · Zitat `2442:1310` · Kulissen `2257:554` · Pakete `2257:579` · neugier `2257:606` · Verweis zurück `2339:919` · Footer `2018:1272`
 
 **index** `13:285`
