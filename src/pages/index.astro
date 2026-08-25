@@ -22,16 +22,22 @@ const W_PATH =
 
 const referenzen = [
   {
-    id: 'referenz-simona',
-    name: 'SIMONA',
+    id: 'referenz-patricia',
+    name: 'PATRICIA',
     zitat:
-      'Ich habe mich gesehen, gehalten, ernst genommen und frei gefühlt. Man merkt, dass du nicht nur Bilder machst, sondern Räume öffnest, in denen etwas entstehen darf.',
+      'Ich bin wirklich begeistert was für tolle Fotos Seraina gezaubert hat! Sie ist voll auf meine Ideen eingegangen und hat sie noch mit ihrer inspirierenden Art «auf der Jagd nach dem schönsten Bild» optimiert! Seraina hat mich mit ihrer Art und ihrer Begeisterung sehr inspiriert. Ich konnte davon Einiges für mein Leben und meinen Weg mitnehmen.',
   },
   {
     id: 'referenz-ivor',
     name: 'IVOR',
     zitat:
       'Die Session bei Seraina ist unkompliziert und kurzweilig, geht aber gerade dadurch in die Tiefe. Man erhält nicht nur tolle Bilder, sondern introspektive Einblicke. Sehr empfehlenswert.',
+  },
+  {
+    id: 'referenz-simona',
+    name: 'SIMONA',
+    zitat:
+      'Ich habe mich gesehen, gehalten, ernst genommen und frei gefühlt. Man merkt, dass du nicht nur Bilder machst, sondern Räume öffnest, in denen etwas entstehen darf.',
   },
   {
     id: 'referenz-beatrice',
@@ -537,9 +543,9 @@ const kontaktFN   = 'Die Antwort kommt von mir persönlich, nicht aus einer Vorl
         {referenzenH2}
       </h2>
 
-      <div class="flex gap-[2rem]" style="width:75rem">
+      <div class="grid grid-cols-2 gap-[2rem]" style="width:75rem">
         {referenzen.map(({ id, name, zitat }) => (
-          <div class="flex min-w-0 flex-1 flex-col items-center justify-center gap-[1.5rem] overflow-hidden rounded-[1rem] px-[2.5rem] py-[3rem]" style="background:rgba(255,255,255,0.85)">
+          <div class="flex min-w-0 h-full flex-col items-center justify-center gap-[1.5rem] overflow-hidden rounded-[1rem] px-[2.5rem] py-[3rem]" style="background:rgba(255,255,255,0.85)">
             <div class="relative shrink-0 overflow-hidden rounded-full" style="width:5rem;height:5rem">
               <BildPicture id={id} class="absolute inset-0 h-full w-full object-cover" widths={[80, 160]} sizes="5rem" />
             </div>

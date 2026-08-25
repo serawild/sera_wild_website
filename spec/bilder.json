@@ -216,6 +216,26 @@
    "deckungsfaktor": 8.0
   },
   {
+   "id": "referenz-patricia",
+   "figmaEbene": "referenz-patricia.jpg",
+   "baustein": "Referenzen",
+   "seite": "Startseite",
+   "anzeige": {
+    "breite": 80,
+    "hoehe": 80
+   },
+   "verhaeltnis": "1 : 1",
+   "ausrichtung": "quadratisch",
+   "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+   "aktiv": true,
+   "datei": "src/assets/images/Quadrat/referenz-patricia.jpg",
+   "dateiMasse": {
+    "breite": 640,
+    "hoehe": 640
+   },
+   "deckungsfaktor": 8.0
+  },
+  {
    "id": "galerie-geschichten-01",
    "figmaEbene": "galerie-geschichten-01.jpg",
    "baustein": "Galerie / Geschichten",

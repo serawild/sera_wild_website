@@ -27,6 +27,7 @@ Seite: index.astro — Abschnitt: 04 Stimmen (Referenzen)
 - **referenz-simona** – kein dateiMobil vorhanden. Quadratbild mit object-fit cover auf 50×50 rund beschnitten. Kein Informationsverlust.
 - **referenz-ivor** – kein dateiMobil vorhanden. Wie oben.
 - **referenz-beatrice** – kein dateiMobil vorhanden. Wie oben.
+- **referenz-patricia** – kein dateiMobil vorhanden. Wie oben. ALT-Text in bilder.json fehlt noch.
 
 Seite: w-erlaebnis.astro — Abschnitt: 01 Begegnung
 - **begegnung-01** – kein dateiMobil vorhanden. Normale Datei (4:5 Portrait) mit object-fit cover auf 214×286 (3:4) beschnitten.
