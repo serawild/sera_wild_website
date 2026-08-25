@@ -59,6 +59,22 @@ Entwurfsbreite 1728, Inhalt 1488 zentriert, Seitenrand 120. Abschnitte laufen in
 .abschnitt > .inhalt { max-width: var(--inhalt); margin-inline: auto; }
 ```
 
+### Proportionale Skalierung
+
+Feste Pixelwerte führen dazu, dass auf schmaleren Bildschirmen alles zu gross wirkt — bei 1300 px Fenster ist ein 32-px-Text ein Drittel grösser im Verhältnis zur Breite als im Entwurf.
+
+Deshalb: alle Grössen in `rem`, und die Wurzelschriftgrösse an die Fensterbreite koppeln.
+
+```css
+html { font-size: clamp(12px, 0.926vw, 16px); }
+```
+
+`0.926vw` ist `16 / 1728`. Bei 1728 px Fenster ergibt das exakt 16 px, alle Figma-Werte stimmen 1:1. Darunter schrumpft die Seite proportional mit. Unter 1024 px die Skalierung stoppen (`font-size: 16px`) und auf die Mobile-Schriftskala wechseln.
+
+### Vertikale Abstände
+
+Abschnitte haben oben und unten je **80 px** Innenabstand, also 160 px zwischen zwei Blöcken. Ausnahmen: Das W und Wonach wir suchen 96, Verweis 77, Video und Collage 88, Angebot Startseite 80/112. Die Heros sind davon ausgenommen — dort steuert der Innenabstand die Bildkomposition.
+
 ---
 
 ## 3. Farben
@@ -157,16 +173,9 @@ Das Verhältnis der Datei stimmt nicht immer exakt mit dem Platz überein. `obje
 
 ### AVIF und Rückfallebene
 
-Alle Bilder sind AVIF. Safari unterstützt das erst ab 16.4, deshalb pro Bild ein `<picture>`:
+Alle Bilder sind AVIF. Safari unterstützt das erst ab 16.4, es braucht also eine Rückfallebene in WebP.
 
-```html
-<picture>
-  <source srcset="assets/images/Galerie_3-2/orte-aare.avif" type="image/avif">
-  <img src="assets/images/webp/orte-aare.webp" alt="" width="469" height="300" loading="lazy">
-</picture>
-```
-
-WebP-Dateien aus den AVIF erzeugen, nach `assets/images/webp/`. Zusätzlich kleinere Varianten mit 640 und 1024 px langer Kante und über `srcset` mit `sizes` anbieten — sonst lädt ein Handy ein 1800-Pixel-Bild für einen 350 Pixel breiten Platz.
+Mit Astro erledigt das der Build: `<Picture>` aus `astro:assets` mit `formats={['avif','webp']}` und passenden `widths`. Kein manueller Ordner, kein Konvertierungs-Script.
 
 **Hero-Bilder:** kein `loading="lazy"`, stattdessen `fetchpriority="high"`.
 
@@ -187,12 +196,18 @@ Vier Motive als SVG in `spec/illustrationen/`: `mohn.svg`, `tulpe.svg`, `blattzw
 | Hell / Hell-warm | `--hellgruen`, teils `--hellorange` |
 | Hellgrün | `--beige` |
 
-Position, Grösse, Drehung und Farbe stehen in Figma. Jede Illustration ist ein absolut positioniertes Element direkt im Seitenrahmen, benannt `Deko – …`.
+Position, Grösse, Drehung und Farbe stehen in `spec/deko.json` (alleinige Wahrheit).
 
-- Sie liegen **über** den Abschnitten, nicht darin. Viele überlappen eine Abschnittskante — das ist der Zweck.
+### Einbauregeln (verbindlich)
+
+- **Hinterste Ebene:** Die Illustration liegt hinter Text und hinter Bildern. `z-index: -1` auf dem Element.
+- **Stapelkontext:** Der Elternabschnitt muss einen Stapelkontext bilden (`isolation: isolate` oder `z-index` gesetzt), damit `z-index: -1` nicht unter den Seitenhintergrund fällt. Tailwind-Klasse `isolate` reicht.
+- **Nie über Bildflächen.** Darf hinter Text liegen (dort gehört sie in die hinterste Ebene). Wenn sie über einem Bild liegt, ist die Position falsch — nicht die Regel anpassen.
+- **cssRotate direkt verwenden** (Feld aus deko.json, bereits für CSS umgerechnet). Nicht `drehung` — sonst kippen alle in die falsche Richtung.
+- **Alle Pixelwerte ÷ 16 = rem**, damit sie mit der Seite mitskalieren.
+- **SVG inline** im HTML — `fill="currentColor"` greift nur so. Kein `<img>`.
 - Dekoration: `aria-hidden="true"`, `pointer-events: none`.
 - Sie dürfen aus dem Bild laufen. Seitencontainer braucht `overflow-x: hidden`.
-- Sie liegen **nie** über Text oder Bild. Passiert das beim Nachbauen, ist die Position falsch.
 - **Unter 768 px Fensterbreite alle ausblenden.** Auf dem Handy fehlt der Rand.
 
 ---
@@ -232,7 +247,39 @@ Je Bausteintyp:
 
 ---
 
-## 9. Technik und Deploy
+## 9. Bildreihe randabfallend
+
+Drei Bilder füllen gemeinsam die volle Fensterbreite. Das linke liegt bündig am linken Rand, das rechte bündig am rechten. Das mittlere überlappt beide Nachbarn und ist nach unten versetzt.
+
+**Slot-Positionen** (in % der Containerbreite = 100 vw):
+
+| Slot | Breite | Links  | Oben | z-index |
+|------|--------|--------|------|---------|
+| 1 (links)  | 33.5 vw | 0       | 0 vw  | 1 |
+| 2 (mitte)  | 40.5 vw | 29.7 vw | 21 vw | 2 |
+| 3 (rechts) | 33.5 vw | auto (right: 0) | 3 vw | 3 |
+
+Überlappung beider Seiten: je ≈ 4 % der Containerbreite.
+
+**Containerbreite:** `width: 100vw; margin-inline: calc(50% - 50vw)` — bricht aus dem zentrierten Inhaltscontainer aus. `body { overflow-x: hidden }` verhindert waagrechte Bildlaufleiste (bereits in `global.css`).
+
+**Containerhöhe:** Berechnet im Frontmatter von `FotoStory.astro` aus den Seitenverhältnissen in `bilder.json`, übergeben als CSS-Variable `--fs-h`. Formel: `max(H1 + T1, H2 + T2, H3 + T3)` mit H = Breite × (Bildhöhe / Bildbreite).
+
+**Bildgrössen** (anzeige aus `bilder.json`):
+- Slot 1 & 3: Hochformat, Anzeige 580 × 650 bzw. 580 × 630
+- Slot 2: Querformat, Anzeige 700 × 470
+
+**Mobil (< 1024 px):** Bilder untereinander, volle Breite, kein Versatz, keine Überlappung.
+
+**Komponente:** `src/components/FotoStory.astro` — nimmt Props `id1`, `id2`, `id3` aus `bilder.json`.
+
+**Einsatz:**
+- `src/pages/geschichten/simona.astro` → `simona-fotostory-01`, `-02`, `-03`
+- `src/pages/geschichten.astro` → `geschichten-fotostory-01`, `-02`, `-03`
+
+---
+
+## 10. Technik und Deploy
 
 - GitHub Pages, Domain über Hostpoint.
 - `.nojekyll` im Wurzelverzeichnis.
@@ -244,7 +291,10 @@ Je Bausteintyp:
 
 ## 10. Offen vor dem Livegang
 
-1. **ALT-Texte** fehlen für alle Bilder.
-2. **`authentizitaet-01`** fehlt als Datei, Platz ist hoch 406 × 489.
-3. **`hero-ueber.mp4`** wiegt 47 MB. Auf 3 bis 5 MB bringen, plus Standbild als Poster. Bis dahin auf Über das Standbild statt des Videos.
-4. **Referenzen** laufen unter echten Namen. Einverständnis der drei einholen.
+1. ~~**ALT-Texte** fehlen für alle Bilder.~~ **Erledigt.** Alle 72 aktiven Bilder haben ein gefülltes `alt`-Feld in `bilder.json`. Sie beschreiben, was zu sehen ist, nicht was es bedeutet. Bei Referenzen und bei Seraina selbst steht der Name im Text, weil er daneben angezeigt wird. Die 48 inaktiven Einträge bleiben leer — sie gehören zu Netzwerk, Sara und Emanuela.
+2. ~~**`hero-ueber.mp4`** wiegt 47 MB.~~ **Erledigt.** Neu geschnitten und komprimiert: 6,08 s, 1728 × 1118, 24 fps, ohne Tonspur. `public/video/hero-ueber.mp4` 4,23 MB, `hero-ueber.webm` 5,07 MB, `hero-ueber-poster.jpg` als Poster. Einbindung mit `autoplay muted loop playsinline poster aria-hidden`; bei `prefers-reduced-motion` nur das Poster zeigen. Angaben stehen in `bilder.json` unter `hero-ueber` im Feld `video`.
+3. ~~**Referenzen** laufen unter echten Namen.~~ **Erledigt.** Die Zitate von Simona, Ivor und Beatrice sind echt und liegen freigegeben per WhatsApp vor.
+4. ~~**Herz-Icon** in Figma war die alte Fassung mit zwei Kreisen.~~ **Erledigt.** In Figma durch `spec/icons/herz.svg` ersetzt, Strichfarbe und -stärke vom Kamera-Icon übernommen.
+
+Alle 72 Bilder für die zehn Seiten sind vorhanden und geprüft.
+FAQ ist im Entwurf offen dargestellt, im Code bewusst zugeklappt. Das ist kein Abweichungsfehler.

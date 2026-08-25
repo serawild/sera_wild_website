@@ -1,347 +1,97 @@
-# CLAUDE.md — sera wild
+# Sera Wild — Website
 
-Projektleitfaden für Claude Code. Diese Datei beschreibt Zweck, Tech-Stack,
-Konventionen und Workflows der Website. Bei Unklarheiten oder Abweichungen:
-nachfragen, statt raten.
+Diese Datei wird bei jedem Start gelesen. Sie gilt immer, auch nach `/clear`.
 
----
+## Was hier gebaut wird
 
-## 1. Projektüberblick
+Die Website von Sera Wild, prozessorientierte Fotografie. Astro mit Tailwind, Ziel ist GitHub Pages.
 
-- **Was**: Website für **sera Wild** — Einzelfirma für **prozessorientierte
-  Fotografie** (Schweiz). Claim laut Branding: „prozessorientierte Fotografie".
-- **Charakter**: Portfolio + Journal/Blog. Überwiegend statisch, inhaltsfokussiert.
-  Bildstark — Fotografie steht im Zentrum, daher hoher Anspruch an Bildqualität
-  und -performance.
-- **Ziel**: Arbeiten (Kunden-„Geschichten") präsentieren, über die Firma
-  informieren, Kontaktmöglichkeit bieten. Storytelling steht im Zentrum.
-- **Zielpublikum**: Potenzielle Kund:innen (D-A-CH + international).
+Der Entwurf liegt in Figma, File-Key `L1sORBHNF7ohDq9DXjruRm`, Seite **Desktop | Designs**. Das Figma-File wurde vollständig auf Auto Layout umgebaut — Abschnitte sind vertikale Auto-Layout-Rahmen, ihre Innereien horizontale oder vertikale Rahmen mit Abständen. Das lässt sich fast eins zu eins in Flexbox übersetzen.
 
-### Sitemap / Informationsarchitektur
-Aus Figma (node `55:1467`). Vier Hauptbereiche + Story-Detailseiten. Bestimmt
-Navigation und Routing (je unter `/de/…` und `/en/…`):
+## Die sechs Regeln
 
-```
-Startseite (serawild.com)
-├── Angebot
-│     W-Erlebnis · Fotoshooting · FAQs · Ablauf · Stimmen über Workshop
-│     · „Du bist die richtige, wenn…" · Kontakt-CTA · passende Story
-├── Geschichten                          ← Portfolio-/Story-Übersicht
-│     Portfolio · Kundenstimmen
-│     └── Einzelne Geschichte            ← Detailseite (Content Collection)
-│           Storytelling · Ausgangslage · Herausforderung · Lösung
-│           · Verlinkung Kunde
-├── Sera Wild (Über)
-│     Deine Werte · Mission · Vision · Geschichte · „Was macht dich aus"
-│     · Partnerschaften · Stimmen über dich · Verlinkung Kontakt
-└── Kontakt
-      „Wo bist du zu Hause" · Kontaktdaten · Stimmen · Story-Cross-Link
-```
+1. **Bilder nie aus Figma exportieren.** In Figma liegen nur Platzhalter. Die echten Dateien liegen im Repo. Die Zuordnung steht in `spec/bilder.json`: Das Feld `figmaEbene` nennt den Ebenennamen in Figma, das Feld `datei` den Pfad. Trifft der Code auf eine Ebene `orte-aare.jpg`, wird die Datei aus `datei` eingesetzt.
 
-- **Haupt-Navigation** (4 Punkte): Angebot · Geschichten · Sera Wild · Kontakt.
-- **Einzige Content Collection**: `geschichten` (die Story-Detailseiten). Angebot,
-  Sera Wild und Kontakt sind weitgehend statische Seiten mit festen Abschnitten.
-- Wiederkehrende Bausteine: **Stimmen/Testimonials** und **Cross-Links** (Story ↔
-  Angebot ↔ Kontakt) tauchen mehrfach auf → als wiederverwendbare Komponenten bauen.
+2. **Texte wörtlich aus Figma.** Nichts umformulieren, nichts ergänzen, nichts erfinden. Keine Platzhaltertexte, keine Blindtexte.
 
----
+3. **Nicht raten.** Wenn etwas unklar ist: in `OFFEN.md` notieren mit Seite, Abschnitt, Node-ID und Frage — und mit der naheliegenden Lösung weiterbauen. Nicht stehenbleiben, aber auch nicht so tun, als wäre es geklärt.
 
-## 2. Tech-Stack
+4. **Ein Abschnitt pro Arbeitsschritt.** Nicht eine ganze Seite auf einmal. Nach jedem Abschnitt kurz melden, was gebaut wurde.
 
-| Bereich        | Wahl                                    |
-| -------------- | --------------------------------------- |
-| Framework      | **Astro** (statische Ausgabe, `output: 'static'`) |
-| Sprache        | **TypeScript** (strict)                 |
-| Styling        | **Tailwind CSS** (Design-Tokens aus Figma) |
-| Inhalte        | **Markdown/MDX** via Astro Content Collections |
-| Bilder         | `astro:assets` (automatische Optimierung, WebP/AVIF) |
-| i18n           | Astro-i18n-Routing, **Deutsch + Englisch** |
-| Formatierung   | **Prettier** (+ `prettier-plugin-astro`, `prettier-plugin-tailwindcss`) |
-| Linting/Checks | **ESLint** + `astro check` (TypeScript-Prüfung) |
-| Hosting        | **GitHub Pages** via GitHub Actions     |
-| Domain         | **serawild.com** (eigene Domain, CNAME) |
-| Kontakt        | Nur E-Mail / Social — **kein Formular** |
+5. **`src/pages/kontakt.astro` ist der Massstab.** Diese Seite ist freigegeben. Abstände, Containerbreiten, Typo-Klassen und die Art, wie Bilder eingebunden sind, kommen von dort.
 
-**Bewusst NICHT im Stack** (weil statisch gehostet): kein SSR, keine
-Server-Functions, kein CMS, keine Datenbank. Falls später serverseitige Logik
-nötig wird (z.B. echtes Kontaktformular mit eigener Verarbeitung), zuerst
-Hosting-Wechsel (Vercel/Netlify) oder externen Dienst besprechen.
+6. **Drei Seiten gehen nicht online:** Netzwerk, Sara, Emanuela. Nicht bauen, nicht verlinken, nicht in die Sitemap. Auch der Button „Nächste Geschichte" am Ende von `geschichten/simona` entfällt.
 
----
+## Wo was steht
 
-## 3. Projektstruktur
+| Datei | Inhalt |
+|---|---|
+| `spec/SPEC.md` | Farben, Schriftskala, Raster, Umbruchregeln, Barrierefreiheit |
+| `spec/bilder.json` | Zuordnung Figma-Ebene → Bilddatei, mit Anzeigegrösse, Seitenverhältnis und ALT-Text |
+| `spec/deko.json` | Positionen aller Illustrationen, relativ zu ihrem Abschnitt, plus Bild- und Wortmarke |
+| `spec/seiten/*.json` | Aufbau je Seite: Abschnitte, Layout, Texte, Bildplätze |
+| `spec/mobil.json` | Aufbau der mobilen Seiten: Raster, Bausteine, Abschnitte je Seite, Deko |
+| `spec/illustrationen/` | Die vier Motive als SVG, `fill="currentColor"` |
+| `spec/icons/` | Die fünf Icons für den Fakten-Abschnitt, `stroke="currentColor"` |
+| `spec/marken/` | Die Bildmarke W als SVG |
+| `public/video/` | Hero-Video für die Über-Seite, MP4 und WebM plus Poster |
+| `OFFEN.md` | Offene Fragen und bewusst Weggelassenes |
 
-```
-src/
-  pages/
-    de/            # deutschsprachige Seiten
-    en/            # englischsprachige Seiten
-  content/
-    geschichten/   # Kunden-Geschichten / Story-Detailseiten (Content Collection, MD/MDX)
-    config.ts      # Collection-Schemas (zod)
-  components/      # Astro-/UI-Komponenten (PascalCase)
-  layouts/         # Seiten-Layouts
-  styles/          # globale Styles, Tailwind-Base
-  i18n/            # Übersetzungs-Strings & Helfer
-  assets/          # in den Build importierte Bilder/SVGs
-public/            # statische Dateien 1:1 (Favicon, CNAME, robots.txt)
-assets/            # QUELL-Brandmaterial (Logos, Fonts, Illustrationen) — NICHT der Build-Ordner
-astro.config.mjs
-tailwind.config.ts
-```
+## Was seit dem letzten Stand dazugekommen ist
 
-Hinweis: Der bestehende Ordner `assets/` (Grossbuchstaben-Unterordner: `Logos`,
-`Markenelement`, `Schriften`) enthält die **Quelldateien** des Brandings. Für die
-Website verwendete Assets werden bewusst nach `src/assets/` bzw. `public/`
-übernommen (nicht der ganze Ordner ausgeliefert).
+**ALT-Texte** stehen für alle 72 aktiven Bilder in `bilder.json`. Nicht selber erfinden, immer von dort nehmen.
 
----
+**Der Hero auf Über ist ein Video**, kein Bild. Angaben im Eintrag `hero-ueber` unter `video`. Einbinden mit `autoplay muted loop playsinline` und `poster`; bei `prefers-reduced-motion` nur das Poster zeigen.
 
-## 4. Design-System / Brand
+**Das Angebot heisst nicht mehr „30–40 Bilder"**, sondern Bilderreise mit mindestens 40 Bildern, ohne Wasserzeichen, leicht bearbeitet in Licht, Farbe und Ausschnitt, mit leichter Hautretusche. Steht so in Figma — von dort übernehmen, nicht aus dem Gedächtnis.
 
-Verbindliche Design-Grundlage. Exakte Hex-Werte und Skalen kommen aus Figma
-(siehe §5) und werden in `tailwind.config.ts` als Tokens hinterlegt.
+**Die Wortmarke „W Erläbnis"** ersetzt zwei Überschriften: den Titel im Hero von W-Erläbnis und die Überschrift der Sektion Erläbnis auf der Startseite. Aufbau und Masse stehen in `deko.json` unter `marken`. Sie wird aus der Bildmarke plus echtem Text gebaut, nicht als Bild eingesetzt.
 
-### Farben (Markenpalette)
-Aus Figma ausgelesen (Datei „SeraWild | Website", File-Key
-`L1sORBHNF7ohDq9DXjruRm`; Styleguide-Farbseite node `85:146`). Die Gruppierung
-Primary/Secondary/Akzente stammt aus dem Styleguide; die Tailwind-Tokens sind
-die semantischen Namen für den Code.
+**Die mobile Fassung steht in Figma**, auf der Seite **Mobile | Designs**. Alle elf Rahmen sind gebaut: M0_Ladebild, M1_Startseite, M2_W-Erläbnis, M2.1_Scheune, M3_Geschichten, M3.1_Simona, M4_Über, M5_Kontakt, M6_Impressum, M7_Datenschutz, M8_AGB. Bezugsbreite 390 px. Raster, Bausteine und Abschnitte stehen in `spec/mobil.json` — von dort bauen, nicht aus Figma neu nachschlagen. Die sieben Hero-Bilder brauchen einen eigenen Hochformat-Ausschnitt, die Platzhalter heissen bereits `hero-*-hoch`.
 
-| Gruppe    | Tailwind-Token | Figma-Variable | Hex       | Verwendung                    |
-| --------- | -------------- | -------------- | --------- | ----------------------------- |
-| Primary   | `dark`         | 1 Dunkelgrün   | `#2F322D` | Text / dunkler Grund          |
-| Primary   | `cream`        | 6 Hell         | `#F5F3ED` | heller Grund / Off-White      |
-| Secondary | `olive`        | 2 Hellgrün     | `#5B5C4F` | gedämpftes Oliv, Sekundärfläche|
-| Secondary | `beige`        | 5 Beage        | `#A0886D` | warmes Beige/Taupe            |
-| Akzent    | `rust`         | 3 Rostorange   | `#983515` | Hauptakzent                   |
-| Akzent    | `orange`       | 4 Hellorange   | `#BC541F` | Hover / heller Akzent         |
-| —         | `white`        | —              | `#FFFFFF` | reines Weiss (keine Variable) |
+**Mobile Bilder — nie stehenbleiben.** Zu vielen Bildern gibt es eine zweite Datei mit dem Zusatz `-hoch`, im selben Ordner. Auf schmalen Bildschirmen wird diese genommen, sonst die normale. Fehlt die `-hoch`-Datei: die vorhandene per `object-fit: cover` auf das mobile Seitenverhältnis beschneiden und weiterbauen. Nicht nachfragen, nicht auslassen. Jedes so behandelte Bild in `OFFEN.md` eintragen mit Seite, Bild-ID und Soll-Verhältnis, damit Seraina es anschauen kann.
 
-### Typografie
-- **Primär (Headlines/Display)**: **Vollkorn** (Serif, Google Fonts), SemiBold (600)
-- **Sekundär (Fliesstext/UI)**: **Roboto** (Sans, Google Fonts), Regular (400)
-- Fonts self-hosted einbinden (Performance + DSGVO), nicht via Google-CDN.
-- **Skala aus Figma-Styleguide** (Grössen in px, Desktop & Mobile; für Web
-  rem-basiert umsetzen, responsiv per `clamp()` oder Breakpoint):
+**Illustrationen liegen nie über Text oder Bild.** Das ist in Figma gegen die Buchstabenumrisse geprüft, mit 10 px Mindestabstand. Wenn im Code etwas überlappt, stimmt die Umrechnung nicht — nicht die Vorlage.
 
-  | Stil               | Font / Style             | Desktop | Mobile | Extra              |
-  | ------------------ | ------------------------ | ------- | ------ | ------------------ |
-  | H1                 | Vollkorn SemiBold        | 80      | 44*    | *korrigiert (s.u.) |
-  | H2                 | Vollkorn SemiBold        | 56      | 40     | —                  |
-  | H3                 | Vollkorn SemiBold        | 40      | 28     | —                  |
-  | H4                 | Roboto Regular           | 28      | 16     | **unterstrichen**  |
-  | CTA                | Roboto Regular           | 28      | 24     | Letter-spacing 6 (Desktop) |
-  | Body               | Roboto Regular           | 32      | 20     | Line-height ≈200 % |
-  | Body Hervorgehoben | Vollkorn SemiBold Italic | 40      | 40     | Hervorhebung im Fliesstext |
-  | Small / Navigation | Roboto Regular           | 24      | 24     | u.a. Navigation    |
+## Seiten und Node-IDs
 
-  \* Korrektur (mit Seraina bestätigt): Im Figma steht Mobile-H1 = 36px und damit
-  kleiner als H2 (40px) — das ist ein Fehler. Im Code muss **H1 grösser als H2**
-  sein. Vorschlag: H1 mobile = **44px** (kann angepasst werden). Sobald das
-  Figma korrigiert ist, hier den finalen Wert übernehmen.
-  Referenz: `assets/Schriften/Typografie.pdf`.
+| Seite | Datei | Figma-Node |
+|---|---|---|
+| Startseite | `index.astro` | `13:285` |
+| W-Erläbnis | `w-erlaebnis.astro` | `45:932` |
+| Scheune | `scheune.astro` | `2018:1202` |
+| Geschichten | `geschichten.astro` | `85:1428` |
+| Simona | `geschichten/simona.astro` | `85:1705` |
+| Über | `ueber.astro` | `2013:854` |
+| Kontakt | `kontakt.astro` | `2021:367` — fertig, Referenz |
+| Impressum | `impressum.astro` | `2206:226` |
+| Datenschutz | `datenschutz.astro` | `2206:251` |
+| AGB | `agb.astro` | `2206:276` |
 
-### Spacing (Abstände)
-5-stufige Skala aus dem Figma-Styleguide, je Desktop/Mobile. Als Tailwind-
-Spacing-Tokens hinterlegen (responsiv umsetzen, z.B. `clamp()` oder `md:`):
+## Abschnitte je Seite
 
-| Token | Desktop | Mobile |
-| ----- | ------- | ------ |
-| `xs`  | 6       | 8      |
-| `sm`  | 16      | 20     |
-| `md`  | 40      | 40     |
-| `lg`  | 80      | 56     |
-| `xl`  | 200     | 100    |
+**ueber** `2013:854`
+Hero `2236:260` · Fakten `2286:775` · Geschichte Seraina `2246:273` · Geschichte Seraina unten `2246:278` · Zitat `2246:294` · Echtes Portrait `2246:287` · Kontakt-Teaser `2264:3433` · Footer `2013:924`
 
-(Grosszügige Abstände — v.a. `lg`/`xl` prägen den ruhigen, bildbetonten Look.)
+**geschichten** `85:1428`
+Hero `2259:653` · Foto-Story 2 `2166:129` · Authentizität `2264:3270` · Angebot `2264:3245` · Kundenstory Collage `2259:638` · Zitat `2348:977` · Kontakt-Teaser `2264:3425` · Footer `85:1498`
 
-### Logos & Markenelemente
-- **Logos**: `assets/Logos/` — Varianten `Bildmarke` (das „W"-Zeichen),
-  `Primary` (Wortmarke **mit** Claim „prozessorientierte Fotografie"),
-  `Secondary` (Wortmarke ohne Claim), `Icon`. Je in EPS/PNG/SVG und in den
-  Farbvarianten (Beige, Dark, Olivengrün, Rostorange, White). Für Web **SVG**;
-  auf dunklem Grund die helle Variante verwenden, auf hellem die dunkle.
-- **Markenelement**: `assets/Markenelement/` — 4 botanische Line-Art-
-  Illustrationen (01–04: Zweig, Tulpe, Eukalyptus, Mohn) in Dark/Rostorange/
-  White. Dekorative Akzente, sparsam einsetzen.
+**geschichten/simona** `85:1705`
+Hero `2260:679` · Geschichte Oben `2260:661` · Foto-Story `2212:3235` · Geschichte Unten `2260:666` · Collage `2394:958` · Zitat `2260:673` · Weiter-Button `2397:932` (entfällt) · Footer `85:1987`
 
-### Design-Quelle (Figma)
-- Datei „SeraWild | Website", File-Key `L1sORBHNF7ohDq9DXjruRm`.
-- Styleguide-Nodes: Farben `85:146`, Logo `85:147`, Bildmarke `85:472`,
-  Illustrationen `85:499`, Typo Mobile `85:699` / Desktop `85:532`,
-  Spacing Desktop `85:655` / Mobile `85:1075`.
-- Sitemap: node `55:1467`.
-- Seiten: `Elements` (Komponenten) und `Archiv` (fertige Seiten-Designs:
-  Startseite, Angebot/„Experience", Geschichten, Sera Wild/„Simona", Sitemap).
+**scheune** `2018:1202`
+Hero `2257:624` · Raum mit Geschichte `2257:547` · Zitat `2442:1310` · Kulissen `2257:554` · Pakete `2257:579` · neugier `2257:606` · Verweis zurück `2339:919` · Footer `2018:1272`
 
-### Verbindliche Design-Grundsätze (von Seraina festgelegt)
-Diese Regeln gelten für **jede** Seite/Komponente:
+**index** `13:285`
+Hero `2251:342` · Über mich `2251:370` · Erläbnis `2251:390` · Authentizität `2251:410` · Angebot `2251:435` · Galerie/Geschichten `2251:451` · Geschichten gespiegelt `2310:971` · Referenzen `2247:319` · Kontakt-Teaser `2251:495` · Footer `13:760`
 
-1. **Bilder**: **immer rechteckig** (keine abgerundeten Ecken). Der sichtbare
-   **Ausschnitt/Zoom** (object-position/scale) soll dem der Figma-Datei
-   entsprechen — Bilder so einzoomen, dass der Crop wie im Design sitzt.
-2. **Abschnitts-Abstände**: möglichst **immer gleich** (einheitlicher vertikaler
-   Rhythmus, `py-xl`; Token aus §4-Spacing).
-3. **Illustrationen** (Markenelemente, in mehreren Farben verfügbar):
-   **abwechslungsreich** einsetzen — mal **überlappend** über zwei Abschnitte
-   hinweg, mal nicht; **Grösse variieren** (einzoomen), **drehen**, teils nur als
-   **Ausschnitt** ins Bild hineinragend, teils **klein als ganze Illustration**.
-   Verteilung **unabhängig von Figma** gestalten → Abwechslung + Wiedererkennung.
-   **Ausnahme**: die **Header-Illustration der Startseite** exakt wie Figma
-   (Rostorange-Zweig von oben rechts hereinragend, Quelle node `13:629`,
-   Datei `src/assets/deco-hero.png`).
-   **Reihenfolge**: Illustrationen werden **ganz zum Schluss** verteilt — zuerst
-   alle Abschnitte/Seiten vollständig mit **Bild + Text** aufbauen.
-4. **Buttons** (exakt nach Figma node `55:1508`):
-   - Farbe: variiert je Kontext (`rust`/`beige`/`dark`); Varianten in `Button.astro`.
-   - Form: `rounded-[17px]` (17 px Radius — deutlich gerundet, aber kein Pill).
-   - Padding: `px-md py-sm` (40 px / 20 px — Button deutlich grösser als die Schrift).
-   - Schrift: **Roboto Regular**, Uppercase, Letter-Spacing 0.06 em, 28 px (= `text-cta`).
-   - Niemals `rounded-lg`, `py-xs` oder andere Grössen verwenden.
-5. **Typografie**:
-   - **Überschriften (h1–h3) immer Vollkorn, fett (`font-semibold`), Zeilenabstand 1.2**.
-     Bei jeder neuen Verwendung **Seraina fragen**: *kursiv oder regular?*
-   - **Fliesstext**: **Roboto Regular** (`font-body`), `text-body`, `leading-normal` bis `leading-relaxed`.
-   - **Zeilenumbrüche**: wo möglich am Figma-Zeilenumbruch orientieren (Desktop 1728 px).
-   - **W-Erläbnis**: «W» wird **immer** durch die W-Bildmarke (SVG/PNG, selbe Farbe wie Text)
-     ersetzt; optisch an Schriftgrösse anpassen; Rest des Titels Vollkorn bold.
-   - Fliesstext/UI: **Roboto**, Grössen/Stile wie in Figma (§4-Skala).
-5a. **Karussell-Abstände**: Abstand zwischen Bildern **immer 4 px** (`gap: 4px`),
-    Hintergrund der Section scheint durch (ergibt farbige Trennlinie).
-    Galerie-Bilder: Hochformat `aspect-[5/6]` (Figma: 576 × 692 px pro Karte).
-6. **Nutzerführung**: Der/die Besucher:in soll aktiv **durch die Website geführt**
-   werden. **Wichtig**: aktiv darauf hinweisen, wenn Nutzer irgendwo **„hängen
-   bleiben"** könnten (Sackgassen, fehlende CTA/Weiterführung, unklarer nächster
-   Schritt).
-7. **Footer**: **immer identisch** auf allen Seiten. Muss enthalten:
-   **Telefonnummer** (mit **WhatsApp-Icon** links daneben, Direktlink
-   `https://wa.me/41797905701`) und **E-Mail** (`mailto:info@serawild.com`) —
-   beide verlinkt. Umsetzung: `src/components/Footer.astro`.
-8. **Favicon**: das dunkle „W" (Bildmarke) — `public/favicon.svg`
-   (dunkles W auf Cream-Grund), eingebunden in `Base.astro`.
+**w-erlaebnis** `45:932`
+Hero `2253:604` · Begegnung `2253:422` · Das W `2283:775` · Wonach wir suchen `2348:955` · Angebot `2253:444` · Timeline `2255:515` · Zitat `2253:568` · Orte `2285:770` · Verweis Simona `2338:914` · richtig `2253:430` · CTA Banner `2253:406` · FAQ `2253:570` · Footer `2021:247`
 
----
+## Arbeitsweise
 
-## 5. Figma-Workflow (MCP)
+**Zuerst lesen, dann bauen.** Für jede Seite existiert eine Datei `spec/seiten/<slug>.json` mit dem vollständigen Aufbau. Wenn sie fehlt, wird sie zuerst erzeugt: pro Abschnitt ein Figma-Aufruf, Ergebnis in die Datei schreiben. Erst danach bauen — und dann aus der Datei, nicht aus Figma.
 
-Figma Professional ist via MCP-Server angebunden. Der Design-Prozess ist
-**Token-first, dann Komponenten**:
+Der Grund: Was in Figma nachgeschlagen und nicht aufgeschrieben wird, ist nach dem nächsten `/clear` weg.
 
-1. **Design-Tokens zuerst**: Farben, Typografie-Skala, Abstände (Spacing),
-   Radien, Schatten aus Figma auslesen und in `tailwind.config.ts` als Tokens
-   pflegen. Diese Tokens sind die einzige Quelle der Wahrheit — im Code **keine
-   Magic Numbers**, sondern Tailwind-Tokens verwenden.
-2. **Komponenten Frame für Frame**: Figma-Frames in Astro-Komponenten
-   übersetzen, dabei ausschliesslich die definierten Tokens nutzen.
-3. **Konsistenz-Check**: Weicht ein Figma-Wert von den Tokens ab, nachfragen —
-   nicht stillschweigend einen neuen Wert einführen.
-
-Beim Übernehmen aus Figma: semantische Namen bevorzugen (`bg-beige` statt
-Rohwert), Struktur an bestehende Komponenten anlehnen.
-
----
-
-## 6. Content-Workflow (Geschichten)
-
-- **Geschichten** (Kunden-Stories / Case-Studies) liegen als `.md`/`.mdx` in
-  `src/content/geschichten/`. Sie speisen die Übersicht „Geschichten" und die
-  Detailseiten „Einzelne Geschichte".
-- **Struktur einer Geschichte** (aus der Sitemap): Storytelling, Ausgangslage,
-  Herausforderung, Lösung, Verlinkung Kunde. Als Frontmatter-Felder + Fliesstext
-  abbilden.
-- **Bilder im Content**: colokiert bei der Geschichte ablegen und relativ
-  referenzieren (`![Alt](./bild.jpg)`). Optimierung übernimmt `astro:assets`
-  automatisch beim Build. Immer **aussagekräftige Alt-Texte** setzen.
-- **MDX** nutzen, wenn Komponenten gebraucht werden (Galerie, Vollbreit-Bild,
-  Zitat-/Stimmen-Block).
-- **Schema**: Frontmatter-Felder in `src/content/config.ts` via zod definieren
-  (Titel, Datum, Sprache, Kunde, Cover, Ausgangslage, Herausforderung, Lösung …).
-  Fehlende Felder werden beim Build gemeldet.
-- **i18n**: Jede Geschichte existiert idealerweise in DE und EN. Sprache über
-  Ordner/Frontmatter kennzeichnen; URLs unter `/de/…` und `/en/…`.
-
----
-
-## 7. Konventionen
-
-- **TypeScript strict**; keine `any` ohne guten Grund.
-- **Komponenten**: PascalCase-Dateinamen (`WorkCard.astro`), ein Zweck pro Datei.
-- **Styling nur über Tailwind-Tokens** (§4/§5). Kein Inline-CSS mit Rohwerten,
-  keine willkürlichen `#hex`-Angaben im Markup.
-- **Bilder** immer über `astro:assets` (`<Image />`) statt roher `<img>`, ausser
-  bei bewusst statischen Dateien in `public/`.
-- **Barrierefreiheit**: semantisches HTML, Alt-Texte, ausreichende Kontraste,
-  Fokus-Zustände. Als Design-Firma ist sauberes A11y Teil der Visitenkarte.
-- **Commit-Sprache**: Deutsch oder Englisch konsistent; kurze, präzise Messages.
-- Vor grösseren Änderungen an Struktur/Stack kurz abstimmen.
-
----
-
-## 8. Befehle
-
-> Paketmanager: **pnpm** (via `packageManager`-Feld gepinnt, Corepack). Node ≥ 22.13.
-
-```bash
-pnpm install        # Abhängigkeiten installieren
-pnpm dev            # lokaler Dev-Server (Hot Reload)
-pnpm build          # Produktions-Build nach dist/
-pnpm preview        # Build lokal ansehen
-pnpm check          # astro check (TypeScript/Astro-Diagnostik)
-pnpm format         # Prettier über das Projekt
-pnpm lint           # ESLint
-```
-
-Vor jedem Commit sinnvoll: `pnpm check` + `pnpm format`.
-
-**pnpm-Besonderheiten** (native Pakete):
-- `sharp` ist **direkte** Dependency — sonst findet Astro es unter pnpms
-  isolierten `node_modules` nicht (Bildoptimierung `astro:assets`).
-- Build-Skripte von `esbuild`/`sharp` sind in `pnpm-workspace.yaml` freigegeben
-  (`allowBuilds` + `onlyBuiltDependencies`).
-
----
-
-## 9. Deployment
-
-- **Ziel**: GitHub Pages, automatisiert über **GitHub Actions** (Build bei Push
-  auf `main`, Deploy des `dist/`-Ordners).
-- **Domain**: eigene Domain `serawild.com`.
-  - `public/CNAME` mit Inhalt `serawild.com` anlegen.
-  - In `astro.config.mjs`: `site: 'https://serawild.com'` setzen.
-  - **Kein `base`-Pfad** nötig (eigene Domain, Root-Deployment).
-- HTTPS über GitHub Pages aktivieren.
-
----
-
-## 10. Kontakt / Formulare
-
-- Kontakt läuft über **E-Mail-Adresse + Social-Links**, kein Formular.
-- Kein serverseitiges Handling nötig → passt zum statischen Hosting.
-- E-Mail: `info@serawild.com`.
-
----
-
-## 11. Offene Punkte / TODO
-
-- [x] Markenfarben aus Figma ausgelesen (§4) — noch in `tailwind.config.ts` überführen.
-- [x] Typografie-Skala (Desktop+Mobile) aus Figma ausgelesen (§4) — noch in `tailwind.config.ts`.
-- [x] Spacing-Skala (Desktop+Mobile) aus Figma ausgelesen (§4) — noch in `tailwind.config.ts`.
-- [x] Branche = prozessorientierte Fotografie (bestätigt).
-- [x] Mobile H1<H2 als Figma-Fehler bestätigt → H1 mobile grösser als H2 (Vorschlag 44px); Figma noch korrigieren.
-- [x] Sitemap / Informationsarchitektur aus Figma erfasst (§1).
-- [x] Projekt scaffolden (Astro + Tailwind + MDX, pnpm) + Tokens in `tailwind.config.ts`.
-- [x] Vollkorn & Roboto self-hosten (via `@fontsource`, inkl. Vollkorn SemiBold Italic).
-- [x] Content-Schema `geschichten` in `src/content/config.ts` definiert (Felder gem. §6).
-- [x] Footer (Desktop + Mobile) als `src/components/Footer.astro` umgesetzt.
-- [x] Komponenten: Navigation, CTA-Button (`Button.astro`) umgesetzt.
-- [x] Startseite (erster Durchgang) — alle Abschnitte, Texte, Farben.
-- [x] Echte Fotos aus `assets/Images` in die Startseite eingebaut (`src/assets/*.jpg`).
-- [x] Fotos exakt per MD5 den Figma-Bildstellen zugeordnet (Quellbild == Repo-Datei).
-- [ ] Rest-Bildstellen: W-Erläbnis-Seitenfotos ergänzen; Seraina-Quelle prüfen (matchte keine Repo-Datei).
-- [x] Foto-Collagen (Prozess, Gesehen, Für alle) mit exakten Figma-Überlappungen umgesetzt.
-- [ ] Card-Komponente (Hover-Overlay) für Geschichten-Teaser ausbauen.
-- [ ] Mobile-Menü in der Navigation (aktuell nur Logo + Kontakt auf Mobile).
-- [ ] Weitere Seiten: Angebot, Geschichten (Übersicht + Detail), Sera Wild, Kontakt — je DE/EN.
-- [ ] i18n-Grundgerüst (Routing + Übersetzungs-Strings) vervollständigen.
-- [ ] GitHub-Actions-Workflow für Pages-Deploy einrichten (mit pnpm).
+**Illustrationen zuletzt**, über `spec/deko.json`, wenn alle Seiten stehen.

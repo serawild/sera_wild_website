@@ -1,0 +1,317 @@
+{
+  "seite": "Startseite",
+  "figmaNode": "13:285",
+  "abschnitte": [
+    {
+      "id": "hero",
+      "name": "Hero Startseite",
+      "figmaNode": "2251:342",
+      "typ": "hero-bild",
+      "hoehe": "100svh",
+      "hintergrund": {
+        "bild": "hero-startseite",
+        "overlay": "rgba(0,0,0,0.43)",
+        "position": "cover center"
+      },
+      "navigation": {
+        "theme": "light"
+      },
+      "text": {
+        "ausrichtung": "rechts",
+        "paddingLeft": 648,
+        "h1": "Hier beginnt die Begegnung mit dir selbst: Du zeigst dich. Ich mach's sichtbar.",
+        "h1Zeilen": ["Hier beginnt die", "Begegnung mit dir", "selbst: Du zeigst dich. Ich mach's sichtbar."]
+      },
+      "cta": {
+        "text": "Los geht's!",
+        "href": "/kontakt",
+        "farbe": "rust"
+      }
+    },
+    {
+      "id": "ueber-mich",
+      "name": "Über mich",
+      "figmaNode": "2251:370",
+      "typ": "bild-text",
+      "hintergrund": "cream",
+      "padding": "py-xl px-[7.5rem]",
+      "gap": 80,
+      "layout": {
+        "bildSeite": "links",
+        "bildBreite": 560,
+        "bildHoehe": 700
+      },
+      "collage": {
+        "container": { "breite": 560, "hoehe": 700 },
+        "bilder": [
+          { "id": "ueber-mich-02", "left": 30, "top": 40, "breite": 240, "hoehe": 320 },
+          { "id": "ueber-mich-01", "left": 240, "top": 20, "breite": 300, "hoehe": 400 },
+          { "id": "ueber-mich-03", "left": 150, "top": 310, "breite": 260, "hoehe": 340 }
+        ]
+      },
+      "text": {
+        "h2": "Bei Sera Wild steht der Prozess im Mittelpunkt.",
+        "h2Zeilen": ["Bei Sera Wild steht", "der Prozess im Mittelpunkt."],
+        "absaetze": [
+          { "text": "Mir geht's um dich. Das Bild kommt von selbst.", "stil": "bold" },
+          { "text": "Um den Moment, in dem du aufhörst, dich von aussen zu betrachten und beginnst, dich wirklich zu sehen. Trau dich vor die Kamera und erlebe den Moment, in dem du dich zeigst, ohne Rücksicht auf Erwartungen aus der Aussenwelt.", "stil": "normal" }
+        ]
+      },
+      "cta": {
+        "text": "MEHR DAZU",
+        "href": "/ueber",
+        "farbe": "rust"
+      }
+    },
+    {
+      "id": "erlaebnis",
+      "name": "Erläbnis",
+      "figmaNode": "2251:390",
+      "typ": "vollbild-zentriert",
+      "hintergrund": "dark",
+      "padding": "py-xl px-[12.5rem]",
+      "gap": 48,
+      "wortmarke": {
+        "form": "wortmarke",
+        "breite": 400,
+        "hoehe": 166,
+        "farbe": "#F5F3ED",
+        "ausrichtung": "zentriert"
+      },
+      "text": {
+        "breite": 800,
+        "zitat": "Du weisst, da steckt mehr in dir. Du hast nur noch nicht den Raum gehabt, es zu zeigen. Ich biete dir einen Raum, in dem du mutig, spontan und kreativ sein darfst. "
+      },
+      "collage": {
+        "container": { "breite": 700, "hoehe": 320 },
+        "bilder": [
+          { "id": "startseite-erlaebnis-01", "left": 40, "top": 10, "breite": 380, "hoehe": 270 },
+          { "id": "startseite-erlaebnis-02", "left": 320, "top": 50, "breite": 350, "hoehe": 250 }
+        ]
+      },
+      "cta": {
+        "text": "Zum W–Erläbnis",
+        "href": "/w-erlaebnis",
+        "farbe": "beige"
+      }
+    },
+    {
+      "id": "authentizitaet",
+      "name": "Authentizität",
+      "figmaNode": "2251:410",
+      "typ": "text-bild",
+      "hintergrund": "cream",
+      "padding": "py-xl px-[7.5rem]",
+      "gap": 80,
+      "layout": {
+        "bildSeite": "rechts",
+        "bildBreite": 600,
+        "bildHoehe": 750
+      },
+      "collage": {
+        "container": { "breite": 600, "hoehe": 750 },
+        "bilder": [
+          { "id": "authentizitaet-01", "left": 194, "top": 48, "breite": 406, "hoehe": 489, "transform": "scaleY(-1) rotate(180deg)" },
+          { "id": "authentizitaet-02", "left": 0, "top": 273, "breite": 320, "hoehe": 420 }
+        ]
+      },
+      "text": {
+        "h2": "Du musst nicht jemand anderes sein, um gesehen zu werden.",
+        "h2Zeilen": ["Du musst nicht jemand anderes sein, um gesehen ", "zu werden."],
+        "fliesstext": [
+          { "text": "Viele Menschen kommen zu mir und sagen: ", "stil": "normal" },
+          { "text": "Ich bin nicht fotogen. ", "stil": "vollkorn-kursiv" },
+          { "text": "Was sie eigentlich meinen: ", "stil": "normal" },
+          { "text": "Ich habe mich noch nie wirklich gesehen. ", "stil": "vollkorn-kursiv" },
+          { "text": "Und genau dort beginnen wir.", "stil": "normal" }
+        ]
+      },
+      "cta": {
+        "text": "schreib mir!",
+        "href": "/kontakt",
+        "farbe": "rust"
+      }
+    },
+    {
+      "id": "angebot",
+      "name": "Angebot (Startseite)",
+      "figmaNode": "2251:435",
+      "typ": "vollbild-zentriert",
+      "hintergrund": "rust",
+      "padding": "pt-xl pb-[7rem] px-[12.5rem]",
+      "gap": 48,
+      "text": {
+        "breite": 900,
+        "h2": "Veränderung beginnt dort, wo du in Kontakt gehst. Mit dir selbst und mit anderen.",
+        "body": "Ich biete dir den Raum. Du probierst aus, folgst deinen Impulsen und entdeckst Schritt für Schritt, was entsteht, wenn du dir selbst Raum gibst."
+      },
+      "cta": {
+        "text": "Kontaktiere mich",
+        "href": "/kontakt",
+        "farbe": "beige"
+      }
+    },
+    {
+      "id": "galerie-geschichten",
+      "name": "Galerie / Geschichten",
+      "figmaNode": "2251:451",
+      "typ": "galerie-karussell",
+      "hintergrund": "cream",
+      "padding": "py-xl",
+      "gap": 48,
+      "text": {
+        "breite": 1200,
+        "h2": "Jede Begegnung hinterlässt Spuren. Hier findest du Momente, die geblieben sind.",
+        "h2Zeilen": ["Jede Begegnung hinterlässt Spuren.", "Hier findest du Momente, die geblieben sind."]
+      },
+      "karussell": {
+        "bildBreite": 519,
+        "bildHoehe": 692,
+        "gap": 16,
+        "bilder": [
+          "galerie-geschichten-01",
+          "galerie-geschichten-02",
+          "galerie-geschichten-03",
+          "galerie-geschichten-04",
+          "galerie-geschichten-05"
+        ]
+      },
+      "cta": {
+        "text": "Zu den Geschichten",
+        "href": "/geschichten",
+        "farbe": "rust"
+      }
+    },
+    {
+      "id": "geschichten-gespiegelt",
+      "name": "Geschichten (gespiegelt)",
+      "figmaNode": "2310:971",
+      "typ": "text-bild",
+      "hintergrund": "dark",
+      "padding": "py-xl px-[7.5rem]",
+      "gap": 80,
+      "layout": {
+        "bildSeite": "rechts",
+        "bildBreite": 600,
+        "bildHoehe": 750
+      },
+      "bild": { "id": "seraina-portrait" },
+      "text": {
+        "farbe": "cream",
+        "h2": "Wenn du etwas willst, das du noch nie hattest, musst du etwas tun, das du noch nie getan hast.",
+        "h2Zeilen": ["Wenn du etwas willst, das du noch nie hattest,", "musst du etwas tun, das du noch nie getan hast."],
+        "absaetze": [
+          { "text": "Ich bin Seraina und ich begleite dich", "stil": "normal" },
+          { "text": "hinter der Kamera durch diesen wunder-vollen Prozess. Ich freue mich auf dich!", "stil": "normal" }
+        ]
+      },
+      "cta": {
+        "text": "ÜBER SERAWILD",
+        "href": "/ueber",
+        "farbe": "beige"
+      }
+    },
+    {
+      "id": "referenzen",
+      "name": "Referenzen",
+      "figmaNode": "2247:319",
+      "typ": "referenzen",
+      "hintergrund": "cream",
+      "hintergrundBild": null,
+      "hinweis": "Figma zeigt ein Hintergrundbild, dessen Positionsdaten im Export korrumpiert waren. Vorerst ohne Hintergrundbild gebaut.",
+      "padding": "py-xl",
+      "gap": 48,
+      "text": {
+        "breite": 1200,
+        "h2": "Was meine Kunden über mich sagen"
+      },
+      "karten": {
+        "breite": 1200,
+        "gap": 32,
+        "hintergrund": "rgba(255,255,255,0.85)",
+        "eintraege": [
+          {
+            "name": "SIMONA",
+            "bild": "referenz-simona",
+            "zitat": "Ich habe mich gesehen, gehalten, ernst genommen und frei gefühlt. Man merkt, dass du nicht nur Bilder machst, sondern Räume öffnest, in denen etwas entstehen darf."
+          },
+          {
+            "name": "IVOR",
+            "bild": "referenz-ivor",
+            "zitat": "Die Session bei Seraina ist unkompliziert und kurzweilig, geht aber gerade dadurch in die Tiefe. Man erhält nicht nur tolle Bilder, sondern introspektive Einblicke. Sehr empfehlenswert."
+          },
+          {
+            "name": "BEATRICE",
+            "hinweis": "Figma zeigt 'SARA', CLAUDE.md nennt Beatrice. Bild-ID 'referenz-beatrice'. Im Zweifel: echten Namen verwenden.",
+            "bild": "referenz-beatrice",
+            "zitat": "Vor der Kamera zu stehen löst bei den meisten eher Unbehagen aus. Doch Seraina schafft es, dass man sich trotzdem wohl fühlt, sich selbst sein kann und daraus authentische Bilder entstehen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "kontakt-teaser",
+      "name": "Kontakt-Teaser",
+      "figmaNode": "2251:495",
+      "typ": "bild-text",
+      "hintergrund": "rust",
+      "padding": "py-xl px-[7.5rem]",
+      "gap": 80,
+      "layout": {
+        "bildSeite": "links",
+        "bildBreite": 600,
+        "bildHoehe": 500
+      },
+      "collage": {
+        "container": { "breite": 600, "hoehe": 500 },
+        "bilder": [
+          { "id": "kontakt-teaser-01", "left": 140, "top": 0, "breite": 460, "hoehe": 320 },
+          { "id": "kontakt-teaser-02", "left": 0, "top": 241, "breite": 358, "hoehe": 239 }
+        ]
+      },
+      "text": {
+        "farbe": "cream",
+        "h2": "Für alle, die sich selbst zurückfinden möchten.",
+        "h2Zeilen": ["Für alle, ", "die sich selbst zurückfinden ", "möchten."],
+        "absaetze": [
+          { "text": "Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.", "stil": "small" },
+          { "text": "Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.", "stil": "small" }
+        ],
+        "unterschrift": "Die Antwort kommt von mir persönlich, nicht aus einer Vorlage."
+      },
+      "cta": {
+        "text": "KONTAKT",
+        "href": "/kontakt",
+        "farbe": "beige"
+      }
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "figmaNode": "13:760",
+      "typ": "footer",
+      "hintergrund": "cream",
+      "padding": "py-xl px-[7.5rem]",
+      "spalten": {
+        "links": {
+          "links": [
+            { "text": "Datenschutz", "href": "/datenschutz" },
+            { "text": "Impressum", "href": "/impressum" },
+            { "text": "AGB", "href": "/agb" }
+          ]
+        },
+        "mitte": {
+          "logo": "03_BrandRoute_1.0",
+          "breite": 458,
+          "hoehe": 180
+        },
+        "rechts": {
+          "linkedin": true,
+          "telefon": "+41 79 790 57 01",
+          "telefonHref": "tel:+41772895701",
+          "email": "info@serawild.com"
+        }
+      }
+    }
+  ]
+}

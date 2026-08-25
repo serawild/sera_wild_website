@@ -1,8 +1,44 @@
 ---
+import { Image } from 'astro:assets';
+import heroUeberHoch from '../assets/images/Hero_Bilder/hero-ueber-hoch.jpg';
 import Base from '../layouts/Base.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import BildPicture from '../components/BildPicture.astro';
+import DekoIllustration from '../components/DekoIllustration.astro';
+
+const heroAlt      = 'Seraina Wild kniet in einer Wiese und fotografiert';
+const heroSubtitel = 'Für alle, die mehr vom Leben wollen – und den Mut entwickeln, es zu leben.';
+
+const faktenStationen = [
+  { name: '10 Jahre',      desc: ['Fotografie – outdoor,', 'Event und klassisches Studio'],  svgContent: `<rect x="31.0" y="41.0" width="42" height="30" rx="5" stroke="currentColor" stroke-width="2"/><ellipse cx="52.0" cy="56.0" rx="8.0" ry="8.0" stroke="currentColor" stroke-width="2"/><rect x="39.0" y="35.0" width="12" height="4" rx="2" stroke="currentColor" stroke-width="2"/>`, desktopOffset: false },
+  { name: 'Diplom AAI',    desc: ['Individualpsychologie,', 'aus Interesse am Menschen'],     svgContent: `<ellipse cx="52.0" cy="41.0" rx="10.0" ry="10.0" stroke="currentColor" stroke-width="2"/><rect x="45" y="54" width="5" height="20" rx="1" fill="currentColor"/><rect x="54" y="54" width="5" height="20" rx="1" fill="currentColor"/>`, desktopOffset: true  },
+  { name: '4 Jahre',       desc: ['Eventmanagerin,', 'nebenbei und mittendrin'],             svgContent: `<rect x="31.0" y="39.0" width="42" height="34" rx="4" stroke="currentColor" stroke-width="2"/><rect x="30" y="48" width="44" height="2" fill="currentColor"/><rect x="41" y="30" width="2" height="12" rx="1" fill="currentColor"/><rect x="61" y="30" width="2" height="12" rx="1" fill="currentColor"/>`, desktopOffset: false },
+  { name: 'Ein Jahrzehnt', desc: ['Mami von zwei Töchtern,', 'die mich täglich erden'],      svgContent: `<path d="M52 70C40.5 60.5 31 52.5 31 44.8C31 38.3 36 34 41.8 34C46.2 34 49.9 36.5 52 40.4C54.1 36.5 57.8 34 62.2 34C68 34 73 38.3 73 44.8C73 52.5 63.5 60.5 52 70Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>`, desktopOffset: true  },
+  { name: 'Um die Welt',   desc: ['Jahre als Flight Attendant,', 'eine Weile in den USA daheim'], svgContent: `<ellipse cx="52.0" cy="52.0" rx="21.0" ry="21.0" stroke="currentColor" stroke-width="2"/><ellipse cx="52.0" cy="52.0" rx="8.0" ry="21.0" stroke="currentColor" stroke-width="2"/><rect x="30" y="51" width="44" height="2" fill="currentColor"/>`, desktopOffset: false },
+];
+
+const faktenAbschluss = 'Das Diplom habe ich aus Interesse gemacht, nicht um zu therapieren – ich wollte Menschen einfach besser verstehen. Der Rest ist über die Jahre zusammengekommen. Ein gerader Lebenslauf ist das nicht, eher ein Zickzack. Aber genau daraus schöpfe ich heute: Jeder Umweg hat etwas dagelassen, das ich jetzt brauchen kann.';
+
+const meinWegH2   = 'Ich mache meinen eigenen Weg – und ich lade dich ein, deinen zu gehen.';
+const meinWegBold = 'Neugierig seit ich denken kann, unterwegs wo immer es mich hinzieht – und Mama von zwei Töchtern, die mich jeden Tag erden.';
+const meinWegP    = 'Ich bin fröhlich und unkompliziert – und gleichzeitig jemand, der lieber einmal tief taucht als zehnmal an der Oberfläche bleibt. Tiefe Gespräche, echte Begegnungen, ein gutes Lied – das sind meine Momente. Ich habe viel erlebt, viele Menschen getroffen, viele Orte gesehen. Und überall dieselbe Frage mitgenommen: Was treibt Menschen wirklich an? Was lässt sie strahlen? Wo steckt das wahre Leben – und was ist unsere Aufgabe?';
+
+const aufgabeH2 = 'Meine Aufgabe ist nicht, zu glänzen. Sondern dich zum Strahlen zu bringen.';
+const aufgabeP1 = 'Aus echtem Interesse habe ich eine Ausbildung in Individualpsychologie nach Alfred Adler gemacht – nicht um zu therapieren, sondern um Menschen tiefer zu verstehen.';
+const aufgabeP2 = 'Heute mache ich mich selbständig. Mit meiner Kamera, meiner Neugier und dem tiefen Glauben: Die besten Bilder entstehen, wenn jemand kurz vergisst, dass ich da bin. Und wenn die Seele strahlt – dann strahlt das Bild.';
+
+const zitatText = 'Ich glaube daran, dass jeder Mensch das in sich trägt, was er braucht. Manchmal braucht es einfach jemanden, der den Raum hält.';
+
+const echtesH2 = 'Überlege dir nicht, was schön aussieht, sondern worin du dich am wohlsten fühlst.';
+const echtesP1 = 'Ein strahlendes Portrait lächelt nicht zwingend. Es zeigt etwas Echtes – einen Moment, in dem jemand sich zeigen durfte. Ganz. Ohne Maske.';
+const echtesP2 = 'Diesen Moment halte ich fest. Und setze ihn in Szene – mit Farbe, Ausschnitt, Licht. Nicht um zu verschönern, sondern um sichtbar zu machen was schon da war.';
+const echtesP3 = 'Das fertige Bild soll dich berühren. Nicht weil es perfekt ist – sondern weil es du bist.';
+
+const kontaktH2 = 'Für alle, die sich selbst zurückfinden möchten.';
+const kontaktP1 = 'Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.';
+const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.';
+const kontaktFN = 'Die Antwort kommt von mir persönlich, nicht aus einer Vorlage.';
 ---
 
 <Base
@@ -10,139 +46,119 @@ import BildPicture from '../components/BildPicture.astro';
   description="Seraina Stettler ist Fotografin mit Hintergrund in Individualpsychologie. Erfahre mehr über ihren Weg und ihre Überzeugung: echte Bilder entstehen, wenn die Seele strahlt."
 >
 
-  <!-- ===== 1. HERO ===== -->
-  <section class="relative h-[100svh] min-h-[600px] overflow-hidden">
-    <div class="absolute inset-0 overflow-hidden opacity-[0.87]">
-      <BildPicture
-        id="hero-ueber"
-        class="absolute inset-0 h-full w-full object-cover object-center"
-        loading="eager"
-        fetchpriority="high"
-        widths={[768, 1280, 1728, 2560]}
-        sizes="100vw"
-      />
-    </div>
-    <div class="absolute inset-0 bg-black/[0.39]"></div>
-    <Navigation theme="light" />
+  <Navigation farbe="hell" />
 
-    <!-- Text: unten rechts, w-1175px -->
-    <div class="absolute bottom-[10rem] right-6 max-w-[73.4375rem] text-right md:right-[7.5rem]">
-      <h1 class="font-display text-h1 font-semibold leading-tight text-cream">
-        Meine Geschichte
-      </h1>
-      <p class="font-display text-h2 font-semibold leading-tight text-cream">
-        Für alle, die mehr vom Leben wollen – und den Mut entwickeln, es zu leben.
-      </p>
+  <!-- ===== HERO ===== -->
+
+  <!-- Mobile: olive + hoch-Bild -->
+  <section class="relative md:hidden h-[43.75rem] overflow-hidden bg-olive">
+    <Image
+      src={heroUeberHoch}
+      alt={heroAlt}
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+      widths={[390, 780]}
+      sizes="100vw"
+    />
+    <div class="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-10 left-6 max-w-[21rem]">
+      <h1 class="font-display text-[1.9375rem] leading-[1.3] font-semibold text-cream">Meine Geschichte</h1>
+      <p class="font-body text-[1.125rem] leading-[1.6] text-cream mt-[0.5rem]">{heroSubtitel}</p>
     </div>
   </section>
+
+  <!-- Desktop: Video -->
+  <section class="hidden md:block relative h-[100svh] min-h-[600px] overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden opacity-[0.91]">
+      <img src="/video/hero-ueber-poster.jpg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full object-cover object-center" />
+      <video class="hero-video absolute inset-0 h-full w-full object-cover object-center" autoplay muted loop playsinline aria-hidden="true">
+        <source src="/video/hero-ueber.webm" type="video/webm" />
+        <source src="/video/hero-ueber.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="absolute inset-0 bg-black/40 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-[10rem] right-[7.5rem] max-w-[73.4375rem] text-right">
+      <h1 class="font-display text-h1 font-semibold leading-normal text-cream">Meine Geschichte</h1>
+      <p class="font-display text-h2 font-semibold leading-normal text-cream">{heroSubtitel}</p>
+    </div>
+  </section>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video { display: none; }
+    }
+  </style>
 
   <div class="relative overflow-x-hidden">
 
-  <!-- ===== 2. FAKTEN ===== -->
-  <!-- bg #5B5C4F, py 80px, px 100px, gap 56px zwischen Stationen und Text -->
-  <section class="bg-olive py-xl">
-    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-14 px-6 md:px-[6.25rem]">
+  <!-- ===== 01 FAKTEN ===== -->
 
-      <!-- Stationen: 5 Kacheln nebeneinander, gap 24px -->
-      <div class="flex w-full items-start gap-6">
-
-        <!-- Station 1: 10 Jahre · Kamera -->
-        <div class="flex flex-1 min-w-0 flex-col items-center gap-[1.125rem] overflow-hidden">
-          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
-            <svg class="h-14 w-14" viewBox="0 0 24 24" fill="none" stroke="#F5F3ED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
-              <path d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
-            </svg>
-          </div>
-          <p class="font-display text-[2.125rem] font-semibold leading-normal text-cream text-center">10 Jahre</p>
-          <div class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
-            <p>Fotografie – outdoor,</p>
-            <p>Event und klassisches Studio</p>
-          </div>
-        </div>
-
-        <!-- Station 2: Diplom AAI · Diplom — 36px versetzt -->
-        <div class="flex flex-1 min-w-0 flex-col items-center gap-[1.125rem] overflow-hidden pt-9">
-          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
-            <svg class="h-14 w-14" viewBox="0 0 24 24" fill="none" stroke="#F5F3ED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.905 59.905 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-            </svg>
-          </div>
-          <p class="font-display text-[2.125rem] font-semibold leading-normal text-cream text-center">Diplom AAI</p>
-          <div class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
-            <p>Individualpsychologie,</p>
-            <p>aus Interesse am Menschen</p>
-          </div>
-        </div>
-
-        <!-- Station 3: 4 Jahre · Kalender (inline) -->
-        <div class="flex flex-1 min-w-0 flex-col items-center gap-[1.125rem] overflow-hidden">
-          <!-- Kalender-Icon inline nach Figma Node I2286:775;2299:138 -->
-          <div class="relative h-[6.5rem] w-[6.5rem] shrink-0 rounded-full bg-cream/[0.09]">
-            <!-- Kalenderrahmen: border-2, h-36, w-44, left-30, top-38, rounded-4 -->
-            <div class="absolute rounded-[0.25rem] border-2 border-cream"
-                 style="height:2.25rem;width:2.75rem;left:1.875rem;top:2.375rem;"></div>
-            <!-- Trennlinie: h-2, w-44, left-30, top-48 -->
-            <div class="absolute bg-cream"
-                 style="height:0.125rem;width:2.75rem;left:1.875rem;top:3rem;"></div>
-            <!-- Linker Tab: h-12, w-2, left-41, top-30 -->
-            <div class="absolute rounded-[0.0625rem] bg-cream"
-                 style="height:0.75rem;width:0.125rem;left:2.5625rem;top:1.875rem;"></div>
-            <!-- Rechter Tab: h-12, w-2, left-61, top-30 -->
-            <div class="absolute rounded-[0.0625rem] bg-cream"
-                 style="height:0.75rem;width:0.125rem;left:3.8125rem;top:1.875rem;"></div>
-          </div>
-          <p class="font-display text-[2.125rem] font-semibold leading-normal text-cream text-center">4 Jahre</p>
-          <div class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
-            <p>Eventmanagerin,</p>
-            <p>nebenbei und mittendrin</p>
-          </div>
-        </div>
-
-        <!-- Station 4: Ein Jahrzehnt · Herz — 36px versetzt -->
-        <div class="flex flex-1 min-w-0 flex-col items-center gap-[1.125rem] overflow-hidden pt-9">
-          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
-            <svg class="h-14 w-14" viewBox="0 0 24 24" fill="none" stroke="#F5F3ED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
-          </div>
-          <p class="font-display text-[2.125rem] font-semibold leading-normal text-cream text-center">Ein Jahrzehnt</p>
-          <div class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
-            <p>Mami von zwei Töchtern,</p>
-            <p>die mich täglich erden</p>
-          </div>
-        </div>
-
-        <!-- Station 5: Um die Welt · Globus -->
-        <div class="flex flex-1 min-w-0 flex-col items-center gap-[1.125rem] overflow-hidden">
-          <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-cream/[0.09]">
-            <svg class="h-14 w-14" viewBox="0 0 24 24" fill="none" stroke="#F5F3ED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
-            </svg>
-          </div>
-          <p class="font-display text-[2.125rem] font-semibold leading-normal text-cream text-center">Um die Welt</p>
-          <div class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
-            <p>Jahre als Flight Attendant,</p>
-            <p>eine Weile in den USA daheim</p>
-          </div>
-        </div>
-
+  <!-- Mobile: dark -->
+  <section class="md:hidden bg-dark py-[52px] px-6">
+    <div class="flex flex-col gap-[1.125rem] mb-[0.375rem]">
+      <div class="flex items-center gap-2">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">01</span>
+        <span class="w-5 h-px bg-cream/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">FAKTEN</span>
       </div>
+    </div>
+    <div class="mt-[1.25rem] grid grid-cols-2 gap-4">
+      {faktenStationen.map((s, i) => (
+        <div class={`flex flex-col items-center gap-[0.75rem] text-cream ${i === 4 ? 'col-span-2' : ''}`}>
+          <div class="flex h-[5rem] w-[5rem] shrink-0 items-center justify-center rounded-full bg-[rgba(245,243,237,0.09)]">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104" class="h-full w-full" fill="none" aria-hidden="true">
+              <Fragment set:html={s.svgContent} />
+            </svg>
+          </div>
+          <p class="font-display text-[1.375rem] font-semibold leading-normal text-center">{s.name}</p>
+          <div class="font-body text-[1rem] text-cream/[0.72] text-center leading-[1.65]">
+            {s.desc.map(z => <p>{z}</p>)}
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="mt-[1.5rem] font-body text-[1.0625rem] leading-[1.68] text-center text-cream/90">{faktenAbschluss}</p>
+  </section>
 
-      <!-- Erläuterung: Roboto 28px, zentriert, max-w 1180px -->
-      <p class="font-body text-[1.75rem] leading-[1.7] text-cream text-center max-w-[73.75rem]">
-        Das Diplom habe ich aus Interesse gemacht, nicht um zu therapieren – ich wollte Menschen einfach besser verstehen. Der Rest ist über die Jahre zusammengekommen. Ein gerader Lebenslauf ist das nicht, eher ein Zickzack. Aber genau daraus schöpfe ich heute: Jeder Umweg hat etwas dagelassen, das ich jetzt brauchen kann.
-      </p>
-
+  <!-- Desktop: olive -->
+  <section class="hidden md:block bg-olive py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-14 px-6 md:px-[6.25rem]">
+      <div class="flex w-full items-start gap-6">
+        {faktenStationen.map(s => (
+          <div class={`flex flex-1 min-w-0 flex-col items-center gap-[1.125rem] text-cream ${s.desktopOffset ? 'pt-9' : ''}`}>
+            <div class="flex h-[6.5rem] w-[6.5rem] shrink-0 items-center justify-center rounded-full bg-[rgba(245,243,237,0.09)]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104" class="h-full w-full" fill="none" aria-hidden="true">
+                <Fragment set:html={s.svgContent} />
+              </svg>
+            </div>
+            <p class="font-display text-[2.125rem] font-semibold leading-normal text-center">{s.name}</p>
+            <div class="font-body text-body-klein text-cream/[0.72] text-center leading-[1.7]">
+              {s.desc.map(z => <p>{z}</p>)}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="font-body text-[1.75rem] leading-[1.7] text-center max-w-[73.75rem] text-cream">{faktenAbschluss}</p>
     </div>
   </section>
 
-  <!-- ===== 3. GESCHICHTE SERAINA ===== -->
-  <!-- bg #F5F2ED, gap 80px, items-center, px 120px, py 80px -->
-  <section class="relative bg-cream-warm py-xl">
-    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-[7.5rem]">
+  <!-- ===== 02 MEIN WEG (Geschichte Seraina) ===== -->
+  <!-- cream-warm bg, responsive layout -->
+  <section class="relative isolate overflow-visible z-[2] bg-cream-warm py-12 md:py-xl">
+    <div class="hidden md:block">
+      <DekoIllustration motiv="mohn" farbe="#A0886D" breite={259} cssRotate={29} top={960} seite="links" abstand={-121} />
+    </div>
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[2.5rem] px-6 md:flex-row md:items-center md:justify-between md:gap-[5rem] md:px-0">
 
-      <!-- Bild links: 560×740 -->
+      <!-- Kapitelmarke (mobile only) -->
+      <div class="md:hidden flex items-center gap-2">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">02</span>
+        <span class="w-5 h-px bg-dark/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">MEIN WEG</span>
+      </div>
+
+      <!-- Bild -->
       <div class="w-full shrink-0 overflow-hidden md:w-[35rem]" style="aspect-ratio:560/740;">
         <BildPicture
           id="ueber-geschichte"
@@ -152,189 +168,179 @@ import BildPicture from '../components/BildPicture.astro';
         />
       </div>
 
-      <!-- Text rechts: w-820px -->
-      <div class="flex flex-col gap-6 text-dark">
-        <h2 class="font-display text-h2 font-semibold italic leading-tight">
-          Ich mache meinen eigenen Weg – und ich lade dich ein, deinen zu gehen.
-        </h2>
-        <div class="font-body text-body leading-[2]">
-          <p class="font-bold">
-            Neugierig seit ich denken kann, unterwegs wo immer es mich hinzieht – und Mama von zwei Töchtern, die mich jeden Tag erden.
-          </p>
-          <p>
-            Ich bin fröhlich und unkompliziert – und gleichzeitig jemand, der lieber einmal tief taucht als zehnmal an der Oberfläche bleibt. Tiefe Gespräche, echte Begegnungen, ein gutes Lied – das sind meine Momente. Ich habe viel erlebt, viele Menschen getroffen, viele Orte gesehen. Und überall dieselbe Frage mitgenommen: Was treibt Menschen wirklich an? Was lässt sie strahlen? Wo steckt das wahre Leben – und was ist unsere Aufgabe?
-          </p>
-        </div>
+      <!-- Text -->
+      <div class="flex flex-col gap-[1.5rem] md:w-[51.25rem] md:shrink-0">
+        <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-normal font-semibold italic">{meinWegH2}</h2>
+        <p class="font-body text-[1.0625rem] md:text-body font-bold leading-[1.68] md:leading-[2]">{meinWegBold}</p>
+        <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[2]">{meinWegP}</p>
       </div>
-
     </div>
   </section>
 
-  <!-- ===== 4. GESCHICHTE SERAINA UNTEN ===== -->
-  <!-- bg #F5F2ED, gap 80px, items-end, px 120px, py 80px -->
-  <section class="relative bg-cream-warm py-xl">
-    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-end md:px-[7.5rem]">
+  <!-- ===== 03 MEINE AUFGABE (Geschichte Seraina unten) ===== -->
 
-      <!-- Text links: w-798px -->
-      <div class="flex flex-col gap-[2.5rem] text-dark md:flex-1">
-        <h2 class="font-display text-h2 font-semibold italic leading-tight md:max-w-[40.625rem]">
-          Meine Aufgabe ist nicht, zu glänzen. Sondern dich zum Strahlen zu bringen.
-        </h2>
-        <div class="font-body text-body leading-[2]">
-          <p>
-            Aus echtem Interesse habe ich eine Ausbildung in Individualpsychologie nach Alfred Adler gemacht – nicht um zu therapieren, sondern um Menschen tiefer zu verstehen.
-          </p>
-          <p>
-            Heute mache ich mich selbständig. Mit meiner Kamera, meiner Neugier und dem tiefen Glauben: Die besten Bilder entstehen, wenn jemand kurz vergisst, dass ich da bin. Und wenn die Seele strahlt – dann strahlt das Bild.
-          </p>
-        </div>
+  <!-- Mobile: olive -->
+  <section class="md:hidden bg-olive py-[52px] px-6">
+    <div class="flex flex-col gap-[1.125rem]">
+      <div class="flex items-center gap-2 mb-[0.375rem]">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">03</span>
+        <span class="w-5 h-px bg-cream/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">MEINE AUFGABE</span>
       </div>
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold italic text-cream">{aufgabeH2}</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream">{aufgabeP1}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream">{aufgabeP2}</p>
+    </div>
+    <!-- Bildgruppe: gross oben links, klein unten rechts -->
+    <div class="relative mx-auto mt-[1.5rem]" style="width:342px;height:322px;">
+      <div class="absolute overflow-hidden" style="left:0;top:0;width:214px;height:286px;">
+        <BildPicture id="ueber-geschichte-unten-01" class="h-full w-full object-cover" mobil={true} widths={[214,428]} sizes="214px" />
+      </div>
+      <div class="absolute overflow-hidden" style="left:164px;top:84px;width:178px;height:238px;">
+        <BildPicture id="ueber-geschichte-unten-02" class="h-full w-full object-cover" mobil={true} widths={[178,356]} sizes="178px" />
+      </div>
+    </div>
+  </section>
 
-      <!-- Bilder rechts: h-700px w-560px, zwei überlappend -->
+  <!-- Desktop: cream-warm -->
+  <section class="hidden md:block relative isolate overflow-visible z-[1] bg-cream-warm py-xl">
+    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={226} cssRotate={-30} top={786} seite="rechts" abstand={-144} />
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] md:flex-row md:items-end md:justify-between md:px-0">
+      <div class="flex flex-col gap-[2.5rem] md:w-[49.875rem] md:shrink-0">
+        <h2 class="font-display text-h2 font-semibold italic leading-normal md:max-w-[40.625rem]">{aufgabeH2}</h2>
+        <p class="font-body text-body leading-[2]">{aufgabeP1}</p>
+        <p class="font-body text-body leading-[2]">{aufgabeP2}</p>
+      </div>
       <div class="relative h-[43.75rem] w-full shrink-0 md:w-[35rem]">
-        <!-- Bild 1: 380×540, left-0 top-80 -->
         <div class="absolute left-0 top-[5rem] h-[33.75rem] w-[23.75rem] overflow-hidden">
-          <BildPicture
-            id="ueber-geschichte-unten-01"
-            class="h-full w-full object-cover"
-            widths={[380, 760]}
-            sizes="(max-width: 768px) 100vw, 380px"
-          />
+          <BildPicture id="ueber-geschichte-unten-01" class="h-full w-full object-cover" widths={[380, 760]} sizes="(max-width: 768px) 100vw, 380px" />
         </div>
-        <!-- Bild 2: 260×380, left-280 top-0 -->
         <div class="absolute left-[17.5rem] top-0 h-[23.75rem] w-[16.25rem] overflow-hidden">
-          <BildPicture
-            id="ueber-geschichte-unten-02"
-            class="h-full w-full object-cover"
-            widths={[260, 520]}
-            sizes="(max-width: 768px) 50vw, 260px"
-          />
+          <BildPicture id="ueber-geschichte-unten-02" class="h-full w-full object-cover" widths={[260, 520]} sizes="(max-width: 768px) 50vw, 260px" />
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ===== 5. ZITAT ===== -->
-  <!-- bg #2F322D, py 80px, px 120px, Vollkorn 56px, #F5F2ED -->
-  <section class="bg-dark py-xl">
+  <!-- ===== ZITAT ===== -->
+
+  <!-- Mobile: rust -->
+  <section class="md:hidden bg-rust py-12 px-6">
+    <p class="text-center font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{zitatText}</p>
+  </section>
+
+  <!-- Desktop: dark -->
+  <section class="hidden md:block relative z-0 bg-dark py-xl">
     <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
-      <p class="font-display text-h2 font-semibold leading-tight text-cream-warm text-center">
-        Ich glaube daran, dass jeder Mensch das in sich trägt, was er braucht. Manchmal braucht es einfach jemanden, der den Raum hält.
-      </p>
+      <p class="font-display text-h2 font-semibold leading-normal text-cream-warm text-center">{zitatText}</p>
     </div>
   </section>
 
-  <!-- ===== 6. ECHTES PORTRAIT ===== -->
-  <!-- bg #F5F2ED, gap 80px, items-center, px 120px, py 80px -->
-  <section class="relative bg-cream-warm py-xl">
-    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-[7.5rem]">
+  <!-- ===== 04 ECHTES PORTRAIT ===== -->
+  <!-- cream-warm bg, two inner blocks -->
+  <section class="relative isolate overflow-visible bg-cream-warm py-12 md:py-xl">
+    <div class="hidden md:block">
+      <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={313} cssRotate={29} top={680} seite="links" abstand={-154} />
+    </div>
 
-      <!-- Bilder links: h-600px w-560px, zwei überlappend -->
-      <div class="relative h-[37.5rem] w-full shrink-0 md:w-[35rem]">
-        <!-- Bild 1: 450×300, left-0 top-0 -->
+    <!-- Mobile inner -->
+    <div class="md:hidden px-6 flex flex-col gap-[1.125rem]">
+      <div class="flex items-center gap-2 mb-[0.375rem]">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">04</span>
+        <span class="w-5 h-px bg-dark/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">ECHTES PORTRAIT</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold">{echtesH2}</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68]">{echtesP1}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68]">{echtesP2}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68]">{echtesP3}</p>
+    </div>
+    <!-- Bildgruppe mobile -->
+    <!-- Bildgruppe gespiegelt: gross oben rechts, klein unten links -->
+    <div class="md:hidden relative mx-auto mt-[1.5rem]" style="width:342px;height:322px;">
+      <div class="absolute overflow-hidden" style="left:128px;top:0;width:214px;height:286px;">
+        <BildPicture id="echtes-portrait-01" class="h-full w-full object-cover" mobil={true} widths={[214,428]} sizes="214px" />
+      </div>
+      <div class="absolute overflow-hidden" style="left:0;top:84px;width:178px;height:238px;">
+        <BildPicture id="echtes-portrait-02" class="h-full w-full object-cover" mobil={true} widths={[178,356]} sizes="178px" />
+      </div>
+    </div>
+
+    <!-- Desktop inner -->
+    <div class="hidden md:flex mx-auto max-w-inhalt flex-row items-center gap-[5rem]">
+      <div class="relative h-[37.5rem] w-[35rem] shrink-0">
         <div class="absolute left-0 top-0 h-[18.75rem] w-[28.125rem] overflow-hidden">
-          <BildPicture
-            id="echtes-portrait-01"
-            class="h-full w-full object-cover"
-            widths={[450, 900]}
-            sizes="(max-width: 768px) 100vw, 450px"
-          />
+          <BildPicture id="echtes-portrait-01" class="h-full w-full object-cover" widths={[450, 900]} sizes="(max-width: 768px) 100vw, 450px" />
         </div>
-        <!-- Bild 2: 450×300, left-110 top-280 -->
         <div class="absolute left-[6.875rem] top-[17.5rem] h-[18.75rem] w-[28.125rem] overflow-hidden">
-          <BildPicture
-            id="echtes-portrait-02"
-            class="h-full w-full object-cover"
-            widths={[450, 900]}
-            sizes="(max-width: 768px) 100vw, 450px"
-          />
+          <BildPicture id="echtes-portrait-02" class="h-full w-full object-cover" widths={[450, 900]} sizes="(max-width: 768px) 100vw, 450px" />
         </div>
       </div>
-
-      <!-- Text rechts: flex-1 -->
-      <div class="flex flex-1 min-w-0 flex-col gap-6 text-dark">
-        <h2 class="font-display text-h2 font-semibold leading-tight">
-          Überlege dir nicht, was schön aussieht, sondern worin du dich am wohlsten fühlst.
-        </h2>
-        <div class="font-body text-body leading-[2]">
-          <p>
-            Ein strahlendes Portrait lächelt nicht zwingend. Es zeigt etwas Echtes – einen Moment, in dem jemand sich zeigen durfte. Ganz. Ohne Maske.
-          </p>
-          <p>
-            Diesen Moment halte ich fest. Und setze ihn in Szene – mit Farbe, Ausschnitt, Licht. Nicht um zu verschönern, sondern um sichtbar zu machen was schon da war.
-          </p>
-          <p>
-            Das fertige Bild soll dich berühren. Nicht weil es perfekt ist – sondern weil es du bist.
-          </p>
-        </div>
+      <div class="flex flex-1 min-w-0 flex-col gap-6">
+        <h2 class="font-display text-h2 font-semibold leading-normal">{echtesH2}</h2>
+        <p class="font-body text-body leading-[2]">{echtesP1}</p>
+        <p class="font-body text-body leading-[2]">{echtesP2}</p>
+        <p class="font-body text-body leading-[2]">{echtesP3}</p>
       </div>
+    </div>
 
+  </section>
+
+  <!-- ===== 05 KONTAKT ===== -->
+
+  <!-- Mobile: dark -->
+  <section class="md:hidden bg-dark py-[52px] px-6">
+    <div class="flex flex-col gap-[1.125rem]">
+      <div class="flex items-center gap-2 mb-[0.375rem]">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">05</span>
+        <span class="w-5 h-px bg-cream/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">KONTAKT</span>
+      </div>
+    </div>
+    <!-- Bildgruppe: gross oben links, klein unten rechts -->
+    <div class="relative mx-auto mt-[1.25rem]" style="width:342px;height:322px;">
+      <div class="absolute overflow-hidden" style="left:0;top:0;width:214px;height:286px;">
+        <BildPicture id="kontakt-teaser-01" class="h-full w-full object-cover" mobil={true} widths={[214,428]} sizes="214px" />
+      </div>
+      <div class="absolute overflow-hidden" style="left:164px;top:84px;width:178px;height:238px;">
+        <BildPicture id="kontakt-teaser-02" class="h-full w-full object-cover" mobil={true} widths={[178,356]} sizes="178px" />
+      </div>
+    </div>
+    <div class="mt-[1.5rem] flex flex-col gap-[1.125rem]">
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{kontaktH2}</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/[0.92]">{kontaktP1}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/[0.92]">{kontaktP2}</p>
+      <a href="/kontakt" class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream">
+        Kontakt
+      </a>
+      <p class="font-body text-[1rem] leading-[1.65] text-cream/[0.7]">{kontaktFN}</p>
     </div>
   </section>
 
-  <!-- ===== 7. KONTAKT-TEASER ===== -->
-  <!-- bg #983515, gap 80px, items-center, px 120px, py 80px -->
-  <section class="bg-rust py-xl">
-    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-[7.5rem]">
-
-      <!-- Foto-Collage links: h-500px w-600px, zwei überlappend -->
+  <!-- Desktop: rust -->
+  <section class="hidden md:block bg-rust py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-0">
       <div class="relative h-[31.25rem] w-full shrink-0 md:w-[37.5rem]">
-        <!-- Bild 1: 460×320, left-140 top-0 -->
         <div class="absolute left-[8.75rem] top-0 h-[20rem] w-[28.75rem] overflow-hidden">
-          <BildPicture
-            id="kontakt-teaser-01"
-            class="h-full w-full object-cover"
-            widths={[460, 920]}
-            sizes="(max-width: 768px) 100vw, 460px"
-          />
+          <BildPicture id="kontakt-teaser-01" class="h-full w-full object-cover" widths={[460, 920]} sizes="(max-width: 768px) 100vw, 460px" />
         </div>
-        <!-- Bild 2: 358×239, left-0 top-241 -->
         <div class="absolute left-0 top-[15.0625rem] h-[14.9375rem] w-[22.375rem] overflow-hidden">
-          <BildPicture
-            id="kontakt-teaser-02"
-            class="h-full w-full object-cover"
-            widths={[358, 716]}
-            sizes="(max-width: 768px) 100vw, 358px"
-          />
+          <BildPicture id="kontakt-teaser-02" class="h-full w-full object-cover" widths={[358, 716]} sizes="(max-width: 768px) 100vw, 358px" />
         </div>
       </div>
-
-      <!-- Text rechts: flex-1, gap-32px -->
       <div class="flex flex-1 min-w-0 flex-col gap-8">
-        <h2 class="font-display text-h2 font-semibold leading-tight text-cream">
-          Für alle, die sich selbst zurückfinden möchten.
+        <h2 class="font-display text-h2 font-semibold leading-normal text-cream">
+          Für alle,<br>die sich selbst zurückfinden<br>möchten.
         </h2>
-        <!-- Figma: text-[24px] (Small), leading-[2], rgba(245,243,237,0.92) -->
-        <div class="font-body text-[1.5rem] leading-[2] text-cream/[0.92]">
-          <p>
-            Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.
-          </p>
-          <p>
-            Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.
-          </p>
-        </div>
-        <a
-          href="/kontakt"
-          class="inline-flex self-start items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange"
-        >
+        <p class="font-body text-[1.5rem] leading-[2] text-cream/[0.92]">{kontaktP1}</p>
+        <p class="font-body text-[1.5rem] leading-[2] text-cream/[0.92]">{kontaktP2}</p>
+        <a href="/kontakt" class="inline-flex self-start items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange">
           Kontakt
         </a>
-        <!-- Figma: text-[22px] (Body Klein), leading-[1.7], rgba(245,243,237,0.7) -->
-        <p class="font-body text-body-klein leading-[1.7] text-cream/[0.7]">
-          Die Antwort kommt von mir persönlich, nicht aus einer Vorlage.
-        </p>
+        <p class="font-body text-body-klein leading-[1.7] text-cream/[0.7]">{kontaktFN}</p>
       </div>
-
     </div>
   </section>
-
-  <!-- Illustrationen — kommen zum Schluss (deko.json slug "ueber") -->
-  <!--
-    mohn      Beige     breite=215  drehung=-29  ankerIndex=2  obenAbAnker=974  links   abstand=-111
-    blattzweig Hellgrün breite=211  drehung=30   ankerIndex=3  obenAbAnker=615  rechts  abstand=-106
-    eukalyptus Hellorange breite=313 drehung=-29 ankerIndex=5  obenAbAnker=680  links   abstand=-154
-  -->
 
   </div>
 

@@ -1,0 +1,41 @@
+{
+  "seite": "Impressum",
+  "figmaNode": "2206:226",
+  "abschnitte": [
+    {
+      "id": "titelleiste",
+      "figmaNode": "2206:227",
+      "typ": "titelleiste",
+      "hintergrund": "dark",
+      "navigation": { "theme": "light" },
+      "padding": { "top": 40, "bottom": 96, "px": 120 },
+      "titel": { "text": "Impressum", "groesse": "h2", "farbe": "cream" }
+    },
+    {
+      "id": "inhalt",
+      "figmaNode": "2206:238",
+      "typ": "rechtstext",
+      "hintergrund": "cream",
+      "padding": { "top": 120, "bottom": 160, "px": 120 },
+      "abschnittGap": 80,
+      "titelGroesse": "h3",
+      "textGroesse": 24,
+      "textZeilenabstand": 2,
+      "sektionen": [
+        "Verantwortlich für den Inhalt",
+        "Kontakt",
+        "Rechtsform und Steuern",
+        "Urheberrecht",
+        "Bildnachweis",
+        "Haftung für Inhalte",
+        "Haftung für Links",
+        "Streitbeilegung"
+      ]
+    },
+    {
+      "id": "footer",
+      "figmaNode": "2206:239",
+      "typ": "footer"
+    }
+  ]
+}

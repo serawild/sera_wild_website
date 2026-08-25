@@ -1,0 +1,23 @@
+---
+const iconFiles = import.meta.glob<string>(
+  '/spec/icons/*.svg',
+  { query: '?raw', import: 'default', eager: true }
+);
+
+interface Props {
+  motiv: 'kamera' | 'diplom' | 'kalender' | 'herz' | 'globus';
+  class?: string;
+}
+
+const { motiv, class: className } = Astro.props;
+
+const rawSvg = iconFiles[`/spec/icons/${motiv}.svg`];
+if (!rawSvg) throw new Error(`IkonSvg: Icon nicht gefunden — "${motiv}"`);
+
+const svg = rawSvg
+  .replace(/\s+width="[^"]*"/g, '')
+  .replace(/\s+height="[^"]*"/g, '')
+  .replace('<svg ', '<svg width="100%" style="display:block" ');
+---
+
+<div class={className} aria-hidden="true" set:html={svg} />

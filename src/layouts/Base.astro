@@ -1,29 +1,89 @@
 ---
 import '../styles/global.css';
+import Loader from '../components/Loader.astro';
+import MobileNavLeiste from '../components/MobileNavLeiste.astro';
 
 interface Props {
   title?: string;
   description?: string;
-  lang?: string;
+  ogImage?: string;
+  /** 'de' oder 'en'. Steuert lang-Attribut, og:locale und die Standardtexte. */
+  sprache?: 'de' | 'en';
+  /** Pfad derselben Seite in der anderen Sprache, z. B. '/en/w-erlaebnis'. */
+  uebersetzung?: string;
+  /** Seite aus der Suche heraushalten (Werkstattseiten, Entwürfe). */
+  noindex?: boolean;
 }
 
 const {
-  title = 'sera Wild — prozessorientierte Fotografie',
-  description = 'sera Wild — prozessorientierte Fotografie.',
-  lang = 'de',
+  sprache = 'de',
+  title,
+  description,
+  ogImage = '/og-default.jpg',
+  uebersetzung,
+  noindex = false,
 } = Astro.props;
+
+const standard = {
+  de: {
+    htmlLang: 'de-CH',
+    ogLocale: 'de_CH',
+    title: 'sera Wild — prozessorientierte Fotografie',
+    description:
+      'Professionelle Fotografie in der Schweiz. Sera Wild begleitet Menschen in ihrer Geschichte – prozessorientiert, echt und berührend.',
+  },
+  en: {
+    htmlLang: 'en',
+    ogLocale: 'en_GB',
+    title: 'sera Wild — process-driven photography',
+    description:
+      'Process-driven photography in Switzerland. Sera Wild accompanies people through their own story – real, unposed and moving.',
+  },
+}[sprache];
+
+const seitenTitel = title ?? standard.title;
+const seitenText = description ?? standard.description;
+
+const canonicalUrl = new URL(Astro.url.pathname, 'https://serawild.com').href;
+const andereSprache = sprache === 'de' ? 'en' : 'de';
+const uebersetzungUrl = uebersetzung
+  ? new URL(uebersetzung, 'https://serawild.com').href
+  : undefined;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={standard.htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+    <meta name="description" content={seitenText} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={seitenTitel} />
+    <meta property="og:description" content={seitenText} />
+    <meta property="og:image" content={`https://serawild.com${ogImage}`} />
+    <meta property="og:locale" content={standard.ogLocale} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+
+    {
+      uebersetzungUrl && (
+        <>
+          <link rel="alternate" hreflang={sprache} href={canonicalUrl} />
+          <link rel="alternate" hreflang={andereSprache} href={uebersetzungUrl} />
+        </>
+      )
+    }
+
+    <title>{seitenTitel}</title>
   </head>
-  <body class="flex min-h-screen flex-col">
+  <body class="flex min-h-screen flex-col overflow-x-hidden pb-[82px] md:pb-0">
+    <Loader />
     <slot />
+    <MobileNavLeiste />
   </body>
 </html>

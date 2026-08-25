@@ -1,0 +1,18 @@
+{
+  "seite": "Geschichten",
+  "figmaNode": "85:1428",
+  "abschnitte": [
+    {
+      "id": "foto-story",
+      "name": "Foto-Story 2",
+      "figmaNode": "2166:129",
+      "typ": "bildreihe-randabfallend",
+      "hintergrund": "dark",
+      "bilder": {
+        "slot1": "geschichten-fotostory-01",
+        "slot2": "geschichten-fotostory-02",
+        "slot3": "geschichten-fotostory-03"
+      }
+    }
+  ]
+}

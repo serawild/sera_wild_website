@@ -1,0 +1,43 @@
+{
+  "seite": "Datenschutzerklärung",
+  "figmaNode": "2206:251",
+  "abschnitte": [
+    {
+      "id": "titelleiste",
+      "typ": "titelleiste",
+      "hintergrund": "dark",
+      "navigation": { "theme": "light" },
+      "padding": { "top": 40, "bottom": 96, "px": 120 },
+      "titel": { "text": "Datenschutzerklärung", "groesse": "h2", "farbe": "cream" }
+    },
+    {
+      "id": "inhalt",
+      "typ": "rechtstext",
+      "hintergrund": "cream",
+      "padding": { "top": 120, "bottom": 160, "px": 120 },
+      "abschnittGap": 80,
+      "titelGroesse": "h3",
+      "textGroesse": 24,
+      "textZeilenabstand": 2,
+      "sektionen": [
+        "1. Verantwortliche Stelle",
+        "2. Grundsatz",
+        "3. Keine Formulare, Cookies oder Tracking",
+        "4. Google Maps (Kontaktseite)",
+        "5. Hosting und Server-Protokolle",
+        "6. Kontaktaufnahme per E-Mail oder Telefon",
+        "7. Daten im Rahmen einer Buchung",
+        "8. Bildauswahl über Webgalerie (Pixieset)",
+        "9. Weitergabe von Daten an Dritte",
+        "10. Aufbewahrung von Bilddaten",
+        "11. Datensicherheit",
+        "12. Deine Rechte",
+        "13. Änderungen dieser Datenschutzerklärung"
+      ]
+    },
+    {
+      "id": "footer",
+      "typ": "footer"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+---
+interface Props {
+  eintraege: Array<{ q: string; a: string }>;
+}
+const { eintraege } = Astro.props;
+---
+
+<div class="flex flex-col">
+  {eintraege.map((item) => (
+    <details class="border-b border-[#ede3d4] first:border-t first:border-[#ede3d4]">
+      <summary class="flex cursor-pointer items-center justify-between gap-[2rem] py-[1.5rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5F3ED]">
+        <span class="font-display text-[2rem] font-semibold">{item.q}</span>
+        <svg
+          class="faq-pfeil h-[1.5rem] w-[1.5rem] shrink-0"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <p class="pb-[1.5rem] font-body text-body leading-[2]">{item.a}</p>
+    </details>
+  ))}
+</div>
+
+<style>
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-pfeil {
+    transition: transform 200ms ease;
+  }
+  details[open] .faq-pfeil {
+    transform: rotate(180deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-pfeil {
+      transition: none;
+    }
+  }
+</style>

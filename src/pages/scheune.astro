@@ -1,0 +1,432 @@
+---
+import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import BildPicture from '../components/BildPicture.astro';
+import DekoIllustration from '../components/DekoIllustration.astro';
+
+const raumH2   = 'Ein Raum mit Geschichte.';
+const raumBold = 'Alte Steinwände, antike Objekte, neue Energie - gebaut auf dem was war, offen für das was kommt.';
+const raumP1   = 'Hier darfst du dich austoben – mit deinen Lieblingsoutfits, deinen Ideen, deiner Energie. Es geht um Bilder, um Darstellung, um Spass vor der Kamera. Und wer weiss – vielleicht entdeckst du dabei den Wunsch nach mehr. Nach Bildern, die nicht nur zeigen wie du aussiehst, sondern wer du bist.';
+const raumP2   = 'Eines vorweg, damit du weisst worauf du dich einlässt: Die Scheune ist kein Studio im klassischen Sinn. Sie ist nicht isoliert – im Sommer ist es warm, im Winter frisch. Genau diese Unperfektheit macht die Bilder aus: Keine künstliche Kulisse, sondern ein einzigartiger Ort  - mit Stil.';
+
+const zitatText = 'Manchmal braucht es keinen Plan. Nur einen Ort, an dem du dich ausprobieren darfst.';
+
+const kulissenH2   = 'Wähle deine Kulisse vor Ort:';
+const kulissenBold = 'Wir treffen uns direkt bei der Scheune. Ein kurzer Schwatz, dann legen wir los – unkompliziert, locker, du.';
+
+const kulissen = [
+  { id: 'kulissen-01', name: 'Vintage mit Charme', text: '...rustikale & einzigartige Kulisse aus Holz' },
+  { id: 'kulissen-02', name: 'Licht trifft Tiefe', text: '...dein Portrait auf schwarzem Hintergrund' },
+  { id: 'kulissen-03', name: 'Zeitlos wie du', text: '...dein Bild vor der über 200-jährigen Steinwand' },
+];
+
+const paketeH2 = 'Die 3 Pakete';
+const pakete = [
+  { buchstabe: 'S', name: 'Kennenlern-Shooting', dauer: '15 Min | 1 Hintergrund', bilder: '3 Bilder inkl. Bearbeitung', preis: 'CHF 149' },
+  { buchstabe: 'M', name: "Probier's aus!", dauer: '30 Min | 1-2 Hintergründe', bilder: '5 Bilder inkl. Bearbeitung', preis: 'CHF 290' },
+  { buchstabe: 'L', name: 'Tob dich aus!', dauer: '45-60 Min | 2-3 Hintergründe', bilder: '8 Bilder inkl. Bearbeitung', preis: 'CHF 390' },
+];
+
+const neugierH2 = 'Neugierig auf mehr?';
+
+const verweisH2 = 'Oder doch das grosse Ganze?';
+const verweisP  = 'Wenn du beim Lesen gemerkt hast, dass dir eine Stunde zu wenig ist: Das W-Erläbnis nimmt sich zwei bis drei Stunden Zeit, draussen, an einem Ort der dir etwas bedeutet.';
+---
+
+<Base
+  title="Scheune — sera Wild"
+  description="Dein Fotoshooting in der Scheune: vier rustikale Kulissen, eine besondere Stimmung, ganz du."
+>
+
+  <Navigation farbe="hell" />
+
+  <!-- ===== HERO ===== -->
+
+  <!-- Mobile -->
+  <section class="relative md:hidden h-[43.75rem] overflow-hidden bg-olive">
+    <BildPicture
+      id="hero-scheune"
+      class="absolute inset-0 h-full w-full object-cover"
+      mobil={true}
+      loading="eager"
+      fetchpriority="high"
+      widths={[390, 780]}
+      sizes="100vw"
+    />
+    <div class="absolute inset-0 bg-black/25 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-10 left-6 max-w-[21rem]">
+      <p class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/70 mb-[0.625rem]">RUSTIKAL &amp; ECHT</p>
+      <h1 class="font-display text-[1.9375rem] leading-[1.3] font-semibold text-cream">Dein Fotoshooting</h1>
+      <p class="font-body text-[1.125rem] leading-[1.6] text-cream mt-[0.5rem]">Vier Kulissen, eine Stimmung, ganz du.</p>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="hidden md:block relative h-[100svh] min-h-[600px] overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <BildPicture
+        id="hero-scheune"
+        class="absolute inset-0 h-full w-full object-cover object-[56%_70%] scale-[1.61] origin-[56%_70%]"
+        loading="eager"
+        fetchpriority="high"
+        widths={[768, 1280, 1728, 2560]}
+        sizes="100vw"
+      />
+    </div>
+    <div class="absolute inset-0 bg-black/40 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-[10rem] right-[7.5rem] flex max-w-[73.4375rem] flex-col items-end text-right">
+      <p class="font-display text-h1 font-semibold leading-normal text-cream">rustikal &amp; echt</p>
+      <p class="font-display text-h2 font-semibold leading-normal text-cream">Dein Fotoshooting: vier Kulissen,</p>
+      <p class="font-display text-h2 font-semibold leading-normal text-cream">eine Stimmung, ganz du.</p>
+    </div>
+  </section>
+
+  <!-- ===== 01 RAUM MIT GESCHICHTE ===== -->
+
+  <!-- Mobile -->
+  <section class="md:hidden bg-cream py-12 px-6">
+    <div class="flex flex-col gap-[1.125rem]">
+      <div class="flex items-center gap-2 mb-[0.375rem]">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">01</span>
+        <span class="w-5 h-px bg-dark/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">RAUM MIT GESCHICHTE</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold">{raumH2}</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] font-bold">{raumBold}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68]">{raumP1}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68]">{raumP2}</p>
+    </div>
+    <!-- Bildgruppe: gross oben links, klein unten rechts -->
+    <div class="relative mx-auto mt-[1.5rem]" style="width:342px;height:322px;">
+      <div class="absolute overflow-hidden" style="left:0;top:0;width:214px;height:286px;">
+        <BildPicture id="raum-mit-geschichte-01" class="h-full w-full object-cover" mobil={true} widths={[214,428]} sizes="214px" />
+      </div>
+      <div class="absolute overflow-hidden" style="left:164px;top:84px;width:178px;height:238px;">
+        <BildPicture id="raum-mit-geschichte-02" class="h-full w-full object-cover" mobil={true} widths={[178,356]} sizes="178px" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="hidden md:block relative isolate overflow-visible z-10 bg-cream-warm py-xl">
+    <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={146} cssRotate={-33.6} top={976} seite="rechts" abstand={-140} />
+    <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
+      <div class="flex flex-1 min-w-0 flex-col gap-[1.5rem]">
+        <h2 class="font-display text-h2 font-semibold leading-normal">{raumH2}</h2>
+        <p class="font-body text-body font-bold leading-[2]">{raumBold}</p>
+        <p class="font-body text-body leading-[2]">{raumP1}</p>
+        <p class="font-body text-body leading-[2]">{raumP2}</p>
+      </div>
+      <div class="relative shrink-0" style="width:35rem;height:43.75rem">
+        <div class="absolute" style="left:0;top:0;width:28.125rem;height:18.75rem">
+          <BildPicture id="raum-mit-geschichte-01" class="absolute inset-0 h-full w-full object-cover" widths={[450, 900]} sizes="28.125rem" />
+        </div>
+        <div class="absolute" style="left:6.25rem;top:17.5rem;width:28.125rem;height:18.75rem">
+          <BildPicture id="raum-mit-geschichte-02" class="absolute inset-0 h-full w-full object-cover" widths={[450, 900]} sizes="28.125rem" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ZITAT ===== -->
+
+  <!-- Mobile: rust; Desktop: dark -->
+  <section class="md:hidden bg-rust py-12 px-6">
+    <p class="text-center font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{zitatText}</p>
+  </section>
+  <section class="hidden md:block relative z-0 bg-dark py-xl">
+    <div class="mx-auto max-w-inhalt px-[7.5rem]">
+      <p class="text-center font-display text-h2 font-semibold leading-normal text-cream">{zitatText}</p>
+    </div>
+  </section>
+
+  <!-- ===== 02 KULISSEN ===== -->
+
+  <!-- Mobile -->
+  <section class="md:hidden bg-dark py-[52px]">
+    <div class="px-6 flex flex-col gap-[1.125rem]">
+      <div class="flex items-center gap-2 mb-[0.375rem]">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">02</span>
+        <span class="w-5 h-px bg-cream/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">KULISSEN</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{kulissenH2}</h2>
+    </div>
+    <!-- Wischleiste 260×340 -->
+    <div
+      class="mt-[1.25rem] overflow-x-auto"
+      id="kulissen-track"
+      style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;"
+    >
+      <div class="flex gap-3 px-6" style="width:max-content;">
+        {kulissen.map(k => (
+          <div class="shrink-0 flex flex-col" style="scroll-snap-align:start;width:16.25rem;">
+            <div style="width:16.25rem;height:21.25rem;overflow:hidden;position:relative;">
+              <BildPicture
+                id={k.id}
+                class="absolute inset-0 h-full w-full object-cover"
+                mobil={true}
+                widths={[260, 520]}
+                sizes="260px"
+              />
+            </div>
+            <div class="mt-[0.75rem] flex flex-col gap-[0.25rem]">
+              <p class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream">{k.name}</p>
+              <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/80">{k.text}</p>
+            </div>
+          </div>
+        ))}
+        <!-- 4. Karte: Leinen & Licht (kein Bild) -->
+        <div class="shrink-0 flex flex-col" style="scroll-snap-align:start;width:16.25rem;">
+          <div class="flex items-center justify-center bg-olive/60" style="width:16.25rem;height:21.25rem;">
+            <p class="font-display text-[1.6875rem] font-semibold italic text-cream/60 text-center px-4">Leinen &amp; Licht</p>
+          </div>
+          <div class="mt-[0.75rem] flex flex-col gap-[0.25rem]">
+            <p class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream">Leinen &amp; Licht</p>
+            <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/80">...mit einem Hauch Boho in Szene gesetzt</p>
+          </div>
+        </div>
+        <div class="shrink-0 w-3" aria-hidden="true"></div>
+      </div>
+    </div>
+    <!-- Dots -->
+    <div class="flex justify-center gap-[0.5rem] mt-[1.25rem]">
+      {Array.from({length: 4}, (_, i) => (
+        <span class={`kulissen-dot h-[0.375rem] w-[0.375rem] rounded-full bg-cream transition-opacity ${i === 0 ? 'opacity-100' : 'opacity-30'}`}></span>
+      ))}
+    </div>
+    <div class="px-6 mt-[1.5rem] flex flex-col gap-[1.125rem]">
+      <p class="font-body text-[1.0625rem] leading-[1.68] font-bold text-cream">{kulissenBold}</p>
+      <a
+        href="/kontakt"
+        class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-[#b08257] px-md py-sm font-body text-cta uppercase text-cream"
+      >
+        MEHR DAZU
+      </a>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="hidden md:block relative isolate overflow-visible z-10 bg-cream-warm py-xl">
+    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={287} cssRotate={29} top={922} seite="links" abstand={-148} />
+    <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
+      <div class="relative shrink-0" style="width:35rem;height:43.75rem">
+        <div class="absolute" style="left:1.875rem;top:2.5rem;width:15rem;height:20rem">
+          <BildPicture id="kulissen-02" class="absolute inset-0 h-full w-full object-cover" widths={[240, 480]} sizes="15rem" />
+        </div>
+        <div class="absolute" style="left:15rem;top:1.25rem;width:18.75rem;height:25rem">
+          <BildPicture id="kulissen-01" class="absolute inset-0 h-full w-full object-cover" widths={[300, 600]} sizes="18.75rem" />
+        </div>
+        <div class="absolute" style="left:9.375rem;top:19.375rem;width:16.25rem;height:21.25rem">
+          <BildPicture id="kulissen-03" class="absolute inset-0 h-full w-full object-cover" widths={[260, 520]} sizes="16.25rem" />
+        </div>
+      </div>
+      <div class="flex flex-1 min-w-0 flex-col items-start gap-[3rem]">
+        <h2 class="font-display text-h2 font-semibold leading-normal">{kulissenH2}</h2>
+        <div class="flex w-full flex-col gap-[1.5rem]">
+          {kulissen.map(k => (
+            <div class="flex flex-col gap-[0.25rem]">
+              <p class="font-body text-body uppercase tracking-[0.08em]">{k.name}</p>
+              <p class="font-body text-body leading-[2]">{k.text}</p>
+            </div>
+          ))}
+          <div class="flex flex-col gap-[0.25rem]">
+            <p class="font-body text-body uppercase tracking-[0.08em]">Leinen &amp; Licht</p>
+            <p class="font-body text-body leading-[2]">...mit einem Hauch Boho in Szene gesetzt</p>
+          </div>
+          <div class="h-px w-full bg-[#5b5c4f]"></div>
+          <p class="font-body text-body font-bold leading-[2]">{kulissenBold}</p>
+        </div>
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center rounded-[1.0625rem] bg-[#b08257] px-md py-sm font-body text-cta uppercase text-cream transition-opacity hover:opacity-90"
+        >
+          MEHR DAZU
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 PAKETE ===== -->
+
+  <!-- Mobile: cream; Desktop: dark -->
+  <section class="md:hidden bg-cream py-12 px-6">
+    <div class="flex flex-col gap-[1.125rem]">
+      <div class="flex items-center gap-2 mb-[0.375rem]">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">03</span>
+        <span class="w-5 h-px bg-dark/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">PAKETE</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold">{paketeH2}</h2>
+    </div>
+    <div class="mt-[1.5rem] flex flex-col gap-4">
+      {pakete.map(p => (
+        <div class="flex flex-col items-center gap-4 bg-cream-warm px-6 py-8">
+          <p class="font-display text-[3.5rem] font-semibold leading-none" style="color:#b08257">{p.buchstabe}</p>
+          <p class="font-display text-[1.25rem] font-semibold leading-[1.3] text-dark text-center">{p.name}</p>
+          <div class="h-px w-full bg-[#ede3d4]"></div>
+          <p class="font-body text-[1rem] leading-[1.65] text-dark text-center">{p.dauer}</p>
+          <p class="font-body text-[1rem] leading-[1.65] text-dark text-center">{p.bilder}</p>
+          <p class="font-display text-[2rem] font-semibold leading-[1.3] text-dark">{p.preis}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-[1.5rem] flex flex-col gap-[0.75rem]">
+      <p class="font-body text-[1.0625rem] leading-[1.68]">
+        <span class="font-bold">Vor dem Shooting:</span>
+        {' '}Du erhältst nach der Buchung meinen persönlichen Guide mit allem was du wissen musst.
+      </p>
+      <p class="font-body text-[1.0625rem] leading-[1.68]">
+        <span class="font-bold">Nach dem Shooting: </span>
+        Du erhältst deine Bilder mit Wasserzeichen per Webgalerie zur Bildauswahl.
+      </p>
+    </div>
+  </section>
+
+  <section class="hidden md:block relative z-0 bg-dark py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[3rem] px-[7.5rem]">
+      <h2 class="w-full text-center font-display text-h2 font-semibold leading-normal text-cream">{paketeH2}</h2>
+      <div class="flex w-full gap-[1.5rem]">
+        {pakete.map(p => (
+          <div class="flex flex-1 flex-col items-center gap-[1.25rem] bg-cream-warm px-[2rem] py-[3rem]">
+            <p class="w-full text-center font-display text-[4.5rem] font-semibold leading-normal" style="color:#b08257">{p.buchstabe}</p>
+            <p class="w-full text-center font-display text-[1.5rem] font-semibold leading-normal text-dark">{p.name}</p>
+            <div class="h-px w-full bg-[#ede3d4]"></div>
+            <p class="w-full text-center font-body text-body-klein leading-[1.7] text-dark">{p.dauer}</p>
+            <p class="w-full text-center font-body text-body-klein leading-[1.7] text-dark">{p.bilder}</p>
+            <p class="w-full text-center font-display text-[2.25rem] font-semibold leading-normal text-dark">{p.preis}</p>
+          </div>
+        ))}
+      </div>
+      <div class="flex w-full flex-col items-center gap-[0.75rem] text-center font-body text-[1.5rem] text-cream">
+        <p>
+          <span class="font-bold">Vor dem Shooting:</span>
+          {' '}Du erhältst nach der Buchung meinen persönlichen Guide mit allem was du wissen musst.
+        </p>
+        <p>
+          <span class="font-bold">Nach dem Shooting: </span>
+          Du erhältst deine Bilder mit Wasserzeichen per Webgalerie zur Bildauswahl.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 NEUGIER ===== -->
+
+  <!-- Mobile: olive; Desktop: cream -->
+  <section class="md:hidden bg-olive py-[52px] px-6">
+    <div class="flex flex-col gap-[1.125rem]">
+      <div class="flex items-center gap-2 mb-[0.375rem]">
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">04</span>
+        <span class="w-5 h-px bg-cream/50"></span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">NEUGIER</span>
+      </div>
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{neugierH2}</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream">
+        <span>Viele Menschen kommen zu mir und sagen: </span>
+        <span class="font-display font-semibold italic text-[1.5rem] leading-[1.6]">Ich bin nicht fotogen. </span>
+        <span>Was sie eigentlich meinen: </span>
+        <span class="font-display font-semibold italic text-[1.5rem] leading-[1.6]">Ich habe mich noch nie wirklich gesehen. </span>
+        <span>Und genau dort beginnen wir beim W-Erläbnis! </span>
+      </p>
+      <a
+        href="/kontakt"
+        class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-[#b08257] px-md py-sm font-body text-cta uppercase text-cream mt-[0.375rem]"
+      >
+        schreib mir!
+      </a>
+    </div>
+    <!-- Bildgruppe gespiegelt: gross oben rechts, klein unten links -->
+    <div class="relative mx-auto mt-[1.5rem]" style="width:342px;height:322px;">
+      <div class="absolute overflow-hidden" style="left:128px;top:0;width:214px;height:286px;">
+        <BildPicture id="neugier-01" class="h-full w-full object-cover" mobil={true} widths={[214,428]} sizes="214px" />
+      </div>
+      <div class="absolute overflow-hidden" style="left:0;top:84px;width:178px;height:238px;">
+        <BildPicture id="neugier-02" class="h-full w-full object-cover" mobil={true} widths={[178,356]} sizes="178px" />
+      </div>
+    </div>
+  </section>
+
+  <section class="hidden md:block relative isolate overflow-visible z-10 bg-cream py-xl">
+    <DekoIllustration motiv="blattzweig" farbe="#BC541F" breite={284} cssRotate={-30} top={697} seite="rechts" abstand={-215} />
+    <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
+      <div class="flex flex-1 min-w-0 flex-col items-start gap-[3rem]">
+        <div class="flex flex-col gap-[2.5rem]">
+          <h2 class="font-display text-h2 font-semibold leading-normal">{neugierH2}</h2>
+          <p class="font-body leading-[2] text-body">
+            <span>Viele Menschen kommen zu mir und sagen: </span>
+            <span class="font-display font-semibold italic text-[2.5rem] leading-[2]">Ich bin nicht fotogen. </span>
+            <span>Was sie eigentlich meinen: </span>
+            <span class="font-display font-semibold italic text-[2.5rem] leading-[2]">Ich habe mich noch nie wirklich gesehen. </span>
+            <span>Und genau dort beginnen wir beim W-Erläbnis! </span>
+          </p>
+        </div>
+        <a
+          href="/kontakt"
+          class="inline-flex items-center justify-center rounded-[1.0625rem] bg-[#b08257] px-md py-sm font-body text-cta uppercase text-cream transition-opacity hover:opacity-90"
+        >
+          schreib mir!
+        </a>
+      </div>
+      <div class="relative shrink-0" style="width:37.5rem;height:46.875rem">
+        <div class="absolute overflow-hidden" style="left:12.125rem;top:-0.1875rem;width:25.375rem;height:31.75rem">
+          <div class="absolute inset-0" style="transform:scaleX(-1)">
+            <BildPicture id="neugier-01" class="absolute inset-0 h-full w-full object-cover" widths={[406, 812]} sizes="25.375rem" />
+          </div>
+        </div>
+        <div class="absolute" style="left:0;top:17.0625rem;width:20rem;height:26.25rem">
+          <BildPicture id="neugier-02" class="absolute inset-0 h-full w-full object-cover" widths={[320, 640]} sizes="20rem" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VERWEIS – W-ERLÄBNIS ===== -->
+
+  <!-- Mobile: dark; Desktop: rust -->
+  <section class="md:hidden bg-dark py-12 px-6">
+    <div class="flex flex-col items-center gap-[1.125rem] text-center">
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{verweisH2}</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/80">{verweisP}</p>
+      <a
+        href="/w-erlaebnis"
+        class="inline-flex items-center justify-center rounded-[1.0625rem] bg-cream px-md py-sm font-body text-cta uppercase text-dark mt-[0.375rem]"
+      >
+        ZUM W-ERLÄBNIS
+      </a>
+    </div>
+  </section>
+
+  <section class="hidden md:block relative z-0 bg-rust py-[4.8125rem]">
+    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[1.75rem] px-[15rem] text-center">
+      <h2 class="font-display text-[2.75rem] font-semibold leading-normal text-cream">{verweisH2}</h2>
+      <p class="font-body text-small leading-[2] text-cream/90">{verweisP}</p>
+      <a
+        href="/w-erlaebnis"
+        class="inline-flex items-center justify-center rounded-[1.0625rem] bg-cream px-md py-sm font-body text-cta uppercase text-dark transition-colors hover:bg-cream-warm"
+      >
+        ZUM W-ERLÄBNIS
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+
+</Base>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('kulissen-track');
+  const dots = document.querySelectorAll('.kulissen-dot');
+  if (!track || !dots.length) return;
+  track.addEventListener('scroll', () => {
+    const cardWidth = 260 + 12;
+    const idx = Math.min(Math.round(track.scrollLeft / cardWidth), dots.length - 1);
+    dots.forEach((d, i) => {
+      d.classList.toggle('opacity-100', i === idx);
+      d.classList.toggle('opacity-30', i !== idx);
+    });
+  });
+});
+</script>

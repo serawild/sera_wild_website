@@ -1,0 +1,96 @@
+---
+/**
+ * BildPicture — liest Pfad + Masse aus bilder.json anhand der `id`,
+ * optimiert via astro:assets (<Picture>) mit AVIF + WebP-Fallback.
+ *
+ * Verwendung:
+ *   <BildPicture id="hero-kontakt" class="..." loading="eager" fetchpriority="high" />
+ *   <BildPicture id="orte-aare" sizes="(max-width: 640px) 100vw, 469px" />
+ *
+ * optional=true: kein Fehler wenn datei=null (rendert leere Box mit richtigen Massen).
+ */
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import bilderRaw from '../../spec/bilder.json';
+
+interface BilderEintrag {
+  id: string;
+  alt: string;
+  aktiv?: boolean;
+  datei: string | null;
+  dateiMobil?: string | null;
+  anzeige: { breite: number; hoehe: number };
+}
+
+interface Props {
+  id: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+  widths?: number[];
+  optional?: boolean;
+  /** Auf true setzen in mobilen Abschnitten: lädt dateiMobil aus bilder.json, falls vorhanden. */
+  mobil?: boolean;
+}
+
+const {
+  id,
+  class: className,
+  loading = 'lazy',
+  fetchpriority,
+  sizes,
+  widths,
+  optional = false,
+  mobil = false,
+} = Astro.props;
+
+// Bilder aus src/assets/images/ via Vite-Glob laden (AVIF + JPEG)
+const imageModules = {
+  ...import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.avif', { eager: true }),
+  ...import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.jpg',  { eager: true }),
+};
+
+const eintrag = (bilderRaw.bilder as BilderEintrag[]).find(
+  (b) => b.id === id && b.aktiv !== false
+);
+
+if (!eintrag) {
+  throw new Error(`BildPicture: Kein Eintrag für id="${id}" in bilder.json`);
+}
+
+const { anzeige } = eintrag;
+const defaultWidths = widths ?? [640, 1024, Math.round(anzeige.breite * 1.5)];
+const defaultSizes = sizes ?? `(max-width: 640px) 100vw, ${anzeige.breite}px`;
+
+let src: ImageMetadata | null = null;
+
+const dateiPfad = mobil && eintrag.dateiMobil ? eintrag.dateiMobil : eintrag.datei;
+
+if (dateiPfad) {
+  const key = `/${dateiPfad}`;
+  const mod = imageModules[key];
+  src = mod?.default ?? null;
+}
+---
+
+{src ? (
+  <Picture
+    src={src}
+    alt={eintrag.alt}
+    width={anzeige.breite}
+    height={anzeige.hoehe}
+    formats={['avif', 'webp']}
+    widths={defaultWidths}
+    sizes={defaultSizes}
+    class={className}
+    loading={loading}
+    fetchpriority={fetchpriority}
+  />
+) : (
+  <div
+    class={className}
+    style={`aspect-ratio: ${anzeige.breite} / ${anzeige.hoehe}; background: #e0d4c2;`}
+    aria-hidden="true"
+  />
+)}

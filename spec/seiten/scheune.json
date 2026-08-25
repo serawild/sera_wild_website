@@ -1,0 +1,246 @@
+{
+  "seite": "Scheune",
+  "figmaNode": "2018:1202",
+  "abschnitte": [
+    {
+      "id": "hero",
+      "name": "Hero Scheune",
+      "figmaNode": "2257:624",
+      "typ": "hero-bild",
+      "hoehe": "100svh",
+      "hintergrund": {
+        "bild": "hero-scheune",
+        "overlay": "rgba(0,0,0,0.4)",
+        "position": "cover center"
+      },
+      "navigation": {
+        "theme": "light"
+      },
+      "text": {
+        "ausrichtung": "rechts",
+        "zeilen": [
+          { "text": "rustikal & echt", "groesse": "h1", "px": 80 },
+          { "text": "Dein Fotoshooting: vier Kulissen,", "groesse": "h2", "px": 56 },
+          { "text": "eine Stimmung, ganz du.", "groesse": "h2", "px": 56 }
+        ]
+      },
+      "cta": null
+    },
+    {
+      "id": "raum-mit-geschichte",
+      "name": "Raum mit Geschichte",
+      "figmaNode": "2257:547",
+      "typ": "text-bild",
+      "hintergrund": "cream",
+      "padding": "py-xl px-[7.5rem]",
+      "gap": 80,
+      "layout": {
+        "bildSeite": "rechts",
+        "bildBreite": 560,
+        "bildHoehe": 700
+      },
+      "text": {
+        "h2": "Ein Raum mit Geschichte.",
+        "absaetze": [
+          {
+            "text": "Alte Steinwände, antike Objekte, neue Energie - gebaut auf dem was war, offen für das was kommt.",
+            "stil": "bold"
+          },
+          {
+            "text": "Hier darfst du dich austoben – mit deinen Lieblingsoutfits, deinen Ideen, deiner Energie. Es geht um Bilder, um Darstellung, um Spass vor der Kamera. Und wer weiss – vielleicht entdeckst du dabei den Wunsch nach mehr. Nach Bildern, die nicht nur zeigen wie du aussiehst, sondern wer du bist.",
+            "stil": "normal"
+          },
+          {
+            "text": "Eines vorweg, damit du weisst worauf du dich einlässt: Die Scheune ist kein Studio im klassischen Sinn. Sie ist nicht isoliert – im Sommer ist es warm, im Winter frisch. Genau diese Unperfektheit macht die Bilder aus: Keine künstliche Kulisse, sondern ein einzigartiger Ort  - mit Stil.",
+            "stil": "normal"
+          }
+        ]
+      },
+      "collage": {
+        "container": { "breite": 560, "hoehe": 700 },
+        "bilder": [
+          { "id": "raum-mit-geschichte-01", "left": 0, "top": 0, "breite": 450, "hoehe": 300 },
+          { "id": "raum-mit-geschichte-02", "left": 100, "top": 280, "breite": 450, "hoehe": 300 }
+        ]
+      }
+    },
+    {
+      "id": "zitat",
+      "name": "Zitat",
+      "figmaNode": "2442:1310",
+      "typ": "zitat-zentriert",
+      "hintergrund": "dark",
+      "padding": "py-xl px-[7.5rem]",
+      "text": {
+        "zitat": "Manchmal braucht es keinen Plan. Nur einen Ort, an dem du dich ausprobieren darfst.",
+        "farbe": "cream"
+      }
+    },
+    {
+      "id": "kulissen",
+      "name": "Kulissen",
+      "figmaNode": "2257:554",
+      "typ": "bild-text",
+      "hintergrund": "cream",
+      "padding": "py-xl px-[7.5rem]",
+      "gap": 80,
+      "layout": {
+        "bildSeite": "links",
+        "bildBreite": 560,
+        "bildHoehe": 700
+      },
+      "collage": {
+        "container": { "breite": 560, "hoehe": 700 },
+        "bilder": [
+          { "id": "kulissen-02", "left": 30, "top": 40, "breite": 240, "hoehe": 320 },
+          { "id": "kulissen-01", "left": 240, "top": 20, "breite": 300, "hoehe": 400 },
+          { "id": "kulissen-03", "left": 150, "top": 310, "breite": 260, "hoehe": 340 }
+        ]
+      },
+      "text": {
+        "h2": "Wähle deine Kulisse vor Ort:",
+        "kulissenListe": [
+          { "titel": "Vintage mit Charme", "beschreibung": "...rustikale & einzigartige Kulisse aus Holz" },
+          { "titel": "Licht trifft Tiefe", "beschreibung": "...dein Portrait auf schwarzem Hintergrund" },
+          { "titel": "Zeitlos wie du", "beschreibung": "...dein Bild vor der über 200-jährigen Steinwand" },
+          { "titel": "Leinen & Licht", "beschreibung": "...mit einem Hauch Boho in Szene gesetzt" }
+        ],
+        "abschluss": "Wir treffen uns direkt bei der Scheune. Ein kurzer Schwatz, dann legen wir los – unkompliziert, locker, du."
+      },
+      "cta": {
+        "text": "MEHR DAZU",
+        "href": "/kontakt",
+        "farbe": "#b08257"
+      }
+    },
+    {
+      "id": "pakete",
+      "name": "Pakete",
+      "figmaNode": "2257:579",
+      "typ": "pakete",
+      "hintergrund": "dark",
+      "padding": "py-xl px-[7.5rem]",
+      "gap": 48,
+      "text": {
+        "h2": "Die 3 Pakete",
+        "farbe": "cream"
+      },
+      "pakete": [
+        {
+          "kuerzel": "S",
+          "titel": "Kennenlern-Shooting",
+          "details": ["15 Min | 1 Hintergrund", "3 Bilder inkl. Bearbeitung"],
+          "preis": "CHF 149"
+        },
+        {
+          "kuerzel": "M",
+          "titel": "Probier's aus!",
+          "details": ["30 Min | 1-2 Hintergründe", "5 Bilder inkl. Bearbeitung"],
+          "preis": "CHF 290"
+        },
+        {
+          "kuerzel": "L",
+          "titel": "Tob dich aus!",
+          "details": ["45-60 Min | 2-3 Hintergründe", "8 Bilder inkl. Bearbeitung"],
+          "preis": "CHF 390"
+        }
+      ],
+      "hinweise": [
+        {
+          "bold": "Vor dem Shooting:",
+          "text": " Du erhältst nach der Buchung meinen persönlichen Guide mit allem was du wissen musst."
+        },
+        {
+          "bold": "Nach dem Shooting: ",
+          "text": "Du erhältst deine Bilder mit Wasserzeichen per Webgalerie zur Bildauswahl."
+        }
+      ]
+    },
+    {
+      "id": "neugier",
+      "name": "Neugierig auf mehr",
+      "figmaNode": "2257:606",
+      "typ": "text-bild",
+      "hintergrund": "cream",
+      "padding": "py-xl px-[7.5rem]",
+      "gap": 80,
+      "layout": {
+        "bildSeite": "rechts",
+        "bildBreite": 600,
+        "bildHoehe": 750
+      },
+      "text": {
+        "h2": "Neugierig auf mehr?",
+        "fliesstext": [
+          { "text": "Viele Menschen kommen zu mir und sagen: ", "stil": "normal", "groesse": 32 },
+          { "text": "Ich bin nicht fotogen. ", "stil": "vollkorn-kursiv", "groesse": 40 },
+          { "text": "Was sie eigentlich meinen: ", "stil": "normal", "groesse": 32 },
+          { "text": "Ich habe mich noch nie wirklich gesehen. ", "stil": "vollkorn-kursiv", "groesse": 40 },
+          { "text": "Und genau dort beginnen wir beim W-Erläbnis! ", "stil": "normal", "groesse": 32 }
+        ]
+      },
+      "cta": {
+        "text": "schreib mir!",
+        "href": "/kontakt",
+        "farbe": "#b08257"
+      },
+      "collage": {
+        "container": { "breite": 600, "hoehe": 750 },
+        "bilder": [
+          { "id": "neugier-01", "left": 194, "top": -3, "breite": 406, "hoehe": 508, "transform": "scaleX(-1)" },
+          { "id": "neugier-02", "left": 0, "top": 273, "breite": 320, "hoehe": 420 }
+        ]
+      }
+    },
+    {
+      "id": "verweis-zurueck",
+      "name": "Verweis zurück zum W-Erläbnis",
+      "figmaNode": "2339:919",
+      "typ": "verweis-banner",
+      "hintergrund": "rust",
+      "padding": "py-[4.8125rem] px-[15rem]",
+      "gap": 28,
+      "text": {
+        "h2": "Oder doch das grosse Ganze?",
+        "h2Groesse": 44,
+        "farbe": "cream",
+        "body": "Wenn du beim Lesen gemerkt hast, dass dir eine Stunde zu wenig ist: Das W-Erläbnis nimmt sich zwei bis drei Stunden Zeit, draussen, an einem Ort der dir etwas bedeutet.",
+        "bodyOpacity": 0.9
+      },
+      "cta": {
+        "text": "ZUM W-ERLÄBNIS",
+        "href": "/w-erlaebnis",
+        "farbe": "beige",
+        "textFarbe": "dark"
+      }
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "figmaNode": "2018:1272",
+      "typ": "footer",
+      "hintergrund": "cream",
+      "padding": "py-xl px-[7.5rem]",
+      "spalten": {
+        "links": {
+          "links": [
+            { "text": "Datenschutz", "href": "/datenschutz" },
+            { "text": "Impressum", "href": "/impressum" },
+            { "text": "AGB", "href": "/agb" }
+          ]
+        },
+        "mitte": {
+          "logo": "03_BrandRoute_1.0",
+          "breite": 458,
+          "hoehe": 180
+        },
+        "rechts": {
+          "linkedin": true,
+          "telefon": "+41 79 790 57 01",
+          "telefonHref": "tel:+41772895701",
+          "email": "info@serawild.com"
+        }
+      }
+    }
+  ]
+}

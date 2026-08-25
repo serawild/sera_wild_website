@@ -1,0 +1,44 @@
+{
+  "seite": "AGB",
+  "figmaNode": "2206:276",
+  "abschnitte": [
+    {
+      "id": "titelleiste",
+      "typ": "titelleiste",
+      "hintergrund": "dark",
+      "navigation": { "theme": "light" },
+      "padding": { "top": 40, "bottom": 96, "px": 120 },
+      "titel": { "text": "AGB", "groesse": "h2", "farbe": "cream" }
+    },
+    {
+      "id": "inhalt",
+      "typ": "rechtstext",
+      "hintergrund": "cream",
+      "padding": { "top": 120, "bottom": 160, "px": 120 },
+      "abschnittGap": 80,
+      "titelGroesse": "h3",
+      "textGroesse": 24,
+      "textZeilenabstand": 2,
+      "sektionen": [
+        "1. Geltungsbereich",
+        "2. Zustandekommen des Vertrags",
+        "3. Preise und Zahlung",
+        "4. Absage und Verschiebung",
+        "5. Durchführung",
+        "6. Bildauswahl, Bearbeitung und Lieferung",
+        "7. Urheberrecht",
+        "8. Nutzungsrechte der Kundschaft",
+        "9. Veröffentlichung durch die Fotografin",
+        "10. Persönlichkeitsrechte Dritter",
+        "11. Haftung",
+        "12. Archivierung",
+        "13. Datenschutz",
+        "14. Anwendbares Recht und Gerichtsstand"
+      ]
+    },
+    {
+      "id": "footer",
+      "typ": "footer"
+    }
+  ]
+}

@@ -1,10 +1,11 @@
-/* Self-hosted Fonts (via @fontsource) — siehe CLAUDE.md §4 */
+/* Self-hosted Fonts (via @fontsource) — keine CDN-Verbindung */
 /* Vollkorn (Display, Serif): Regular + SemiBold + SemiBold Italic */
 @import '@fontsource/vollkorn/400.css';
 @import '@fontsource/vollkorn/600.css';
 @import '@fontsource/vollkorn/600-italic.css';
-/* Roboto (Body/UI, Sans): Regular */
+/* Roboto (Body/UI, Sans): Regular + Bold */
 @import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/700.css';
 
 @tailwind base;
 @tailwind components;
@@ -12,9 +13,35 @@
 
 @layer base {
   html {
+    /* Mobile: volle 16px-Basis, Tailwind-Clamp-Werte übernehmen Mobile-Skala */
+    font-size: 16px;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
   }
+
+  /* Desktop: Wurzelschriftgrösse an Fensterbreite koppeln.
+     16 / 1728 * 100 = 0.926vw → bei 1728px exakt 16px (1:1 mit Figma).
+     Bei 1300px ≈ 12px, Seite schrumpft proportional mit.
+     Unter 1024px: Skalierung gestoppt, Mobile-Layout greift. */
+  @media (min-width: 1024px) {
+    html {
+      font-size: clamp(12px, 0.926vw, 16px);
+    }
+  }
+
   body {
     @apply bg-cream font-body text-dark antialiased;
+    overflow-x: hidden;
   }
+}
+
+/* Hintergrundklassen setzen automatisch passende Schriftfarbe —
+   Textelemente erben die Farbe, ohne sie selbst zu definieren.
+   Ausnahmen: Elemente mit eigenem Hintergrund (Knöpfe, Karten). */
+@layer components {
+  .bg-rust       { color: #F5F3ED; }
+  .bg-dark       { color: #F5F3ED; }
+  .bg-olive      { color: #F5F3ED; }
+  .bg-cream      { color: #2F322D; }
+  .bg-cream-warm { color: #2F322D; }
 }

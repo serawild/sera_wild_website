@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Werkstattseite, nicht fuer die Suche gedacht
+Disallow: /bausteine
+
+Sitemap: https://serawild.com/sitemap.xml
