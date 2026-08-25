@@ -5,7 +5,9 @@ import Footer from '../components/Footer.astro';
 import BildPicture from '../components/BildPicture.astro';
 import DekoIllustration from '../components/DekoIllustration.astro';
 import FaqListe from '../components/FaqListe.astro';
+import Wortmarke from '../components/Wortmarke.astro';
 
+// Wird im "Das W"-Abschnitt als reine Bildmarke (ohne Text) benötigt
 const W_PATH =
   'M881.4,117.35c282.95,21.85,598.33,247.43,856,154.88,4.73-1.7,7.95-6.11,8.15-11.14' +
   '.69-17.3-1.88-60.18-6.11-69.29-2.38-5.13-9.54-5.9-14.62-3.43-188.71,91.8-623.66' +
@@ -165,21 +167,8 @@ const faqFragen = [
 
     <!-- Mobiler Text: links unten — Wortmarke + Untertitel -->
     <div class="absolute bottom-16 left-6 flex flex-col items-start gap-[18px] md:hidden">
-      <h1 class="relative" style="width:15rem;height:6.25rem;" aria-label="W-Erläbnis">
-        <svg
-          viewBox="0 0 1765.27 1262.84"
-          fill="currentColor"
-          aria-hidden="true"
-          class="absolute left-0 top-0 text-cream"
-          style="width:8.875rem;"
-        >
-          <path d={W_PATH} />
-        </svg>
-        <span
-          class="absolute font-display font-semibold text-cream"
-          aria-hidden="true"
-          style="left:4.6rem;top:1.6rem;font-size:2.75rem;line-height:1.1;"
-        >Erläbnis</span>
+      <h1 aria-label="W-Erläbnis">
+        <Wortmarke wort="Erläbnis" breite={15} klasse="text-cream" />
       </h1>
       <div>
         <p class="font-body text-[1.125rem] leading-[1.6] text-cream">{heroSubZ1}</p>
@@ -189,21 +178,8 @@ const faqFragen = [
 
     <!-- Desktop-Text: rechts unten -->
     <div class="absolute bottom-[10rem] right-6 hidden flex-col items-end text-right md:flex md:right-[7.5rem]">
-      <h1 class="relative mb-[1.625rem] h-[11.5rem] w-[27.5rem]" aria-label="W-Erläbnis">
-        <svg
-          viewBox="0 0 1765.27 1262.84"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          fill="currentColor"
-          class="absolute left-0 top-0 text-cream"
-          style="width:15.9rem;"
-        >
-          <path d={W_PATH} />
-        </svg>
-        <span
-          class="absolute font-display font-semibold text-cream"
-          style="left:8.25rem;top:2.9rem;font-size:5rem;line-height:1.1;"
-        >Erläbnis</span>
+      <h1 class="mb-[1.625rem]" aria-label="W-Erläbnis">
+        <Wortmarke wort="Erläbnis" breite={27.5} klasse="text-cream" />
       </h1>
       <p class="font-display text-h2 font-semibold leading-normal text-cream">{heroSubZ1}</p>
       <p class="font-display text-h2 font-semibold leading-normal text-cream">{heroSubZ2}</p>
