@@ -78,7 +78,9 @@ const collageIds = Array.from({length: 14}, (_, i) => `simona-collage-${String(i
 
   <!-- ===== 01 GESCHICHTE OBEN ===== -->
   <!-- cream bg both versions — one section, responsive layout -->
-  <section class="bg-cream-warm py-12 md:py-xl px-6 md:px-0">
+  <section class="relative isolate overflow-visible bg-cream-warm py-12 md:py-xl px-6 md:px-0">
+    <div class="hidden md:block"><DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={220} cssRotate={39.8} top={919} seite="links" abstand={-119} /></div>
+    <DekoIllustration motiv="tulpe" farbe="#A0886D" breite={186} cssRotate={-27} obenAbAnkerAnteil={0.16} seite="rechts" abstand={-86} mobil={true} deckkraft={0.6} />
     <div class="mx-auto max-w-inhalt flex flex-col gap-[2.5rem] md:flex-row md:items-center md:gap-[5rem]">
       <!-- Bild -->
       <div class="w-full shrink-0 overflow-hidden md:hidden" style="aspect-ratio:342/456;">
@@ -99,7 +101,8 @@ const collageIds = Array.from({length: 14}, (_, i) => `simona-collage-${String(i
 
   <!-- ===== 02 FOTO-STORY ===== -->
   <!-- dark bg both — one section, two inner blocks -->
-  <section class="bg-dark py-12 md:py-xl">
+  <section class="relative isolate bg-dark py-12 md:py-xl">
+    <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={162} cssRotate={21} obenAbAnkerAnteil={0.16} seite="links" abstand={-75} mobil={true} deckkraft={0.6} />
 
     <!-- Mobile inner -->
     <div class="md:hidden px-6 flex flex-col gap-[1.125rem]">
@@ -156,6 +159,7 @@ const collageIds = Array.from({length: 14}, (_, i) => `simona-collage-${String(i
   <!-- ===== 03 WAS GEBLIEBEN IST ===== -->
   <!-- cream-warm bg both — one section, two inner blocks -->
   <section class="relative isolate overflow-visible bg-cream-warm py-12 md:py-xl px-6 md:px-0">
+    <DekoIllustration motiv="eukalyptus" farbe="#A0886D" breite={140} cssRotate={-33} obenAbAnkerAnteil={0.16} seite="rechts" abstand={-64} mobil={true} deckkraft={0.6} />
 
     <!-- Mobile inner: text then Bildgruppe -->
     <div class="md:hidden flex flex-col gap-[1.125rem]">
@@ -203,7 +207,8 @@ const collageIds = Array.from({length: 14}, (_, i) => `simona-collage-${String(i
   <!-- ===== 04 COLLAGE ===== -->
 
   <!-- Mobile: olive -->
-  <section class="md:hidden bg-olive py-[52px]">
+  <section class="relative isolate md:hidden bg-olive py-[52px]">
+    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={122} cssRotate={15} obenAbAnkerAnteil={0.16} seite="links" abstand={-56} mobil={true} deckkraft={0.6} />
     <div class="px-6 flex flex-col items-center gap-[0.75rem] text-center mb-[1.25rem]">
       <p class="font-body text-xs uppercase tracking-[1.28px] text-cream/50">{collageLabelText}</p>
       <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{collageH2}</h2>
