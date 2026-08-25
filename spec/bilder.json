@@ -1628,7 +1628,7 @@
   },
   {
    "id": "hero-sara",
-   "figmaEbene": "hero-geschichten.jpg",
+   "figmaEbene": "hero-sara.jpg",
    "baustein": "Hero",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1639,12 +1639,14 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Hero_Bilder/hero-sara.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich.",
+   "dateiMobil": "src/assets/images/Hero_Bilder/hero-sara-hoch.jpg",
+   "verhaeltnisMobil": "0.63 : 1"
   },
   {
    "id": "sara-geschichte-oben",
-   "figmaEbene": "simona-geschichte-oben.jpg",
+   "figmaEbene": "sara-geschichte-oben.jpg",
    "baustein": "Geschichte Oben",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1655,12 +1657,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-geschichte-oben.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-fotostory-01",
-   "figmaEbene": "simona-fotostory-01.jpg",
+   "figmaEbene": "sara-fotostory-01.jpg",
    "baustein": "Foto-Story",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1671,12 +1673,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-fotostory-01.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-fotostory-02",
-   "figmaEbene": "simona-fotostory-02.jpg",
+   "figmaEbene": "sara-fotostory-02.jpg",
    "baustein": "Foto-Story",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1687,12 +1689,12 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_3-2/sara-fotostory-02.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-fotostory-03",
-   "figmaEbene": "simona-fotostory-03.jpg",
+   "figmaEbene": "sara-fotostory-03.jpg",
    "baustein": "Foto-Story",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1703,12 +1705,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-fotostory-03.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-geschichte-unten-01",
-   "figmaEbene": "simona-geschichte-unten-01.jpg",
+   "figmaEbene": "sara-geschichte-unten-01.jpg",
    "baustein": "Geschichte Unten",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1719,12 +1721,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/sara-geschichte-unten-01.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-geschichte-unten-02",
-   "figmaEbene": "simona-geschichte-unten-02.jpg",
+   "figmaEbene": "sara-geschichte-unten-02.jpg",
    "baustein": "Geschichte Unten",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1735,12 +1737,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/sara-geschichte-unten-02.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-01",
-   "figmaEbene": "simona-collage-01.jpg",
+   "figmaEbene": "sara-collage-01.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1751,12 +1753,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-collage-01.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-02",
-   "figmaEbene": "simona-collage-02.jpg",
+   "figmaEbene": "sara-collage-02.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1767,12 +1769,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-collage-02.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-03",
-   "figmaEbene": "simona-collage-03.jpg",
+   "figmaEbene": "sara-collage-03.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1783,12 +1785,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-collage-03.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-04",
-   "figmaEbene": "simona-collage-04.jpg",
+   "figmaEbene": "sara-collage-04.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1799,12 +1801,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-collage-04.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-05",
-   "figmaEbene": "simona-collage-05.jpg",
+   "figmaEbene": "sara-collage-05.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1815,12 +1817,12 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_3-2/sara-collage-05.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-06",
-   "figmaEbene": "simona-collage-06.jpg",
+   "figmaEbene": "sara-collage-06.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1831,12 +1833,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-collage-06.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-07",
-   "figmaEbene": "simona-collage-07.jpg",
+   "figmaEbene": "sara-collage-07.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1847,12 +1849,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-collage-07.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-08",
-   "figmaEbene": "simona-collage-08.jpg",
+   "figmaEbene": "sara-collage-08.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1863,12 +1865,12 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_3-2/sara-collage-08.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-09",
-   "figmaEbene": "simona-collage-09.jpg",
+   "figmaEbene": "sara-collage-09.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1879,12 +1881,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-collage-09.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-10",
-   "figmaEbene": "simona-collage-10.jpg",
+   "figmaEbene": "sara-collage-10.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1895,12 +1897,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/sara-collage-10.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-11",
-   "figmaEbene": "simona-collage-11.jpg",
+   "figmaEbene": "sara-collage-11.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1911,12 +1913,12 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_3-2/sara-collage-11.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-12",
-   "figmaEbene": "simona-collage-12.jpg",
+   "figmaEbene": "sara-collage-12.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1927,12 +1929,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/sara-collage-12.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-13",
-   "figmaEbene": "simona-collage-13.jpg",
+   "figmaEbene": "sara-collage-13.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1943,12 +1945,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/sara-collage-13.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "sara-collage-14",
-   "figmaEbene": "simona-collage-14.jpg",
+   "figmaEbene": "sara-collage-14.jpg",
    "baustein": "Collage",
    "seite": "4.1_Sara",
    "anzeige": {
@@ -1959,12 +1961,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/sara-collage-14.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "hero-emanuela",
-   "figmaEbene": "hero-geschichten.jpg",
+   "figmaEbene": "hero-emanuela.jpg",
    "baustein": "Hero",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -1975,12 +1977,14 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Hero_Bilder/hero-emanuela.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich.",
+   "dateiMobil": "src/assets/images/Hero_Bilder/hero-emanuela-hoch.jpg",
+   "verhaeltnisMobil": "0.63 : 1"
   },
   {
    "id": "emanuela-geschichte-oben",
-   "figmaEbene": "simona-geschichte-oben.jpg",
+   "figmaEbene": "emanuela-geschichte-oben.jpg",
    "baustein": "Geschichte Oben",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -1991,12 +1995,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-geschichte-oben.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-fotostory-01",
-   "figmaEbene": "simona-fotostory-01.jpg",
+   "figmaEbene": "emanuela-fotostory-01.jpg",
    "baustein": "Foto-Story",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2007,12 +2011,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-fotostory-01.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-fotostory-02",
-   "figmaEbene": "simona-fotostory-02.jpg",
+   "figmaEbene": "emanuela-fotostory-02.jpg",
    "baustein": "Foto-Story",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2023,12 +2027,12 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_3-2/emanuela-fotostory-02.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-fotostory-03",
-   "figmaEbene": "simona-fotostory-03.jpg",
+   "figmaEbene": "emanuela-fotostory-03.jpg",
    "baustein": "Foto-Story",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2039,12 +2043,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-fotostory-03.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-geschichte-unten-01",
-   "figmaEbene": "simona-geschichte-unten-01.jpg",
+   "figmaEbene": "emanuela-geschichte-unten-01.jpg",
    "baustein": "Geschichte Unten",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2055,12 +2059,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/emanuela-geschichte-unten-01.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-geschichte-unten-02",
-   "figmaEbene": "simona-geschichte-unten-02.jpg",
+   "figmaEbene": "emanuela-geschichte-unten-02.jpg",
    "baustein": "Geschichte Unten",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2071,12 +2075,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/emanuela-geschichte-unten-02.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-01",
-   "figmaEbene": "simona-collage-01.jpg",
+   "figmaEbene": "emanuela-collage-01.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2087,12 +2091,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-collage-01.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-02",
-   "figmaEbene": "simona-collage-02.jpg",
+   "figmaEbene": "emanuela-collage-02.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2103,12 +2107,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-collage-02.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-03",
-   "figmaEbene": "simona-collage-03.jpg",
+   "figmaEbene": "emanuela-collage-03.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2119,12 +2123,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-collage-03.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-04",
-   "figmaEbene": "simona-collage-04.jpg",
+   "figmaEbene": "emanuela-collage-04.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2135,12 +2139,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-collage-04.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-05",
-   "figmaEbene": "simona-collage-05.jpg",
+   "figmaEbene": "emanuela-collage-05.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2151,12 +2155,12 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_3-2/emanuela-collage-05.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-06",
-   "figmaEbene": "simona-collage-06.jpg",
+   "figmaEbene": "emanuela-collage-06.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2167,12 +2171,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-collage-06.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-07",
-   "figmaEbene": "simona-collage-07.jpg",
+   "figmaEbene": "emanuela-collage-07.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2183,12 +2187,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-collage-07.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-08",
-   "figmaEbene": "simona-collage-08.jpg",
+   "figmaEbene": "emanuela-collage-08.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2199,12 +2203,12 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_3-2/emanuela-collage-08.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-09",
-   "figmaEbene": "simona-collage-09.jpg",
+   "figmaEbene": "emanuela-collage-09.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2215,12 +2219,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-collage-09.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-10",
-   "figmaEbene": "simona-collage-10.jpg",
+   "figmaEbene": "emanuela-collage-10.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2231,12 +2235,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_4-5/emanuela-collage-10.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-11",
-   "figmaEbene": "simona-collage-11.jpg",
+   "figmaEbene": "emanuela-collage-11.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2247,12 +2251,12 @@
    "ausrichtung": "quer",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_3-2/emanuela-collage-11.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-12",
-   "figmaEbene": "simona-collage-12.jpg",
+   "figmaEbene": "emanuela-collage-12.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2263,12 +2267,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/emanuela-collage-12.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-13",
-   "figmaEbene": "simona-collage-13.jpg",
+   "figmaEbene": "emanuela-collage-13.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2279,12 +2283,12 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/emanuela-collage-13.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "emanuela-collage-14",
-   "figmaEbene": "simona-collage-14.jpg",
+   "figmaEbene": "emanuela-collage-14.jpg",
    "baustein": "Collage",
    "seite": "4.2_Emanuela",
    "anzeige": {
@@ -2295,8 +2299,8 @@
    "ausrichtung": "hoch",
    "alt": "",
    "aktiv": false,
-   "datei": null,
-   "hinweis": "Ebene mit Simona geteilt – Bild pro Instanz ueberschreiben"
+   "datei": "src/assets/images/Galerie_2-3/emanuela-collage-14.jpg",
+   "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
   },
   {
    "id": "hero-netzwerk",
@@ -2323,7 +2327,10 @@
    "figmaEbene": "",
    "baustein": "Hero Reportage",
    "seite": "Reportage",
-   "anzeige": { "breite": 1728, "hoehe": 1117 },
+   "anzeige": {
+    "breite": 1728,
+    "hoehe": 1117
+   },
    "verhaeltnis": "1.55 : 1",
    "ausrichtung": "quer",
    "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
@@ -2335,7 +2342,10 @@
    "figmaEbene": "",
    "baustein": "Bildstrecke Reportage",
    "seite": "Reportage",
-   "anzeige": { "breite": 300, "hoehe": 380 },
+   "anzeige": {
+    "breite": 300,
+    "hoehe": 380
+   },
    "verhaeltnis": "300 : 380",
    "ausrichtung": "hoch",
    "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
@@ -2347,7 +2357,10 @@
    "figmaEbene": "",
    "baustein": "Bildstrecke Reportage",
    "seite": "Reportage",
-   "anzeige": { "breite": 300, "hoehe": 380 },
+   "anzeige": {
+    "breite": 300,
+    "hoehe": 380
+   },
    "verhaeltnis": "300 : 380",
    "ausrichtung": "hoch",
    "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
@@ -2359,7 +2372,10 @@
    "figmaEbene": "",
    "baustein": "Bildstrecke Reportage",
    "seite": "Reportage",
-   "anzeige": { "breite": 300, "hoehe": 380 },
+   "anzeige": {
+    "breite": 300,
+    "hoehe": 380
+   },
    "verhaeltnis": "300 : 380",
    "ausrichtung": "hoch",
    "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
@@ -2371,7 +2387,10 @@
    "figmaEbene": "",
    "baustein": "Bildstrecke Reportage",
    "seite": "Reportage",
-   "anzeige": { "breite": 300, "hoehe": 380 },
+   "anzeige": {
+    "breite": 300,
+    "hoehe": 380
+   },
    "verhaeltnis": "300 : 380",
    "ausrichtung": "hoch",
    "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
@@ -2383,7 +2402,10 @@
    "figmaEbene": "",
    "baustein": "Bildstrecke Reportage",
    "seite": "Reportage",
-   "anzeige": { "breite": 300, "hoehe": 380 },
+   "anzeige": {
+    "breite": 300,
+    "hoehe": 380
+   },
    "verhaeltnis": "300 : 380",
    "ausrichtung": "hoch",
    "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
@@ -2395,7 +2417,10 @@
    "figmaEbene": "",
    "baustein": "Kontakt Reportage",
    "seite": "Reportage",
-   "anzeige": { "breite": 480, "hoehe": 600 },
+   "anzeige": {
+    "breite": 480,
+    "hoehe": 600
+   },
    "verhaeltnis": "4 : 5",
    "ausrichtung": "hoch",
    "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
