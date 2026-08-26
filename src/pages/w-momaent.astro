@@ -86,7 +86,7 @@ const neugierH2 = 'Neugierig auf mehr?';
 
   <!-- Mobile -->
   <section class="relative isolate md:hidden bg-cream py-12 px-6">
-    <DekoIllustration motiv="tulpe" farbe="#A0886D" breite={186} cssRotate={-27} obenAbAnkerAnteil={0.16} seite="rechts" abstand={-86} mobil={true} deckkraft={0.6} />
+    <DekoIllustration motiv="tulpe" farbe="#A0886D" breite={186} cssRotate={-27} obenAbAnkerAnteil={0.05} seite="rechts" abstand={-86} mobil={true} deckkraft={0.5} />
     <div class="flex flex-col gap-[1.125rem]">
       <div class="flex items-center gap-2 mb-[0.375rem]">
         <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">01</span>
@@ -111,7 +111,7 @@ const neugierH2 = 'Neugierig auf mehr?';
 
   <!-- Desktop -->
   <section class="hidden md:block relative isolate overflow-visible z-10 bg-cream-warm py-xl">
-    <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={146} cssRotate={-33.6} top={976} seite="rechts" abstand={-140} />
+    <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={146} cssRotate={-33.6} top={80} seite="rechts" abstand={-140} />
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
       <div class="flex flex-1 min-w-0 flex-col gap-[1.5rem]">
         <h2 class="font-display text-h2 font-semibold leading-normal">{raumH2}</h2>
@@ -180,7 +180,7 @@ const neugierH2 = 'Neugierig auf mehr?';
 
   <!-- Mobile: rust; Desktop: dark -->
   <section class="relative isolate md:hidden bg-rust py-12 px-6">
-    <DekoIllustration motiv="mohn" farbe="#BC541F" breite={162} cssRotate={21} obenAbAnkerAnteil={0.42} seite="links" abstand={-75} mobil={true} deckkraft={0.6} />
+    <DekoIllustration motiv="mohn" farbe="#BC541F" breite={162} cssRotate={21} obenAbAnkerAnteil={-0.08} seite="links" abstand={-75} mobil={true} deckkraft={0.5} />
     <p class="text-center font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{zitatText}</p>
   </section>
   <section class="hidden md:block relative z-0 bg-dark py-xl">
@@ -257,7 +257,7 @@ const neugierH2 = 'Neugierig auf mehr?';
 
   <!-- Desktop -->
   <section class="hidden md:block relative isolate overflow-visible z-10 bg-cream-warm py-xl">
-    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={287} cssRotate={29} top={922} seite="links" abstand={-148} />
+    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={287} cssRotate={29} top={-80} seite="links" abstand={-148} />
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
       <div class="relative shrink-0" style="width:35rem;height:43.75rem">
         <div class="absolute" style="left:1.875rem;top:2.5rem;width:15rem;height:20rem">
@@ -300,7 +300,7 @@ const neugierH2 = 'Neugierig auf mehr?';
 
   <!-- Mobile: cream; Desktop: dark -->
   <section class="relative isolate md:hidden bg-cream py-12 px-6">
-    <DekoIllustration motiv="eukalyptus" farbe="#A0886D" breite={140} cssRotate={-33} obenAbAnkerAnteil={0.42} seite="rechts" abstand={-64} mobil={true} deckkraft={0.6} />
+    <DekoIllustration motiv="eukalyptus" farbe="#A0886D" breite={140} cssRotate={-33} obenAbAnkerAnteil={-0.08} seite="rechts" abstand={-64} mobil={true} deckkraft={0.5} />
     <div class="flex flex-col gap-[1.125rem]">
       <div class="flex items-center gap-2 mb-[0.375rem]">
         <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">03</span>
@@ -364,8 +364,8 @@ const neugierH2 = 'Neugierig auf mehr?';
   <!-- ===== NEUGIERIG AUF MEHR ===== -->
 
   <!-- Mobile: rust -->
-  <section class="relative isolate md:hidden bg-rust py-12 px-6">
-    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={122} cssRotate={15} obenAbAnkerAnteil={0.16} seite="links" abstand={-56} mobil={true} deckkraft={0.6} />
+  <section class="relative isolate overflow-visible md:hidden bg-rust py-12 px-6">
+    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={122} cssRotate={15} obenAbAnkerAnteil={-0.08} seite="links" abstand={-56} mobil={true} deckkraft={0.5} />
     <div class="flex flex-col items-center gap-[1.125rem] text-center">
       <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{neugierH2}</h2>
       <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/90">
@@ -383,8 +383,8 @@ const neugierH2 = 'Neugierig auf mehr?';
   </section>
 
   <!-- Desktop: rust -->
-  <section class="hidden md:block relative z-0 bg-rust py-[4.8125rem]">
-    <DekoIllustration motiv="blattzweig" farbe="#BC541F" breite={284} cssRotate={-30} top={697} seite="rechts" abstand={-215} />
+  <section class="hidden md:block relative isolate overflow-visible bg-rust py-[4.8125rem]">
+    <DekoIllustration motiv="blattzweig" farbe="#BC541F" breite={284} cssRotate={-30} top={-80} seite="rechts" abstand={-215} />
     <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[1.75rem] px-[15rem] text-center">
       <h2 class="font-display text-[2.75rem] font-semibold leading-normal text-cream">{neugierH2}</h2>
       <p class="font-body text-small leading-[2] text-cream/90">
