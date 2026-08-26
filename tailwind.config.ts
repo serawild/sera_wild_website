@@ -30,10 +30,10 @@ export default {
         h3: ['clamp(1.75rem, 1.55rem + 0.42vw, 2rem)', { lineHeight: '1.2' }], // 28 → 32
         h4: ['clamp(1rem, 0.74rem + 1.13vw, 1.75rem)', { lineHeight: '1.2' }],   // 16 → 28
         cta: ['clamp(1.5rem, 1.41rem + 0.38vw, 1.75rem)', { lineHeight: '1', letterSpacing: '0.06em' }], // 24 → 28
-        body: ['clamp(1.25rem, 1.01rem + 1.05vw, 2rem)', { lineHeight: '1.65' }], // 20 → 32
-        'body-klein': ['1.375rem', { lineHeight: '1.6' }],                        // 22 px fix
+        body: ['clamp(1.125rem, 1.05rem + 0.31vw, 1.25rem)', { lineHeight: '1.65' }], // 18 → 20
+        'body-klein': ['1.125rem', { lineHeight: '1.6' }],                         // 18 px fix
         highlight: ['clamp(1.75rem, 1.49rem + 1.13vw, 2.5rem)', { lineHeight: '1.4' }], // 28 → 40
-        small: ['1.375rem', { lineHeight: '1.3' }],                               // 22
+        small: ['1.125rem', { lineHeight: '1.3' }],                                // 18
         label: ['1rem', { lineHeight: '1.5', letterSpacing: '0.08em' }],          // 16, UC, 8 % LS
         'label-gross': ['2rem', { lineHeight: '1.5', letterSpacing: '0.08em' }],  // 32, UC, 8 % LS
       },
