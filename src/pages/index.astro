@@ -160,6 +160,8 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
   <!-- ===== 2b. DESKTOP: Über mich ===== -->
   <section class="relative isolate overflow-visible z-10 bg-cream py-xl hidden md:block">
     <DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={261} cssRotate={29} top={80} seite="links" abstand={-108} />
+    <!-- mohn überlappt nach unten in Erläbnis (z-10 > z-0, daher hier platziert) -->
+    <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={450} cssRotate={-30} bottom={-80} seite="rechts" abstand={-270} />
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
 
       <div class="relative shrink-0" style="width:35rem;height:40.625rem">
@@ -191,7 +193,6 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
 
   <!-- ===== 3. ERLÄBNIS — nur Desktop ===== -->
   <section class="hidden md:block relative isolate overflow-visible z-0 bg-dark py-xl">
-    <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={450} cssRotate={-30} top={-80} seite="rechts" abstand={-270} />
     <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[3rem] px-[12.5rem]">
 
       <div role="img" aria-label="W – Erläbnis">
@@ -221,6 +222,8 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
   <!-- ===== 4. AUTHENTIZITÄT — nur Desktop ===== -->
   <section class="hidden md:flex relative isolate overflow-visible z-10 bg-cream py-xl">
     <DekoIllustration motiv="blattzweig" farbe="#BC541F" breite={371} cssRotate={-30} top={-80} seite="rechts" abstand={-348} />
+    <!-- eukalyptus überlappt nach unten in Angebot (z-10 > z-0, daher hier platziert) -->
+    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={320} cssRotate={29.2} bottom={-80} seite="links" abstand={-159} />
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
 
       <div class="flex flex-1 min-w-0 flex-col items-start gap-[3rem]">
@@ -299,7 +302,6 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
 
   <!-- ===== 5b. DESKTOP: Angebot (rust) ===== -->
   <section class="hidden md:block relative isolate overflow-visible z-0 bg-rust pt-xl pb-[7rem]">
-    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={320} cssRotate={29.2} top={-80} seite="links" abstand={-159} />
     <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[3rem] px-[12.5rem]">
       <h2 class="font-display text-h2 font-semibold leading-normal text-center" style="max-width:56.25rem">
         {angebotH2}
@@ -315,6 +317,8 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
   <!-- ===== 6. GALERIE / GESCHICHTEN (responsive) ===== -->
   <section class="relative isolate overflow-visible bg-cream py-12 md:py-xl">
     <DekoIllustration motiv="eukalyptus" farbe="#A0886D" breite={140} cssRotate={-33} obenAbAnkerAnteil={-0.08} seite="rechts" abstand={-64} mobil={true} deckkraft={0.5} />
+    <!-- Desktop: mohn am rechten Rand -->
+    <DekoIllustration motiv="mohn" farbe="#A0886D" breite={240} cssRotate={-23} top={80} seite="rechts" abstand={-120} deckkraft={0.6} />
     <div class="mx-auto mb-5 px-6 text-center md:mb-[3rem] md:max-w-inhalt md:px-[7.5rem]">
       <h2 class="font-display text-[1.6875rem] font-semibold leading-[1.3] md:text-h2 md:leading-normal" style="max-width:75rem">
         {galerieH2}
@@ -422,7 +426,8 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
 
 
   <!-- ===== 7. GESCHICHTEN gespiegelt — nur Desktop ===== -->
-  <section class="hidden md:flex bg-dark py-xl">
+  <section class="hidden md:flex relative isolate overflow-visible bg-dark py-xl">
+    <DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={235} cssRotate={12} top={100} seite="links" abstand={-115} deckkraft={0.6} />
     <div class="mx-auto flex max-w-inhalt items-start gap-[5rem]">
 
       <div class="flex min-w-0 flex-1 flex-col items-start gap-[3rem]">
@@ -586,7 +591,8 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
   </section>
 
   <!-- ===== 9b. DESKTOP: Kontakt-Teaser (rust) ===== -->
-  <section class="hidden md:flex bg-rust py-xl">
+  <section class="hidden md:flex relative isolate overflow-visible bg-rust py-xl">
+    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={260} cssRotate={-14} top={80} seite="rechts" abstand={-130} deckkraft={0.6} />
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
 
       <div class="relative shrink-0" style="width:37.5rem;height:31.25rem">

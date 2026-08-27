@@ -112,6 +112,8 @@ const neugierH2 = 'Neugierig auf mehr?';
   <!-- Desktop -->
   <section class="hidden md:block relative isolate overflow-visible z-10 bg-cream-warm py-xl">
     <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={146} cssRotate={-33.6} top={80} seite="rechts" abstand={-140} />
+    <!-- tulpe überlappt nach unten in Zitat-Sektion (z-10 > no-z) -->
+    <DekoIllustration motiv="tulpe" farbe="#A0886D" breite={186} cssRotate={27} bottom={-80} seite="links" abstand={-86} />
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
       <div class="flex flex-1 min-w-0 flex-col gap-[1.5rem]">
         <h2 class="font-display text-h2 font-semibold leading-normal">{raumH2}</h2>
@@ -155,7 +157,7 @@ const neugierH2 = 'Neugierig auf mehr?';
 
   <!-- Desktop -->
   <section class="hidden md:block relative isolate overflow-visible bg-cream-warm pt-[2.5rem] pb-xl">
-    <DekoIllustration motiv="tulpe" farbe="#A0886D" breite={186} cssRotate={27} top={-80} seite="links" abstand={-86} />
+    <DekoIllustration motiv="mohn" farbe="#A0886D" breite={200} cssRotate={16} top={80} seite="rechts" abstand={-100} deckkraft={0.6} />
     <div class="mx-auto max-w-inhalt px-[7.5rem]">
       <div class="flex items-center gap-2 mb-[1.5rem]">
         <span class="font-body text-label uppercase tracking-[0.08em] text-dark/50">FÜR WEN</span>
@@ -184,7 +186,8 @@ const neugierH2 = 'Neugierig auf mehr?';
     <DekoIllustration motiv="mohn" farbe="#BC541F" breite={162} cssRotate={21} obenAbAnkerAnteil={-0.08} seite="links" abstand={-75} mobil={true} deckkraft={0.5} />
     <p class="text-center font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{zitatText}</p>
   </section>
-  <section class="hidden md:block relative z-0 bg-dark py-xl">
+  <section class="hidden md:block relative isolate overflow-visible z-0 bg-dark py-xl">
+    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={230} cssRotate={-19} top={80} seite="links" abstand={-115} deckkraft={0.6} />
     <div class="mx-auto max-w-inhalt px-[7.5rem]">
       <p class="text-center font-display text-h2 font-semibold leading-normal text-cream">{zitatText}</p>
     </div>
@@ -334,7 +337,8 @@ const neugierH2 = 'Neugierig auf mehr?';
     </div>
   </section>
 
-  <section class="hidden md:block relative z-0 bg-dark py-xl">
+  <section class="hidden md:block relative isolate overflow-visible z-0 bg-dark py-xl">
+    <DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={240} cssRotate={8} top={80} seite="rechts" abstand={-120} deckkraft={0.6} />
     <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[3rem] px-[7.5rem]">
       <h2 class="w-full text-center font-display text-h2 font-semibold leading-normal text-cream">{paketeH2}</h2>
       <div class="flex w-full gap-[1.5rem]">

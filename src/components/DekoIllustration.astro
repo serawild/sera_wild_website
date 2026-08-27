@@ -5,9 +5,13 @@
  *
  * cssRotate: CSS-Grad direkt aus deko.json (bereits umgerechnet, positiv = Uhrzeigersinn).
  *
- * top/abstand kommen aus Figma als Begrenzungsrahmen-Position (Bounding Box des
+ * top/bottom/abstand kommen aus Figma als Begrenzungsrahmen-Position (Bounding Box des
  * rotierten Elements). CSS braucht die Elementposition vor Rotation. Die Korrektur
  * wird hier intern aus dem SVG-viewBox-Seitenverhältnis und dem Drehwinkel berechnet.
+ *
+ * bottom: Figma-BB-Unterkante ab Sektion-Unterkante (px). Negativ = ragt nach unten in
+ * den nächsten Abschnitt. Für Sektion-zu-Sektion-Überlappungen: Illustration in den
+ * Abschnitt mit höherem z-index legen und bottom=-80 (o.ä.) für 80px Überlapp nutzen.
  *
  * z-index:-1 — Illustration liegt hinter Text und Bildern im Abschnitt.
  * Der Elternabschnitt muss einen Stapelkontext bilden (isolate oder z-index gesetzt),
@@ -26,6 +30,7 @@ interface Props {
   breite: number;                 // px bei Design-Breite
   cssRotate: number;              // CSS-Grad direkt aus deko.json (positiv = Uhrzeigersinn)
   top?: number;                   // px — Figma Bounding-Box-Oberkante ab Anker (Desktop)
+  bottom?: number;                // px — Figma BB-Unterkante ab Sektion-Unterkante (Desktop). Negativ = überlappt in nächste Sektion
   obenAbAnkerAnteil?: number;     // 0–1 Anteil der Abschnittshöhe (Mobil, aus mobil.seiten)
   seite: 'links' | 'rechts';
   abstand: number;                // px — Figma Bounding-Box-Rand (negativ = ausserhalb)
@@ -33,7 +38,7 @@ interface Props {
   deckkraft?: number;             // Deckkraft 0–1 (Standard 1)
 }
 
-const { motiv, farbe, breite, cssRotate, top, obenAbAnkerAnteil, seite, abstand, mobil = false, deckkraft = 1 } = Astro.props;
+const { motiv, farbe, breite, cssRotate, top, bottom, obenAbAnkerAnteil, seite, abstand, mobil = false, deckkraft = 1 } = Astro.props;
 
 const rawSvg = svgFiles[`/spec/illustrationen/${motiv}.svg`];
 if (!rawSvg) throw new Error(`DekoIllustration: Motiv nicht gefunden — "${motiv}"`);
@@ -65,14 +70,19 @@ const svg = rawSvg
 // px ÷ 16 = rem
 const rem = (px: number) => `${(px / 16).toFixed(3)}rem`;
 
-// top-Berechnung: Pixelwert (Desktop) oder Anteil der Abschnittshöhe (Mobil)
+// top/bottom-Berechnung: Pixelwert (Desktop) oder Anteil der Abschnittshöhe (Mobil)
+// Für bottom: CSS bottom = rem(bottom + bbOffsetY). Negativ = ragt unter Sektion (Überlappung).
 const topStyle = obenAbAnkerAnteil !== undefined
   ? `calc(${(obenAbAnkerAnteil * 100).toFixed(2)}% - ${rem(bbOffsetY)})`
   : rem((top ?? 0) + bbOffsetY);
 
+const posStyle: string[] = bottom !== undefined
+  ? [`bottom:${rem(bottom + bbOffsetY)}`]
+  : [`top:${topStyle}`];
+
 const style = [
   'position:absolute',
-  `top:${topStyle}`,
+  ...posStyle,
   seite === 'links' ? `left:${rem(cssAbstand)}` : `right:${rem(cssAbstand)}`,
   `width:${rem(breite)}`,
   'height:auto',

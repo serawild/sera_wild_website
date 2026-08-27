@@ -103,6 +103,7 @@ const collageIds = Array.from({length: 14}, (_, i) => `simona-collage-${String(i
   <!-- dark bg both — one section, two inner blocks -->
   <section class="relative isolate overflow-visible bg-dark py-12 md:py-xl">
     <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={162} cssRotate={21} obenAbAnkerAnteil={-0.08} seite="links" abstand={-75} mobil={true} deckkraft={0.5} />
+    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={245} cssRotate={-22} top={80} seite="rechts" abstand={-122} deckkraft={0.6} />
 
     <!-- Mobile inner -->
     <div class="md:hidden px-6 flex flex-col gap-[1.125rem]">
@@ -160,6 +161,7 @@ const collageIds = Array.from({length: 14}, (_, i) => `simona-collage-${String(i
   <!-- cream-warm bg both — one section, two inner blocks -->
   <section class="relative isolate overflow-visible bg-cream-warm py-12 md:py-xl px-6 md:px-0">
     <DekoIllustration motiv="eukalyptus" farbe="#A0886D" breite={140} cssRotate={-33} obenAbAnkerAnteil={-0.08} seite="rechts" abstand={-64} mobil={true} deckkraft={0.5} />
+    <DekoIllustration motiv="tulpe" farbe="#A0886D" breite={220} cssRotate={-24} top={80} seite="links" abstand={-110} deckkraft={0.6} />
 
     <!-- Mobile inner: text then Bildgruppe -->
     <div class="md:hidden flex flex-col gap-[1.125rem]">
@@ -279,7 +281,8 @@ const collageIds = Array.from({length: 14}, (_, i) => `simona-collage-${String(i
   </section>
 
   <!-- Desktop: dark -->
-  <section class="hidden md:block bg-dark py-xl px-[7.5rem]">
+  <section class="hidden md:block bg-dark py-xl px-[7.5rem] relative isolate overflow-visible">
+    <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={230} cssRotate={17} top={80} seite="links" abstand={-115} deckkraft={0.6} />
     <div class="mx-auto max-w-inhalt text-center">
       <h2 class="font-display text-h2 font-semibold leading-normal text-cream/90">{zitatText}</h2>
     </div>
