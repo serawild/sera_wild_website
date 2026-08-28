@@ -122,8 +122,7 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
   </section>
 
   <!-- Desktop: olive -->
-  <section class="hidden md:block relative isolate overflow-visible bg-olive py-xl">
-    <DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={240} cssRotate={18} top={80} seite="rechts" abstand={-120} deckkraft={0.6} />
+  <section class="hidden md:block bg-olive py-xl">
     <div class="mx-auto flex max-w-inhalt flex-col items-center gap-14 px-6 md:px-[6.25rem]">
       <div class="flex w-full items-start gap-6">
         {faktenStationen.map(s => (
@@ -149,8 +148,6 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
   <section class="relative isolate overflow-visible z-[2] bg-cream-warm py-12 md:py-xl">
     <div class="hidden md:block">
       <DekoIllustration motiv="mohn" farbe="#A0886D" breite={259} cssRotate={29} top={-80} seite="links" abstand={-121} />
-      <!-- blattzweig überlappt nach unten in Geschichte Seraina unten (z-[2] > z-[1]) -->
-      <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={226} cssRotate={-30} bottom={-80} seite="rechts" abstand={-144} />
     </div>
     <DekoIllustration motiv="mohn" farbe="#A0886D" breite={162} cssRotate={21} obenAbAnkerAnteil={-0.08} seite="links" abstand={-75} mobil={true} deckkraft={0.5} />
     <div class="mx-auto flex max-w-inhalt flex-col gap-[2.5rem] px-6 md:flex-row md:items-center md:justify-between md:gap-[5rem] md:px-0">
@@ -208,7 +205,7 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
 
   <!-- Desktop: cream-warm -->
   <section class="hidden md:block relative isolate overflow-visible z-[1] bg-cream-warm py-xl">
-    <DekoIllustration motiv="eukalyptus" farbe="#A0886D" breite={210} cssRotate={-16} top={80} seite="links" abstand={-105} deckkraft={0.6} />
+    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={226} cssRotate={-30} top={-80} seite="rechts" abstand={-144} />
     <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] md:flex-row md:items-end md:justify-between md:px-0">
       <div class="flex flex-col gap-[2.5rem] md:w-[49.875rem] md:shrink-0">
         <h2 class="font-display text-h2 font-semibold italic leading-normal md:max-w-[40.625rem]">{aufgabeH2}</h2>
@@ -323,7 +320,7 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
   </section>
 
   <!-- Desktop: rust -->
-  <section class="hidden md:block bg-rust py-xl relative isolate overflow-visible">
+  <section class="hidden md:block bg-rust py-xl">
     <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-0">
       <div class="relative h-[30rem] w-full shrink-0 md:w-[37.5rem]">
         <div class="absolute left-[8.75rem] top-0 h-[20rem] w-[28.75rem] overflow-hidden">
@@ -344,7 +341,6 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
         </a>
       </div>
     </div>
-    <DekoIllustration motiv="mohn" farbe="#BC541F" breite={265} cssRotate={12} top={80} seite="rechts" abstand={-133} deckkraft={0.6} />
   </section>
 
   </div>

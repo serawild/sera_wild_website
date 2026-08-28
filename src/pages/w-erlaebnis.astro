@@ -270,8 +270,6 @@ const faqFragen = [
   <!-- ===== 3b. DESKTOP: Das W ===== -->
   <section class="relative isolate overflow-visible z-10 bg-dark py-[6rem] hidden md:block">
     <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={348} cssRotate={-25.3} top={-80} seite="rechts" abstand={-240} />
-    <!-- mohn überlappt nach unten in Wonach wir suchen (z-10 > z-[2]) -->
-    <DekoIllustration motiv="mohn" farbe="#BC541F" breite={306} cssRotate={29.4} bottom={-80} seite="links" abstand={-226} />
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem] px-[7.5rem]">
       <svg
         viewBox="0 0 1765.27 1262.84"
@@ -300,6 +298,7 @@ const faqFragen = [
 
   <!-- ===== 4. WONACH WIR SUCHEN (responsive) ===== -->
   <section class="relative isolate overflow-visible z-[2] bg-cream-warm px-6 py-12 md:py-[6rem] md:px-[16.25rem]">
+    <DekoIllustration motiv="mohn" farbe="#BC541F" breite={306} cssRotate={29.4} top={-80} seite="links" abstand={-226} />
     <DekoIllustration motiv="mohn" farbe="#A0886D" breite={162} cssRotate={21} obenAbAnkerAnteil={-0.08} seite="links" abstand={-75} mobil={true} deckkraft={0.5} />
     <div class="flex flex-col items-center gap-[1.25rem] text-center md:gap-[2rem]">
       <p class="font-body text-[0.75rem] uppercase tracking-[0.08em] text-rust md:text-[1rem] md:tracking-[1.28px]">LÄB DIS LÄBE</p>
@@ -384,8 +383,7 @@ const faqFragen = [
   </section>
 
   <!-- ===== 5b. DESKTOP: Angebot ===== -->
-  <section class="relative isolate overflow-visible z-[1] bg-dark py-xl px-[7.5rem] hidden md:block">
-    <DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={220} cssRotate={14} top={100} seite="rechts" abstand={-110} deckkraft={0.6} />
+  <section class="relative z-[1] bg-dark py-xl px-[7.5rem] hidden md:block">
     <div class="mx-auto flex max-w-inhalt flex-col gap-[2.5rem]">
       <div class="flex flex-col items-center gap-[1rem] text-center">
         <h2 class="font-display text-h2 font-semibold leading-normal">{angebotH2}</h2>
@@ -470,7 +468,6 @@ const faqFragen = [
 
   <!-- ===== 6b. DESKTOP: Timeline ===== -->
   <section class="relative isolate overflow-visible bg-cream py-[6.25rem] px-[7.5rem] hidden md:block">
-    <DekoIllustration motiv="blattzweig" farbe="#A0886D" breite={285} cssRotate={-10} top={80} seite="links" abstand={-140} deckkraft={0.6} />
     <div class="mx-auto flex max-w-inhalt flex-col gap-[3.75rem]">
       <div class="flex flex-col items-center gap-[1rem] text-center">
         <p class="font-body font-medium uppercase tracking-[5.5px] text-rust">DEIN WEG ZU DEN BILDERN</p>
@@ -519,8 +516,6 @@ const faqFragen = [
   <!-- ===== 7. ZITAT (responsive) ===== -->
   <section class="relative isolate overflow-visible z-10 bg-rust px-6 py-[52px] md:py-xl md:px-[7.5rem]">
     <DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={181} cssRotate={-22.1} top={-80} seite="rechts" abstand={-62} />
-    <!-- blattzweig überlappt nach unten in Orte (z-10 > z-[2]) -->
-    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={405} cssRotate={-34} bottom={-80} seite="rechts" abstand={-379} />
     <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={140} cssRotate={-33} obenAbAnkerAnteil={-0.08} seite="rechts" abstand={-64} mobil={true} deckkraft={0.5} />
     <div class="mx-auto max-w-inhalt text-center">
       <p class="font-display text-[1.6875rem] font-semibold leading-[1.3] text-cream md:text-h2 md:font-bold md:leading-[1.5]">
@@ -583,8 +578,7 @@ const faqFragen = [
 
   <!-- ===== 8b. DESKTOP: Orte ===== -->
   <section class="relative isolate overflow-visible z-[2] bg-cream-warm py-xl px-[7.5rem] hidden md:block">
-    <!-- eukalyptus überlappt nach unten in Richtig (z-[2] > no-z) -->
-    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={359} cssRotate={30} bottom={-80} seite="links" abstand={-171} />
+    <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={405} cssRotate={-34} top={-80} seite="rechts" abstand={-379} />
     <div class="mx-auto flex max-w-inhalt flex-col gap-[3.5rem]">
       <div class="flex flex-col items-center gap-[1.25rem] text-center">
         <h2 class="font-display text-h2 font-semibold">{orteH2}</h2>
@@ -674,7 +668,7 @@ const faqFragen = [
 
   <!-- ===== 10b. DESKTOP: Richtig ===== -->
   <section class="relative isolate overflow-visible bg-cream py-xl px-[7.5rem] hidden md:block">
-    <DekoIllustration motiv="tulpe" farbe="#A0886D" breite={250} cssRotate={20} top={80} seite="rechts" abstand={-125} deckkraft={0.6} />
+    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={359} cssRotate={30} top={-80} seite="links" abstand={-171} />
     <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
       <div class="relative h-[40.625rem] w-[35rem] shrink-0">
         <div class="absolute h-[20rem] w-[15rem]" style="left:1.875rem;top:2.5rem;">
