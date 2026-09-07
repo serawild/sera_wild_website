@@ -13,6 +13,12 @@
  * Der Elternabschnitt muss einen Stapelkontext bilden (isolate oder z-index gesetzt),
  * damit -1 nicht unter den Seitenhintergrund fällt.
  *
+ * Wichtig: dem Abschnitt KEINE z-index-Klasse geben. Mit `relative isolate` allein
+ * liegen die Abschnitte in DOM-Reihenfolge übereinander — ein späterer über einem
+ * früheren. Genau das braucht eine Illustration mit negativem `top`, die nach oben
+ * in den Abschnitt darüber ragt. Sobald der Abschnitt darüber eine höhere z-index
+ * hat, schneidet er sie an der Kante ab.
+ *
  * Unter 768px immer ausgeblendet (hidden md:block).
  */
 const svgFiles = import.meta.glob<string>(
