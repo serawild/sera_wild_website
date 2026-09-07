@@ -81,3 +81,20 @@ Seite: ueber.astro — Abschnitt: 03 Meine Aufgabe (Bildgruppe)
 Seite: scheune.astro — Abschnitt: 04 Neugier (Bildgruppe)
 - **neugier-01** – kein dateiMobil vorhanden. Normale Datei (4:5 Portrait, 406×508) mit object-fit cover auf 214×286 (3:4) beschnitten. Seitenränder leicht abgeschnitten.
 - **neugier-02** – kein dateiMobil vorhanden. Normale Datei (0.76:1 Portrait, 320×420) mit object-fit cover auf 178×238 (3:4) beschnitten. Minimaler Verlust.
+
+## Illustrationen: bewusste Abweichungen von Figma / deko.json
+
+Von Seraina am 07.09.2026 direkt so gewünscht. `spec/deko.json` gibt weiterhin den
+Figma-Stand wieder — bei einem Abgleich mit Figma diese drei nicht zurücksetzen.
+
+Seite: w-erlaebnis.astro — Abschnitt: Zitat (`deko[3]`)
+- **tulpe** – war Hellgrün, rechts, cssRotate −22.1. Jetzt **Hellorange**, **links**,
+  cssRotate **+22.1** (Drehung im Uhrzeigersinn). Position gespiegelt, abstand unverändert −62.
+
+Seite: w-erlaebnis.astro — Abschnitt: CTA Banner (`deko[6]`)
+- **mohn** – war Hellgrün. Jetzt **Hellorange**. Position und Drehung unverändert.
+
+Seite: geschichten/simona.astro — Abschnitt: Geschichte Oben (`deko[0]`)
+- **tulpe** – war Hellgrün, `top` +80 (ganz im Abschnitt). Jetzt **Beige** und `top` **−80**,
+  ragt also in den Hero darüber. Bewusst gegen die Regel «Illustrationen liegen nie über
+  Text oder Bild» — sie liegt über dem Hero-Bild, nicht über Text.
