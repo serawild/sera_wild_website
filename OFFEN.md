@@ -95,6 +95,8 @@ Seite: w-erlaebnis.astro — Abschnitt: CTA Banner (`deko[6]`)
 - **mohn** – war Hellgrün. Jetzt **Hellorange**. Position und Drehung unverändert.
 
 Seite: geschichten/simona.astro — Abschnitt: Geschichte Oben (`deko[0]`)
-- **tulpe** – war Hellgrün, `top` +80 (ganz im Abschnitt). Jetzt **Beige** und `top` **−80**,
-  ragt also in den Hero darüber. Bewusst gegen die Regel «Illustrationen liegen nie über
-  Text oder Bild» — sie liegt über dem Hero-Bild, nicht über Text.
+- **tulpe** – war Hellgrün, `top` +80 (ganz im Abschnitt). Jetzt **Beige bei 50 % Deckkraft**
+  («Hellbeige» — die Palette kennt keinen eigenen Wert dafür, 0.5 ist die Deckkraft aller
+  mobilen Illustrationen) und `top` **−80**, ragt also in den Hero darüber. Bewusst gegen
+  die Regel «Illustrationen liegen nie über Text oder Bild» — sie liegt über dem Hero-Bild,
+  nicht über Text.
