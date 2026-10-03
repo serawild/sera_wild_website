@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import BildPicture from '../../components/BildPicture.astro';
+import bilderRaw from '../../../spec/bilder.json';
 import DekoIllustration from '../../components/DekoIllustration.astro';
 import FotoStory from '../../components/FotoStory.astro';
 
@@ -25,6 +26,11 @@ const collageH2        = 'Ein Ausschnitt aus Emanuelas Bilderreise';
 const collageFotospots = 'Mit folgenden Fotospots: [NOCH OFFEN]';
 
 const zitatText = '[NOCH OFFEN — Schlusszitat]';
+
+const bildVerhaeltnis: Record<string, number> = Object.fromEntries(
+  (bilderRaw.bilder as Array<{id: string; anzeige: {breite: number; hoehe: number}}>)
+    .map(b => [b.id, b.anzeige.breite / b.anzeige.hoehe])
+);
 
 const collageIds = Array.from({length: 14}, (_, i) => `emanuela-collage-${String(i + 1).padStart(2, '0')}`);
 ---
@@ -221,11 +227,19 @@ const collageIds = Array.from({length: 14}, (_, i) => `emanuela-collage-${String
       style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;"
     >
       <div class="flex gap-3 px-6" style="width:max-content;">
-        {collageIds.map(id => (
-          <div class="shrink-0" style="scroll-snap-align:start;width:13.75rem;height:18.125rem;overflow:hidden;position:relative;">
-            <BildPicture id={id} class="absolute inset-0 h-full w-full object-cover" mobil={true} widths={[220,440]} sizes="220px" />
-          </div>
-        ))}
+        {collageIds.map(id => {
+          // Gleiche Höhe für alle, Breite folgt dem Bildformat.
+          // So stehen Querformate breiter als Hochformate.
+          const hoeheRem = 18.125;
+          const v = bildVerhaeltnis[id] ?? 0.75;
+          const breiteRem = Math.round(hoeheRem * v * 1000) / 1000;
+          const breitePx = Math.round(breiteRem * 16);
+          return (
+            <div class="shrink-0" style={`scroll-snap-align:start;width:${breiteRem}rem;height:${hoeheRem}rem;overflow:hidden;position:relative;`}>
+              <BildPicture id={id} class="absolute inset-0 h-full w-full object-cover" mobil={true} widths={[breitePx, breitePx * 2]} sizes={`${breitePx}px`} />
+            </div>
+          );
+        })}
         <div class="shrink-0 w-3" aria-hidden="true"></div>
       </div>
     </div>
@@ -257,13 +271,13 @@ const collageIds = Array.from({length: 14}, (_, i) => `emanuela-collage-${String
           <div class="basis-[20.625rem] shrink-0"><BildPicture id="emanuela-collage-07" class="h-[27.5rem] w-full object-cover rounded-[3px]" /></div>
         </div>
         <div class="flex gap-[1.25rem]">
-          <div class="basis-[41.75rem] shrink-0"><BildPicture id="emanuela-collage-08" class="h-[31.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[24.375rem] shrink-0"><BildPicture id="emanuela-collage-09" class="h-[31.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[24.375rem] shrink-0"><BildPicture id="emanuela-collage-10" class="h-[31.25rem] w-full object-cover rounded-[3px]" /></div>
+          <div class="basis-[41.75rem] shrink-0"><BildPicture id="emanuela-collage-08" class="h-[31.25rem] w-full object-cover rounded-[3px]" /></div>
         </div>
         <div class="flex gap-[1.25rem]">
-          <div class="basis-[39.375rem] shrink-0"><BildPicture id="emanuela-collage-11" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[16.625rem] shrink-0"><BildPicture id="emanuela-collage-12" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
+          <div class="basis-[39.375rem] shrink-0"><BildPicture id="emanuela-collage-11" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[16.625rem] shrink-0"><BildPicture id="emanuela-collage-13" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[16.625rem] shrink-0"><BildPicture id="emanuela-collage-14" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
         </div>
@@ -285,20 +299,6 @@ const collageIds = Array.from({length: 14}, (_, i) => `emanuela-collage-${String
     </div>
   </section>
 
-  <!-- ===== VERWEIS AUF EMANUELAS INSTAGRAM ===== -->
-  <section class="bg-cream-warm px-6 py-10 md:px-[7.5rem] md:py-[3.5rem]">
-    <div class="mx-auto max-w-inhalt text-center">
-      <p class="font-body text-[1rem] leading-[1.7] text-dark/70 md:text-body-klein">
-        Emanuela arbeitet als Künstlerin unter dem Namen alagna —{' '}
-        <a
-          href="https://www.instagram.com/alagna.art/"
-          target="_blank"
-          rel="noopener"
-          class="underline underline-offset-4 decoration-1 transition-colors hover:text-orange"
-        >@alagna.art</a>
-      </p>
-    </div>
-  </section>
 
   <Footer />
 
@@ -306,19 +306,30 @@ const collageIds = Array.from({length: 14}, (_, i) => `emanuela-collage-${String
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  function setupTrack(trackId, dotClass, cardW) {
+  function setupTrack(trackId, dotClass) {
     const track = document.getElementById(trackId);
     const dots = document.querySelectorAll('.' + dotClass);
     if (!track || !dots.length) return;
+    const reihe = track.firstElementChild;
+    if (!reihe) return;
     track.addEventListener('scroll', () => {
-      const idx = Math.min(Math.round(track.scrollLeft / cardW), dots.length - 1);
+      // Karten unterschiedlich breit — darum messen statt rechnen
+      const links = track.getBoundingClientRect().left;
+      const karten = Array.from(reihe.children).filter(el => el.clientWidth > 20);
+      let idx = 0, naechste = Infinity;
+      karten.forEach((el, i) => {
+        const abstand = Math.abs(el.getBoundingClientRect().left - links);
+        if (abstand < naechste) { naechste = abstand; idx = i; }
+      });
+      idx = Math.min(idx, dots.length - 1);
       dots.forEach((d, i) => {
         d.classList.toggle('opacity-100', i === idx);
         d.classList.toggle('opacity-20', i !== idx);
+        d.classList.toggle('opacity-30', false);
       });
     });
   }
-  setupTrack('emanuela-fotostory-track', 'emanuela-fotostory-dot', 272);
-  setupTrack('collage-track', 'collage-dot', 220 + 12);
+  setupTrack('emanuela-fotostory-track', 'emanuela-fotostory-dot');
+  setupTrack('collage-track', 'collage-dot');
 });
 </script>

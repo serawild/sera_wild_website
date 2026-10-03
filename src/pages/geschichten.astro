@@ -23,6 +23,12 @@ const kundenstoryStudioUrl = 'https://www.instagram.com/studiobenanti/';
 
 const zitatText = 'Was wäre ein Leben, das sich wahr anfühlt – für mich, hier, jetzt?';
 
+const geschichten = [
+  { pfad: '/geschichten/sara',   name: 'Sara' },
+  { pfad: '/geschichten/simona', name: 'Simona' },
+  { pfad: '/geschichten/tina',   name: 'Tina' },
+];
+
 const kontaktH2 = 'Für alle, die sich selbst zurückfinden oder etwas Neues wagen möchten.';
 const kontaktP1 = 'Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.';
 const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.';
@@ -293,6 +299,25 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
             class="underline underline-offset-4 decoration-1 transition-colors hover:text-orange"
           >{kundenstoryStudio}</a></p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIE GESCHICHTEN ===== -->
+  <section class="bg-cream-warm px-6 py-12 md:px-[7.5rem] md:py-xl">
+    <div class="mx-auto max-w-inhalt flex flex-col items-center gap-[1.75rem] md:gap-[2.25rem] text-center">
+      <h2 class="font-display text-[1.6875rem] md:text-h2 font-semibold leading-[1.28] md:leading-normal">
+        Drei Frauen, drei Geschichten
+      </h2>
+      <div class="flex flex-col gap-[0.875rem] md:flex-row md:gap-[1.25rem]">
+        {geschichten.map(g => (
+          <a
+            href={g.pfad}
+            class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase tracking-[1.5px] text-cream transition-colors hover:bg-orange"
+          >
+            {g.name}s Geschichte lesen
+          </a>
+        ))}
       </div>
     </div>
   </section>

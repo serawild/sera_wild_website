@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import BildPicture from '../components/BildPicture.astro';
 import DekoIllustration from '../components/DekoIllustration.astro';
+import KulissenWaehler from '../components/KulissenWaehler.astro';
 import Wortmarke from '../components/Wortmarke.astro';
 
 const raumH2   = 'Ein Raum mit Geschichte.';
@@ -16,14 +17,13 @@ const zitatText = 'Manchmal braucht es keinen Plan. Nur einen Ort, an dem du dic
 const kulissenH2   = 'Wähle deine Kulisse vor Ort:';
 const kulissenBold = 'Wir treffen uns direkt bei der Scheune. Ein kurzer Schwatz, dann legen wir los – unkompliziert, locker, du.';
 
-// Die ids sind hier bewusst getauscht: kulissen-02 zeigt das Sofa mit Fotoalbum
-// (Vintage), kulissen-01 das Portrait vor dunklem Grund (Licht trifft Tiefe).
 // Nur die Wischleiste stellt Bild und Name nebeneinander; die Desktop-Collage
 // weiter unten setzt ihre Bilder selbst und bleibt davon unberührt.
 const kulissen = [
-  { id: 'kulissen-02', name: 'Vintage mit Charme', text: '...rustikale & einzigartige Kulisse aus Holz' },
-  { id: 'kulissen-01', name: 'Licht trifft Tiefe', text: '...dein Portrait auf schwarzem Hintergrund' },
-  { id: 'kulissen-03', name: 'Zeitlos wie du', text: '...dein Bild vor der über 200-jährigen Steinwand' },
+  { kuerzel: 'vintage', name: 'Vintage mit Charme', text: '...rustikale & einzigartige Kulisse aus Holz' },
+  { kuerzel: 'licht',   name: 'Licht trifft Tiefe', text: '...dein Portrait auf schwarzem Hintergrund' },
+  { kuerzel: 'stein',   name: 'Zeitlos wie du',     text: '...dein Bild vor der über 200-jährigen Steinwand' },
+  { kuerzel: 'leinen',  name: 'Leinen & Licht',     text: '...mit einem Hauch Boho in Szene gesetzt' },
 ];
 
 const paketeH2 = 'Die 3 Pakete';
@@ -197,109 +197,12 @@ const neugierH2 = 'Neugierig auf mehr?';
   <!-- ===== 02 KULISSEN ===== -->
 
   <!-- Mobile -->
-  <section class="md:hidden bg-dark py-[52px]">
-    <div class="px-6 flex flex-col gap-[1.125rem]">
-      <div class="flex items-center gap-2 mb-[0.375rem]">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">02</span>
-        <span class="w-5 h-px bg-cream/50"></span>
-        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">KULISSEN</span>
-      </div>
-      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{kulissenH2}</h2>
-    </div>
-    <!-- Wischleiste 260×340 -->
-    <div
-      class="mt-[1.25rem] overflow-x-auto"
-      id="kulissen-track"
-      style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;"
-    >
-      <div class="flex gap-3 px-6" style="width:max-content;">
-        {kulissen.map(k => (
-          <div class="shrink-0 flex flex-col" style="scroll-snap-align:start;width:16.25rem;">
-            <div style="width:16.25rem;height:21.25rem;overflow:hidden;position:relative;">
-              <BildPicture
-                id={k.id}
-                class="absolute inset-0 h-full w-full object-cover"
-                mobil={true}
-                widths={[260, 520]}
-                sizes="260px"
-              />
-            </div>
-            <div class="mt-[0.75rem] flex flex-col gap-[0.25rem]">
-              <p class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream">{k.name}</p>
-              <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/80">{k.text}</p>
-            </div>
-          </div>
-        ))}
-        <!-- 4. Karte: Leinen & Licht (kein Bild) -->
-        <div class="shrink-0 flex flex-col" style="scroll-snap-align:start;width:16.25rem;">
-          <div class="flex items-center justify-center bg-olive/60" style="width:16.25rem;height:21.25rem;">
-            <p class="font-display text-[1.6875rem] font-semibold italic text-cream/60 text-center px-4">Leinen &amp; Licht</p>
-          </div>
-          <div class="mt-[0.75rem] flex flex-col gap-[0.25rem]">
-            <p class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream">Leinen &amp; Licht</p>
-            <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/80">...mit einem Hauch Boho in Szene gesetzt</p>
-          </div>
-        </div>
-        <div class="shrink-0 w-3" aria-hidden="true"></div>
-      </div>
-    </div>
-    <!-- Dots -->
-    <div class="flex justify-center gap-[0.5rem] mt-[1.25rem]">
-      {Array.from({length: 4}, (_, i) => (
-        <span class={`kulissen-dot h-[0.375rem] w-[0.375rem] rounded-full bg-cream transition-opacity ${i === 0 ? 'opacity-100' : 'opacity-30'}`}></span>
-      ))}
-    </div>
-    <div class="px-6 mt-[1.5rem] flex flex-col gap-[1.125rem]">
-      <p class="font-body text-[1.0625rem] leading-[1.68] font-bold text-cream">{kulissenBold}</p>
-      <a
-        href="/kontakt"
-        class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-[#b08257] px-md py-sm font-body text-cta uppercase text-cream"
-      >
-        MEHR DAZU
-      </a>
-    </div>
-  </section>
+  <KulissenWaehler
+    kulissen={kulissen}
+    ueberschrift={kulissenH2}
+    abschluss={kulissenBold}
+  />
 
-  <!-- Desktop -->
-  <section class="hidden md:block relative isolate overflow-visible bg-cream-warm py-xl">
-    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={287} cssRotate={29} top={-80} seite="links" abstand={-148} />
-    <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
-      <div class="relative shrink-0" style="width:35rem;height:43.75rem">
-        <div class="absolute" style="left:1.875rem;top:2.5rem;width:15rem;height:20rem">
-          <BildPicture id="kulissen-02" class="absolute inset-0 h-full w-full object-cover" widths={[240, 480]} sizes="15rem" />
-        </div>
-        <div class="absolute" style="left:15rem;top:1.25rem;width:18.75rem;height:25rem">
-          <BildPicture id="kulissen-01" class="absolute inset-0 h-full w-full object-cover" widths={[300, 600]} sizes="18.75rem" />
-        </div>
-        <div class="absolute" style="left:9.375rem;top:19.375rem;width:16.25rem;height:21.25rem">
-          <BildPicture id="kulissen-03" class="absolute inset-0 h-full w-full object-cover" widths={[260, 520]} sizes="16.25rem" />
-        </div>
-      </div>
-      <div class="flex flex-1 min-w-0 flex-col items-start gap-[3rem]">
-        <h2 class="font-display text-h2 font-semibold leading-normal">{kulissenH2}</h2>
-        <div class="flex w-full flex-col gap-[1.5rem]">
-          {kulissen.map(k => (
-            <div class="flex flex-col gap-[0.25rem]">
-              <p class="font-body text-body uppercase tracking-[0.08em]">{k.name}</p>
-              <p class="font-body text-body leading-[1.65]">{k.text}</p>
-            </div>
-          ))}
-          <div class="flex flex-col gap-[0.25rem]">
-            <p class="font-body text-body uppercase tracking-[0.08em]">Leinen &amp; Licht</p>
-            <p class="font-body text-body leading-[1.65]">...mit einem Hauch Boho in Szene gesetzt</p>
-          </div>
-          <div class="h-px w-full bg-[#5b5c4f]"></div>
-          <p class="font-body text-body font-bold leading-[1.65]">{kulissenBold}</p>
-        </div>
-        <a
-          href="/kontakt"
-          class="inline-flex items-center justify-center rounded-[1.0625rem] bg-[#b08257] px-md py-sm font-body text-cta uppercase text-cream transition-opacity hover:opacity-90"
-        >
-          MEHR DAZU
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== 03 PAKETE ===== -->
 
