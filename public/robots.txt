@@ -5,6 +5,3 @@ Allow: /
 Disallow: /bausteine
 
 Sitemap: https://serawild.com/sitemap.xml
-
-# Kundengeschichte, nur ueber Direktlink
-Disallow: /geschichten/sara

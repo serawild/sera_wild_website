@@ -20,7 +20,9 @@ Der Entwurf liegt in Figma, File-Key `L1sORBHNF7ohDq9DXjruRm`, Seite **Desktop |
 
 5. **`src/pages/kontakt.astro` ist der Massstab.** Diese Seite ist freigegeben. Abstände, Containerbreiten, Typo-Klassen und die Art, wie Bilder eingebunden sind, kommen von dort.
 
-6. **Drei Seiten gehen nicht online:** Netzwerk, Sara, Emanuela. Nicht bauen, nicht verlinken, nicht in die Sitemap. Auch der Button „Nächste Geschichte" am Ende von `geschichten/simona` entfällt.
+6. **Zwei Seiten gehen nicht online:** Netzwerk und Emanuela. Nicht bauen, nicht verlinken, nicht in die Sitemap. Auch der Button „Nächste Geschichte“ am Ende von `geschichten/simona` entfällt.
+
+   **Geändert am 2026-10-03:** Sara und Tina sind seither online — verlinkt von der Geschichten-Seite, in der Sitemap, ohne `noindex`. Sie werden genau wie Simona behandelt. Die frühere Sperre in `robots.txt` ist entfernt.
 
 ## Wo was steht
 
@@ -61,7 +63,9 @@ Der Entwurf liegt in Figma, File-Key `L1sORBHNF7ohDq9DXjruRm`, Seite **Desktop |
 | W-Erläbnis | `w-erlaebnis.astro` | `45:932` |
 | W-Momänt | `w-momaent.astro` | `2018:1202` |
 | Geschichten | `geschichten.astro` | `85:1428` |
+| Sara | `geschichten/sara.astro` | — (ohne Figma-Vorlage gebaut) |
 | Simona | `geschichten/simona.astro` | `85:1705` |
+| Tina | `geschichten/tina.astro` | — (ohne Figma-Vorlage gebaut) |
 | Über | `ueber.astro` | `2013:854` |
 | Kontakt | `kontakt.astro` | `2021:367` — fertig, Referenz |
 | Impressum | `impressum.astro` | `2206:226` |
