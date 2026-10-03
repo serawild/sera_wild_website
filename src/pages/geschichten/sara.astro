@@ -10,9 +10,9 @@ const heroH1       = 'Die Geschichte von Sara';
 const heroSubtitel = '«Sera hat eine super Stimmung geschaffen, sodass es mir leicht fiel, natürlich in die Kamera zu schauen.»';
 
 const geschichteObenZitat = 'Die Frau auf den Bildern sollte dieselbe sein wie die im Beratungszimmer.';
-const geschichteObenBold  = 'Sara berät Frauen zu ihrer Gesundheit. Ihre Kundinnen kennen sie als jemanden, der zuhört, erklärt und dabei lacht. Genau diese Frau sollte auf den Bildern zu sehen sein.';
+const geschichteObenBold  = 'Sara berät Frauen zu ihrer Gesundheit. Ihre Kundinnen kennen sie als jemanden, der zuhört, erklärt und mit positiver Energie vorangeht. Genau diese Frau sollte auf den Bildern zu sehen sein.';
 const geschichteObenP1    = 'Ihr Geschäft wächst, und mit ihm der Bedarf: eine Website, die zeigt, wer da eigentlich berät. Bilder, die nicht nach Katalog aussehen, sondern nach ihr.';
-const geschichteObenP2    = 'Wir haben uns Zeit genommen für das, was sie ausmacht – die Neugier auf den Körper, die Freude am Erklären, den Humor, der sich nicht abstellen lässt. Fotografiert haben wir dort, wo sie sowieso ist: in ihrer eigenen Küche und draussen im Wald bei Aarau.';
+const geschichteObenP2    = 'Wir haben uns Zeit genommen für das, was sie ausmacht – die Neugier auf den Körper, die Freude am Erklären, die Leichtigkeit, die sie mitbringt. Fotografiert haben wir dort, wo sie sowieso ist: in ihrer eigenen Küche und draussen im Wald bei Aarau.';
 
 const fotostoryH2 = 'Alles begann mit der Frage: «Wie zeige ich auf Bildern, was meine Kundinnen längst an mir kennen?»';
 
@@ -247,9 +247,10 @@ const collageIds = Array.from({length: 14}, (_, i) => `sara-collage-${String(i +
       </div>
       <div class="flex flex-col gap-[1.25rem]">
         <div class="flex gap-[1.25rem]">
-          {collageIds.slice(0,4).map(id => (
-            <div class="flex-1"><BildPicture id={id} class="h-[29.75rem] w-full object-cover rounded-[3px]" /></div>
-          ))}
+          <div class="basis-[16.625rem] shrink-0"><BildPicture id="sara-collage-01" class="h-[29.75rem] w-full object-cover rounded-[3px]" /></div>
+          <div class="basis-[39.375rem] shrink-0"><BildPicture id="sara-collage-02" class="h-[29.75rem] w-full object-cover rounded-[3px]" /></div>
+          <div class="basis-[16.625rem] shrink-0"><BildPicture id="sara-collage-03" class="h-[29.75rem] w-full object-cover rounded-[3px]" /></div>
+          <div class="basis-[16.625rem] shrink-0"><BildPicture id="sara-collage-04" class="h-[29.75rem] w-full object-cover rounded-[3px]" /></div>
         </div>
         <div class="flex gap-[1.25rem]">
           <div class="basis-[49.25rem] shrink-0"><BildPicture id="sara-collage-05" class="h-[27.5rem] w-full object-cover rounded-[3px]" /></div>
@@ -257,13 +258,13 @@ const collageIds = Array.from({length: 14}, (_, i) => `sara-collage-${String(i +
           <div class="basis-[20.625rem] shrink-0"><BildPicture id="sara-collage-07" class="h-[27.5rem] w-full object-cover rounded-[3px]" /></div>
         </div>
         <div class="flex gap-[1.25rem]">
-          <div class="basis-[41.75rem] shrink-0"><BildPicture id="sara-collage-08" class="h-[31.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[24.375rem] shrink-0"><BildPicture id="sara-collage-09" class="h-[31.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[24.375rem] shrink-0"><BildPicture id="sara-collage-10" class="h-[31.25rem] w-full object-cover rounded-[3px]" /></div>
+          <div class="basis-[41.75rem] shrink-0"><BildPicture id="sara-collage-08" class="h-[31.25rem] w-full object-cover rounded-[3px]" /></div>
         </div>
         <div class="flex gap-[1.25rem]">
-          <div class="basis-[39.375rem] shrink-0"><BildPicture id="sara-collage-11" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[16.625rem] shrink-0"><BildPicture id="sara-collage-12" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
+          <div class="basis-[39.375rem] shrink-0"><BildPicture id="sara-collage-11" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[16.625rem] shrink-0"><BildPicture id="sara-collage-13" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
           <div class="basis-[16.625rem] shrink-0"><BildPicture id="sara-collage-14" class="h-[26.25rem] w-full object-cover rounded-[3px]" /></div>
         </div>
@@ -285,20 +286,6 @@ const collageIds = Array.from({length: 14}, (_, i) => `sara-collage-${String(i +
     </div>
   </section>
 
-  <!-- ===== VERWEIS AUF SARAS WEBSITE ===== -->
-  <section class="bg-cream-warm px-6 py-10 md:px-[7.5rem] md:py-[3.5rem]">
-    <div class="mx-auto max-w-inhalt text-center">
-      <p class="font-body text-[1rem] leading-[1.7] text-dark/70 md:text-body-klein">
-        Sara berät Frauen zu ihrer Gesundheit —{' '}
-        <a
-          href="https://baravital.ch"
-          target="_blank"
-          rel="noopener"
-          class="underline underline-offset-4 decoration-1 transition-colors hover:text-orange"
-        >baravital.ch</a>
-      </p>
-    </div>
-  </section>
 
   <Footer />
 
