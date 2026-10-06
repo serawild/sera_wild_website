@@ -395,9 +395,9 @@
       },
       "deckungsfaktor": 2.17,
       "hinweis": "1 Datei, 4 Seiten",
-      "dateiMobil": null,
-      "verhaeltnisMobil": "3 : 4",
-      "hinweisMobil": "Neues Motiv vom 2026-10-03. Die alte -hoch-Datei zeigt noch das fruehere Motiv und wird nicht mehr verwendet; mobil wird das Querbild per cover auf 3:4 beschnitten. Eigener Hochformat-Ausschnitt waere besser."
+      "dateiMobil": "src/assets/images/Galerie_3-2/kontakt-teaser-01-hoch.jpg",
+      "verhaeltnisMobil": "2 : 3",
+      "hinweisMobil": "Eigener Hochformat-Ausschnitt des neuen Motivs vom 2026-10-03, 667 x 1000 (2:3). Wird mobil per cover auf 3:4 beschnitten, Verlust nur oben und unten."
     },
     {
       "id": "kontakt-teaser-02",
@@ -419,9 +419,9 @@
       },
       "deckungsfaktor": 2.79,
       "hinweis": "1 Datei, 4 Seiten",
-      "dateiMobil": null,
-      "verhaeltnisMobil": "3 : 4",
-      "hinweisMobil": "Neues Motiv vom 2026-10-03. Die alte -hoch-Datei zeigt noch das fruehere Motiv und wird nicht mehr verwendet; mobil wird das Querbild per cover auf 3:4 beschnitten. Eigener Hochformat-Ausschnitt waere besser."
+      "dateiMobil": "src/assets/images/Galerie_3-2/kontakt-teaser-02-hoch.jpg",
+      "verhaeltnisMobil": "2 : 3",
+      "hinweisMobil": "Eigener Hochformat-Ausschnitt des neuen Motivs vom 2026-10-03, 665 x 1000 (2:3). Wird mobil per cover auf 3:4 beschnitten, Verlust nur oben und unten."
     },
     {
       "id": "hero-erlaebnis",

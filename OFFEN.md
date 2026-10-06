@@ -389,13 +389,22 @@ eingesetzt.
 Motiv (olivgrünes Spitzenkleid am Fluss, Abendsonne). ALT-Texte, `dateiMasse`
 und `deckungsfaktor` in `bilder.json` nachgezogen.
 
-Die beiden `-hoch`-Dateien stammen noch vom 25. August und zeigen das **alte**
-Motiv (Jeansjacke am Hafen) — mobil und auf dem Rechner wären damit zwei
-verschiedene Personen im selben Abschnitt zu sehen. Darum ist `dateiMobil` auf
-`null` gesetzt: mobil wird jetzt das neue Querbild per `object-fit: cover` auf
-3:4 beschnitten.
+Die passenden Hochformat-Ausschnitte lagen unter anderem Namen und im falschen
+Ordner: `Galerie_2-3/kontakt-teaser-hoch-01.jpg` und `-02.jpg` statt
+`Galerie_3-2/kontakt-teaser-01-hoch.jpg` und `-02-hoch.jpg`. Sie sind jetzt
+umbenannt und einsortiert, beide 2:3 (665 × 1000 bzw. 667 × 1000). Die alten
+`-hoch`-Dateien vom 25. August zeigten noch das frühere Motiv (Jeansjacke am
+Hafen) und liegen zur Sicherheit in
+`~/sera-bilder-originale/kontakt-teaser-altes-motiv/`.
 
-**Offen:** eigener Hochformat-Ausschnitt des neuen Motivs als
-`kontakt-teaser-01-hoch.jpg` / `-02-hoch.jpg` (3:4). Sobald die da sind, in
-`bilder.json` `dateiMobil` wieder auf die Pfade setzen. Betrifft Startseite,
-Geschichten und Über.
+**Von Seraina prüfen lassen — Zuordnung nach Motiv, nicht nach Nummer:**
+Ihre Nummerierung und die Motive passten nicht zusammen. Zugeordnet wurde nach
+Bildinhalt, damit die ALT-Texte stimmen:
+
+- `kontakt-teaser-01` (lachende Nahaufnahme) ← ihre Datei `kontakt-teaser-hoch-02.jpg`
+- `kontakt-teaser-02` (am Ufer, abgewandt) ← ihre Datei `kontakt-teaser-hoch-01.jpg`
+
+Soll es doch nach ihrer Nummerierung gehen, sind es zwei vertauschte Dateinamen.
+
+Die Bilder sind 2:3, der mobile Platz ist 3:4 — beschnitten wird oben und unten,
+seitlich geht nichts verloren. Betrifft Startseite, Geschichten und Über.
