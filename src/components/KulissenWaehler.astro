@@ -11,6 +11,7 @@
  * Handy:   wischbare Leiste, nach Kulissen gruppiert.
  */
 import { Picture } from 'astro:assets';
+import DekoIllustration from './DekoIllustration.astro';
 import type { ImageMetadata } from 'astro';
 
 interface Kulisse {
@@ -41,6 +42,37 @@ const gruppen = kulissen.map(k => {
   return { ...k, bilder };
 });
 
+// Die zwei überlappenden Plätze — alle im Verhältnis 2:3,
+// damit an den Bildern nichts beschnitten wird.
+// Drei Bilder: feste Plaetze, Formate 3:2 / 2:3 / 4:5.
+const plaetze3 = [
+  'left:3rem;top:18rem;width:21rem;height:14rem;',       // quer 3:2, unten — zuoberst
+  'left:0;top:0;width:12.5rem;height:18.75rem;',         // hoch 2:3, oben links
+  'left:14rem;top:3rem;width:14.5rem;height:18.125rem;', // hoch 4:5, oben rechts
+];
+
+// Bei einem oder zwei Bildern richtet sich die Breite nach dem Bild selbst.
+// So wird nichts beschnitten, egal in welchem Format es abgelegt wurde.
+const rem = (px: number) => Math.round(px * 1000) / 1000;
+
+function plaetzeFuer(bilder: ImageMetadata[]): string[] {
+  if (bilder.length >= 3) return plaetze3;
+
+  if (bilder.length === 1) {
+    const h = 33.75;   // 27 x 1.25
+    const b = rem(h * (bilder[0].width / bilder[0].height));
+    return [`left:${rem((33 - b) / 2)}rem;top:1.5rem;width:${b}rem;height:${h}rem;`];
+  }
+
+  const hA = 24, hB = 18.5;
+  const bA = rem(hA * (bilder[0].width / bilder[0].height));
+  const bB = rem(hB * (bilder[1].width / bilder[1].height));
+  return [
+    `left:0;top:0;width:${bA}rem;height:${hA}rem;`,
+    `left:${rem(Math.max(bA - 3, 6))}rem;top:${rem(hA - hB + 4)}rem;width:${bB}rem;height:${hB}rem;`,
+  ];
+}
+
 const mitBildern = gruppen.filter(g => g.bilder.length > 0);
 const erste = mitBildern[0]?.kuerzel ?? '';
 ---
@@ -67,7 +99,7 @@ const erste = mitBildern[0]?.kuerzel ?? '';
           <div class="shrink-0 flex flex-col" style="scroll-snap-align:start;width:16.25rem;">
             <div style="width:16.25rem;height:21.25rem;overflow:hidden;position:relative;">
               <Picture
-                src={bild}
+                src={g.bilder[i]}
                 alt={`${g.name} — ${g.text.replace(/^\.\.\./, '')}`}
                 formats={['avif', 'webp']}
                 widths={[260, 520]}
@@ -110,44 +142,42 @@ const erste = mitBildern[0]?.kuerzel ?? '';
 </section>
 
 <!-- ══════════════ Rechner: Durchklicken ══════════════ -->
-<section class="hidden md:block relative isolate overflow-visible bg-cream-warm py-xl">
+<section class="hidden md:block relative z-10 overflow-visible bg-cream-warm py-xl">
+  <DekoIllustration motiv="eukalyptus" farbe="#5B5C4F" breite={320} cssRotate={-22} top={330} seite="links" abstand={-60} />
   <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
 
-    <!-- Bühne -->
-    <div class="relative shrink-0 overflow-hidden rounded-[3px] bg-olive/10"
-         style="width:35rem;height:43.75rem;">
-      {gruppen.map(g => g.bilder.map((bild, i) => (
+    <!-- Bühne: pro Kulisse eine überlappende Dreiergruppe -->
+    <div class="relative shrink-0" style="width:35rem;height:36rem;">
+      {gruppen.map(g => (
         <div
-          class="kulisse-bild absolute inset-0 transition-opacity duration-300"
+          class="kulisse-gruppe absolute inset-0 transition-opacity duration-300"
           data-kuerzel={g.kuerzel}
-          data-index={i}
-          style={`opacity:${g.kuerzel === erste && i === 0 ? 1 : 0};pointer-events:none;`}
+          style={`opacity:${g.kuerzel === erste ? 1 : 0};pointer-events:none;`}
         >
-          <Picture
-            src={bild}
-            alt={`${g.name} — ${g.text.replace(/^\.\.\./, '')}`}
-            formats={['avif', 'webp']}
-            widths={[560, 1120]}
-            sizes="560px"
-            class="h-full w-full object-cover"
-          />
-        </div>
-      )))}
-
-      {gruppen.filter(g => g.bilder.length === 0).map(g => (
-        <div
-          class="kulisse-bild absolute inset-0 flex items-center justify-center bg-olive/60 transition-opacity duration-300"
-          data-kuerzel={g.kuerzel}
-          data-index="0"
-          style="opacity:0;pointer-events:none;"
-        >
-          <p class="font-display text-h3 font-semibold italic text-cream/70">{g.name}</p>
+          {g.bilder.length === 0 && (
+            <div class="absolute flex items-center justify-center bg-olive/60"
+                 style="left:14rem;top:3rem;width:14.5rem;height:18.125rem;">
+              <p class="font-display text-h3 font-semibold italic text-cream/70 text-center px-4">{g.name}</p>
+            </div>
+          )}
+          {(() => {
+            const pl = plaetzeFuer(g.bilder);
+            const reihenfolge = pl.length === 3 ? [1, 2, 0] : pl.map((_, i) => i);
+            return reihenfolge.filter(i => g.bilder[i]).map(i => (
+              <div class="absolute overflow-hidden rounded-[3px]" style={pl[i]}>
+                <Picture
+                  src={g.bilder[i]}
+                  alt={`${g.name} — ${g.text.replace(/^\.\.\./, '')}`}
+                  formats={['avif', 'webp']}
+                  widths={[320, 640]}
+                  sizes="320px"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            ));
+          })()}
         </div>
       ))}
-
-      <!-- Punkte, wenn eine Kulisse mehrere Bilder hat -->
-      <div class="absolute bottom-[1.25rem] left-0 right-0 flex justify-center gap-[0.5rem]"
-           id="kulisse-punkte"></div>
     </div>
 
     <!-- Auswahl -->
@@ -187,26 +217,20 @@ const erste = mitBildern[0]?.kuerzel ?? '';
   .kulisse-knopf[aria-pressed='true'] { opacity: 1; }
   .kulisse-knopf:hover { opacity: 0.8; }
   .kulisse-knopf[aria-pressed='true']:hover { opacity: 1; }
-  .kulisse-punkt { width: 0.4375rem; height: 0.4375rem; border-radius: 9999px;
-                   background: #faf8f5; opacity: 0.4; transition: opacity 0.2s; }
-  .kulisse-punkt[aria-current='true'] { opacity: 1; }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const knoepfe = Array.from(document.querySelectorAll<HTMLButtonElement>('.kulisse-knopf'));
-    const bilder  = Array.from(document.querySelectorAll<HTMLElement>('.kulisse-bild'));
-    const punkte  = document.getElementById('kulisse-punkte');
-    if (!knoepfe.length || !bilder.length || !punkte) return;
+    const gruppen = Array.from(document.querySelectorAll<HTMLElement>('.kulisse-gruppe'));
+    if (!knoepfe.length || !gruppen.length) return;
 
     let aktuell = knoepfe.find(k => k.getAttribute('aria-pressed') === 'true')?.dataset.kuerzel
       ?? knoepfe[0].dataset.kuerzel!;
-    let index = 0;
 
     function zeigen() {
-      bilder.forEach(b => {
-        const treffer = b.dataset.kuerzel === aktuell && Number(b.dataset.index) === index;
-        b.style.opacity = treffer ? '1' : '0';
+      gruppen.forEach(g => {
+        g.style.opacity = g.dataset.kuerzel === aktuell ? '1' : '0';
       });
       knoepfe.forEach(k => {
         const aktiv = k.dataset.kuerzel === aktuell;
@@ -217,24 +241,10 @@ const erste = mitBildern[0]?.kuerzel ?? '';
           strich.style.opacity = aktiv ? '1' : '0.35';
         }
       });
-      const anzahl = bilder.filter(b => b.dataset.kuerzel === aktuell).length;
-      punkte!.innerHTML = '';
-      if (anzahl > 1) {
-        for (let i = 0; i < anzahl; i++) {
-          const p = document.createElement('button');
-          p.type = 'button';
-          p.className = 'kulisse-punkt';
-          p.setAttribute('aria-current', i === index ? 'true' : 'false');
-          p.setAttribute('aria-label', `Bild ${i + 1} von ${anzahl}`);
-          p.addEventListener('click', () => { index = i; zeigen(); });
-          punkte!.appendChild(p);
-        }
-      }
     }
 
     knoepfe.forEach(k => k.addEventListener('click', () => {
       aktuell = k.dataset.kuerzel!;
-      index = 0;
       zeigen();
     }));
 

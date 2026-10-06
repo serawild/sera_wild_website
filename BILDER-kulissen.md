@@ -27,25 +27,37 @@ sie findet. Die Reihenfolge ergibt sich aus der Nummer.
 
 ## Format und Grösse
 
-Der Platz ist **560 × 700** Pixel, also Hochformat **4 : 5**.
+Pro Kulisse werden **drei Bilder** gezeigt, jedes in einem anderen Format.
+Die Nummer im Dateinamen bestimmt den Platz:
 
-- mindestens **840 × 1050**
-- besser **1120 × 1400**
+| Datei | Format | Platz | Export mindestens |
+|---|---|---|---|
+| `<kuerzel>-01.jpg` | **quer 3:2** | unten, liegt zuoberst | **528 × 352**, besser 704 × 470 |
+| `<kuerzel>-02.jpg` | **hoch 2:3** | oben links | **312 × 468**, besser 416 × 624 |
+| `<kuerzel>-03.jpg` | **hoch 4:5** | oben rechts | **360 × 450**, besser 480 × 600 |
 
-Exportier im Verhältnis 4:5, dann wird nichts beschnitten. Andere
-Hochformate funktionieren auch, die Seite schneidet dann oben und unten
-etwas weg.
+Die drei überlappen sich; daneben steht eine Illustration in Dunkelgrün.
 
-Die drei bestehenden Bilder sind 1198 × 1800, also 2:3. Sie werden
-dadurch oben und unten leicht angeschnitten — bei Gelegenheit in 4:5
-nachliefern, dann sitzt es genau.
+Weitere Dateien (`-04` und folgende) erscheinen nur in der wischbaren
+Leiste auf dem Handy, nicht auf dem Rechner.
 
-## Stand
+## Stand (06.10.2026)
 
-- `vintage-01.jpg` ✓
-- `licht-01.jpg` ✓
-- `stein-01.jpg` ✓
-- `leinen-*` — fehlt noch, zeigt solange eine Platzhalterfläche
+| Kulisse | vorhanden | fehlt |
+|---|---|---|
+| Vintage mit Charme | `-01` quer, `-02` hoch, `-03` hoch | — vollständig |
+| Zeitlos wie du | `-01` quer, `-02` hoch, `-03` hoch | — vollständig |
+| Licht trifft Tiefe | `-01` hoch | `licht-02` (quer 3:2), `licht-03` (hoch 4:5) |
+| Leinen & Licht | `-01` hoch, `-02` hoch | `leinen-03` (hoch 4:5) |
+
+Hat eine Kulisse weniger als drei Bilder, ordnet die Seite die vorhandenen
+automatisch an, ohne etwas zu beschneiden — ein Bild gross, zwei überlappend.
+Erst ab drei Bildern entsteht die Collage aus der Tabelle oben.
+
+**Achtung bei `licht`:** `licht-01.jpg` ist Hochformat. Sobald zwei weitere
+dazukommen, rutscht es in den Querformat-Platz und wird stark beschnitten.
+Dann besser ein echtes Querbild als `-01` ablegen und das heutige nach `-03`
+umbenennen.
 
 Die alten Dateien `Galerie_2-3/kulissen-01…03.jpg` werden nicht mehr
 gebraucht und können weg, sobald alles steht.
