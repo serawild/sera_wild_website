@@ -36,23 +36,22 @@ const blind = partner.blindtexte;
  */
 const DEKO_JE_EINTRAG: Record<string, any> = {
   /*
-   * Mohn am ERSTEN Eintrag. Nicht mehr am Seitenrand wie in Figma, sondern in der
-   * Luecke zwischen Bild und Text (Entscheid Seraina, 06.10.2026): Am Rand blieb auf
-   * breiten Monitoren nur ein Drittel sichtbar, der Rest hing ausserhalb des Fensters.
+   * Mohn am ERSTEN Eintrag, im rechten Seitenrand neben dem Partnernamen
+   * (Entscheid Seraina, 06.10.2026). Davor stand er in der Luecke zwischen Bild und
+   * Text und wirkte dort wie ein Versehen.
    *
-   * `top` und `abstand` zaehlen ab der linken oberen Bildecke (Rahmen in
-   * NetzwerkEintrag.astro), das Bild ist 700 × 500.
+   * `top` und `abstand` zaehlen ab der Inhaltsspalte (Rahmen in NetzwerkEintrag.astro),
+   * nicht ab der Fensterkante — sonst wandert die Blume auf breiten Monitoren weg.
    *
-   *   breite 130  → Begrenzungsrahmen 214 × 245 (vorher 248 → 409 × 466)
-   *   abstand 556 → rechte Kante bei 770, also 10 px Luft zur Textspalte bei 780
-   *   top 128     → senkrecht auf Bildmitte
-   *
-   * Damit liegen 144 px hinter dem Bild und 70 px stehen in der 80 px breiten Luecke —
-   * ein Drittel der Blume, und wegen der Drehung um 29° ist es die Bluete selbst, nicht
-   * der Stiel. Kleiner skaliert heisst hier: mehr von der Blume im sichtbaren Streifen.
+   *   breite 145  → Begrenzungsrahmen 239 x 273
+   *   abstand -239 → die linke Kante liegt genau auf der rechten Spaltenkante,
+   *                  die Blume steht also vollstaendig im Seitenrand und beruehrt
+   *                  keinen Buchstaben. Sichtbar ist, was der Rand hergibt: bei
+   *                  1728 px die Haelfte, auf breiten Schirmen mehr.
+   *   top 10      → auf Hoehe von Logo und Name
    */
   'netzwerk-studio-benanti': {
-    motiv: 'mohn', farbe: '#5B5C4F', breite: 130, cssRotate: 29, top: 128, seite: 'links', abstand: 556,
+    motiv: 'mohn', farbe: '#5B5C4F', breite: 145, cssRotate: 29, top: 10, seite: 'rechts', abstand: -239,
   },
 };
 
