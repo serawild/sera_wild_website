@@ -95,46 +95,51 @@ const LABEL = label ?? 'WIE WIR UNS KENNENGELERNT HABEN';
 
 <!-- Desktop -->
 <section class="relative isolate hidden overflow-visible md:block bg-cream-warm py-xl">
-  {/*
-    Die Illustration haengt an der Textspalte, nicht am Bildschirmrand: Der Rahmen
-    ist genauso breit wie der Inhalt (max-w-inhalt, zentriert) und spannt die ganze
-    Abschnittshoehe. `abstand` zaehlt damit ab der linken Spaltenkante statt ab der
-    Fensterkante — die Blume fuellt den linken Rand und behaelt ihren Abstand zum
-    Text, egal wie breit der Bildschirm ist. Ohne diesen Rahmen klebt sie am
-    Fensterrand und entfernt sich auf breiten Monitoren immer weiter vom Text.
-  */}
-  {deko && (
-    <div class="pointer-events-none absolute inset-0 mx-auto max-w-inhalt">
-      <DekoIllustration
-        motiv={deko.motiv}
-        farbe={deko.farbe}
-        breite={deko.breite}
-        cssRotate={deko.cssRotate}
-        top={deko.top}
-        seite={deko.seite}
-        abstand={deko.abstand}
-      />
-    </div>
-  )}
   <div
     class:list={[
       'mx-auto flex max-w-inhalt items-center gap-[5rem] px-6 md:px-0',
       bildSeite === 'rechts' && 'md:flex-row-reverse',
     ]}
   >
-    {foto ? (
-      <div class="h-[31.25rem] w-[43.75rem] shrink-0 overflow-hidden rounded-[0.25rem]">
-        <BildPicture id={foto} class="h-full w-full object-cover" widths={[700, 1400]} sizes="700px" optional={true} />
-      </div>
-    ) : (
-      /* Solange kein Foto da ist: Logo und Name füllen die Bildspalte, damit die
-         Reihe vollständig wirkt statt eine leere Fläche zu zeigen. */
-      <div class="flex w-[43.75rem] shrink-0 flex-col gap-8">
-        <img src={logo} alt="" class="h-[6.25rem] w-auto max-w-[20rem] object-contain object-left" loading="lazy" />
-        <h2 class="font-display text-[2.25rem] leading-[1.39] font-semibold">{name}</h2>
-        <span class="h-px w-20 bg-beige" aria-hidden="true"></span>
-      </div>
-    )}
+    {/*
+      Die Bildspalte traegt die Illustration. Der Rahmen ist genau so gross wie das
+      Bild (700 × 500), also zaehlen `top` und `abstand` ab der Bildecke — nicht ab
+      der Fensterkante und nicht ab der Abschnittsoberkante.
+
+      Zwei Gruende: Am Fensterrand verankert wandert die Blume auf breiten Monitoren
+      immer weiter vom Inhalt weg. Am Abschnitt verankert verrutscht sie, sobald ein
+      Partnertext laenger wird als das Bild und die Reihe hoeher macht — das Bild
+      sitzt wegen items-center dann tiefer, die Blume nicht.
+
+      Kein overflow-hidden auf diesem Rahmen: Die Blume ragt absichtlich rechts aus
+      dem Bild heraus. Zugeschnitten wird nur das Foto selbst, eine Ebene tiefer.
+    */}
+    <div class="relative w-[43.75rem] shrink-0">
+      {deko && (
+        <DekoIllustration
+          motiv={deko.motiv}
+          farbe={deko.farbe}
+          breite={deko.breite}
+          cssRotate={deko.cssRotate}
+          top={deko.top}
+          seite={deko.seite}
+          abstand={deko.abstand}
+        />
+      )}
+      {foto ? (
+        <div class="h-[31.25rem] w-full overflow-hidden rounded-[0.25rem]">
+          <BildPicture id={foto} class="h-full w-full object-cover" widths={[700, 1400]} sizes="700px" optional={true} />
+        </div>
+      ) : (
+        /* Solange kein Foto da ist: Logo und Name füllen die Bildspalte, damit die
+           Reihe vollständig wirkt statt eine leere Fläche zu zeigen. */
+        <div class="flex w-full flex-col gap-8">
+          <img src={logo} alt="" class="h-[6.25rem] w-auto max-w-[20rem] object-contain object-left" loading="lazy" />
+          <h2 class="font-display text-[2.25rem] leading-[1.39] font-semibold">{name}</h2>
+          <span class="h-px w-20 bg-beige" aria-hidden="true"></span>
+        </div>
+      )}
+    </div>
 
     <div class="flex min-w-0 flex-1 flex-col gap-6">
       {foto && (

@@ -35,16 +35,24 @@ const blind = partner.blindtexte;
  * Mohn 409 → 248, Tulpe 466 → 252, Eukalyptus 350 → 211, Blattzweig 306 → 170.
  */
 const DEKO_JE_EINTRAG: Record<string, any> = {
-  // Mohn haengt am ERSTEN Eintrag und ragt ins Intro hinauf.
-  // Figma y 1272, erster Eintrag beginnt bei 1523 → 1272 − 1523 = −251
-  //
-  // `abstand` zaehlt ab der linken Kante der Inhaltsspalte, nicht ab der Fensterkante
-  // (siehe den Rahmen in NetzwerkEintrag.astro). Figma misst ab Rahmenkante: dort steht
-  // −278 im 1728 breiten Rahmen, die Spalte beginnt bei 120 → −278 − 120 = −398.
-  // So behaelt die Blume ihren Figma-Abstand zum Text, egal wie breit der Bildschirm ist,
-  // und fuellt den linken Rand aus, statt am Fensterrand zu kleben.
+  /*
+   * Mohn am ERSTEN Eintrag. Nicht mehr am Seitenrand wie in Figma, sondern in der
+   * Luecke zwischen Bild und Text (Entscheid Seraina, 06.10.2026): Am Rand blieb auf
+   * breiten Monitoren nur ein Drittel sichtbar, der Rest hing ausserhalb des Fensters.
+   *
+   * `top` und `abstand` zaehlen ab der linken oberen Bildecke (Rahmen in
+   * NetzwerkEintrag.astro), das Bild ist 700 × 500.
+   *
+   *   breite 130  → Begrenzungsrahmen 214 × 245 (vorher 248 → 409 × 466)
+   *   abstand 556 → rechte Kante bei 770, also 10 px Luft zur Textspalte bei 780
+   *   top 128     → senkrecht auf Bildmitte
+   *
+   * Damit liegen 144 px hinter dem Bild und 70 px stehen in der 80 px breiten Luecke —
+   * ein Drittel der Blume, und wegen der Drehung um 29° ist es die Bluete selbst, nicht
+   * der Stiel. Kleiner skaliert heisst hier: mehr von der Blume im sichtbaren Streifen.
+   */
   'netzwerk-studio-benanti': {
-    motiv: 'mohn', farbe: '#5B5C4F', breite: 248, cssRotate: 29, top: -251, seite: 'links', abstand: -398,
+    motiv: 'mohn', farbe: '#5B5C4F', breite: 130, cssRotate: 29, top: 128, seite: 'links', abstand: 556,
   },
 };
 
