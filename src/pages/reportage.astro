@@ -10,9 +10,10 @@ const phoneHref = 'tel:+41797905701';
 const email = 'info@serawild.com';
 
 const anlassTags = [
-  'Jubiläen',
+  'Öffentliche Events',
+  'Firmenfeiern',
   'Mitarbeiteranlässe',
-  'Kongresse',
+  'Jubiläen',
 ];
 
 const leistungen = [
@@ -25,36 +26,37 @@ const leistungen = [
 ];
 
 /**
- * Collage in Abschnitt 03 — drei Reihen zu drei Bildern, quer und hoch gemischt.
+ * Bildstreifen im Abschnitt «Was ich fotografiere».
  *
- * Rhythmus wie auf den Geschichten-Seiten: Das breite Querbild wandert von Reihe
- * zu Reihe — links, rechts, Mitte. Nie zweimal an derselben Stelle, sonst kippt
- * die Collage optisch zur Seite.
+ * Ein einziger Streifen zum Wischen, auf dem Handy wie auf dem Rechner. Alle
+ * Bilder sind gleich hoch; die Breite ergibt sich aus dem Seitenverhältnis.
+ * Ein Querbild ist dadurch gut doppelt so breit wie ein Hochformat, und
+ * beschnitten wird nichts.
  *
- * Beschnitten wird nichts: In jeder Reihe bekommt ein Bild den Platz, der seinem
- * Seitenverhaeltnis entspricht (flex-grow = Verhaeltnis, flex-basis = 0). Dadurch
- * sind alle drei Bilder einer Reihe exakt gleich hoch, ohne dass eine feste Hoehe
- * gesetzt werden muesste.
+ * Darum passt der Streifen zu jeder Mischung: drei quer und zwei hoch, oder
+ * zwölf quer und eines hoch — das Layout bleibt ruhig.
+ *
+ * Welche Bilder erscheinen, steht allein in `spec/bilder.json`: jeder Eintrag,
+ * dessen Kennung mit `reportage-galerie-` beginnt, kommt in den Streifen, nach
+ * Kennung sortiert. Ein neues Bild heisst also: Eintrag anlegen, Datei ablegen,
+ * fertig — am Code ist nichts zu ändern.
  */
-const QUER = 1.5;    // 3 : 2 quer
-const HOCH = 0.667;  // 2 : 3 hoch
-
-const collageReihen = [
-  [ { id: 'reportage-galerie-01', quer: true },  { id: 'reportage-galerie-02' },               { id: 'reportage-galerie-03' } ],
-  [ { id: 'reportage-galerie-04' },              { id: 'reportage-galerie-05' },               { id: 'reportage-galerie-06', quer: true } ],
-  [ { id: 'reportage-galerie-07' },              { id: 'reportage-galerie-08', quer: true },   { id: 'reportage-galerie-09' } ],
-];
-const collageAlle = collageReihen.flat();
-
-/**
- * Sobald ein Bild in bilder.json auf aktiv steht und eine Datei hat, erscheint es
- * von selbst — bis dahin steht eine beige Flaeche mit dem Dateinamen darin.
- * Im Code ist dafuer nichts umzustellen.
- */
-const bildBereit = (id: string): boolean => {
-  const e = (bilderSpec.bilder as any[]).find((b) => b.id === id);
-  return Boolean(e?.aktiv && e?.datei);
-};
+const galerieBilder = (bilderSpec.bilder as any[])
+  .filter((b) => b.id.startsWith('reportage-galerie-'))
+  .sort((a, b) => a.id.localeCompare(b.id))
+  .map((b) => {
+    // Das Verhältnis kommt aus den echten Dateimassen, solange sie erfasst sind.
+    // Sonst aus der vorgesehenen Anzeigegrösse, sonst aus der Ausrichtung.
+    const masse = b.dateiMasse ?? b.anzeige;
+    const verhaeltnis = masse?.breite && masse?.hoehe
+      ? masse.breite / masse.hoehe
+      : (b.ausrichtung === 'quer' ? 1.5 : 0.667);
+    return {
+      id: b.id,
+      verhaeltnis: Math.round(verhaeltnis * 1000) / 1000,
+      bereit: Boolean(b.aktiv && b.datei),
+    };
+  });
 
 const ablaufSchritte = [
   { nr: '1', titel: 'Anfrage', text: 'Datum, Ort, Dauer, Anlass. Ein paar Zeilen genügen.' },
@@ -74,21 +76,23 @@ const ablaufSchritte = [
 
   <!-- Mobile -->
   <section class="relative md:hidden h-[43.75rem] overflow-hidden bg-olive">
-    <div
-      class="absolute inset-0 flex items-center justify-center"
-      style="background:#A0886D;"
-      aria-hidden="true"
-    >
-      <span style="color:#F5F3ED;font-size:0.75rem;opacity:0.45;">hero-reportage</span>
-    </div>
-    <div class="absolute inset-0 pointer-events-none" style="background:rgba(47,50,45,0.42);" aria-hidden="true"></div>
+    <BildPicture
+      id="hero-reportage"
+      class="absolute inset-0 h-full w-full object-cover"
+      mobil={true}
+      loading="eager"
+      fetchpriority="high"
+      widths={[390, 780]}
+      sizes="100vw"
+    />
+    <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top, rgba(47,50,45,0.88) 0%, rgba(47,50,45,0.62) 32%, rgba(47,50,45,0.18) 68%, rgba(47,50,45,0) 100%);" aria-hidden="true"></div>
     <div class="absolute bottom-10 left-6 max-w-[21rem]">
       <p class="font-body text-[0.75rem] font-bold uppercase tracking-[0.15em] text-cream/60 mb-2">EVENT-REPORTAGE</p>
       <h1 class="font-display text-[1.9375rem] leading-[1.3] font-semibold text-cream">
         Ich fotografiere, was passiert.
       </h1>
       <p class="font-body text-[1rem] leading-[1.6] text-cream/80 mt-3">
-        Reportagen für Firmenanlässe und private Feste.
+        Reportage für Firmen, öffentliche Events und private Feste.
       </p>
       <a
         href="/kontakt"
@@ -101,19 +105,22 @@ const ablaufSchritte = [
 
   <!-- Desktop -->
   <section class="hidden md:block relative h-[100svh] min-h-[600px] overflow-hidden bg-olive">
-    <div
-      class="absolute inset-0"
-      style="background:#A0886D;"
-      aria-hidden="true"
-    ></div>
-    <div class="absolute inset-0 pointer-events-none" style="background:rgba(47,50,45,0.42);" aria-hidden="true"></div>
-    <div class="absolute bottom-[10rem] left-6 max-w-[50rem] md:left-[7.5rem]">
+    <BildPicture
+      id="hero-reportage"
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+      widths={[768, 1280, 1728, 2500]}
+      sizes="100vw"
+    />
+    <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to top, rgba(47,50,45,0.88) 0%, rgba(47,50,45,0.62) 32%, rgba(47,50,45,0.18) 68%, rgba(47,50,45,0) 100%);" aria-hidden="true"></div>
+    <div class="absolute bottom-[10rem] left-[7.5rem] flex max-w-[50rem] flex-col items-start">
       <p class="font-body text-label font-bold uppercase text-cream/60 mb-4">EVENT-REPORTAGE</p>
       <h1 class="font-display text-h1 font-semibold leading-tight text-cream">
         Ich fotografiere, was passiert.
       </h1>
       <p class="font-body text-body leading-[1.8] text-cream/80 mt-6 max-w-[36rem]">
-        Reportagen für Firmenanlässe und private Feste.
+        Reportage für Firmen, öffentliche Events und private Feste.
       </p>
       <a
         href="/kontakt"
@@ -296,53 +303,27 @@ const ablaufSchritte = [
       </div>
     </div>
 
-    <!-- Collage — Rechner: drei Reihen, das Querbild wandert links / rechts / Mitte -->
-    <div class="hidden md:flex mx-auto max-w-inhalt px-[7.5rem] mt-12 flex-col gap-4">
-      {collageReihen.map((reihe) => (
-        <div class="flex gap-4">
-          {reihe.map((bild) => (
-            <div
-              class="overflow-hidden rounded-[0.25rem]"
-              style={`flex:${bild.quer ? QUER : HOCH} 1 0;aspect-ratio:${bild.quer ? '3 / 2' : '2 / 3'};`}
-            >
-              {bildBereit(bild.id) ? (
-                <BildPicture
-                  id={bild.id}
-                  class="h-full w-full object-cover"
-                  widths={bild.quer ? [660, 1320] : [300, 600]}
-                  sizes={bild.quer ? '41rem' : '18rem'}
-                />
-              ) : (
-                <div class="flex h-full w-full items-center justify-center" style="background:#A0886D;">
-                  <span style="color:#F5F3ED;font-size:0.8125rem;opacity:0.45;">{bild.id}</span>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-
-    <!-- Collage — Handy: wischbare Leiste, gleiche Reihenfolge, gleiche Hoehe -->
-    <div class="md:hidden mt-8">
+    <!-- Bildstreifen: ein Band zum Wischen, mobil 21.25rem hoch, auf dem Rechner 26rem.
+         Die Breite jedes Bildes folgt seinem Verhältnis, darum sind alle gleich hoch. -->
+    <div class="mt-8 md:mt-12">
       <div
         id="galerie-track"
         class="overflow-x-auto"
         style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;"
       >
-        <div class="flex gap-3 px-6" style="width:max-content;">
-          {collageAlle.map((bild) => (
+        <div class="flex gap-3 px-6 md:gap-4 md:px-[7.5rem]" style="width:max-content;">
+          {galerieBilder.map((bild) => (
             <div
-              class="shrink-0 overflow-hidden rounded-[0.25rem]"
-              style={`scroll-snap-align:start;height:21.25rem;width:${bild.quer ? '31.875rem' : '14.1875rem'};`}
+              class="galerie-karte shrink-0 overflow-hidden rounded-[0.25rem] h-[21.25rem] md:h-[26rem]"
+              style={`scroll-snap-align:start;aspect-ratio:${bild.verhaeltnis};`}
             >
-              {bildBereit(bild.id) ? (
+              {bild.bereit ? (
                 <BildPicture
                   id={bild.id}
                   class="h-full w-full object-cover"
                   mobil={true}
-                  widths={bild.quer ? [510, 1020] : [227, 454]}
-                  sizes={bild.quer ? '510px' : '227px'}
+                  widths={[400, 800, 1200]}
+                  sizes="(max-width: 767px) 60vw, 40vw"
                 />
               ) : (
                 <div class="flex h-full w-full items-center justify-center" style="background:#A0886D;">
@@ -351,17 +332,19 @@ const ablaufSchritte = [
               )}
             </div>
           ))}
-          <div class="shrink-0 w-3" aria-hidden="true"></div>
+          <div class="shrink-0 w-3 md:w-[7.5rem]" aria-hidden="true"></div>
         </div>
       </div>
+
       <div class="flex justify-center gap-[0.5rem] mt-[1.25rem]">
-        {collageAlle.map((_, i) => (
+        {galerieBilder.map((_, i) => (
           <span
             class:list={['galerie-dot h-[0.375rem] w-[0.375rem] rounded-full bg-dark transition-opacity', i === 0 ? 'opacity-100' : 'opacity-30']}
           ></span>
         ))}
       </div>
     </div>
+
 
   </section>
 
@@ -428,10 +411,10 @@ const ablaufSchritte = [
       <a href={`mailto:${email}`} class="font-body text-[1.0625rem] font-semibold text-dark/70 transition-colors hover:text-dark">{email}</a>
     </div>
     <div
-      class="w-full rounded-lg overflow-hidden flex items-center justify-center"
-      style="aspect-ratio:4/5;background:#A0886D;"
+      class="w-full rounded-lg overflow-hidden"
+      style="aspect-ratio:4/5;"
     >
-      <span style="color:#F5F3ED;font-size:0.75rem;opacity:0.45;">reportage-kontakt</span>
+      <BildPicture id="reportage-kontakt" class="h-full w-full object-cover" mobil={true} widths={[390, 780]} sizes="100vw" />
     </div>
   </section>
 
@@ -466,10 +449,10 @@ const ablaufSchritte = [
           </div>
         </div>
         <div
-          class="w-[30rem] shrink-0 rounded-lg overflow-hidden flex items-center justify-center"
-          style="aspect-ratio:4/5;background:#A0886D;"
+          class="w-[30rem] shrink-0 rounded-lg overflow-hidden"
+          style="aspect-ratio:4/5;"
         >
-          <span style="color:#F5F3ED;font-size:0.875rem;opacity:0.45;">reportage-kontakt</span>
+          <BildPicture id="reportage-kontakt" class="h-full w-full object-cover" widths={[480, 960]} sizes="30rem" />
         </div>
       </div>
     </div>
@@ -487,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!track || !dots.length) return;
   // Die Karten sind unterschiedlich breit (quer und hoch gemischt), darum wird
   // die naechstgelegene Kartenkante gesucht statt mit einer festen Breite gerechnet.
-  const karten = Array.from(track.querySelectorAll<HTMLElement>(':scope > div > div'));
+  const karten = Array.from(track.querySelectorAll<HTMLElement>('.galerie-karte'));
   track.addEventListener('scroll', () => {
     let idx = 0;
     let beste = Infinity;

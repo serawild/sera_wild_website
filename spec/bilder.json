@@ -2299,161 +2299,325 @@
     {
       "id": "hero-reportage",
       "figmaEbene": "",
-      "baustein": "Hero Reportage",
+      "baustein": "Hero",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 1728,
-        "hoehe": 1117
+        "breite": 2500,
+        "hoehe": 1664
       },
-      "verhaeltnis": "1.55 : 1",
+      "verhaeltnis": "1.50 : 1",
       "ausrichtung": "quer",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null
+      "alt": "Sängerin auf der Bühne über dem Publikum, erhobene Hände, Rauch und Scheinwerfer",
+      "aktiv": true,
+      "datei": "src/assets/images/Hero_Bilder/hero-reportage.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1664
+      }
     },
     {
       "id": "reportage-galerie-01",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 660,
-        "hoehe": 440
+        "breite": 2500,
+        "hoehe": 1663
       },
-      "verhaeltnis": "3 : 2",
+      "verhaeltnis": "1.50 : 1",
       "ausrichtung": "quer",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 1. Querformat 3:2, mindestens 1320 × 880."
+      "alt": "Publikum von hinten, auf der Bühne ein Podium zwischen orangen Stelen",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-01.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1663
+      }
     },
     {
       "id": "reportage-galerie-02",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 300,
-        "hoehe": 450
+        "breite": 2500,
+        "hoehe": 1663
       },
-      "verhaeltnis": "2 : 3",
-      "ausrichtung": "hoch",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 1. Hochformat 2:3, mindestens 600 × 900."
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Podiumsgespräch auf der Bühne, davor das Publikum von hinten",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-02.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1663
+      }
     },
     {
       "id": "reportage-galerie-03",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 300,
-        "hoehe": 450
+        "breite": 1663,
+        "hoehe": 2500
       },
-      "verhaeltnis": "2 : 3",
+      "verhaeltnis": "0.67 : 1",
       "ausrichtung": "hoch",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 1. Hochformat 2:3, mindestens 600 × 900."
+      "alt": "Blick durch die Halle auf einen Stand, im Hintergrund ein grosses Bogenfenster",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_2-3/reportage-galerie-03.jpg",
+      "dateiMasse": {
+        "breite": 1663,
+        "hoehe": 2500
+      }
     },
     {
       "id": "reportage-galerie-04",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 300,
-        "hoehe": 450
+        "breite": 2500,
+        "hoehe": 1663
       },
-      "verhaeltnis": "2 : 3",
-      "ausrichtung": "hoch",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 2. Hochformat 2:3, mindestens 600 × 900."
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Volles Publikum von hinten, auf der Bühne eine Rednerin zwischen orangen Stelen",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-04.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1663
+      }
     },
     {
       "id": "reportage-galerie-05",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 300,
-        "hoehe": 450
+        "breite": 2500,
+        "hoehe": 1663
       },
-      "verhaeltnis": "2 : 3",
-      "ausrichtung": "hoch",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 2. Hochformat 2:3, mindestens 600 × 900."
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Konzertbühne mit grosser Leinwand, davor ein Publikum mit Hüten",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-05.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1663
+      }
     },
     {
       "id": "reportage-galerie-06",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 660,
-        "hoehe": 440
+        "breite": 1663,
+        "hoehe": 2500
       },
-      "verhaeltnis": "3 : 2",
-      "ausrichtung": "quer",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 2. Querformat 3:2, mindestens 1320 × 880."
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Gitarrist im blauen Bühnenlicht, von der Seite fotografiert",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_2-3/reportage-galerie-06.jpg",
+      "dateiMasse": {
+        "breite": 1663,
+        "hoehe": 2500
+      }
     },
     {
       "id": "reportage-galerie-07",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 300,
-        "hoehe": 450
+        "breite": 2500,
+        "hoehe": 1663
       },
-      "verhaeltnis": "2 : 3",
-      "ausrichtung": "hoch",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 3. Hochformat 2:3, mindestens 600 × 900."
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Mann mit Lockenkopf bricht am Mikrofon eine Torte an",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-07.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1663
+      }
     },
     {
       "id": "reportage-galerie-08",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 660,
-        "hoehe": 440
+        "breite": 2500,
+        "hoehe": 1663
       },
-      "verhaeltnis": "3 : 2",
+      "verhaeltnis": "1.50 : 1",
       "ausrichtung": "quer",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 3. Querformat 3:2, mindestens 1320 × 880."
+      "alt": "Gang durch eine Markthalle, Besucherinnen und Besucher zwischen den Ständen",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-08.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1663
+      }
     },
     {
       "id": "reportage-galerie-09",
       "figmaEbene": "",
-      "baustein": "Collage Reportage",
+      "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 300,
-        "hoehe": 450
+        "breite": 1663,
+        "hoehe": 2500
       },
-      "verhaeltnis": "2 : 3",
+      "verhaeltnis": "0.67 : 1",
       "ausrichtung": "hoch",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Collage Abschnitt 04, Reihe 3. Hochformat 2:3, mindestens 600 × 900."
+      "alt": "Blick von oben in die Halle: lange Tischreihen, Pflanzen und Lichterketten",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_2-3/reportage-galerie-09.jpg",
+      "dateiMasse": {
+        "breite": 1663,
+        "hoehe": 2500
+      }
+    },
+    {
+      "id": "reportage-galerie-10",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2500,
+        "hoehe": 1406
+      },
+      "verhaeltnis": "1.78 : 1",
+      "ausrichtung": "quer",
+      "alt": "Volle Industriehalle mit grosser Bühne und Leinwand, dichtes Publikum davor",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-10.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1406
+      }
+    },
+    {
+      "id": "reportage-galerie-11",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2500,
+        "hoehe": 1663
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Messestand mit grossformatigen Blumenbildern, Besucherinnen im Gespräch davor",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-11.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1663
+      }
+    },
+    {
+      "id": "reportage-galerie-12",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1663,
+        "hoehe": 2500
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Kuchen unter einer Glasglocke, daneben ein beschriftetes Schild",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_2-3/reportage-galerie-12.jpg",
+      "dateiMasse": {
+        "breite": 1663,
+        "hoehe": 2500
+      }
+    },
+    {
+      "id": "reportage-galerie-13",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2500,
+        "hoehe": 1667
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Gäste in Uniform und festlicher Kleidung an langen Tischen im Saal",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-13.jpg",
+      "dateiMasse": {
+        "breite": 2500,
+        "hoehe": 1667
+      }
+    },
+    {
+      "id": "reportage-galerie-14",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1664,
+        "hoehe": 2500
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Frau im Gespräch an ihrem Messestand, umgeben von Bildern und Dekoration",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_2-3/reportage-galerie-14.jpg",
+      "dateiMasse": {
+        "breite": 1664,
+        "hoehe": 2500
+      }
+    },
+    {
+      "id": "reportage-galerie-15",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1667,
+        "hoehe": 2500
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Festsaal von oben: lange gedeckte Tische voller Gäste, Kronleuchter und rote Wände",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_2-3/reportage-galerie-15.jpg",
+      "dateiMasse": {
+        "breite": 1667,
+        "hoehe": 2500
+      }
+    },
+    {
+      "id": "reportage-galerie-16",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1663,
+        "hoehe": 2500
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Holzleiter als Regal, darauf Gläser und kleine beschriftete Schilder",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_2-3/reportage-galerie-16.jpg",
+      "dateiMasse": {
+        "breite": 1663,
+        "hoehe": 2500
+      }
     },
     {
       "id": "reportage-kontakt",
@@ -2466,9 +2630,13 @@
       },
       "verhaeltnis": "4 : 5",
       "ausrichtung": "hoch",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
-      "aktiv": false,
-      "datei": null
+      "alt": "Publikum in einer Industriehalle, Blick über die Köpfe Richtung Bühne",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_4-5/reportage-kontakt.jpg",
+      "dateiMasse": {
+        "breite": 1663,
+        "hoehe": 2500
+      }
     },
     {
       "id": "hero-tina",
@@ -2826,6 +2994,26 @@
         "hoehe": 1200
       },
       "deckungsfaktor": 3.84
+    },
+    {
+      "id": "gutschein-vorschau",
+      "figmaEbene": "",
+      "baustein": "Gutschein-Vorschau",
+      "seite": "W-Gutschein",
+      "anzeige": {
+        "breite": 560,
+        "hoehe": 394
+      },
+      "verhaeltnis": "1.42 : 1",
+      "ausrichtung": "quer",
+      "alt": "Ein W-Gutschein im Format A5 quer: Logo, Paketname, Wert und ein Code zum Einlösen",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/gutschein-vorschau.jpg",
+      "dateiMasse": {
+        "breite": 1654,
+        "hoehe": 1165
+      },
+      "hinweis": "Kein Foto, sondern der gerenderte Gutschein aus ~/gutscheine. Ändert sich die Vorlage dort, dieses Bild neu erzeugen."
     }
   ],
   "mobil": {
