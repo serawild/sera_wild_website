@@ -1,0 +1,149 @@
+---
+/**
+ * NetzwerkEintrag — ein Partner auf der Netzwerk-Seite.
+ * Vorlage: Figma „Sektion – Netzwerk-Eintrag" (2287:150), Instanzen 2289:801/811/821/831/841.
+ *
+ * Desktop 1728: Rahmen 660 hoch, Polsterung 80/120, Abstand 80.
+ *   Bild 700x500 fest (shrink-0), Inhalt flex-1 (708 bei 1488 Inhaltsbreite).
+ *   Bildseite wechselt ab — links, rechts, links, rechts, links.
+ *
+ * Die Partnerfotos fehlen noch. Figma zeigt dort leere Rahmen in Beige #A0886D.
+ * Solange `foto` null ist, wird KEINE Platzhalterfläche gezeigt: Logo und Name rücken
+ * in die Bildspalte, der Text bleibt daneben. Die Reihe wirkt damit fertig statt leer.
+ * Sobald `foto` gesetzt ist, greift wieder das Figma-Layout mit Bild 700x500.
+ *
+ * Das Logo sitzt in Figma in einem weissen Platzhalterrahmen 200x76. Da die echten
+ * Logos freigestellt sind, entfaellt der weisse Kasten; das Logo wird linksbuendig
+ * in dieselben Maximalmasse eingepasst.
+ */
+import BildPicture from '../BildPicture.astro';
+import DekoIllustration from '../DekoIllustration.astro';
+
+interface DekoAngabe {
+  motiv: 'mohn' | 'tulpe' | 'eukalyptus' | 'blattzweig';
+  farbe: string;
+  breite: number;
+  cssRotate: number;
+  top: number;
+  seite: 'links' | 'rechts';
+  abstand: number;
+}
+
+interface Props {
+  nummer: string;
+  name: string;
+  logo: string;
+  beschrieb: string;
+  geschichte: string;
+  link: string;
+  linkZiel: string;
+  bildSeite: 'links' | 'rechts';
+  foto?: string | null;
+  /** Illustration, die von oben in diesen Abschnitt hineinragt (negatives top). */
+  deko?: DekoAngabe | null;
+  /** Eigenes Label über der Geschichte. Ohne Angabe: «Wie wir uns kennengelernt haben». */
+  label?: string | null;
+}
+
+const {
+  nummer,
+  name,
+  logo,
+  beschrieb,
+  geschichte,
+  link,
+  linkZiel,
+  bildSeite,
+  foto = null,
+  deko = null,
+  label = null,
+} = Astro.props;
+
+const LABEL = label ?? 'WIE WIR UNS KENNENGELERNT HABEN';
+---
+
+<!-- Mobile -->
+<section class="relative isolate overflow-hidden md:hidden bg-cream-warm py-12 px-6">
+  <div class="flex items-center gap-2 mb-[0.375rem]">
+    <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">{nummer}</span>
+    <span class="w-5 h-px bg-dark/50"></span>
+    <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">Netzwerk</span>
+  </div>
+
+  {foto && (
+    <div class="mt-[1.25rem] w-full overflow-hidden rounded-[0.25rem]" style="aspect-ratio:7/5;">
+      <BildPicture id={foto} class="h-full w-full object-cover" mobil={true} widths={[342, 684]} sizes="342px" optional={true} />
+    </div>
+  )}
+
+  <div class="mt-[1.5rem] flex flex-col gap-[1.125rem]">
+    <img src={logo} alt="" class="h-[2.75rem] w-auto max-w-[10rem] object-contain object-left" loading="lazy" />
+    <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold">{name}</h2>
+    <p class="font-body text-[1.0625rem] leading-[1.68]">{beschrieb}</p>
+    <div class="flex flex-col gap-[0.625rem]">
+      <p class="font-body text-xs uppercase tracking-[0.08em] text-orange">{LABEL}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-olive">{geschichte}</p>
+    </div>
+    <a
+      href={linkZiel}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="self-start font-body text-xs uppercase tracking-[0.08em] underline underline-offset-4 decoration-beige"
+    >{link}</a>
+  </div>
+</section>
+
+<!-- Desktop -->
+<section class="relative isolate hidden overflow-visible md:block bg-cream-warm py-xl">
+  {deko && (
+    <DekoIllustration
+      motiv={deko.motiv}
+      farbe={deko.farbe}
+      breite={deko.breite}
+      cssRotate={deko.cssRotate}
+      top={deko.top}
+      seite={deko.seite}
+      abstand={deko.abstand}
+    />
+  )}
+  <div
+    class:list={[
+      'mx-auto flex max-w-inhalt items-center gap-[5rem] px-6 md:px-0',
+      bildSeite === 'rechts' && 'md:flex-row-reverse',
+    ]}
+  >
+    {foto ? (
+      <div class="h-[31.25rem] w-[43.75rem] shrink-0 overflow-hidden rounded-[0.25rem]">
+        <BildPicture id={foto} class="h-full w-full object-cover" widths={[700, 1400]} sizes="700px" optional={true} />
+      </div>
+    ) : (
+      /* Solange kein Foto da ist: Logo und Name füllen die Bildspalte, damit die
+         Reihe vollständig wirkt statt eine leere Fläche zu zeigen. */
+      <div class="flex w-[43.75rem] shrink-0 flex-col gap-8">
+        <img src={logo} alt="" class="h-[6.25rem] w-auto max-w-[20rem] object-contain object-left" loading="lazy" />
+        <h2 class="font-display text-[2.25rem] leading-[1.39] font-semibold">{name}</h2>
+        <span class="h-px w-20 bg-beige" aria-hidden="true"></span>
+      </div>
+    )}
+
+    <div class="flex min-w-0 flex-1 flex-col gap-6">
+      {foto && (
+        <>
+          <img src={logo} alt="" class="h-[4.75rem] w-auto max-w-[12.5rem] object-contain object-left" loading="lazy" />
+          <h2 class="font-display text-[2.25rem] leading-[1.39] font-semibold">{name}</h2>
+        </>
+      )}
+      <p class="font-body text-body leading-[1.68]">{beschrieb}</p>
+      <div class="flex flex-col gap-[0.625rem]">
+        <p class="font-body text-label uppercase text-orange">{LABEL}</p>
+        <p class="font-body text-body leading-[1.68] text-olive">{geschichte}</p>
+      </div>
+      <a
+        href={linkZiel}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="self-start font-body text-label uppercase underline underline-offset-4 decoration-beige transition-colors hover:text-orange"
+      >{link}</a>
+    </div>
+  </div>
+</section>

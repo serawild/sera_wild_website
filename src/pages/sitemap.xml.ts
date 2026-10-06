@@ -4,8 +4,8 @@ import type { APIRoute } from 'astro';
  * Sitemap ohne Zusatzpaket.
  *
  * Neue Seite dazu? Hier eine Zeile ergaenzen.
- * Nicht aufnehmen: /bausteine (Werkstattseite) sowie Netzwerk und
- * Emanuela — die gehen bewusst nicht online.
+ * Nicht aufnehmen: /bausteine (Werkstattseite) sowie Emanuela — die geht
+ * bewusst nicht online. Netzwerk ist seit 06.10.2026 drin.
  *
  * prioritaet ist ein Hinweis an Suchmaschinen, keine Garantie.
  */
@@ -18,6 +18,7 @@ const seiten: { pfad: string; prioritaet: string }[] = [
   { pfad: '/geschichten/simona', prioritaet: '0.7' },
   { pfad: '/geschichten/tina', prioritaet: '0.7' },
   { pfad: '/ueber', prioritaet: '0.7' },
+  { pfad: '/w-netzwerk', prioritaet: '0.6' },
   { pfad: '/kontakt', prioritaet: '0.9' },
   { pfad: '/reportage', prioritaet: '0.7' },
   { pfad: '/impressum', prioritaet: '0.3' },

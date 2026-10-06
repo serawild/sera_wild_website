@@ -1,0 +1,304 @@
+---
+/**
+ * Netzwerk — Figma-Rahmen 10_Netzwerk (2289:770), Seite „Desktop | Designs".
+ * Aufbau vollständig aus spec/seiten/netzwerk.json.
+ *
+ * Online seit 06.10.2026 (Freigabe Seraina): in der Navigation unter «Sera Wild»,
+ * in der Sitemap, ohne noindex. Fünf Partner, Texte und Fotos vollständig.
+ */
+import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import BildPicture from '../components/BildPicture.astro';
+import DekoIllustration from '../components/DekoIllustration.astro';
+import NetzwerkEintrag from '../components/blocks/NetzwerkEintrag.astro';
+import spec from '../../spec/seiten/netzwerk.json';
+import bilderSpec from '../../spec/bilder.json';
+
+const partner   = spec.abschnitte.find((a) => a.id === 'partner')!;
+const intro     = spec.abschnitte.find((a) => a.id === 'intro')!;
+const einladung = spec.abschnitte.find((a) => a.id === 'einladung')!;
+
+// Blindtexte aus Figma. Wörtlich übernommen, bis die echten Texte da sind.
+const blind = partner.blindtexte;
+
+/**
+ * Illustrationen aus spec/seiten/netzwerk.json → deko.
+ * In Figma stehen sie mit absoluter y-Position im 6593 px hohen Rahmen. Hier hängen
+ * sie am Abschnitt DARUNTER mit negativem `top` und ragen nach oben hinein — das ist
+ * das Muster, das im Projekt überall verwendet wird (siehe ueber.astro, geschichten.astro).
+ * Sonst würde der spätere Abschnitt sie überdecken.
+ *
+ * `breite` ist die Breite VOR der Drehung (so erwartet es DekoIllustration und so steht
+ * es in deko.json). Figma liefert über die API den GEDREHTEN Begrenzungsrahmen. Umrechnung:
+ *   breite = BBoxBreite / (cos θ + a · sin θ),  a = SVG-Höhe / SVG-Breite
+ * Mohn 409 → 248, Tulpe 466 → 252, Eukalyptus 350 → 211, Blattzweig 306 → 170.
+ */
+const DEKO_JE_EINTRAG: Record<string, any> = {
+  // Mohn haengt am ERSTEN Eintrag und ragt ins Intro hinauf.
+  // Figma y 1272, erster Eintrag beginnt bei 1523 → 1272 − 1523 = −251
+  'netzwerk-studio-benanti': {
+    motiv: 'mohn', farbe: '#5B5C4F', breite: 248, cssRotate: 29, top: -251, seite: 'links', abstand: -278,
+  },
+};
+
+/**
+ * Partnerfotos sind in bilder.json vorbereitet, die Dateien fehlen aber noch.
+ * Statt einer beigen Platzhalterflaeche wird `foto` nur durchgereicht, wenn die
+ * Datei wirklich im Ordner liegt — sonst greift das Logo-Layout in NetzwerkEintrag.
+ * Sobald eine Datei abgelegt wird, erscheint das Foto von selbst. Nichts umzustellen.
+ */
+const vorhandeneBilder = new Set(
+  Object.keys({
+    ...import.meta.glob('/src/assets/images/**/*.jpg'),
+    ...import.meta.glob('/src/assets/images/**/*.avif'),
+  }).map((k) => k.replace(/^\//, '').replace(/\.(jpg|avif)$/, ''))
+);
+
+const fotoDatei = (id: string): string | null => {
+  const eintrag = (bilderSpec.bilder as any[]).find((b) => b.id === id);
+  if (!eintrag?.datei) return null;
+  return vorhandeneBilder.has(String(eintrag.datei).replace(/\.(jpg|avif)$/, '')) ? id : null;
+};
+
+// Nur Partner mit aktiv !== false. Fotostudio Fokus ist vorerst zurueckgestellt.
+const eintraege = partner.eintraege
+  .filter((e: any) => e.aktiv !== false)
+  .map((e: any, i: number) => ({
+    ...e,
+    nummer: String(i + 1).padStart(2, '0'),
+    beschrieb: e.beschrieb ?? blind.beschrieb,
+    geschichte: e.geschichte ?? blind.geschichte,
+    foto: e.foto ? fotoDatei(e.foto) : null,
+    deko: DEKO_JE_EINTRAG[e.id] ?? null,
+  }));
+
+// Der Einladungs-Abschnitt steht in der Mitte der Liste.
+const einladungNach = (partner as any).einladungNachEintrag ?? Math.ceil(eintraege.length / 2);
+const vorEinladung  = eintraege.slice(0, einladungNach);
+const nachEinladung = eintraege.slice(einladungNach);
+
+const introH2 = intro.text.h2;
+const introP  = intro.text.absaetze[0].text;
+
+const einladungH2  = einladung.text.h2;
+const einladungP   = einladung.text.absaetze[0].text;
+const einladungCta = einladung.cta;
+
+const kontakt   = spec.abschnitte.find((a) => a.id === 'kontakt-teaser')!;
+const kontaktP1 = kontakt.text.absaetze[0].text;
+const kontaktP2 = kontakt.text.absaetze[1].text;
+
+// Bildmarke W aus spec/marken — Hero-Hintergrund, 477x341 bei 18 % Deckkraft.
+const W_PATH =
+  'M881.4,117.35c282.95,21.85,598.33,247.43,856,154.88,4.73-1.7,7.95-6.11,8.15-11.14' +
+  '.69-17.3-1.88-60.18-6.11-69.29-2.38-5.13-9.54-5.9-14.62-3.43-188.71,91.8-623.66' +
+  '-133.23-831.73-151.36-124.72-10.86-179.85,31.53-213.39,154.86-32.8,120.6-157.59,' +
+  '618.16-201.63,788.23-5.65,21.82-9.92,15.23-9.92,15.23-19.82-23.76-34.89-483.1' +
+  '-45.26-513.63-.68-2.01-10.13-25.66-27.07-10.46-11.23,10.08-60.87,52.27-79.74,' +
+  '67.1-5.12,4.02-8.6,9.56-10.77,15.81,0,0-76.99,237.1-102.29,279.14-7.09,10.84' +
+  '-21.74,15.31-29.98,1.32-28.86-49,3.34-527.09,3.34-527.09,0,0,4.11-64.62-17.8' +
+  '-64.82-19.95-.18-90.94,73.97-119.74,94.43-4.53,3.22-7.36,8.9-3.56,16.51,4.67,' +
+  '9.38,37.18-8.33,32.36,188.34-2.47,100.99-23.62,418.02,19.61,454.73,18,15.28,' +
+  '50.21,15.87,74.51-4.17,75.84-62.54,157.07-334.88,169.23-360.7,6.06-12.9,19.82' +
+  '-5.8,19.7,4.87,12.28,155.86,21.46,379.45,32.15,469.48,12.29,103.53,28.71,126.98' +
+  ',66.89,126.98s66.01-23.21,88.51-111.77c81.99-322.71,112.53-465.65,154.17-641.85' +
+  ',72.17-305.42,95.16-369.45,188.98-362.2Z';
+---
+
+<Base
+  title="Netzwerk — sera Wild"
+  description="Menschen, mit denen Seraina Wild gerne arbeitet — und die Geschichten hinter den Begegnungen."
+>
+
+  <Navigation farbe="hell" />
+
+  <!-- ===== HERO ===== -->
+
+  <!-- Mobile -->
+  <section class="relative md:hidden h-[43.75rem] overflow-hidden bg-olive">
+    <BildPicture
+      id="hero-netzwerk"
+      class="absolute inset-0 h-full w-full object-cover"
+      mobil={true}
+      loading="eager"
+      fetchpriority="high"
+      widths={[390, 780]}
+      sizes="100vw"
+    />
+    <div class="absolute inset-0 bg-black/35 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-10 left-6 max-w-[21rem]">
+      <h1 class="font-display text-[1.9375rem] leading-[1.3] font-semibold text-cream">Netzwerk</h1>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="hidden md:block relative h-[100svh] min-h-[600px] overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <BildPicture
+        id="hero-netzwerk"
+        class="absolute inset-0 h-full w-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+        widths={[768, 1280, 1728, 2560]}
+        sizes="100vw"
+      />
+    </div>
+    <div class="absolute inset-0 bg-black/40 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Bildmarke W hinter dem Titel — deko.json: 477x341, #F5F3ED, 18 % -->
+    <svg
+      viewBox="0 0 1765.27 1262.84"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      class="pointer-events-none absolute"
+      style="bottom:4.25rem;right:13.75rem;width:29.8125rem;height:21.3125rem;opacity:0.18;"
+      fill="#F5F3ED"
+    >
+      <path d={W_PATH} />
+    </svg>
+
+    <div class="absolute bottom-[10rem] right-[7.5rem] flex max-w-[96.75rem] flex-col items-end text-right">
+      <h1 class="font-display text-h1 font-semibold leading-normal text-cream">Netzwerk</h1>
+    </div>
+  </section>
+
+  <div class="relative isolate">
+
+  <!-- ===== 01 INTRO ===== -->
+
+  <!-- Mobile -->
+  <section class="relative isolate overflow-hidden md:hidden bg-cream py-12 px-6">
+    <div class="flex flex-col gap-[1.125rem]">
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold">{introH2}</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-olive">{introP}</p>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="relative isolate hidden overflow-hidden md:block bg-cream pt-[6.25rem] pb-[3.75rem]">
+    <div class="mx-auto max-w-inhalt px-6 md:px-0">
+      <h2 class="font-display text-[3.5rem] leading-[1.39] font-semibold">{introH2}</h2>
+      <p class="mt-6 max-w-[68.75rem] font-body text-[1.5rem] leading-[2] text-olive">{introP}</p>
+    </div>
+  </section>
+
+  <!-- ===== 02 PARTNER 1–3 ===== -->
+  {vorEinladung.map((e) => (
+    <NetzwerkEintrag
+      nummer={e.nummer}
+      name={e.name}
+      logo={e.logo}
+      beschrieb={e.beschrieb}
+      geschichte={e.geschichte}
+      link={e.link}
+      linkZiel={e.linkZiel}
+      bildSeite={e.bildSeite as 'links' | 'rechts'}
+      foto={e.foto}
+      deko={e.deko}
+      label={e.label ?? null}
+    />
+  ))}
+
+  <!-- ===== 03 EINLADUNG ===== -->
+
+  <!-- Mobile -->
+  <section class="md:hidden bg-dark py-[52px] px-6">
+    <div class="flex flex-col items-center gap-[1.125rem] text-center">
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{einladungH2}</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-beige">{einladungP}</p>
+      <a
+        href={einladungCta.ziel}
+        class="mt-[0.375rem] inline-flex items-center justify-center rounded-[1.0625rem] bg-rust px-md py-sm font-body text-cta uppercase text-cream"
+      >{einladungCta.text}</a>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="relative isolate hidden overflow-visible md:block bg-dark py-[6.875rem]">
+    <DekoIllustration motiv="tulpe" farbe="#5B5C4F" breite={252} cssRotate={-30} top={-183} seite="rechts" abstand={-180} />
+    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-8 px-[7.5rem] text-center">
+      <h2 class="font-display text-[3.5rem] leading-[1.39] font-semibold text-cream">{einladungH2}</h2>
+      <p class="max-w-[78rem] font-body text-body leading-[1.68] text-beige">{einladungP}</p>
+      <a
+        href={einladungCta.ziel}
+        class="inline-flex items-center justify-center rounded-[1.0625rem] bg-rust px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange"
+      >{einladungCta.text}</a>
+    </div>
+  </section>
+
+  <!-- ===== 04 PARTNER 4–5 ===== -->
+  {nachEinladung.map((e, i) => (
+    <NetzwerkEintrag
+      nummer={e.nummer}
+      name={e.name}
+      logo={e.logo}
+      beschrieb={e.beschrieb}
+      geschichte={e.geschichte}
+      link={e.link}
+      linkZiel={e.linkZiel}
+      bildSeite={e.bildSeite as 'links' | 'rechts'}
+      foto={e.foto}
+      deko={e.deko}
+      label={e.label ?? null}
+    />
+  ))}
+
+  <!-- ===== 05 KONTAKT-TEASER ===== -->
+
+  <!-- Mobile -->
+  <section class="md:hidden bg-dark py-[52px] px-6">
+    <div class="flex items-center gap-2 mb-[0.375rem]">
+      <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">05</span>
+      <span class="w-5 h-px bg-cream/50"></span>
+      <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">Kontakt</span>
+    </div>
+    <div class="relative mx-auto mt-[1.25rem]" style="width:342px;height:322px;">
+      <div class="absolute overflow-hidden" style="left:0;top:0;width:214px;height:286px;">
+        <BildPicture id="kontakt-teaser-01" class="h-full w-full object-cover" mobil={true} widths={[214,428]} sizes="214px" />
+      </div>
+      <div class="absolute overflow-hidden" style="left:164px;top:84px;width:178px;height:238px;">
+        <BildPicture id="kontakt-teaser-02" class="h-full w-full object-cover" mobil={true} widths={[178,356]} sizes="178px" />
+      </div>
+    </div>
+    <div class="mt-[1.5rem] flex flex-col gap-[1.125rem]">
+      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">Für alle, die sich selbst zurückfinden möchten.</h2>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/[0.92]">{kontaktP1}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/[0.92]">{kontaktP2}</p>
+      <a href="/kontakt" class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <!-- Desktop -->
+  <section class="relative isolate hidden overflow-visible md:block bg-rust py-xl">
+    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={211} cssRotate={29} top={65} seite="links" abstand={-130} />
+    <DekoIllustration motiv="blattzweig" farbe="#BC541F" breite={170} cssRotate={-30} top={300} seite="rechts" abstand={-210} />
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] px-6 md:flex-row md:items-center md:px-0">
+      <div class="relative h-[30rem] w-full shrink-0 md:w-[37.5rem]">
+        <div class="absolute left-[8.75rem] top-0 h-[20rem] w-[28.75rem] overflow-hidden">
+          <BildPicture id="kontakt-teaser-01" class="h-full w-full object-cover" widths={[460, 920]} sizes="(max-width: 768px) 100vw, 460px" />
+        </div>
+        <div class="absolute left-0 top-[15.0625rem] h-[14.9375rem] w-[22.375rem] overflow-hidden">
+          <BildPicture id="kontakt-teaser-02" class="h-full w-full object-cover" widths={[358, 716]} sizes="(max-width: 768px) 100vw, 358px" />
+        </div>
+      </div>
+      <div class="flex flex-1 min-w-0 flex-col gap-8">
+        <h2 class="font-display text-h2 font-semibold leading-normal text-cream">
+          Für alle,<br>die sich selbst zurückfinden<br>möchten.
+        </h2>
+        <p class="font-body text-small leading-[2] text-cream/[0.92]">{kontaktP1}</p>
+        <p class="font-body text-small leading-[2] text-cream/[0.92]">{kontaktP2}</p>
+        <a href="/kontakt" class="inline-flex self-start items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange">
+          Kontakt
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <Footer />
+
+</Base>

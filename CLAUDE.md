@@ -20,7 +20,9 @@ Der Entwurf liegt in Figma, File-Key `L1sORBHNF7ohDq9DXjruRm`, Seite **Desktop |
 
 5. **`src/pages/kontakt.astro` ist der Massstab.** Diese Seite ist freigegeben. Abstände, Containerbreiten, Typo-Klassen und die Art, wie Bilder eingebunden sind, kommen von dort.
 
-6. **Zwei Seiten gehen nicht online:** Netzwerk und Emanuela. Nicht bauen, nicht verlinken, nicht in die Sitemap. Auch der Button „Nächste Geschichte“ am Ende von `geschichten/simona` entfällt.
+6. **Eine Seite geht nicht online:** Emanuela. Nicht bauen, nicht verlinken, nicht in die Sitemap. Auch der Button „Nächste Geschichte“ am Ende von `geschichten/simona` entfällt.
+
+   **Geändert am 2026-10-06:** Netzwerk (`w-netzwerk.astro`, Figma `2289:770`) ist online — in der Navigation als Unterpunkt von «Sera Wild», in der Sitemap, ohne `noindex`. Aufbau in `spec/seiten/netzwerk.json`.
 
    **Geändert am 2026-10-03:** Sara und Tina sind seither online — verlinkt von der Geschichten-Seite, in der Sitemap, ohne `noindex`. Sie werden genau wie Simona behandelt. Die frühere Sperre in `robots.txt` ist entfernt.
 
@@ -38,6 +40,7 @@ Der Entwurf liegt in Figma, File-Key `L1sORBHNF7ohDq9DXjruRm`, Seite **Desktop |
 | `spec/marken/` | Die Bildmarke W als SVG |
 | `public/video/` | Hero-Video für die Über-Seite, MP4 und WebM plus Poster |
 | `OFFEN.md` | Offene Fragen und bewusst Weggelassenes |
+| `ANLEITUNG-netzwerk-partner.md` | Schritt für Schritt: neuen Partner auf der Netzwerk-Seite aufnehmen |
 
 ## Was seit dem letzten Stand dazugekommen ist
 

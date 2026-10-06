@@ -1555,10 +1555,9 @@
       },
       "verhaeltnis": "7 : 5",
       "ausrichtung": "quer",
-      "alt": "",
+      "alt": "Simona in weisser Bluse sitzt am Tisch und hört ihrem Gegenüber lächelnd zu",
       "aktiv": true,
-      "datei": "src/assets/images/Galerie_3-2/netzwerk-studio-benanti.jpg",
-      "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
+      "datei": "src/assets/images/Galerie_3-2/netzwerk-studio-benanti.jpg"
     },
     {
       "id": "netzwerk-baravital",
@@ -1571,10 +1570,9 @@
       },
       "verhaeltnis": "7 : 5",
       "ausrichtung": "quer",
-      "alt": "",
+      "alt": "Sara mit Brille und grüner Jacke steht lächelnd auf einem Waldweg",
       "aktiv": true,
-      "datei": "src/assets/images/Galerie_3-2/netzwerk-baravital.jpg",
-      "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
+      "datei": "src/assets/images/Galerie_3-2/netzwerk-baravital.jpg"
     },
     {
       "id": "netzwerk-esmeralda",
@@ -1587,10 +1585,9 @@
       },
       "verhaeltnis": "7 : 5",
       "ausrichtung": "quer",
-      "alt": "",
+      "alt": "Empfangsbereich von Esmeralda Cosmetics mit grauem Samtsofa, Sessel und Orchidee, an der Wand der Schriftzug «Entspannung»",
       "aktiv": true,
-      "datei": "src/assets/images/Galerie_3-2/netzwerk-esmeralda.jpg",
-      "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
+      "datei": "src/assets/images/Galerie_3-2/netzwerk-esmeralda.jpg"
     },
     {
       "id": "netzwerk-aeschbachhalle",
@@ -1603,10 +1600,9 @@
       },
       "verhaeltnis": "7 : 5",
       "ausrichtung": "quer",
-      "alt": "",
+      "alt": "Blick von oben in die Aeschbachhalle: Industriehalle mit Lichterketten, runden Holztischen, Pflanzen und Bar",
       "aktiv": true,
-      "datei": "src/assets/images/Galerie_3-2/netzwerk-aeschbachhalle.jpg",
-      "hinweis": "Platzhalter. Datei fehlt noch — Dateiname und Ordner sind verbindlich."
+      "datei": "src/assets/images/Galerie_3-2/netzwerk-aeschbachhalle.jpg"
     },
     {
       "id": "netzwerk-fotostudio-fokus",
@@ -1619,10 +1615,9 @@
       },
       "verhaeltnis": "7 : 5",
       "ausrichtung": "quer",
-      "alt": "",
-      "aktiv": false,
-      "datei": null,
-      "hinweis": "Wartet auf Logos – vorerst zurueckgestellt"
+      "alt": "Helles Fotostudio mit weisser Hohlkehle, Studioblitz mit grossem Softbox-Schirm und Arbeitstheke",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/netzwerk-fotostudio-fokus.jpg"
     },
     {
       "id": "hero-sara",

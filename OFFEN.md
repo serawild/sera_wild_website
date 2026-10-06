@@ -408,3 +408,47 @@ Soll es doch nach ihrer Nummerierung gehen, sind es zwei vertauschte Dateinamen.
 
 Die Bilder sind 2:3, der mobile Platz ist 3:4 — beschnitten wird oben und unten,
 seitlich geht nichts verloren. Betrifft Startseite, Geschichten und Über.
+
+## Netzwerk-Seite: Fotostudio Fokus wieder drin (06.10.2026)
+
+Von Seraina entschieden: Fokus kommt wieder auf die Seite. Damit fünf Partner, Fokus an
+Position 5, Bild links. Einladungs-Banner bleibt nach Eintrag 2.
+
+- `aktiv: true` in `spec/seiten/netzwerk.json`, Foto-Eintrag in `bilder.json` aktiviert
+  mit Pfad `Galerie_3-2/netzwerk-fotostudio-fokus.jpg`.
+- Die zwei Texte (`beschrieb`, `geschichte`) sind inzwischen da, ebenso Logo und Foto.
+  Der Figma-Blindtext steht nur noch als Rückfalltext in `netzwerk.json` und wird von
+  keinem der fünf Einträge verwendet.
+- Hinweis: Laut fotostudio-fokus.ch ist Seraina selbst im Team. Wie bei AHA passt das
+  Label «WIE WIR UNS KENNENGELERNT HABEN» dann nur bedingt.
+
+## Netzwerk-Seite: Partnerfotos da (06.10.2026)
+
+Vier von fünf Fotos liegen in `Galerie_3-2/`: Studio Benanti, Baravital, Esmeralda,
+Fotostudio Fokus. Je 2400 × 1600 (3 : 2). Der Rahmen ist 7 : 5 — `object-fit: cover`
+schneidet links und rechts je rund 3 % weg. ALT-Texte in `bilder.json` eingetragen,
+Platzhalter-Hinweise entfernt.
+
+- `netzwerk-aeschbachhalle.jpg` am 06.10.2026 nachgeliefert, ALT-Text eingetragen. Alle fünf Fotos da.
+- ALT-Texte Benanti und Baravital: Von Seraina bestätigt, dass Simona bzw. Sara
+  abgebildet sind — Namen ergänzt. Bildformat 3 : 2 mit leichtem Beschnitt freigegeben.
+
+## Netzwerk-Seite: Texte gekürzt (06.10.2026)
+
+Vorgabe von Seraina: möglichst wenig Text, je zwei Sätze. Alle fünf Partner neu in
+`spec/seiten/netzwerk.json` — Beschrieb und Geschichte je zwei Sätze. Fokus hat damit
+eigene Texte, kein Blindtext mehr auf der Seite. Von Seraina freigegeben.
+
+**Noch offen:** nur noch der Entscheid Aufschalten (noindex, Navigation, Sitemap).
+- 06.10.2026: Label erledigt. `NetzwerkEintrag` nimmt optional `label`; AHA und Fokus
+  zeigen «WAS MICH MIT DIESEM ORT VERBINDET».
+
+## Netzwerk-Seite online (06.10.2026)
+
+Von Seraina freigegeben. `noindex` entfernt, `/w-netzwerk` in `sitemap.xml.ts`, in der
+Navigation als Unterpunkt von «Sera Wild» (neben «Über mich» → `/ueber`). Regel 6 in
+CLAUDE.md angepasst — gesperrt bleibt nur noch Emanuela.
+
+**Zu prüfen beim nächsten Build:** «Sera Wild» hatte bisher kein Untermenü, jetzt schon —
+Desktop-Dropdown und mobiles Menü einmal durchklicken. Die Bezeichnung «Über mich» ist
+abgeleitet, nicht aus Figma.

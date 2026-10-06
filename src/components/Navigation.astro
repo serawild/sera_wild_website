@@ -32,8 +32,11 @@ const menu: MenuItem[] = [
   {
     label: 'Sera Wild',
     href: '/ueber',
-    matchPaths: ['/ueber'],
-    submenu: [],
+    matchPaths: ['/ueber', '/w-netzwerk'],
+    submenu: [
+      { label: 'Über mich', href: '/ueber' },
+      { label: 'Netzwerk',  href: '/w-netzwerk' },
+    ],
   },
 ];
 
