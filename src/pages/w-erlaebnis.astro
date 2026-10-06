@@ -95,10 +95,12 @@ const orteH2  = 'Wo wir fotografieren könnten';
 const orteSub = 'Der Ort ist nicht Kulisse, sondern Teil deiner Geschichte. Am schönsten wird es dort, wo du dich lebendig fühlst – wo dich etwas inspiriert oder deine Leidenschaft weckt. Hier ein paar Vorschläge. Vielleicht fällt dir beim Lesen längst ein anderer ein.';
 const orteList = [
   { id: 'orte-aare',    titel: 'Aare',                text: 'Wasser, Weite, Bewegung. Kiesbank, Uferweg oder Auenwald – das Wasser nimmt dir einen Teil des Gesprächs ab.' },
-  { id: 'orte-wald',    titel: 'Wald',                text: 'Gedämpftes Licht, viel Grün, kaum Publikum. Für alle, die etwas Zeit brauchen, bis sie auftauen.' },
+  { id: 'orte-feld',       titel: 'Feld',        text: 'Offener Himmel, hohe Gräser, Licht bis zum Horizont. Für alle, die Weite brauchen statt Wände.' },
   { id: 'orte-stadt',   titel: 'Stadt',               text: 'Mauern, Gassen, Fenster, Reflexe. Der Gegenpol zur Natur – klarer, direkter, wacher.' },
   { id: 'orte-atelier', titel: 'Atelier oder zu Hause', text: 'Der eigene Sessel, die eigene Küche, dein Arbeitsplatz. Für alle, die sich dort am ehesten wie sich selbst fühlen.' },
-  { id: 'orte-scheune', titel: 'Die Scheune',         text: 'Vier Kulissen, viel Holz, Licht von der Seite. Wetterunabhängig – und trotzdem alles andere als ein Studio.' },
+  { id: 'orte-scheune', titel: 'Scheune',         text: 'Vier Kulissen, viel Holz, Licht von der Seite. Wetterunabhängig – und trotzdem alles andere als ein Studio.' },
+  { id: 'orte-wald',    titel: 'Wald',                text: 'Gedämpftes Licht, viel Grün, kaum Publikum. Für alle, die etwas Zeit brauchen, bis sie auftauen.' },
+  { id: 'orte-sportplatz', titel: 'Sportplatz',  text: 'Linien, Rasen, leere Ränge. Ungewohnt für Porträts – und gerade darum stark, wenn Bewegung zu dir gehört.' },
 ];
 
 const richtigH2    = 'Du bist hier richtig wenn,';
@@ -584,28 +586,17 @@ const faqFragen = [
         <h2 class="font-display text-h2 font-semibold">{orteH2}</h2>
         <p class="font-body text-small leading-[2] text-[#5b5c4f] max-w-[65.625rem]">{orteSub}</p>
       </div>
-      <div class="flex flex-col gap-[2.5rem]">
-        <div class="flex gap-[2.5rem] items-start">
-          {orteList.slice(0, 3).map((o) => (
-            <div class="flex flex-1 flex-col gap-[1rem]">
-              <BildPicture id={o.id} class="h-[18.75rem] w-full rounded-[4px] object-cover" />
-              <p class="font-display text-[1.75rem] font-semibold">{o.titel}</p>
-              <p class="font-body text-body-klein leading-[1.7] text-[#5b5c4f]">{o.text}</p>
-            </div>
-          ))}
-        </div>
-        <div class="flex gap-[2.5rem] items-stretch">
-          {orteList.slice(3).map((o) => (
-            <div class="flex flex-1 flex-col gap-[1rem]">
-              <BildPicture id={o.id} class="h-[18.75rem] w-full rounded-[4px] object-cover" />
-              <p class="font-display text-[1.75rem] font-semibold">{o.titel}</p>
-              <p class="font-body text-body-klein leading-[1.7] text-[#5b5c4f]">{o.text}</p>
-            </div>
-          ))}
-          <div class="flex flex-1 flex-col justify-center gap-[1rem] self-stretch rounded-[8px] bg-rust px-[2rem] py-[2.5rem] text-cream">
-            <p class="font-display text-[1.75rem] font-semibold">Dein eigener Ort</p>
-            <p class="font-body text-body-klein leading-[1.7]">Der Platz, an den du immer wieder zurückkehrst. Wo du zur Ruhe kommst, wo etwas angefangen hat oder wo deine Leidenschaft wohnt. Erzähl mir davon – wir gehen hin.</p>
+      <div class="grid grid-cols-3 gap-[2.5rem] items-start">
+        {orteList.map((o) => (
+          <div class="flex flex-col gap-[1rem]">
+            <BildPicture id={o.id} class="h-[18.75rem] w-full rounded-[4px] object-cover" />
+            <p class="font-display text-[1.75rem] font-semibold">{o.titel}</p>
+            <p class="font-body text-body-klein leading-[1.7] text-[#5b5c4f]">{o.text}</p>
           </div>
+        ))}
+        <div class="flex flex-col justify-center gap-[1rem] self-stretch rounded-[8px] bg-rust px-[2rem] py-[2.5rem] text-cream">
+          <p class="font-display text-[1.75rem] font-semibold">Dein eigener Ort</p>
+          <p class="font-body text-body-klein leading-[1.7]">Der Platz, an den du immer wieder zurückkehrst. Wo du zur Ruhe kommst, wo etwas angefangen hat oder wo deine Leidenschaft wohnt. Erzähl mir davon – wir gehen hin.</p>
         </div>
       </div>
     </div>

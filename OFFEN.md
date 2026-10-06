@@ -357,3 +357,45 @@ korrigiert — sie standen noch auf 3 : 4 aus dem alten Raster.
 - Beim neuen Hero steht Sara mittig. Der Titel liegt mobil unten links und könnte
   auf ihr liegen — bei 390 px prüfen. Falls nötig: Text verschieben oder den
   Schleier an der Stelle vertiefen.
+
+## Kulissen auf W-Momänt: fehlende Bilder (06.10.2026)
+
+Die Kulissenbilder lagen seit dem 3. Oktober nur lokal und waren nie
+committet — live war darum pro Kulisse nur das jeweils erste Bild sichtbar.
+Jetzt alle vorhandenen Dateien im Repo. Es fehlen noch:
+
+Seite: w-momaent.astro — Abschnitt: 02 Kulissen (Durchklicken)
+- **licht** – nur `licht-01.jpg` (hoch 2:3). Es fehlen `licht-02.jpg`
+  (**quer 3:2**, mind. 704 × 470) und `licht-03.jpg` (**hoch 4:5**, mind.
+  480 × 600). Solange zeigt die Kulisse ein einzelnes grosses Bild statt der
+  Dreier-Collage. Hinweis: `licht-01.jpg` ist Hochformat — sobald zwei weitere
+  dazukommen, landet es im Querformat-Platz und wird stark beschnitten. Dann
+  besser ein echtes Querbild als `-01` nehmen und das heutige nach `-03` rücken.
+- **leinen** – `leinen-01.jpg` und `-02.jpg` vorhanden (beide hoch). Es fehlt
+  `leinen-03.jpg`; bis dahin die Zweier-Anordnung ohne Beschnitt.
+- **vintage** und **stein** sind vollständig (01 quer, 02 + 03 hoch). Bei
+  `vintage-03` und `stein-03` liegt 2:3 statt 4:5 im 4:5-Platz — leichter
+  Beschnitt oben/unten, bewusst so.
+
+Die Datei `Scheune-16.jpg` (identisches Motiv wie `licht-01.jpg`, nur anderer
+Export) lag im Kulissenordner und wurde nach
+`~/sera-bilder-originale/kulissen-unbenutzt/` verschoben. `licht-03.jpg` liegt
+ebenfalls dort — Hochformat 2:3, passt nicht in den 4:5-Platz, darum nicht
+eingesetzt.
+
+## Kontakt-Teaser: neues Motiv, mobile Fassung fehlt (06.10.2026)
+
+`kontakt-teaser-01.jpg` und `-02.jpg` zeigen seit dem 3. Oktober ein neues
+Motiv (olivgrünes Spitzenkleid am Fluss, Abendsonne). ALT-Texte, `dateiMasse`
+und `deckungsfaktor` in `bilder.json` nachgezogen.
+
+Die beiden `-hoch`-Dateien stammen noch vom 25. August und zeigen das **alte**
+Motiv (Jeansjacke am Hafen) — mobil und auf dem Rechner wären damit zwei
+verschiedene Personen im selben Abschnitt zu sehen. Darum ist `dateiMobil` auf
+`null` gesetzt: mobil wird jetzt das neue Querbild per `object-fit: cover` auf
+3:4 beschnitten.
+
+**Offen:** eigener Hochformat-Ausschnitt des neuen Motivs als
+`kontakt-teaser-01-hoch.jpg` / `-02-hoch.jpg` (3:4). Sobald die da sind, in
+`bilder.json` `dateiMobil` wieder auf die Pfade setzen. Betrifft Startseite,
+Geschichten und Über.

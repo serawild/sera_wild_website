@@ -386,18 +386,18 @@
       },
       "verhaeltnis": "1.44 : 1",
       "ausrichtung": "quer",
-      "alt": "Frau in Jeansjacke lacht am Wasser, im Hintergrund ein Hafen",
+      "alt": "Frau im olivgruenen Spitzenkleid lacht in die Kamera, die Haende an der Brust, warmes Gegenlicht am Fluss",
       "aktiv": true,
       "datei": "src/assets/images/Galerie_3-2/kontakt-teaser-01.jpg",
       "dateiMasse": {
-        "breite": 1800,
-        "hoehe": 1198
+        "breite": 1000,
+        "hoehe": 667
       },
-      "deckungsfaktor": 3.74,
+      "deckungsfaktor": 2.17,
       "hinweis": "1 Datei, 4 Seiten",
-      "dateiMobil": "src/assets/images/Galerie_3-2/kontakt-teaser-01-hoch.jpg",
+      "dateiMobil": null,
       "verhaeltnisMobil": "3 : 4",
-      "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+      "hinweisMobil": "Neues Motiv vom 2026-10-03. Die alte -hoch-Datei zeigt noch das fruehere Motiv und wird nicht mehr verwendet; mobil wird das Querbild per cover auf 3:4 beschnitten. Eigener Hochformat-Ausschnitt waere besser."
     },
     {
       "id": "kontakt-teaser-02",
@@ -410,18 +410,18 @@
       },
       "verhaeltnis": "1.50 : 1",
       "ausrichtung": "quer",
-      "alt": "Frau in Jeansjacke steht im Profil am Ufer, der Wind bewegt ihr Haar",
+      "alt": "Frau sitzt im Profil am Kiesufer eines Flusses, die Abendsonne spiegelt sich im Wasser",
       "aktiv": true,
       "datei": "src/assets/images/Galerie_3-2/kontakt-teaser-02.jpg",
       "dateiMasse": {
-        "breite": 1800,
-        "hoehe": 1198
+        "breite": 1000,
+        "hoehe": 665
       },
-      "deckungsfaktor": 5.01,
+      "deckungsfaktor": 2.79,
       "hinweis": "1 Datei, 4 Seiten",
-      "dateiMobil": "src/assets/images/Galerie_3-2/kontakt-teaser-02-hoch.jpg",
+      "dateiMobil": null,
       "verhaeltnisMobil": "3 : 4",
-      "hinweisMobil": "Querformat. Fuer die mobile Fassung braucht es einen eigenen Hochformat-Ausschnitt."
+      "hinweisMobil": "Neues Motiv vom 2026-10-03. Die alte -hoch-Datei zeigt noch das fruehere Motiv und wird nicht mehr verwendet; mobil wird das Querbild per cover auf 3:4 beschnitten. Eigener Hochformat-Ausschnitt waere besser."
     },
     {
       "id": "hero-erlaebnis",
@@ -2722,6 +2722,46 @@
       "alt": "Bild 14 aus Tinas Bilderreise",
       "aktiv": true,
       "datei": "src/assets/images/Galerie_2-3/tina-collage-14.jpg"
+    },
+    {
+      "id": "orte-feld",
+      "figmaEbene": "orte-feld.jpg",
+      "baustein": "Orte",
+      "seite": "Erläbnis",
+      "anzeige": {
+        "breite": 469,
+        "hoehe": 300
+      },
+      "verhaeltnis": "1.56 : 1",
+      "ausrichtung": "quer",
+      "alt": "Weites Feld mit hohen Graesern, offener Himmel bis zum Horizont",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/orte-feld.jpg",
+      "dateiMasse": {
+        "breite": 1800,
+        "hoehe": 1200
+      },
+      "deckungsfaktor": 3.84
+    },
+    {
+      "id": "orte-sportplatz",
+      "figmaEbene": "orte-sportplatz.jpg",
+      "baustein": "Orte",
+      "seite": "Erläbnis",
+      "anzeige": {
+        "breite": 469,
+        "hoehe": 300
+      },
+      "verhaeltnis": "1.56 : 1",
+      "ausrichtung": "quer",
+      "alt": "Leerer Sportplatz mit Rasen und Linien, im Hintergrund die Raenge",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_3-2/orte-sportplatz.jpg",
+      "dateiMasse": {
+        "breite": 1800,
+        "hoehe": 1200
+      },
+      "deckungsfaktor": 3.84
     }
   ],
   "mobil": {
