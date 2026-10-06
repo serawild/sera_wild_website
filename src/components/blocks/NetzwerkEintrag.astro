@@ -95,16 +95,26 @@ const LABEL = label ?? 'WIE WIR UNS KENNENGELERNT HABEN';
 
 <!-- Desktop -->
 <section class="relative isolate hidden overflow-visible md:block bg-cream-warm py-xl">
+  {/*
+    Die Illustration haengt an der Textspalte, nicht am Bildschirmrand: Der Rahmen
+    ist genauso breit wie der Inhalt (max-w-inhalt, zentriert) und spannt die ganze
+    Abschnittshoehe. `abstand` zaehlt damit ab der linken Spaltenkante statt ab der
+    Fensterkante — die Blume fuellt den linken Rand und behaelt ihren Abstand zum
+    Text, egal wie breit der Bildschirm ist. Ohne diesen Rahmen klebt sie am
+    Fensterrand und entfernt sich auf breiten Monitoren immer weiter vom Text.
+  */}
   {deko && (
-    <DekoIllustration
-      motiv={deko.motiv}
-      farbe={deko.farbe}
-      breite={deko.breite}
-      cssRotate={deko.cssRotate}
-      top={deko.top}
-      seite={deko.seite}
-      abstand={deko.abstand}
-    />
+    <div class="pointer-events-none absolute inset-0 mx-auto max-w-inhalt">
+      <DekoIllustration
+        motiv={deko.motiv}
+        farbe={deko.farbe}
+        breite={deko.breite}
+        cssRotate={deko.cssRotate}
+        top={deko.top}
+        seite={deko.seite}
+        abstand={deko.abstand}
+      />
+    </div>
   )}
   <div
     class:list={[
