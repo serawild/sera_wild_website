@@ -15,17 +15,23 @@ const W_PATH =
   ',72.17-305.42,95.16-369.45,188.98-362.2Z';
 
 interface Props {
-  wort: 'Erläbnis' | 'Momänt';
+  wort: 'Erläbnis' | 'Momänt' | 'Netzwerk';
   breite: number;
   klasse?: string;
 }
 
 const { wort, breite, klasse = '' } = Astro.props;
 
-// Referenzwerte aus spec/deko.json → marken → wortmarke / wortmarkeMomaent
-const ref = wort === 'Erläbnis'
-  ? { bezugsBreite: 532, textVonLinks: 160, textVonOben: 56, lineHeight: 1.396 }
-  : { bezugsBreite: 539, textVonLinks: 160, textVonOben: 56, lineHeight: 1.396 };
+// Referenzwerte aus spec/deko.json → marken → wortmarke / wortmarkeMomaent.
+// «Netzwerk» hat keine Figma-Vorlage: bezugsBreite aus der Schrift selbst gemessen
+// (Vollkorn 600, 96 px → 424 px Textbreite + 160 px Vorlauf), auf 580 gerundet wie
+// Figma es bei den beiden anderen tut.
+const REF: Record<string, { bezugsBreite: number }> = {
+  'Erläbnis': { bezugsBreite: 532 },
+  'Momänt':   { bezugsBreite: 539 },
+  'Netzwerk': { bezugsBreite: 580 },
+};
+const ref = { textVonLinks: 160, textVonOben: 56, lineHeight: 1.396, ...REF[wort] };
 
 const W_BREITE  = 308;
 const W_HOEHE   = 222;

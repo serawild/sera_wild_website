@@ -12,6 +12,7 @@ import Footer from '../components/Footer.astro';
 import BildPicture from '../components/BildPicture.astro';
 import DekoIllustration from '../components/DekoIllustration.astro';
 import NetzwerkEintrag from '../components/blocks/NetzwerkEintrag.astro';
+import Wortmarke from '../components/Wortmarke.astro';
 import spec from '../../spec/seiten/netzwerk.json';
 import bilderSpec from '../../spec/bilder.json';
 
@@ -102,21 +103,6 @@ const kontakt   = spec.abschnitte.find((a) => a.id === 'kontakt-teaser')!;
 const kontaktP1 = kontakt.text.absaetze[0].text;
 const kontaktP2 = kontakt.text.absaetze[1].text;
 
-// Bildmarke W aus spec/marken — Hero-Hintergrund, 477x341 bei 18 % Deckkraft.
-const W_PATH =
-  'M881.4,117.35c282.95,21.85,598.33,247.43,856,154.88,4.73-1.7,7.95-6.11,8.15-11.14' +
-  '.69-17.3-1.88-60.18-6.11-69.29-2.38-5.13-9.54-5.9-14.62-3.43-188.71,91.8-623.66' +
-  '-133.23-831.73-151.36-124.72-10.86-179.85,31.53-213.39,154.86-32.8,120.6-157.59,' +
-  '618.16-201.63,788.23-5.65,21.82-9.92,15.23-9.92,15.23-19.82-23.76-34.89-483.1' +
-  '-45.26-513.63-.68-2.01-10.13-25.66-27.07-10.46-11.23,10.08-60.87,52.27-79.74,' +
-  '67.1-5.12,4.02-8.6,9.56-10.77,15.81,0,0-76.99,237.1-102.29,279.14-7.09,10.84' +
-  '-21.74,15.31-29.98,1.32-28.86-49,3.34-527.09,3.34-527.09,0,0,4.11-64.62-17.8' +
-  '-64.82-19.95-.18-90.94,73.97-119.74,94.43-4.53,3.22-7.36,8.9-3.56,16.51,4.67,' +
-  '9.38,37.18-8.33,32.36,188.34-2.47,100.99-23.62,418.02,19.61,454.73,18,15.28,' +
-  '50.21,15.87,74.51-4.17,75.84-62.54,157.07-334.88,169.23-360.7,6.06-12.9,19.82' +
-  '-5.8,19.7,4.87,12.28,155.86,21.46,379.45,32.15,469.48,12.29,103.53,28.71,126.98' +
-  ',66.89,126.98s66.01-23.21,88.51-111.77c81.99-322.71,112.53-465.65,154.17-641.85' +
-  ',72.17-305.42,95.16-369.45,188.98-362.2Z';
 ---
 
 <Base
@@ -141,7 +127,9 @@ const W_PATH =
     />
     <div class="absolute inset-0 bg-black/35 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute bottom-10 left-6 max-w-[21rem]">
-      <h1 class="font-display text-[1.9375rem] leading-[1.3] font-semibold text-cream">Netzwerk</h1>
+      <h1 aria-label="W-Netzwerk">
+        <Wortmarke wort="Netzwerk" breite={16.3125} klasse="text-cream" />
+      </h1>
     </div>
   </section>
 
@@ -159,20 +147,10 @@ const W_PATH =
     </div>
     <div class="absolute inset-0 bg-black/40 pointer-events-none" aria-hidden="true"></div>
 
-    <!-- Bildmarke W hinter dem Titel — deko.json: 477x341, #F5F3ED, 18 % -->
-    <svg
-      viewBox="0 0 1765.27 1262.84"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      class="pointer-events-none absolute"
-      style="bottom:4.25rem;right:13.75rem;width:29.8125rem;height:21.3125rem;opacity:0.18;"
-      fill="#F5F3ED"
-    >
-      <path d={W_PATH} />
-    </svg>
-
     <div class="absolute bottom-[10rem] right-[7.5rem] flex max-w-[96.75rem] flex-col items-end text-right">
-      <h1 class="font-display text-h1 font-semibold leading-normal text-cream">Netzwerk</h1>
+      <h1 aria-label="W-Netzwerk">
+        <Wortmarke wort="Netzwerk" breite={30} klasse="text-cream" />
+      </h1>
     </div>
   </section>
 
