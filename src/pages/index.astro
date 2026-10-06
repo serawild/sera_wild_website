@@ -42,21 +42,21 @@ const galerieIds = [
 ];
 
 // Texte, die in mobile und desktop identisch vorkommen
-const haltungH2   = 'Bei Sera Wild steht der Prozess im Mittelpunkt.';
+const haltungH2   = 'Bei sera Wild steht der Prozess im Mittelpunkt.';
 const haltungBold = `Mir geht's um dich. Das Bild kommt von selbst.`;
-const haltungText = 'Um den Moment, in dem du aufhörst, dich von aussen zu betrachten und beginnst, dich wirklich zu sehen. Trau dich vor die Kamera und erlebe den Moment, in dem du dich zeigst, ohne Rücksicht auf Erwartungen aus der Aussenwelt.';
+const haltungText = 'Um den Moment, in dem du aufhörst, dich von aussen zu betrachten und beginnst, dich wirklich zu sehen. Trau dich vor die Kamera und erlebe den Moment, in dem du dich zeigst, ohne Rücksicht auf Erwartungen aus der Aussenwelt. Ich fotografiere nicht, wie du sein solltest, sondern wie du bist, wenn du vergisst, dass eine Kamera da ist.';
 const angebotH2   = 'Veränderung beginnt dort, wo du in Kontakt gehst. Mit dir selbst und mit anderen.';
-const angebotText = 'Ich biete dir den Raum. Du probierst aus, folgst deinen Impulsen und entdeckst Schritt für Schritt, was entsteht, wenn du dir selbst Raum gibst.';
+const angebotText = 'Ich biete dir den Raum. Du probierst aus, folgst deinen Impulsen und entdeckst Schritt für Schritt, was entsteht, wenn du dir selbst Raum gibst. Auch für Selbständige, die sich authentisch zeigen wollen – mit Bildern, die zu ihnen passen und nicht zu einer Vorlage.';
 const galerieH2   = 'Jede Begegnung hinterlässt Spuren. Hier findest du Momente, die geblieben sind.';
 const referenzenH2 = 'Was meine Kunden über mich sagen';
-const kontaktH2   = 'Für alle, die sich selbst zurückfinden möchten.';
+const kontaktH2   = 'Für alle, die zu sich zurückfinden möchten.';
 const kontaktText1 = 'Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.';
 const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.';
 ---
 
 <Base
-  title="sera Wild — prozessorientierte Fotografie"
-  description="Prozessorientierte Fotografie in der Schweiz. Sera Wild begleitet Menschen dabei, sich wirklich zu sehen – mutig, spontan und echt."
+  title="sera Wild — prozessorientierte Porträt- und Reportagefotografie"
+  description="sera Wild – Porträt- und Reportagefotografie im Aareland. Echte Bilder an deinem Lieblingsort, bei dem, was du liebst. Nur du. In echt."
 >
 
   <!-- ===== 1. HERO ===== -->
@@ -91,9 +91,14 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
     <!-- Text: mobil links unten, desktop rechts unten -->
     <div class="absolute bottom-16 left-6 flex max-w-[calc(100%-3rem)] flex-col items-start gap-6 text-left
                 md:bottom-[5rem] md:left-auto md:right-[7.5rem] md:max-w-[56.25rem] md:items-end md:gap-[2.5rem] md:text-right">
-      <h1 class="font-display text-[1.9375rem] font-semibold leading-[1.3] text-cream md:text-h1 md:leading-normal">
-        Hier beginnt die Begegnung mit dir selbst: Du zeigst dich. Ich mach's sichtbar.
-      </h1>
+      <div class="flex flex-col gap-3 md:gap-5">
+        <h1 class="font-display text-[1.9375rem] font-semibold leading-[1.3] text-cream md:text-h1 md:leading-normal">
+          Hier beginnt die Begegnung mit dir selbst: Du zeigst dich. Ich mach's sichtbar.
+        </h1>
+        <p class="font-body text-[1rem] leading-[1.6] text-cream/80 md:text-body md:leading-[1.8]">
+          Nur du. In echt. Prozessorientierte Porträt- und Reportagefotografie im Aareland.
+        </p>
+      </div>
       <a
         href="/kontakt"
         class="inline-flex items-center justify-center rounded-[8px] bg-rust px-7 py-[0.9375rem] font-body text-[0.875rem] uppercase tracking-[0.088em] text-cream transition-colors hover:bg-orange
@@ -211,9 +216,19 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
         </div>
       </div>
 
-      <a href="/w-erlaebnis" class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange">
-        Zum W–Erläbnis
-      </a>
+      <!-- Zwei Einstiege nebeneinander: der kleine Schritt zuerst, fuer alle,
+           die sich «ich bin nicht fotogen» denken. -->
+      <p class="font-body text-small leading-[1.65] text-cream/70 text-center" style="max-width:44rem">
+        Du musst nicht gleich die ganze Reise buchen. Fang klein an — ein W-Momänt in der Scheune ab CHF 149.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="/w-momaent" class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange">
+          Reinschnuppern
+        </a>
+        <a href="/w-erlaebnis" class="inline-flex items-center justify-center rounded-[1.0625rem] bg-rust px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange">
+          Ganz eintauchen
+        </a>
+      </div>
     </div>
   </section>
 
@@ -266,13 +281,25 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
     <!-- Text -->
     <p class="mb-6 font-body text-[1.0625rem] leading-[1.68] text-cream/80">{angebotText}</p>
 
-    <!-- Button -->
-    <a
-      href="/kontakt"
-      class="mb-8 inline-flex items-center justify-center rounded-[8px] bg-beige px-7 py-[0.9375rem] font-body text-[0.875rem] uppercase tracking-[0.088em] text-cream transition-colors hover:bg-orange"
-    >
-      Kontaktiere mich
-    </a>
+    <!-- Zwei Einstiege: der kleine Schritt zuerst. Der Weg zum Kontakt steht
+         weiter unten in Abschnitt 05. -->
+    <p class="mb-4 font-body text-[1rem] leading-[1.68] text-cream/70">
+      Du musst nicht gleich die ganze Reise buchen. Fang klein an — ein W-Momänt in der Scheune ab CHF 149.
+    </p>
+    <div class="mb-8 flex flex-wrap gap-3">
+      <a
+        href="/w-momaent"
+        class="inline-flex items-center justify-center rounded-[8px] bg-beige px-7 py-[0.9375rem] font-body text-[0.875rem] uppercase tracking-[0.088em] text-cream transition-colors hover:bg-orange"
+      >
+        Reinschnuppern
+      </a>
+      <a
+        href="/w-erlaebnis"
+        class="inline-flex items-center justify-center rounded-[8px] bg-rust px-7 py-[0.9375rem] font-body text-[0.875rem] uppercase tracking-[0.088em] text-cream transition-colors hover:bg-orange"
+      >
+        Ganz eintauchen
+      </a>
+    </div>
 
     <!-- Bildgruppe: gross 214×286 bei 0/0, klein 178×238 bei 164/84 → Unterkanten 36px versetzt -->
     <div class="relative mx-auto" style="width:342px;height:322px">
@@ -305,9 +332,14 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
         {angebotH2}
       </h2>
       <p class="font-body text-body leading-[1.65] text-center" style="max-width:56.25rem">{angebotText}</p>
-      <a href="/kontakt" class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange">
-        Kontaktiere mich
-      </a>
+      <div class="flex flex-wrap items-center justify-center gap-5">
+        <a href="/kontakt" class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange">
+          Kontaktiere mich
+        </a>
+        <a href="/kontakt" class="inline-flex items-center justify-center rounded-[1.0625rem] bg-dark px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-olive">
+          Gutschein bestellen
+        </a>
+      </div>
     </div>
   </section>
 
@@ -427,14 +459,13 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
 
       <div class="flex min-w-0 flex-1 flex-col items-start gap-[3rem]">
         <h2 class="font-display text-h2 font-semibold leading-normal">
-          Wenn du etwas willst, das du noch nie hattest, musst du etwas tun, das du noch nie getan hast.
+          Ich kenne das Studio. Und weiss, was dort fehlt.
         </h2>
         <div class="font-body text-body leading-[1.65]">
-          <p>Ich bin Seraina und ich begleite dich</p>
-          <p>hinter der Kamera durch diesen wunder-vollen Prozess. Ich freue mich auf dich!</p>
+          <p>Ich bin Seraina. Nach Jahren im klassischen Fotostudio habe ich gemerkt: Das Schönste passiert, wenn niemand posiert. Heute begleite ich dich dorthin, wo du du selbst bist, und mache es sichtbar.</p>
         </div>
         <a href="/ueber" class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange">
-          ÜBER SERAWILD
+          Über sera Wild
         </a>
       </div>
 
@@ -559,6 +590,12 @@ const kontaktText2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheide
       class="mb-3 inline-flex items-center justify-center rounded-[8px] bg-beige px-7 py-[0.9375rem] font-body text-[0.875rem] uppercase tracking-[0.088em] text-cream transition-colors hover:bg-orange"
     >
       KONTAKT
+    </a>
+    <a
+      href="/kontakt"
+      class="mb-3 inline-flex items-center justify-center rounded-[8px] bg-dark px-7 py-[0.9375rem] font-body text-[0.875rem] uppercase tracking-[0.088em] text-cream transition-colors hover:bg-olive"
+    >
+      Gutschein bestellen
     </a>
 
 

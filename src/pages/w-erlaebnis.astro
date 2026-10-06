@@ -24,12 +24,16 @@ const W_PATH =
   ',72.17-305.42,95.16-369.45,188.98-362.2Z';
 
 // Shared text (used in both mobile and desktop blocks)
+// Hero-Untertitel: bewusst die alten zwei Zeilen (Entscheid Seraina, 06.10.2026).
+// Der Vorschlag «Nur du. In echt. / Kein Studio, keine Posen. Du an einem Ort …»
+// war mit 85 Zeichen zu lang für die 56-px-Schrift und lief über drei Zeilen.
 const heroSubZ1 = 'Wenn du weisst, wer du bist,';
 const heroSubZ2 = 'kannst du sein, wer du willst.';
 
-const begegnungH2 = 'Das W-Erläbnis ist mehr als ein Fotoshooting. Sie ist eine Begegnung.';
-const begegnungP1 = 'Da steckt mehr in dir, als du gerade siehst.';
-const begegnungP2 = 'Gemeinsam gehen wir auf die Suche nach dem, was dich lebendig macht. Die «W»-Session stellt die Fragen, die wirklich zählen: Wer bist du? Was bewegt dich? Wofür stehst du?';
+const begegnungH2 = 'Das W-Erläbnis ist mehr als ein Fotoshooting. Es ist eine Begegnung.';
+const begegnungP1 = 'Ich habe viele Jahre in einem klassischen Fotostudio gearbeitet. Dort habe ich mein Handwerk gelernt und gemerkt, was mich wirklich berührt: Bilder, die nicht gestellt sind.';
+const begegnungP2 = 'Darum fotografiere ich heute am liebsten Reportagen. Das W-Erläbnis verbindet beides: Ich setze dich ins Spotlight wie im Studio und fotografiere dich echt wie bei einer Reportage.';
+const begegnungP3 = 'Wir suchen einen Ort, der zu dir gehört. Du tust, was du liebst: Geige spielen, im Garten wühlen, auf dem Velo sitzen oder einfach in den Tag träumen. Ich bin dabei und halte fest, was passiert.';
 
 const dasWFragen = [
   { w: 'Wann',   rest: ' fühlst du dich am lebendigsten?' },
@@ -85,7 +89,7 @@ const timelineSchritte = [
   },
   {
     nr: 5, icon: '05-bilder', titel: 'Deine Bilder',
-    label: 'Persönlich · rund zwei Wochen später',
+    label: 'Persönlich · ca. 2 Wochen später',
     text: 'Wir treffen uns noch einmal. Deine Lieblingsbilder liegen gedruckt vor dir – und deine ganze Bilderreise nimmst du digital mit nach Hause.',
     extra: null as string | null,
   },
@@ -108,6 +112,7 @@ const richtigItems = [
   '…du dich in einer Übergangsphase befindest',
   '…du dich in einer Neuorientierung befindest',
   '…du gerade eine Rollenveränderung erlebt hast',
+  '…du selbständig bist und dich authentisch zeigen willst',
   '…du keine Bilder willst, auf denen du dich verstellen musst',
 ];
 const richtigBold  = 'Viele kommen zu mir, wenn sich gerade etwas verändert. Neuer Job, Kinder aus dem Haus, ein Kapitel zu Ende.';
@@ -126,7 +131,7 @@ const faqFragen = [
   { q: 'Wo findet das Shooting statt?',                  a: 'Das W-Momänt findet in 5014 Gretzenbach statt. Für das W-Erläbnis fahren wir zu deinem Lieblingsort oder finden gemeinsam ein oder mehrere Fotospots.' },
   { q: 'Was soll ich anziehen?',                         a: 'Du erhältst nach der Buchung meinen persönlichen Guide mit Tipps zu Kleidung und Vorbereitung.' },
   { q: 'Was passiert bei schlechtem Wetter?',            a: 'Wir verschieben kostenlos, auch kurzfristig. Bei leichtem Regen frage ich dich vorher – manchmal entstehen dann die ruhigsten Bilder. In der Scheune sind wir vom Wetter unabhängig.' },
-  { q: 'Wann bekomme ich meine Bilder?',                 a: 'In der Regel zwei bis drei Wochen nach dem Shooting. Du bekommst deine ganze Bilderreise – und deine Favoriten zusätzlich gedruckt, persönlich übergeben in einer Leinenschachtel.' },
+  { q: 'Wann bekomme ich meine Bilder?',                 a: 'In der Regel ca. 2 Wochen nach dem Shooting. Du bekommst deine ganze Bilderreise – und deine Favoriten zusätzlich gedruckt, persönlich übergeben in einer Leinenschachtel.' },
   { q: 'Wie weit im Voraus soll ich mich melden?',       a: 'Vier bis sechs Wochen sind ideal. Fragen ist immer erlaubt - vielleicht finden wir sogar ganz kurzfristig und spontan einen Termin.' },
   { q: 'Für wen ist das W-Erläbnis nicht das Richtige?', a: 'Wenn du klassische Bewerbungsfotos brauchst, bist du woanders besser aufgehoben. Und wenn du Bilder willst, auf denen du perfekt aussiehst statt wie du selbst, passen wir nicht zusammen.' },
 ];
@@ -201,6 +206,7 @@ const faqFragen = [
     <div class="mb-8 flex flex-col gap-[14px]">
       <p class="font-body text-[1.0625rem] leading-[1.68] text-dark font-bold">{begegnungP1}</p>
       <p class="font-body text-[1.0625rem] leading-[1.68] text-dark">{begegnungP2}</p>
+      <p class="font-body text-[1.0625rem] leading-[1.68] text-dark">{begegnungP3}</p>
     </div>
     <!-- Bildgruppe: gross 214×286 bei 0/0, klein 178×238 bei 164/84 -->
     <div class="relative mx-auto" style="width:342px;height:322px">
@@ -242,6 +248,7 @@ const faqFragen = [
         <div class="flex flex-col gap-[1.5rem]">
           <p class="font-body text-body leading-[1.65] font-bold">{begegnungP1}</p>
           <p class="font-body text-body leading-[1.65]">{begegnungP2}</p>
+          <p class="font-body text-body leading-[1.65]">{begegnungP3}</p>
         </div>
       </div>
     </div>
@@ -294,6 +301,20 @@ const faqFragen = [
         </div>
         <p class="font-body text-small leading-[2] text-beige">{dasWFussnote}</p>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 3c. DAS ZIEL (responsive) ===== -->
+  <!-- Baustein wie der Zitat-Abschnitt weiter unten, nur mit Überzeile.
+       Keine Deko: Positionen stehen in deko.json und sind für diesen
+       Abschnitt noch nicht erfasst. -->
+  <section class="bg-rust px-6 py-[52px] md:py-xl md:px-[7.5rem]">
+    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[1.25rem] text-center md:gap-[2rem]">
+      <p class="font-body text-[0.75rem] uppercase tracking-[0.08em] text-cream/70 md:text-[1rem] md:tracking-[1.28px]">DAS ZIEL</p>
+      <p class="font-display text-[1.6875rem] font-semibold leading-[1.3] text-cream md:text-h2 md:font-bold md:leading-[1.5]">
+        Am Ende hast du dich gezeigt, so wie du bist. Und du hältst es in den Händen.
+      </p>
     </div>
   </section>
 
@@ -375,6 +396,16 @@ const faqFragen = [
       </div>
     </details>
 
+    <div class="mb-6 rounded-[8px] bg-cream px-6 py-6 flex flex-col gap-[0.75rem]">
+      <p class="font-display text-[1.125rem] font-semibold">Was ist dir ein Wochenende wert?</p>
+      <p class="font-body text-[1rem] leading-[1.65]">
+        Ein Wellness-Weekend zu zweit kostet in der Schweiz rasch CHF 900–1'000. Das ist schön, doch am Montag ist es vorbei.
+      </p>
+      <p class="font-body text-[1rem] leading-[1.65]">
+        Das W-Erläbnis kostet gleich viel. Es bleibt: als Bilder, in denen du dich wiedererkennst, und als Erinnerung daran, wie es sich anfühlt, ganz du zu sein.
+      </p>
+    </div>
+
     <p class="font-body text-[0.875rem] leading-[1.6] text-cream/60">{angebotFN}</p>
 
     <div class="mt-6">
@@ -434,6 +465,15 @@ const faqFragen = [
             ZU DEM FAQ
           </a>
         </div>
+      </div>
+      <div class="mx-auto flex w-full max-w-[56.25rem] flex-col gap-[1rem] rounded-[8px] bg-cream px-[2.5rem] py-[2.5rem]">
+        <p class="font-display text-h3 font-semibold">Was ist dir ein Wochenende wert?</p>
+        <p class="font-body text-body-klein leading-[1.7]">
+          Ein Wellness-Weekend zu zweit kostet in der Schweiz rasch CHF 900–1'000. Das ist schön, doch am Montag ist es vorbei.
+        </p>
+        <p class="font-body text-body-klein leading-[1.7]">
+          Das W-Erläbnis kostet gleich viel. Es bleibt: als Bilder, in denen du dich wiedererkennst, und als Erinnerung daran, wie es sich anfühlt, ganz du zu sein.
+        </p>
       </div>
       <p class="font-display text-[1.25rem] text-center text-cream/90">{angebotFN}</p>
     </div>
@@ -632,7 +672,8 @@ const faqFragen = [
         </>
       ))}
     </div>
-    <p class="mb-8 font-body text-[1.0625rem] font-bold leading-[1.68] text-dark">{richtigBold}</p>
+    <p class="mb-4 font-body text-[1.0625rem] font-bold leading-[1.68] text-dark">{richtigBold}</p>
+    <p class="mb-8 font-body text-[1.0625rem] leading-[1.68] text-dark">Für alle, die sich einmal echt sehen möchten: für dich, weil du es dir wert bist.</p>
 
     <!-- Bildgruppe gespiegelt: gross oben rechts, klein unten links -->
     <div class="relative mx-auto" style="width:342px;height:322px">
@@ -684,6 +725,7 @@ const faqFragen = [
         </div>
         <div class="h-px bg-dark"></div>
         <p class="font-body text-body font-bold leading-[1.65] max-w-[45.25rem]">{richtigBold}</p>
+        <p class="font-body text-body leading-[1.65] max-w-[45.25rem]">Für alle, die sich einmal echt sehen möchten: für dich, weil du es dir wert bist.</p>
         <div class="h-px bg-dark"></div>
         <a href="/kontakt" class="self-start rounded-[17px] bg-[#b08257] px-md py-sm font-body text-small font-medium uppercase tracking-[1.5px] text-cream">
           MEHR DAZU
