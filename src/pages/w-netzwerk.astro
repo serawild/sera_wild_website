@@ -92,8 +92,14 @@ const einladungNach = (partner as any).einladungNachEintrag ?? Math.ceil(eintrae
 const vorEinladung  = eintraege.slice(0, einladungNach);
 const nachEinladung = eintraege.slice(einladungNach);
 
-const introH2 = intro.text.h2;
-const introP  = intro.text.absaetze[0].text;
+/**
+ * Die Intro-Ueberschrift «Menschen, mit denen ich gerne arbeite» ist auf Serainas
+ * Wunsch (07.10.2026) in den Hero gewandert — Figma `2293:862` hat dort nur die
+ * Titelzeile. Im Intro-Abschnitt entfaellt sie dafuer, sonst stuende sie zweimal
+ * auf derselben Seite. Der Absatz traegt den Abschnitt allein, als Lauftext.
+ */
+const heroUnterzeile = intro.text.h2 + '.';
+const introP = intro.text.absaetze[0].text;
 
 const einladungH2  = einladung.text.h2;
 const einladungP   = einladung.text.absaetze[0].text;
@@ -130,6 +136,7 @@ const kontaktP2 = kontakt.text.absaetze[1].text;
       <h1 aria-label="W-Netzwerk">
         <Wortmarke wort="Netzwerk" breite={16.3125} klasse="text-cream" />
       </h1>
+      <p class="font-body text-[1.125rem] leading-[1.6] text-cream mt-[1.125rem]">{heroUnterzeile}</p>
     </div>
   </section>
 
@@ -148,9 +155,10 @@ const kontaktP2 = kontakt.text.absaetze[1].text;
     <div class="absolute inset-0 bg-black/40 pointer-events-none" aria-hidden="true"></div>
 
     <div class="absolute bottom-[10rem] right-[7.5rem] flex max-w-[96.75rem] flex-col items-end text-right">
-      <h1 aria-label="W-Netzwerk">
+      <h1 class="mb-[0.75rem]" aria-label="W-Netzwerk">
         <Wortmarke wort="Netzwerk" breite={30} klasse="text-cream" />
       </h1>
+      <p class="font-display text-h2 font-semibold leading-normal text-cream">{heroUnterzeile}</p>
     </div>
   </section>
 
@@ -161,7 +169,6 @@ const kontaktP2 = kontakt.text.absaetze[1].text;
   <!-- Mobile -->
   <section class="relative isolate overflow-hidden md:hidden bg-cream py-12 px-6">
     <div class="flex flex-col gap-[1.125rem]">
-      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold">{introH2}</h2>
       <p class="font-body text-[1.0625rem] leading-[1.68] text-olive">{introP}</p>
     </div>
   </section>
@@ -169,8 +176,7 @@ const kontaktP2 = kontakt.text.absaetze[1].text;
   <!-- Desktop -->
   <section class="relative isolate hidden overflow-hidden md:block bg-cream pt-[6.25rem] pb-[3.75rem]">
     <div class="mx-auto max-w-inhalt px-6 md:px-0">
-      <h2 class="font-display text-[3.5rem] leading-[1.39] font-semibold">{introH2}</h2>
-      <p class="mt-6 max-w-[68.75rem] font-body text-[1.5rem] leading-[2] text-olive">{introP}</p>
+      <p class="max-w-[68.75rem] font-body text-[1.5rem] leading-[2] text-olive">{introP}</p>
     </div>
   </section>
 

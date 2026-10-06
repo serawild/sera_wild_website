@@ -542,3 +542,20 @@ CLAUDE.md angepasst — gesperrt bleibt nur noch Emanuela.
 **Zu prüfen beim nächsten Build:** «Sera Wild» hatte bisher kein Untermenü, jetzt schon —
 Desktop-Dropdown und mobiles Menü einmal durchklicken. Die Bezeichnung «Über mich» ist
 abgeleitet, nicht aus Figma.
+
+## Netzwerk-Hero: Wortmarke und Unterzeile (07.10.2026) — Abweichung von Figma
+
+Beides auf Wunsch von Seraina, bewusst anders als die Vorlage. Nicht aus Figma
+zurücksetzen.
+
+| Was | Figma `2293:862` | Jetzt gebaut |
+|---|---|---|
+| Titel | Wort «Netzwerk» 80 px, dahinter die Bildmarke W bei 18 % Deckkraft | Wortmarke **W-Netzwerk** voll deckend in Creme, wie der Hero von W-Momänt. Das halbtransparente W entfällt, sonst stünde das Zeichen zweimal im Bild. |
+| Unterzeile | keine | «Menschen, mit denen ich gerne arbeite.» — bis dahin die Überschrift des Intro-Abschnitts. Dort entfällt sie jetzt, der Absatz trägt den Abschnitt allein. |
+
+Die Bezugsbreite der Wortmarke «Netzwerk» (580) hat keine Figma-Vorlage. Sie ist
+aus der Schriftdatei gemessen: Vollkorn 600 bei 96 px ergibt 424 px Textbreite,
+plus 160 px Vorlauf für das W. Zur Kontrolle dieselbe Messung für «Momänt» (541
+gegen Figmas 539) und «Erläbnis» (536 gegen 532) — die Abweichung von 2 bis 4 px
+stammt aus dem Kerning und ist im Satz nicht zu sehen. Werte in
+`src/components/Wortmarke.astro` → `REF`.
