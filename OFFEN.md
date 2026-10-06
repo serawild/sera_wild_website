@@ -1,13 +1,98 @@
 # Offene Punkte
 
+## Texte «Nur du. In echt.» (2026-10-06) im Code, Figma noch nachführen
+
+Die Texte stammen aus `PROMPT-texte-nur-du-in-echt.md`, von Seraina am
+06.10.2026 freigegeben — **nicht** aus Figma. Für diese Stellen ist Figma
+veraltet; Regel 2 in `CLAUDE.md` ist hier bewusst ausgesetzt. Figma später
+nachziehen, sonst überschreibt der nächste Abgleich die neuen Texte.
+
+Betroffene Abschnitte:
+
+| Seite | Abschnitt | Node-ID |
+|---|---|---|
+| w-erlaebnis | Hero, Untertitel unter der Wortmarke | `2253:604` |
+| w-erlaebnis | Begegnung — H2 und drei Absätze | `2253:422` |
+| w-erlaebnis | **neu** «Das Ziel», zwischen «Das W» und «Wonach wir suchen» | — |
+| w-erlaebnis | Angebot — **neuer** Kasten «Was ist dir ein Wochenende wert?» | `2253:444` |
+| w-erlaebnis | «Du bist hier richtig wenn,» — Abschlusssatz | `2253:430` |
+| index | Hero — **neue** Unterzeile unter der Headline | `2251:342` |
+| index | Haltung — Satz am Ende von `haltungText` | — |
+| index | Geschichten gespiegelt — H2 und Absatz | `2310:971` |
+| index | Meta-Beschreibung | — |
+| ueber | Mein Weg — **neuer** Absatz `meinWegP2` | `2246:273` |
+| index · ueber · w-netzwerk · bausteine | Kontakt-Teaser: «zu sich zurückfinden» | — |
+
+**Hero W-Erläbnis: alte Zeilen behalten (Entscheid Seraina, 06.10.2026).** Der
+neue Untertitel «Nur du. In echt. / Kein Studio, keine Posen. Du an einem Ort,
+den du liebst, bei dem, was dich ausmacht.» war mit 85 Zeichen zu lang für die
+56-px-Schrift — drei Zeilen über fast die ganze Bildbreite. Im Hero stehen
+darum weiter «Wenn du weisst, wer du bist, / kannst du sein, wer du willst.»
+Die Haltung «Nur du. In echt.» trägt die Startseite im Hero und der Abschnitt
+Begegnung auf W-Erläbnis. Beim Nachführen in Figma diese Zeile **nicht**
+ändern.
+
+**«Das Ziel» ohne Illustration:** Der neue Abschnitt verwendet den Baustein des
+Zitat-Abschnitts, aber ohne Deko. Die Positionen der Illustrationen stehen in
+`deko.json` und sind für diesen Abschnitt noch nicht erfasst — die Regel lautet,
+nicht zu raten.
+
+## Geschichten-Seite: Umbau am 06.10.2026
+
+Drei Blöcke gestrichen, weil sie fast wortgleich auf der Startseite stehen:
+«Du musst nicht jemand anderes sein» (Authentizität), «Veränderung beginnt dort»
+(Angebot) und der Kontakt-Teaser. Telefon und Mail stehen im Footer, die Seite
+verliert also keinen Kontaktweg.
+
+Neu stehen die drei Geschichten als Karten mit Porträt, Name und einem Satz —
+direkt nach der Foto-Story, vor der Kundenstory. Bild ist jeweils
+`*-geschichte-oben` (alle 0.76 : 1), zugeschnitten auf 3 : 4.
+
+**Von Seraina gegenlesen — die drei Sätze sind abgeleitet, nicht aus Figma:**
+Grundlage ist jeweils `geschichteObenP1` der eigenen Unterseite.
+
+- Tina: «Sie begegnet dem Wandel des Lebens mit Mut und ihrem inneren Kompass.»
+  (aus ihrem Zitat, aus der Ich- in die Sie-Form gebracht)
+- Sara: «Ihr Geschäft wächst. Sie wollte Bilder, die nach ihr aussehen statt nach Katalog.»
+- Simona: «Sie baut ihr eigenes Business auf — und wollte sich zeigen, wie sie wirklich ist.»
+
+## Schreibweise des Namens — entschieden am 06.10.2026
+
+**Marke: `sera Wild`** — klein geschriebenes «sera», grosses «Wild», genau wie im
+Logo. Auch am Satzanfang. In Versalien-Knöpfen wird daraus durch CSS automatisch
+«ÜBER SERA WILD»; im Quelltext steht trotzdem `Über sera Wild`.
+
+**Person: `Seraina Wild`** — nie «Seraina Stettler».
+
+Beides ist überall nachgezogen: 199 Stellen `sera Wild`, 20 Stellen
+`Seraina Wild`, kein `Sera Wild`, kein `SERAWILD`, kein `Stettler` mehr im
+gebauten Stand. Bei neuen Texten immer so schreiben.
+
 ## Reportage-Seite (/reportage)
 
 Seite: reportage.astro — vor dem Livegang zu erledigen:
 
+**Umbau am 06.10.2026:** Bildstrecke und Anlässe sind zu einem Abschnitt
+«04 — Was ich fotografiere» verschmolzen, mit einer Collage aus neun Bildern
+statt fünf. Die Collage steht neu hinter dem Angebot: 03 ist das Angebot, 04 die
+Collage, danach 05 Ablauf und 06 Kontakt. Der Hinweissatz «Die Auswahl folgt, sobald die Bilder
+freigegeben sind.» ist damit weg und muss nicht mehr ersetzt werden.
+
 - **hero-reportage** – Bild fehlt. Platzhalter Beige. Datei und ALT-Text in bilder.json eintragen, aktiv auf true setzen.
-- **reportage-galerie-01 bis -05** – Alle fünf Bilder fehlen. Wischbare Bildstrecke in Sektion 03. Grösse: 300×380 (Desktop), 260×340 (Mobil). Dateien und ALT-Texte in bilder.json eintragen, aktiv auf true setzen.
-- **reportage-kontakt** – Bild fehlt (Sektion 07, rechts). Verhältnis 4:5. Datei und ALT-Text in bilder.json eintragen, aktiv auf true setzen.
-- **Bildstrecke Hinweistext** – Sektion 03 enthält den Satz «Die Auswahl folgt, sobald die Bilder freigegeben sind.» — dieser muss vor dem Livegang durch den echten Beschrieb ersetzt werden.
+- **reportage-galerie-01 bis -09** – Alle neun Bilder fehlen (Collage in Sektion 04).
+  Drei davon quer, sechs hoch — die Zuordnung steht im Feld `hinweis` je Eintrag:
+
+  | Reihe | links | Mitte | rechts |
+  |---|---|---|---|
+  | 1 | **-01 quer** | -02 hoch | -03 hoch |
+  | 2 | -04 hoch | -05 hoch | **-06 quer** |
+  | 3 | -07 hoch | **-08 quer** | -09 hoch |
+
+  Querbilder 3:2, mindestens 1320 × 880. Hochbilder 2:3, mindestens 600 × 900.
+  Beschnitten wird nichts — jedes Bild bekommt den Platz, der seinem Verhältnis
+  entspricht. Liegt ein Bild in einem anderen Verhältnis vor, stimmt die Reihe
+  trotzdem, nur wird sie etwas höher oder flacher.
+- **reportage-kontakt** – Bild fehlt (Sektion 06, rechts). Verhältnis 4:5. Datei und ALT-Text in bilder.json eintragen, aktiv auf true setzen.
 - **Logo Secondary** – Hero und Seite sollen die Fassung ohne Untertitel («Secondary White.svg» / «Secondary Dark.svg») verwenden. Derzeit zeigt Navigation das Primärlogo. Entweder Navigation einen optionalen Logo-Prop geben oder für diese Seite eine eigene Kopfzeile ohne Navigation.astro bauen.
 
 ## Werbung für Kundinnen auf den Geschichten-Seiten

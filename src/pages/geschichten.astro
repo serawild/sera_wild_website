@@ -11,11 +11,6 @@ const heroSubtitel = 'Authentizität verlangt Mut, doch diesen Schritt braucht e
 const fotostoryH2 = 'Bereit, deinen ganz eigenen Prozess zu entdecken? Diese Reise haben viele schon entdeckt.';
 const fotostoryP  = 'Gemeinsam schaffen wir einen Raum, in dem du dich wohlfühlst und einfach du selbst sein darfst.';
 
-const authH2 = 'Du musst nicht jemand anderes sein, um gesehen zu werden.';
-
-const angebotH2 = 'Veränderung beginnt dort, wo du in Kontakt gehst. Mit dir selbst und mit anderen.';
-const angebotP  = 'Ich biete dir den Raum. Du probierst aus, folgst deinen Impulsen und entdeckst Schritt für Schritt, was entsteht, wenn du dir selbst Raum gibst.';
-
 const kundenstoryQuote = 'Ich habe mich gesehen, gehalten, ernst genommen und frei gefühlt. Der Prozess war für mich mindestens so wertvoll wie das Ergebnis. Man merkt, dass du nicht nur Bilder machst, sondern Räume öffnest, in denen etwas entstehen darf.';
 const kundenstoryName  = 'Simona';
 const kundenstoryStudio = 'Studio Benanti';
@@ -23,20 +18,39 @@ const kundenstoryStudioUrl = 'https://www.instagram.com/studiobenanti/';
 
 const zitatText = 'Was wäre ein Leben, das sich wahr anfühlt – für mich, hier, jetzt?';
 
+/**
+ * Die drei Geschichten als Karten: Bild, Name, ein Satz.
+ *
+ * Der Satz ist jeweils aus dem Einstieg der eigenen Geschichte abgeleitet, nicht neu
+ * erfunden — siehe `geschichteObenP1` auf den drei Unterseiten. Bild ist immer das
+ * Porträt `*-geschichte-oben` (alle 0.76 : 1), zugeschnitten auf 3 : 4.
+ */
 const geschichten = [
-  { pfad: '/geschichten/tina',   name: 'Tina' },
-  { pfad: '/geschichten/sara',   name: 'Sara' },
-  { pfad: '/geschichten/simona', name: 'Simona' },
+  {
+    pfad: '/geschichten/tina',
+    name: 'Tina',
+    bild: 'tina-geschichte-oben',
+    satz: 'Sie begegnet dem Wandel des Lebens mit Mut und ihrem inneren Kompass.',
+  },
+  {
+    pfad: '/geschichten/sara',
+    name: 'Sara',
+    bild: 'sara-geschichte-oben',
+    satz: 'Ihr Geschäft wächst. Sie wollte Bilder, die nach ihr aussehen statt nach Katalog.',
+  },
+  {
+    pfad: '/geschichten/simona',
+    name: 'Simona',
+    bild: 'simona-geschichte-oben',
+    satz: 'Sie baut ihr eigenes Business auf — und wollte sich zeigen, wie sie wirklich ist.',
+  },
 ];
 
-const kontaktH2 = 'Für alle, die sich selbst zurückfinden oder etwas Neues wagen möchten.';
-const kontaktP1 = 'Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.';
-const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.';
 ---
 
 <Base
   title="Geschichten — sera Wild"
-  description="Echte Geschichten von echten Menschen: Wie prozessorientierte Fotografie Verbindung schafft."
+  description="Echte Geschichten von echten Menschen: Wie prozessorientierte Porträt- und Reportagefotografie Verbindung schafft."
 >
 
   <Navigation farbe="hell" />
@@ -139,106 +153,51 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
     </div>
   </section>
 
-  <!-- ===== 02 AUTHENTIZITÄT ===== -->
-
-  <!-- Mobile: dark -->
-  <section class="relative isolate overflow-visible md:hidden bg-dark py-[52px] px-6">
-    <DekoIllustration motiv="mohn" farbe="#5B5C4F" breite={162} cssRotate={21} obenAbAnkerAnteil={-0.08} seite="links" abstand={-75} mobil={true} deckkraft={0.5} />
-    <div class="flex flex-col gap-[1.125rem]">
-      <div class="flex items-center gap-2 mb-[0.375rem]">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">02</span>
-        <span class="w-5 h-px bg-cream/50"></span>
-        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">AUTHENTIZITÄT</span>
-      </div>
-      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{authH2}</h2>
-      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream">
-        <span>Viele Menschen kommen zu mir und sagen: </span>
-        <span class="font-display font-semibold italic text-[1.5rem] leading-[1.6]">Ich bin nicht fotogen. </span>
-        <span>Was sie eigentlich meinen: </span>
-        <span class="font-display font-semibold italic text-[1.5rem] leading-[1.6]">Ich habe mich noch nie wirklich gesehen. </span>
-        <span>Und genau dort beginnen wir.</span>
-      </p>
-      <a href="/kontakt" class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-rust px-md py-sm font-body text-cta text-cream mt-[0.375rem]">
-        schreib mir!
-      </a>
-    </div>
-    <!-- Bildgruppe: gross oben links, klein unten rechts -->
-    <div class="relative mx-auto mt-[1.5rem]" style="width:342px;height:322px;">
-      <div class="absolute overflow-hidden" style="left:0;top:0;width:214px;height:286px;">
-        <BildPicture id="authentizitaet-01" class="h-full w-full object-cover" mobil={true} widths={[214,428]} sizes="214px" />
-      </div>
-      <div class="absolute overflow-hidden" style="left:164px;top:84px;width:178px;height:238px;">
-        <BildPicture id="authentizitaet-02" class="h-full w-full object-cover" mobil={true} widths={[178,356]} sizes="178px" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Desktop: cream -->
-  <section class="hidden md:block relative isolate overflow-visible bg-cream py-xl px-[7.5rem]">
-    <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={320} cssRotate={-16.1} top={-80} seite="rechts" abstand={-177} />
-    <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
-      <div class="flex flex-1 min-w-0 flex-col gap-[3rem]">
-        <h2 class="font-display text-h2 font-semibold">{authH2}</h2>
-        <p class="font-body text-body leading-[1.65]">
-          <span>Viele Menschen kommen zu mir und sagen: </span>
-          <span class="font-display text-h3 font-semibold italic">Ich bin nicht fotogen. </span>
-          <span>Was sie eigentlich meinen: </span>
-          <span class="font-display text-h3 font-semibold italic">Ich habe mich noch nie wirklich gesehen. </span>
-          <span>Und genau dort beginnen wir.</span>
-        </p>
-        <a href="/kontakt" class="self-start rounded-[17px] bg-rust px-md py-sm font-body text-small font-medium text-cream">
-          schreib mir!
-        </a>
-      </div>
-      <div class="relative h-[43.3125rem] w-[37.5rem] shrink-0">
-        <div class="absolute h-[30.5625rem] w-[25.375rem]" style="left:12.125rem;top:3rem;">
-          <BildPicture id="authentizitaet-01" class="h-full w-full object-cover" />
+  <!-- ===== 02 DIE GESCHICHTEN ===== -->
+  <section class="bg-cream-warm px-6 py-12 md:px-[7.5rem] md:py-xl">
+    <div class="mx-auto max-w-inhalt flex flex-col gap-[1.75rem] md:gap-[3rem]">
+      <div class="flex flex-col items-center gap-[1.125rem] text-center">
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">02</span>
+          <span class="w-5 h-px bg-dark/50"></span>
+          <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">DIE GESCHICHTEN</span>
         </div>
-        <div class="absolute h-[26.25rem] w-[20rem]" style="left:0;top:17.0625rem;">
-          <BildPicture id="authentizitaet-02" class="h-full w-full object-cover" />
-        </div>
+        <h2 class="font-display text-[1.6875rem] md:text-h2 font-semibold leading-[1.28] md:leading-normal">
+          Drei Frauen, drei Geschichten
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-[2.5rem] md:flex-row md:gap-[2.5rem]">
+        {geschichten.map(g => (
+          <a href={g.pfad} class="group flex flex-1 flex-col gap-[1rem] min-w-0">
+            <div class="w-full overflow-hidden rounded-[0.25rem]" style="aspect-ratio:3/4;">
+              <BildPicture
+                id={g.bild}
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                mobil={true}
+                widths={[390, 780]}
+                sizes="(max-width: 767px) 100vw, 29rem"
+              />
+            </div>
+            <h3 class="font-display text-[1.375rem] md:text-h4 font-semibold leading-[1.3]">{g.name}</h3>
+            <p class="font-body text-[1.0625rem] md:text-body-klein leading-[1.7] text-dark/85">{g.satz}</p>
+            <span class="font-body text-label uppercase tracking-[0.08em] text-rust transition-colors group-hover:text-orange">
+              Geschichte lesen
+            </span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ===== 03 ANGEBOT ===== -->
-
-  <!-- Mobile: cream -->
-  <section class="md:hidden bg-cream py-12 px-6">
-    <div class="flex flex-col gap-[1.125rem]">
-      <div class="flex items-center gap-2 mb-[0.375rem]">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">03</span>
-        <span class="w-5 h-px bg-dark/50"></span>
-        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">ANGEBOT</span>
-      </div>
-      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold">{angebotH2}</h2>
-      <p class="font-body text-[1.0625rem] leading-[1.68]">{angebotP}</p>
-      <a href="/kontakt" class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta text-cream mt-[0.375rem]">
-        Kontaktiere mich
-      </a>
-    </div>
-  </section>
-
-  <!-- Desktop: rust -->
-  <section class="hidden md:block relative isolate overflow-visible bg-rust py-[7rem] px-[12.5rem]">
-    <DekoIllustration motiv="blattzweig" farbe="#BC541F" breite={404} cssRotate={29} top={-80} seite="links" abstand={-360} />
-    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[3rem] text-center">
-      <h2 class="font-display text-h2 font-semibold max-w-[56.25rem] text-cream">{angebotH2}</h2>
-      <p class="font-body text-body leading-[1.65] max-w-[56.25rem] text-cream">{angebotP}</p>
-      <a href="/kontakt" class="rounded-[17px] bg-beige px-md py-sm font-body text-small font-medium text-cream">
-        Kontaktiere mich
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== 04 KUNDENSTORY ===== -->
+  <!-- ===== 03 KUNDENSTORY ===== -->
 
   <!-- Mobile: olive -->
   <section class="relative isolate overflow-visible md:hidden bg-olive py-[52px]">
     <DekoIllustration motiv="eukalyptus" farbe="#5B5C4F" breite={140} cssRotate={-33} obenAbAnkerAnteil={-0.08} seite="rechts" abstand={-64} mobil={true} deckkraft={0.5} />
     <div class="px-6 flex flex-col gap-[1.125rem]">
       <div class="flex items-center gap-2 mb-[0.375rem]">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">04</span>
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">03</span>
         <span class="w-5 h-px bg-cream/50"></span>
         <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">KUNDENSTORY</span>
       </div>
@@ -303,25 +262,6 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
     </div>
   </section>
 
-  <!-- ===== DIE GESCHICHTEN ===== -->
-  <section class="bg-cream-warm px-6 py-12 md:px-[7.5rem] md:py-xl">
-    <div class="mx-auto max-w-inhalt flex flex-col items-center gap-[1.75rem] md:gap-[2.25rem] text-center">
-      <h2 class="font-display text-[1.6875rem] md:text-h2 font-semibold leading-[1.28] md:leading-normal">
-        Drei Frauen, drei Geschichten
-      </h2>
-      <div class="flex flex-col gap-[0.875rem] md:flex-row md:gap-[1.25rem]">
-        {geschichten.map(g => (
-          <a
-            href={g.pfad}
-            class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase tracking-[1.5px] text-cream transition-colors hover:bg-orange"
-          >
-            {g.name}s Geschichte lesen
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- ===== ZITAT ===== -->
 
   <!-- Mobile: rust -->
@@ -334,60 +274,6 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
   <section class="hidden md:block relative bg-dark py-xl px-[7.5rem]">
     <div class="mx-auto max-w-inhalt text-center">
       <h2 class="font-display text-h2 font-semibold leading-normal text-cream">{zitatText}</h2>
-    </div>
-  </section>
-
-  <!-- ===== 05 KONTAKT ===== -->
-
-  <!-- Mobile: dark -->
-  <section class="md:hidden bg-dark py-[52px] px-6">
-    <div class="flex flex-col gap-[1.125rem]">
-      <div class="flex items-center gap-2 mb-[0.375rem]">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50">05</span>
-        <span class="w-5 h-px bg-cream/50"></span>
-        <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50">KONTAKT</span>
-      </div>
-    </div>
-    <!-- Bildgruppe gespiegelt: gross oben rechts, klein unten links -->
-    <div class="relative mx-auto mt-[1.25rem]" style="width:342px;height:322px;">
-      <div class="absolute overflow-hidden" style="left:128px;top:0;width:214px;height:286px;">
-        <BildPicture id="kontakt-teaser-01" class="h-full w-full object-cover" mobil={true} widths={[214,428]} sizes="214px" />
-      </div>
-      <div class="absolute overflow-hidden" style="left:0;top:84px;width:178px;height:238px;">
-        <BildPicture id="kontakt-teaser-02" class="h-full w-full object-cover" mobil={true} widths={[178,356]} sizes="178px" />
-      </div>
-    </div>
-    <div class="mt-[1.5rem] flex flex-col gap-[1.125rem]">
-      <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{kontaktH2}</h2>
-      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/90">{kontaktP1}</p>
-      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/90">{kontaktP2}</p>
-      <a href="/kontakt" class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream">
-        KONTAKT
-      </a>
-    </div>
-  </section>
-
-  <!-- Desktop: rust -->
-  <section class="hidden md:block bg-rust py-xl px-[7.5rem]">
-    <div class="mx-auto flex max-w-inhalt items-center gap-[5rem]">
-      <div class="relative h-[30rem] w-[37.5rem] shrink-0">
-        <div class="absolute h-[20rem] w-[28.75rem]" style="left:8.75rem;top:0;">
-          <BildPicture id="kontakt-teaser-01" class="h-full w-full object-cover" />
-        </div>
-        <div class="absolute h-[14.9375rem] w-[22.375rem]" style="left:0;top:15.0625rem;">
-          <BildPicture id="kontakt-teaser-02" class="h-full w-full object-cover" />
-        </div>
-      </div>
-      <div class="flex flex-1 min-w-0 flex-col gap-[2rem]">
-        <h2 class="font-display text-h2 font-semibold text-cream">{kontaktH2}</h2>
-        <div class="flex flex-col">
-          <p class="font-body text-small leading-[2] text-cream/92">{kontaktP1}</p>
-          <p class="font-body text-small leading-[2] text-cream/92 mt-[2em]">{kontaktP2}</p>
-        </div>
-        <a href="/kontakt" class="self-start rounded-[17px] bg-beige px-md py-sm font-body text-small font-medium uppercase tracking-[1.5px] text-cream">
-          KONTAKT
-        </a>
-      </div>
     </div>
   </section>
 

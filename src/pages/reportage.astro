@@ -3,18 +3,16 @@ import Base from '../layouts/Base.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import BildPicture from '../components/BildPicture.astro';
+import bilderSpec from '../../spec/bilder.json';
 
 const phone = '+41 79 790 57 01';
 const phoneHref = 'tel:+41797905701';
 const email = 'info@serawild.com';
 
 const anlassTags = [
-  'Firmenjubiläen',
+  'Jubiläen',
   'Mitarbeiteranlässe',
-  'Kongresse und Tagungen',
-  'Preisverleihungen',
-  'Eröffnungen',
-  'Generalversammlungen',
+  'Kongresse',
 ];
 
 const leistungen = [
@@ -23,8 +21,40 @@ const leistungen = [
   { titel: 'Auswahl und Bearbeitung', text: 'Licht, Farbe und Ausschnitt bei jedem einzelnen Bild. Keine Filter von der Stange.' },
   { titel: 'Webgalerie in voller Auflösung', text: 'Passwortgeschützt, teilbar. Ihre Gäste laden ihre Bilder selber herunter.' },
   { titel: 'Nutzungsrechte', text: 'Für Ihre Kommunikation — intern wie extern, zeitlich unbegrenzt.' },
-  { titel: 'Lieferung', text: 'In der Regel innert zwei Wochen. Einzelne Bilder für die Kommunikation auch früher.' },
+  { titel: 'Lieferung', text: 'In der Regel ca. 2 Wochen. Einzelne Bilder für die Kommunikation auch früher.' },
 ];
+
+/**
+ * Collage in Abschnitt 03 — drei Reihen zu drei Bildern, quer und hoch gemischt.
+ *
+ * Rhythmus wie auf den Geschichten-Seiten: Das breite Querbild wandert von Reihe
+ * zu Reihe — links, rechts, Mitte. Nie zweimal an derselben Stelle, sonst kippt
+ * die Collage optisch zur Seite.
+ *
+ * Beschnitten wird nichts: In jeder Reihe bekommt ein Bild den Platz, der seinem
+ * Seitenverhaeltnis entspricht (flex-grow = Verhaeltnis, flex-basis = 0). Dadurch
+ * sind alle drei Bilder einer Reihe exakt gleich hoch, ohne dass eine feste Hoehe
+ * gesetzt werden muesste.
+ */
+const QUER = 1.5;    // 3 : 2 quer
+const HOCH = 0.667;  // 2 : 3 hoch
+
+const collageReihen = [
+  [ { id: 'reportage-galerie-01', quer: true },  { id: 'reportage-galerie-02' },               { id: 'reportage-galerie-03' } ],
+  [ { id: 'reportage-galerie-04' },              { id: 'reportage-galerie-05' },               { id: 'reportage-galerie-06', quer: true } ],
+  [ { id: 'reportage-galerie-07' },              { id: 'reportage-galerie-08', quer: true },   { id: 'reportage-galerie-09' } ],
+];
+const collageAlle = collageReihen.flat();
+
+/**
+ * Sobald ein Bild in bilder.json auf aktiv steht und eine Datei hat, erscheint es
+ * von selbst — bis dahin steht eine beige Flaeche mit dem Dateinamen darin.
+ * Im Code ist dafuer nichts umzustellen.
+ */
+const bildBereit = (id: string): boolean => {
+  const e = (bilderSpec.bilder as any[]).find((b) => b.id === id);
+  return Boolean(e?.aktiv && e?.datei);
+};
 
 const ablaufSchritte = [
   { nr: '1', titel: 'Anfrage', text: 'Datum, Ort, Dauer, Anlass. Ein paar Zeilen genügen.' },
@@ -55,10 +85,10 @@ const ablaufSchritte = [
     <div class="absolute bottom-10 left-6 max-w-[21rem]">
       <p class="font-body text-[0.75rem] font-bold uppercase tracking-[0.15em] text-cream/60 mb-2">EVENT-REPORTAGE</p>
       <h1 class="font-display text-[1.9375rem] leading-[1.3] font-semibold text-cream">
-        «Ich fotografiere, was passiert.»<br />«Nicht, was gestellt ist.»
+        Ich fotografiere, was passiert.
       </h1>
       <p class="font-body text-[1rem] leading-[1.6] text-cream/80 mt-3">
-        Reportagen für Firmenanlässe und private Feste — im Aareland und weit darüber hinaus.
+        Reportagen für Firmenanlässe und private Feste.
       </p>
       <a
         href="/kontakt"
@@ -80,10 +110,10 @@ const ablaufSchritte = [
     <div class="absolute bottom-[10rem] left-6 max-w-[50rem] md:left-[7.5rem]">
       <p class="font-body text-label font-bold uppercase text-cream/60 mb-4">EVENT-REPORTAGE</p>
       <h1 class="font-display text-h1 font-semibold leading-tight text-cream">
-        «Ich fotografiere, was passiert.»<br />«Nicht, was gestellt ist.»
+        Ich fotografiere, was passiert.
       </h1>
       <p class="font-body text-body leading-[1.8] text-cream/80 mt-6 max-w-[36rem]">
-        Reportagen für Firmenanlässe und private Feste — im Aareland und weit darüber hinaus.
+        Reportagen für Firmenanlässe und private Feste.
       </p>
       <a
         href="/kontakt"
@@ -119,13 +149,13 @@ const ablaufSchritte = [
     </div>
     <div class="px-6 mt-[1.5rem] flex flex-col gap-[1.125rem]">
       <p class="font-display text-[1.25rem] font-semibold italic leading-[1.5] text-dark">
-        «Zehn Jahre Fotografie, vier Jahre Eventmanagement — und ein echtes Interesse an Menschen.»
+        Ich fotografiere, weil mich Menschen interessieren.
       </p>
       <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">
-        Ich fotografiere seit zehn Jahren: draussen, an Anlässen und im klassischen Studio. Vier Jahre davon habe ich selber Events organisiert. Ich weiss deshalb, wie so ein Abend von innen aussieht — wo es eng wird, wann der Moment kommt und wann man besser einen Schritt zurücktritt.
+        Ich bin gerne unter Leuten und halte fest, was passiert. Echte Bilder statt gestellte.
       </p>
       <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">
-        Dazu habe ich aus Interesse ein Diplom in Individualpsychologie gemacht. Nicht um zu therapieren, sondern um Menschen besser zu verstehen. Das sieht man den Bildern an.
+        In der Eventlocation AHA in Aarau arbeite ich in der Kommunikation und im Eventmanagement, daneben widme ich mich der Fotografie. Ich kenne einen Anlass also auch von innen — und weiss, wann der Moment kommt und wann man besser einen Schritt zurücktritt. Mein Diplom in Individualpsychologie habe ich aus demselben Grund gemacht: weil mich Menschen interessieren.
       </p>
     </div>
   </section>
@@ -150,13 +180,13 @@ const ablaufSchritte = [
           </div>
           <h2 class="font-display text-h2 font-semibold leading-tight text-dark">Seraina Wild</h2>
           <p class="font-display text-h4 font-semibold italic leading-[1.5] text-dark">
-            «Zehn Jahre Fotografie, vier Jahre Eventmanagement — und ein echtes Interesse an Menschen.»
+            Ich fotografiere, weil mich Menschen interessieren.
           </p>
           <p class="font-body text-body leading-[1.65] text-dark/85">
-            Ich fotografiere seit zehn Jahren: draussen, an Anlässen und im klassischen Studio. Vier Jahre davon habe ich selber Events organisiert. Ich weiss deshalb, wie so ein Abend von innen aussieht — wo es eng wird, wann der Moment kommt und wann man besser einen Schritt zurücktritt.
+            Ich bin gerne unter Leuten und halte fest, was passiert. Echte Bilder statt gestellte.
           </p>
           <p class="font-body text-body leading-[1.65] text-dark/85">
-            Dazu habe ich aus Interesse ein Diplom in Individualpsychologie gemacht. Nicht um zu therapieren, sondern um Menschen besser zu verstehen. Das sieht man den Bildern an.
+            In der Eventlocation AHA in Aarau arbeite ich in der Kommunikation und im Eventmanagement, daneben widme ich mich der Fotografie. Ich kenne einen Anlass also auch von innen — und weiss, wann der Moment kommt und wann man besser einen Schritt zurücktritt. Mein Diplom in Individualpsychologie habe ich aus demselben Grund gemacht: weil mich Menschen interessieren.
           </p>
         </div>
       </div>
@@ -197,72 +227,11 @@ const ablaufSchritte = [
     </div>
   </section>
 
-  <!-- ===== 03 BILDSTRECKE ===== -->
-  <section class="bg-cream-warm py-[52px] md:py-xl">
-    <div class="px-6 md:px-[7.5rem] md:mx-auto md:max-w-inhalt flex flex-col gap-[1.125rem] mb-6">
-      <div class="flex items-center gap-2">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50 md:text-label">03</span>
-        <span class="w-5 h-px bg-dark/50 md:w-8"></span>
-        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50 md:text-label">EIN BLICK</span>
-      </div>
-      <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] font-semibold text-dark">Aus vergangenen Anlässen</h2>
-      <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/60">
-        Wischbare Bildstrecke. Die Auswahl folgt, sobald die Bilder freigegeben sind.
-      </p>
-    </div>
-
-    <!-- Mobile: Wischleiste -->
-    <div class="md:hidden">
-      <div
-        id="galerie-track"
-        class="overflow-x-auto"
-        style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;"
-      >
-        <div class="flex gap-3 px-6" style="width:max-content;">
-          {[1, 2, 3, 4, 5].map((n) => {
-            const label = `reportage-galerie-0${n}`;
-            return (
-              <div
-                class="shrink-0 flex items-center justify-center rounded-lg"
-                style="scroll-snap-align:start;width:16.25rem;height:21.25rem;background:#A0886D;"
-              >
-                <span style="color:#F5F3ED;font-size:0.75rem;opacity:0.45;">{label}</span>
-              </div>
-            );
-          })}
-          <div class="shrink-0 w-3" aria-hidden="true"></div>
-        </div>
-      </div>
-      <div class="flex justify-center gap-[0.5rem] mt-[1.25rem]">
-        {[0, 1, 2, 3, 4].map((i) => (
-          <span
-            class:list={['galerie-dot h-[0.375rem] w-[0.375rem] rounded-full bg-dark transition-opacity', i === 0 ? 'opacity-100' : 'opacity-30']}
-          ></span>
-        ))}
-      </div>
-    </div>
-
-    <!-- Desktop: horizontale Reihe -->
-    <div class="hidden md:flex gap-5 mx-auto max-w-inhalt px-[7.5rem] overflow-x-auto pb-2">
-      {[1, 2, 3, 4, 5].map((n) => {
-        const label = `reportage-galerie-0${n}`;
-        return (
-          <div
-            class="shrink-0 flex items-center justify-center rounded-lg"
-            style="width:18.75rem;height:23.75rem;background:#A0886D;"
-          >
-            <span style="color:#F5F3ED;font-size:0.875rem;opacity:0.45;">{label}</span>
-          </div>
-        );
-      })}
-    </div>
-  </section>
-
-  <!-- ===== 04 ANGEBOT ===== -->
+  <!-- ===== 03 ANGEBOT ===== -->
   <section class="bg-olive py-[52px] md:py-xl">
     <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
       <div class="flex items-center gap-2 mb-5">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50 md:text-label">04</span>
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50 md:text-label">03</span>
         <span class="w-5 h-px bg-cream/50 md:w-8"></span>
         <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50 md:text-label">ANGEBOT</span>
       </div>
@@ -302,37 +271,105 @@ const ablaufSchritte = [
     </div>
   </section>
 
-  <!-- ===== 05 ANLÄSSE ===== -->
+  <!-- ===== 04 WAS ICH FOTOGRAFIERE ===== -->
   <section class="bg-cream-warm py-[52px] md:py-xl">
     <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
       <div class="flex items-center gap-2 mb-5">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50 md:text-label">05</span>
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50 md:text-label">04</span>
         <span class="w-5 h-px bg-dark/50 md:w-8"></span>
-        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50 md:text-label">ANLÄSSE</span>
+        <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50 md:text-label">WAS ICH FOTOGRAFIERE</span>
       </div>
       <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-tight font-semibold text-dark mb-8">
         Wofür ich gebucht werde
       </h2>
-      <div class="flex flex-wrap gap-3 mb-10">
+      <div class="flex flex-wrap gap-3">
         {anlassTags.map((tag) => (
           <span class="inline-block rounded-full border border-beige px-4 py-2 font-body text-[0.9375rem] text-dark">
             {tag}
           </span>
         ))}
       </div>
-      <div class="border-l-[3px] border-rust pl-5">
+      <div class="mt-8 border-l-[3px] border-rust pl-5">
         <p class="font-body text-[1.0625rem] md:text-body leading-[1.8] text-dark/85">
           Und privat? Hochzeiten, runde Geburtstage, Taufen, Familienfeste. Dieselbe Haltung, derselbe Ablauf — nur mit mehr Umarmungen.
         </p>
       </div>
     </div>
+
+    <!-- Collage — Rechner: drei Reihen, das Querbild wandert links / rechts / Mitte -->
+    <div class="hidden md:flex mx-auto max-w-inhalt px-[7.5rem] mt-12 flex-col gap-4">
+      {collageReihen.map((reihe) => (
+        <div class="flex gap-4">
+          {reihe.map((bild) => (
+            <div
+              class="overflow-hidden rounded-[0.25rem]"
+              style={`flex:${bild.quer ? QUER : HOCH} 1 0;aspect-ratio:${bild.quer ? '3 / 2' : '2 / 3'};`}
+            >
+              {bildBereit(bild.id) ? (
+                <BildPicture
+                  id={bild.id}
+                  class="h-full w-full object-cover"
+                  widths={bild.quer ? [660, 1320] : [300, 600]}
+                  sizes={bild.quer ? '41rem' : '18rem'}
+                />
+              ) : (
+                <div class="flex h-full w-full items-center justify-center" style="background:#A0886D;">
+                  <span style="color:#F5F3ED;font-size:0.8125rem;opacity:0.45;">{bild.id}</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <!-- Collage — Handy: wischbare Leiste, gleiche Reihenfolge, gleiche Hoehe -->
+    <div class="md:hidden mt-8">
+      <div
+        id="galerie-track"
+        class="overflow-x-auto"
+        style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;"
+      >
+        <div class="flex gap-3 px-6" style="width:max-content;">
+          {collageAlle.map((bild) => (
+            <div
+              class="shrink-0 overflow-hidden rounded-[0.25rem]"
+              style={`scroll-snap-align:start;height:21.25rem;width:${bild.quer ? '31.875rem' : '14.1875rem'};`}
+            >
+              {bildBereit(bild.id) ? (
+                <BildPicture
+                  id={bild.id}
+                  class="h-full w-full object-cover"
+                  mobil={true}
+                  widths={bild.quer ? [510, 1020] : [227, 454]}
+                  sizes={bild.quer ? '510px' : '227px'}
+                />
+              ) : (
+                <div class="flex h-full w-full items-center justify-center" style="background:#A0886D;">
+                  <span style="color:#F5F3ED;font-size:0.75rem;opacity:0.45;">{bild.id}</span>
+                </div>
+              )}
+            </div>
+          ))}
+          <div class="shrink-0 w-3" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="flex justify-center gap-[0.5rem] mt-[1.25rem]">
+        {collageAlle.map((_, i) => (
+          <span
+            class:list={['galerie-dot h-[0.375rem] w-[0.375rem] rounded-full bg-dark transition-opacity', i === 0 ? 'opacity-100' : 'opacity-30']}
+          ></span>
+        ))}
+      </div>
+    </div>
+
   </section>
 
-  <!-- ===== 06 ABLAUF ===== -->
+  <!-- ===== 05 ABLAUF ===== -->
   <section class="bg-dark py-[52px] md:py-xl">
     <div class="mx-auto max-w-inhalt px-6 md:px-[7.5rem]">
       <div class="flex items-center gap-2 mb-5">
-        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50 md:text-label">06</span>
+        <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50 md:text-label">05</span>
         <span class="w-5 h-px bg-cream/50 md:w-8"></span>
         <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50 md:text-label">ABLAUF</span>
       </div>
@@ -357,17 +394,17 @@ const ablaufSchritte = [
   <section class="bg-rust py-[52px] md:py-xl text-center">
     <div class="mx-auto max-w-inhalt px-6 md:px-[15rem]">
       <p class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-normal font-semibold text-cream">
-        «Die besten Bilder entstehen, wenn jemand kurz vergisst, dass ich da bin.»
+        Die besten Bilder entstehen, wenn jemand kurz vergisst, dass ich da bin.
       </p>
     </div>
   </section>
 
-  <!-- ===== 07 KONTAKT ===== -->
+  <!-- ===== 06 KONTAKT ===== -->
 
   <!-- Mobile -->
   <section class="md:hidden bg-cream-warm py-[52px] px-6">
     <div class="flex items-center gap-2 mb-5">
-      <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">07</span>
+      <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50">06</span>
       <span class="w-5 h-px bg-dark/50"></span>
       <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50">KONTAKT</span>
     </div>
@@ -404,7 +441,7 @@ const ablaufSchritte = [
       <div class="flex gap-[5rem] items-start">
         <div class="flex-1 flex flex-col gap-6">
           <div class="flex items-center gap-2">
-            <span class="font-body text-label font-bold uppercase text-dark/50">07</span>
+            <span class="font-body text-label font-bold uppercase text-dark/50">06</span>
             <span class="w-8 h-px bg-dark/50"></span>
             <span class="font-body text-label uppercase text-dark/50">KONTAKT</span>
           </div>
@@ -448,9 +485,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('galerie-track') as HTMLElement | null;
   const dots = Array.from(document.querySelectorAll<HTMLElement>('.galerie-dot'));
   if (!track || !dots.length) return;
+  // Die Karten sind unterschiedlich breit (quer und hoch gemischt), darum wird
+  // die naechstgelegene Kartenkante gesucht statt mit einer festen Breite gerechnet.
+  const karten = Array.from(track.querySelectorAll<HTMLElement>(':scope > div > div'));
   track.addEventListener('scroll', () => {
-    const cardWidth = 260 + 12;
-    const idx = Math.min(Math.round(track.scrollLeft / cardWidth), dots.length - 1);
+    let idx = 0;
+    let beste = Infinity;
+    karten.forEach((k, i) => {
+      const abstand = Math.abs(k.offsetLeft - track.scrollLeft - 24);
+      if (abstand < beste && i < dots.length) { beste = abstand; idx = i; }
+    });
     dots.forEach((d, i) => {
       d.classList.toggle('opacity-100', i === idx);
       d.classList.toggle('opacity-30', i !== idx);

@@ -224,7 +224,7 @@
       },
       "verhaeltnis": "1 : 1",
       "ausrichtung": "quadratisch",
-      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+      "alt": "Porträt von Patricia im blauen Oberteil, lachend, an eine alte Holzwand gelehnt",
       "aktiv": true,
       "datei": "src/assets/images/Quadrat/referenz-patricia.jpg",
       "dateiMasse": {
@@ -2314,77 +2314,146 @@
     {
       "id": "reportage-galerie-01",
       "figmaEbene": "",
-      "baustein": "Bildstrecke Reportage",
+      "baustein": "Collage Reportage",
       "seite": "Reportage",
       "anzeige": {
-        "breite": 300,
-        "hoehe": 380
+        "breite": 660,
+        "hoehe": 440
       },
-      "verhaeltnis": "300 : 380",
-      "ausrichtung": "hoch",
+      "verhaeltnis": "3 : 2",
+      "ausrichtung": "quer",
       "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
       "aktiv": false,
-      "datei": null
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 1. Querformat 3:2, mindestens 1320 × 880."
     },
     {
       "id": "reportage-galerie-02",
       "figmaEbene": "",
-      "baustein": "Bildstrecke Reportage",
+      "baustein": "Collage Reportage",
       "seite": "Reportage",
       "anzeige": {
         "breite": 300,
-        "hoehe": 380
+        "hoehe": 450
       },
-      "verhaeltnis": "300 : 380",
+      "verhaeltnis": "2 : 3",
       "ausrichtung": "hoch",
       "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
       "aktiv": false,
-      "datei": null
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 1. Hochformat 2:3, mindestens 600 × 900."
     },
     {
       "id": "reportage-galerie-03",
       "figmaEbene": "",
-      "baustein": "Bildstrecke Reportage",
+      "baustein": "Collage Reportage",
       "seite": "Reportage",
       "anzeige": {
         "breite": 300,
-        "hoehe": 380
+        "hoehe": 450
       },
-      "verhaeltnis": "300 : 380",
+      "verhaeltnis": "2 : 3",
       "ausrichtung": "hoch",
       "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
       "aktiv": false,
-      "datei": null
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 1. Hochformat 2:3, mindestens 600 × 900."
     },
     {
       "id": "reportage-galerie-04",
       "figmaEbene": "",
-      "baustein": "Bildstrecke Reportage",
+      "baustein": "Collage Reportage",
       "seite": "Reportage",
       "anzeige": {
         "breite": 300,
-        "hoehe": 380
+        "hoehe": 450
       },
-      "verhaeltnis": "300 : 380",
+      "verhaeltnis": "2 : 3",
       "ausrichtung": "hoch",
       "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
       "aktiv": false,
-      "datei": null
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 2. Hochformat 2:3, mindestens 600 × 900."
     },
     {
       "id": "reportage-galerie-05",
       "figmaEbene": "",
-      "baustein": "Bildstrecke Reportage",
+      "baustein": "Collage Reportage",
       "seite": "Reportage",
       "anzeige": {
         "breite": 300,
-        "hoehe": 380
+        "hoehe": 450
       },
-      "verhaeltnis": "300 : 380",
+      "verhaeltnis": "2 : 3",
       "ausrichtung": "hoch",
       "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
       "aktiv": false,
-      "datei": null
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 2. Hochformat 2:3, mindestens 600 × 900."
+    },
+    {
+      "id": "reportage-galerie-06",
+      "figmaEbene": "",
+      "baustein": "Collage Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 660,
+        "hoehe": 440
+      },
+      "verhaeltnis": "3 : 2",
+      "ausrichtung": "quer",
+      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+      "aktiv": false,
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 2. Querformat 3:2, mindestens 1320 × 880."
+    },
+    {
+      "id": "reportage-galerie-07",
+      "figmaEbene": "",
+      "baustein": "Collage Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 300,
+        "hoehe": 450
+      },
+      "verhaeltnis": "2 : 3",
+      "ausrichtung": "hoch",
+      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+      "aktiv": false,
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 3. Hochformat 2:3, mindestens 600 × 900."
+    },
+    {
+      "id": "reportage-galerie-08",
+      "figmaEbene": "",
+      "baustein": "Collage Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 660,
+        "hoehe": 440
+      },
+      "verhaeltnis": "3 : 2",
+      "ausrichtung": "quer",
+      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+      "aktiv": false,
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 3. Querformat 3:2, mindestens 1320 × 880."
+    },
+    {
+      "id": "reportage-galerie-09",
+      "figmaEbene": "",
+      "baustein": "Collage Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 300,
+        "hoehe": 450
+      },
+      "verhaeltnis": "2 : 3",
+      "ausrichtung": "hoch",
+      "alt": "ALT-Text fehlt noch — bitte vor dem Livegang ergänzen.",
+      "aktiv": false,
+      "datei": null,
+      "hinweis": "Collage Abschnitt 04, Reihe 3. Hochformat 2:3, mindestens 600 × 900."
     },
     {
       "id": "reportage-kontakt",
