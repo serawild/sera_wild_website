@@ -1,0 +1,209 @@
+---
+/**
+ * W-Gutschein — eigene Seite unter «Angebot».
+ *
+ * Verkaufsseite für die Gutscheine. Die Pakete stehen hier bewusst noch einmal,
+ * damit man die Seite verschicken kann, ohne vorher auf W-Momänt gewesen zu sein.
+ * Preise und Inhalte müssen mit `w-momaent.astro` und `w-erlaebnis.astro`
+ * übereinstimmen — ändern sich die dort, auch hier nachziehen.
+ *
+ * Ausgestellt werden die Gutscheine mit dem kleinen Programm in `~/gutscheine`.
+ */
+import Base from '../layouts/Base.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import BildPicture from '../components/BildPicture.astro';
+import DekoIllustration from '../components/DekoIllustration.astro';
+
+const introH2 = 'Verschenk keinen Gegenstand. Verschenk eine Begegnung.';
+const introP1 = 'Ein Gutschein von sera Wild ist eine Einladung: sich Zeit zu nehmen, sich zu zeigen und mit Bildern nach Hause zu gehen, auf denen man sich wiedererkennt.';
+const introP2 = 'Du wählst das Paket oder den Betrag, ich stelle den Gutschein aus — gedruckt oder als PDF, bereit zum Verschenken.';
+
+const gutscheine = [
+  { buchstabe: 'S', name: 'Kennenlern-Shooting', dauer: '15 Min | 1 Hintergrund',    bilder: '3 Bilder inkl. Bearbeitung', preis: 'CHF 149' },
+  { buchstabe: 'M', name: "Probier's aus!",      dauer: '30 Min | 1-2 Hintergründe', bilder: '5 Bilder inkl. Bearbeitung', preis: 'CHF 290' },
+  { buchstabe: 'L', name: 'Tob dich aus!',       dauer: '45-60 Min | 2-3 Hintergründe', bilder: '8 Bilder inkl. Bearbeitung', preis: 'CHF 390' },
+];
+
+const schritte = [
+  { nr: '1', titel: 'Du schreibst mir',   text: 'Welches Paket oder welcher Betrag, für wen, und bis wann du ihn brauchst.' },
+  { nr: '2', titel: 'Ich stelle ihn aus', text: 'Du bekommst ihn als PDF zum Ausdrucken oder gedruckt auf festem Papier, A5.' },
+  { nr: '3', titel: 'Ihr meldet euch',    text: 'Die beschenkte Person meldet sich mit dem Code, und wir suchen einen Termin.' },
+];
+---
+
+<Base
+  title="W-Gutschein — sera Wild"
+  description="Fotografie verschenken: Gutscheine für das W-Momänt und das W-Erläbnis, oder ein freier Betrag. Ohne Ablaufdatum, eingelöst wird, wann es passt."
+>
+
+  <!-- Die Titelleiste ist dunkelgrün, darum die helle Navigation wie auf allen
+       anderen Seiten mit dunklem Kopf. -->
+  <Navigation farbe="hell" />
+
+  <!-- ===== TITELLEISTE =====
+       Kein Foto, sondern eine grosse Mohnblume in Creme auf dem Dunkelgrün. Sie ragt
+       von rechts herein und wird am Rand beschnitten — dasselbe Motiv wie auf den
+       anderen Seiten, nur hier als Flaeche statt als zarter Akzent. -->
+  <section class="relative isolate overflow-hidden bg-dark px-6 md:px-[7.5rem] pb-[3.5rem] md:pb-[6rem] pt-[7rem] md:pt-[15rem]">
+    {/* Mittig gesetzt: Der Rahmen ist genau so breit wie der gedrehte Begrenzungs-
+        rahmen des Zweigs (591 px bei breite 360) und steht
+        mit left-1/2 und -translate-x-1/2 in der Mitte. Darin sitzt die Blume mit
+        abstand 0 — er bleibt also auf jeder Bildschirmbreite zentriert.
+
+        Er beginnt bewusst erst unterhalb der Navigation und wird unten am
+        Abschnittsrand abgeschnitten (overflow-hidden auf der Section). Weiter oben
+        lief der Stiel durch die Menüzeile.
+
+        Motiv Eukalyptus, nicht Mohn: Die Tulpe steht schon im Abschnitt «Bereit zum
+        Verschenken», und der Mohn trägt bereits Startseite, W-Erläbnis und Netzwerk. */}
+    <div class="pointer-events-none absolute inset-y-0 left-1/2 hidden w-[36.9375rem] -translate-x-1/2 md:block">
+      <DekoIllustration motiv="eukalyptus" farbe="#F5F3ED" breite={360} cssRotate={-28} top={120} seite="links" abstand={0} deckkraft={0.16} />
+    </div>
+    {/* Auf dem Handy steht der Zweig rechts statt mittig: In der Mitte liegt dort
+        der Titel, und hinter Text wirkt er unruhig. Er beginnt unterhalb der
+        Navigation und wird unten abgeschnitten. */}
+    <DekoIllustration motiv="eukalyptus" farbe="#F5F3ED" breite={130} cssRotate={-28} obenAbAnkerAnteil={0.28} seite="rechts" abstand={-35} mobil={true} deckkraft={0.16} />
+    <div class="relative mx-auto max-w-inhalt">
+      <p class="font-body text-[0.75rem] md:text-label font-bold uppercase tracking-[0.15em] text-cream/60 mb-3 md:mb-4">GUTSCHEIN</p>
+      <h1 class="font-display text-[2rem] md:text-h1 font-semibold leading-[1.2] md:leading-normal text-cream">W-Gutschein</h1>
+      <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.8] text-cream/80 mt-4 md:mt-6 max-w-[40rem]">
+        Zeit statt Ding. Ohne Ablaufdatum, eingelöst wird, wann es passt.
+      </p>
+    </div>
+  </section>
+
+  <div class="relative isolate">
+
+  <!-- ===== 01 WARUM ===== -->
+  <section class="relative isolate overflow-visible bg-cream-warm px-6 py-12 md:px-[7.5rem] md:py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] md:flex-row md:items-center">
+
+      <div class="flex flex-col gap-[1.125rem] md:flex-1 md:gap-6">
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50 md:text-label">01</span>
+          <span class="w-5 h-px bg-dark/50 md:w-8"></span>
+          <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50 md:text-label">WARUM EIN GUTSCHEIN</span>
+        </div>
+        <h2 class="font-display text-[1.6875rem] md:text-h2 font-semibold leading-[1.28] md:leading-normal md:-ml-sm">
+          {introH2}
+        </h2>
+        <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.65]">{introP1}</p>
+        <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.65]">{introP2}</p>
+      </div>
+
+      <div class="w-full shrink-0 overflow-hidden rounded-[0.25rem] md:w-[35rem]">
+        <BildPicture
+          id="gutschein-vorschau"
+          class="h-full w-full object-cover"
+          widths={[560, 1120]}
+          sizes="(max-width: 767px) 100vw, 35rem"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 DIE GUTSCHEINE ===== -->
+  <section class="bg-dark px-6 py-12 md:px-[7.5rem] md:py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[1.75rem] md:gap-[3rem]">
+      <div class="flex flex-col gap-[1.125rem] md:gap-5">
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-cream/50 md:text-label">02</span>
+          <span class="w-5 h-px bg-cream/50 md:w-8"></span>
+          <span class="font-body text-xs uppercase tracking-[0.08em] text-cream/50 md:text-label">ZUR AUSWAHL</span>
+        </div>
+        <h2 class="font-display text-[1.6875rem] md:text-h2 font-semibold leading-[1.28] md:leading-normal text-cream md:-ml-sm">
+          W-Momänt in drei Grössen
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-[1rem] md:flex-row md:gap-[1.5rem]">
+        {gutscheine.map(g => (
+          <div class="flex flex-1 flex-col items-center gap-[0.5rem] rounded-[0.5rem] bg-cream px-6 py-8 text-center md:gap-[0.75rem] md:py-10">
+            <p class="font-display text-[3.5rem] font-semibold leading-none md:text-[4.5rem]" style="color:#b08257">{g.buchstabe}</p>
+            <p class="font-display text-[1.25rem] font-semibold leading-[1.3] md:text-[1.5rem]">{g.name}</p>
+            <span class="my-[0.5rem] h-px w-12 bg-beige" aria-hidden="true"></span>
+            <p class="font-body text-[1rem] leading-[1.65] md:text-body-klein">{g.dauer}</p>
+            <p class="font-body text-[1rem] leading-[1.65] md:text-body-klein">{g.bilder}</p>
+            <p class="mt-[0.5rem] font-display text-[2rem] font-semibold leading-[1.3] md:text-[2.25rem]">{g.preis}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-col gap-[1rem] md:flex-row md:gap-[1.5rem]">
+        <div class="flex flex-1 flex-col gap-[0.75rem] rounded-[0.5rem] bg-olive px-6 py-8 md:px-[2.5rem] md:py-10">
+          <p class="font-display text-[1.25rem] font-semibold md:text-h3 text-cream">Das ganze W-Erläbnis</p>
+          <p class="font-body text-[1rem] leading-[1.68] md:text-body-klein md:leading-[1.7] text-cream/85">
+            Zwei bis drei Stunden an einem Ort, der zu dir gehört. Mindestens 40 Bilder, die Favoriten gedruckt in einer Leinenschachtel.
+          </p>
+          <p class="mt-[0.5rem] font-display text-[1.75rem] font-semibold md:text-[2rem] text-cream">CHF 950</p>
+        </div>
+
+        <div class="flex flex-1 flex-col gap-[0.75rem] rounded-[0.5rem] bg-rust px-6 py-8 md:px-[2.5rem] md:py-10">
+          <p class="font-display text-[1.25rem] font-semibold md:text-h3 text-cream">Ein freier Betrag</p>
+          <p class="font-body text-[1rem] leading-[1.68] md:text-body-klein md:leading-[1.7] text-cream/85">
+            Du bestimmst die Summe, sie wird an jedes Shooting angerechnet. Bleibt etwas übrig, bleibt es bestehen.
+          </p>
+          <p class="mt-[0.5rem] font-display text-[1.75rem] font-semibold md:text-[2rem] text-cream">Nach Wunsch</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 SO GEHT ES ===== -->
+  <section class="bg-cream-warm px-6 py-12 md:px-[7.5rem] md:py-xl">
+    <div class="mx-auto flex max-w-inhalt flex-col gap-[1.75rem] md:gap-[3rem]">
+      <div class="flex flex-col gap-[1.125rem] md:gap-5">
+        <div class="flex items-center gap-2">
+          <span class="font-body text-xs font-bold uppercase tracking-[0.08em] text-dark/50 md:text-label">03</span>
+          <span class="w-5 h-px bg-dark/50 md:w-8"></span>
+          <span class="font-body text-xs uppercase tracking-[0.08em] text-dark/50 md:text-label">SO GEHT ES</span>
+        </div>
+        <h2 class="font-display text-[1.6875rem] md:text-h2 font-semibold leading-[1.28] md:leading-normal md:-ml-sm">
+          In drei Schritten verschenkt
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-[2rem] md:flex-row md:gap-[2.5rem]">
+        {schritte.map(s => (
+          <div class="flex flex-1 flex-col gap-[0.75rem]">
+            <span class="flex h-[2.75rem] w-[2.75rem] items-center justify-center rounded-full bg-rust font-display text-[1.25rem] font-semibold text-cream">
+              {s.nr}
+            </span>
+            <p class="font-display text-[1.25rem] font-semibold leading-[1.3] md:text-[1.5rem]">{s.titel}</p>
+            <p class="font-body text-[1.0625rem] leading-[1.68] md:text-body-klein md:leading-[1.7]">{s.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="border-l-[3px] border-rust pl-5">
+        <p class="font-body text-[1.0625rem] md:text-body leading-[1.8]">
+          Der Gutschein hat kein Ablaufdatum. In der Schweiz verjähren Gutscheine erst nach zehn Jahren — es muss also niemand hetzen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 BESTELLEN ===== -->
+  <section class="relative isolate overflow-visible bg-rust px-6 py-12 md:px-[7.5rem] md:py-xl">
+    <DekoIllustration motiv="tulpe" farbe="#BC541F" breite={181} cssRotate={22.1} top={-80} seite="links" abstand={-62} />
+    <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[1.5rem] text-center md:gap-[2rem]">
+      <h2 class="font-display text-[1.6875rem] md:text-h2 font-semibold leading-[1.28] md:leading-normal text-cream">
+        Bereit zum Verschenken?
+      </h2>
+      <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.8] text-cream/85 max-w-[44rem]">
+        Schreib mir, welches Paket und für wen. Brauchst du ihn eilig, sag es dazu — dann geht er wenn möglich noch am selben Tag raus.
+      </p>
+      <a
+        href="/kontakt"
+        class="inline-flex items-center justify-center rounded-[8px] bg-cream px-7 py-[0.9375rem] font-body text-[0.875rem] uppercase tracking-[0.088em] text-dark transition-colors hover:bg-cream-warm md:rounded-[1.0625rem] md:px-md md:py-sm md:text-cta"
+      >
+        Gutschein bestellen
+      </a>
+    </div>
+  </section>
+
+  </div>
+
+  <Footer />
+</Base>

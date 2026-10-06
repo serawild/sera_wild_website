@@ -13,6 +13,7 @@ const seiten: { pfad: string; prioritaet: string }[] = [
   { pfad: '/', prioritaet: '1.0' },
   { pfad: '/w-erlaebnis', prioritaet: '0.9' },
   { pfad: '/w-momaent', prioritaet: '0.8' },
+  { pfad: '/w-gutschein', prioritaet: '0.7' },
   { pfad: '/geschichten', prioritaet: '0.8' },
   { pfad: '/geschichten/sara', prioritaet: '0.7' },
   { pfad: '/geschichten/simona', prioritaet: '0.7' },

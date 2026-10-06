@@ -18,10 +18,15 @@ Betroffene Abschnitte:
 | w-erlaebnis | «Du bist hier richtig wenn,» — Abschlusssatz | `2253:430` |
 | index | Hero — **neue** Unterzeile unter der Headline | `2251:342` |
 | index | Haltung — Satz am Ende von `haltungText` | — |
-| index | Geschichten gespiegelt — H2 und Absatz | `2310:971` |
 | index | Meta-Beschreibung | — |
-| ueber | Mein Weg — **neuer** Absatz `meinWegP2` | `2246:273` |
 | index · ueber · w-netzwerk · bausteine | Kontakt-Teaser: «zu sich zurückfinden» | — |
+
+**Startseite, Abschnitt «Über mich» (gespiegelt): zurückgesetzt (Entscheid
+Seraina, 06.10.2026).** Der Vorschlag «Ich kenne das Studio. Und weiss, was dort
+fehlt.» mit dem neuen Absatz gefiel ihr nicht. Dort stehen weiter die
+ursprüngliche Überschrift «Wenn du etwas willst, das du noch nie hattest …» und
+die zwei Zeilen «Ich bin Seraina und ich begleite dich / hinter der Kamera …».
+Beim Nachführen in Figma diese Stelle **nicht** ändern.
 
 **Hero W-Erläbnis: alte Zeilen behalten (Entscheid Seraina, 06.10.2026).** Der
 neue Untertitel «Nur du. In echt. / Kein Studio, keine Posen. Du an einem Ort,
@@ -78,21 +83,22 @@ statt fünf. Die Collage steht neu hinter dem Angebot: 03 ist das Angebot, 04 di
 Collage, danach 05 Ablauf und 06 Kontakt. Der Hinweissatz «Die Auswahl folgt, sobald die Bilder
 freigegeben sind.» ist damit weg und muss nicht mehr ersetzt werden.
 
-- **hero-reportage** – Bild fehlt. Platzhalter Beige. Datei und ALT-Text in bilder.json eintragen, aktiv auf true setzen.
-- **reportage-galerie-01 bis -09** – Alle neun Bilder fehlen (Collage in Sektion 04).
-  Drei davon quer, sechs hoch — die Zuordnung steht im Feld `hinweis` je Eintrag:
+**Stand 06.10.2026:** Hero und Bildstreifen sind bestückt. Aus 21 abgelegten Fotos
+wurden elf gewählt — eines als Hero, zehn für den Streifen, abwechselnd hoch und
+quer. Die übrigen zehn liegen in `~/sera-bilder-originale/reportage-auswahl/`.
 
-  | Reihe | links | Mitte | rechts |
-  |---|---|---|---|
-  | 1 | **-01 quer** | -02 hoch | -03 hoch |
-  | 2 | -04 hoch | -05 hoch | **-06 quer** |
-  | 3 | -07 hoch | **-08 quer** | -09 hoch |
+Aus der 3×3-Collage wurde ein einzelner Streifen zum Wischen: Alle Bilder sind
+gleich hoch, die Breite folgt dem Seitenverhältnis. Das Querbild ist dadurch gut
+doppelt so breit wie ein Hochformat, und beschnitten wird nichts. Der Streifen
+verträgt jede Mischung — bei Seraina sind es mehr Quer- als Hochformate.
 
-  Querbilder 3:2, mindestens 1320 × 880. Hochbilder 2:3, mindestens 600 × 900.
-  Beschnitten wird nichts — jedes Bild bekommt den Platz, der seinem Verhältnis
-  entspricht. Liegt ein Bild in einem anderen Verhältnis vor, stimmt die Reihe
-  trotzdem, nur wird sie etwas höher oder flacher.
-- **reportage-kontakt** – Bild fehlt (Sektion 06, rechts). Verhältnis 4:5. Datei und ALT-Text in bilder.json eintragen, aktiv auf true setzen.
+- **hero-reportage mobil** – Es gibt keine Hochformat-Fassung. Mobil wird das
+  Querbild (2500 × 1664) per `object-fit: cover` auf 390 × 700 beschnitten, also
+  stark seitlich. Die Sängerin sitzt mittig, das überlebt den Schnitt; wer es
+  genauer will, exportiert `hero-reportage-hoch.jpg` im Verhältnis 3 : 4 und trägt
+  `dateiMobil` in `bilder.json` nach.
+- **reportage-kontakt** – Bild fehlt weiterhin (Sektion 06, rechts). Verhältnis 4:5,
+  mindestens 960 × 1200. Bis dahin steht dort die beige Platzhalterfläche.
 - **Logo Secondary** – Hero und Seite sollen die Fassung ohne Untertitel («Secondary White.svg» / «Secondary Dark.svg») verwenden. Derzeit zeigt Navigation das Primärlogo. Entweder Navigation einen optionalen Logo-Prop geben oder für diese Seite eine eigene Kopfzeile ohne Navigation.astro bauen.
 
 ## Werbung für Kundinnen auf den Geschichten-Seiten
