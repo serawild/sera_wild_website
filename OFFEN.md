@@ -92,11 +92,10 @@ gleich hoch, die Breite folgt dem Seitenverhältnis. Das Querbild ist dadurch gu
 doppelt so breit wie ein Hochformat, und beschnitten wird nichts. Der Streifen
 verträgt jede Mischung — bei Seraina sind es mehr Quer- als Hochformate.
 
-- **hero-reportage mobil** – Es gibt keine Hochformat-Fassung. Mobil wird das
-  Querbild (2500 × 1664) per `object-fit: cover` auf 390 × 700 beschnitten, also
-  stark seitlich. Die Sängerin sitzt mittig, das überlebt den Schnitt; wer es
-  genauer will, exportiert `hero-reportage-hoch.jpg` im Verhältnis 3 : 4 und trägt
-  `dateiMobil` in `bilder.json` nach.
+- **hero-reportage mobil** – erledigt ohne eigene Datei: Das Querbild wird auf dem
+  Handy per `object-fit: cover` beschnitten, der Ausschnitt ist mit
+  `object-[69%_center]` nach rechts geschoben. Damit liegt die Sängerin in der Mitte
+  des Ausschnitts. Eine `-hoch`-Fassung braucht es nicht mehr.
 - **reportage-kontakt** – Bild fehlt weiterhin (Sektion 06, rechts). Verhältnis 4:5,
   mindestens 960 × 1200. Bis dahin steht dort die beige Platzhalterfläche.
 - **Logo Secondary** – Hero und Seite sollen die Fassung ohne Untertitel («Secondary White.svg» / «Secondary Dark.svg») verwenden. Derzeit zeigt Navigation das Primärlogo. Entweder Navigation einen optionalen Logo-Prop geben oder für diese Seite eine eigene Kopfzeile ohne Navigation.astro bauen.

@@ -76,9 +76,12 @@ const ablaufSchritte = [
 
   <!-- Mobile -->
   <section class="relative md:hidden h-[43.75rem] overflow-hidden bg-olive">
+    {/* Ausschnitt nach rechts geschoben: Das Querbild wird auf dem Handy auf 3:4
+        beschnitten, mittig wuerde die Saengerin halb wegfallen. Bei 69 % liegt sie
+        in der Mitte des Ausschnitts. Darum braucht es keine eigene Hochformat-Datei. */}
     <BildPicture
       id="hero-reportage"
-      class="absolute inset-0 h-full w-full object-cover"
+      class="absolute inset-0 h-full w-full object-cover object-[69%_center]"
       mobil={true}
       loading="eager"
       fetchpriority="high"
