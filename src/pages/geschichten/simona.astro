@@ -6,6 +6,7 @@ import BildPicture from '../../components/BildPicture.astro';
 import bilderRaw from '../../../spec/bilder.json';
 import DekoIllustration from '../../components/DekoIllustration.astro';
 import FotoStory from '../../components/FotoStory.astro';
+import type { ImageMetadata } from 'astro';
 
 const heroH1       = 'Die Geschichte von Simona';
 const heroSubtitel = '«Der Prozess war für mich mindestens so wertvoll wie das Ergebnis.»';
@@ -27,9 +28,15 @@ const collageFotospots = 'Mit folgenden Fotospots: Aeschbachhalle Aarau - Bahnho
 
 const zitatText = 'Du musst dich nicht verändern, um fotografiert zu werden. Du musst dich nur zeigen dürfen.';
 
+// Seitenverhältnis für die mobile Wischleiste: Gibt es eine dateiMobil
+// (z. B. ein Hochformat-Zuschnitt), zählt deren echtes Format, sonst die Anzeige-Masse.
+const bildDateien = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/**/*.jpg', { eager: true });
 const bildVerhaeltnis: Record<string, number> = Object.fromEntries(
-  (bilderRaw.bilder as Array<{id: string; anzeige: {breite: number; hoehe: number}}>)
-    .map(b => [b.id, b.anzeige.breite / b.anzeige.hoehe])
+  (bilderRaw.bilder as Array<{id: string; dateiMobil?: string | null; anzeige: {breite: number; hoehe: number}}>)
+    .map(b => {
+      const mobil = b.dateiMobil ? bildDateien[`/${b.dateiMobil}`]?.default : undefined;
+      return [b.id, mobil ? mobil.width / mobil.height : b.anzeige.breite / b.anzeige.hoehe];
+    })
 );
 
 const collageIds = Array.from({length: 14}, (_, i) => `simona-collage-${String(i + 1).padStart(2, '0')}`);
