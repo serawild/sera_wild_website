@@ -1427,14 +1427,14 @@
       },
       "verhaeltnis": "0.76 : 1",
       "ausrichtung": "hoch",
-      "alt": "Seraina Wild mit Brille im dunkelgrünen Blazer, Wald im Hintergrund",
+      "alt": "Seraina Wild mit Brille schaut lächelnd durch ihre Kamera, dunkler Hintergrund",
       "aktiv": true,
-      "datei": "src/assets/images/Galerie_4-5/ueber-geschichte.jpg",
+      "datei": "src/assets/images/Galerie_4-5/ueber-geschichte-kamera.jpg",
       "dateiMasse": {
-        "breite": 1280,
-        "hoehe": 1600
+        "breite": 1007,
+        "hoehe": 1331
       },
-      "deckungsfaktor": 2.16
+      "deckungsfaktor": 1.8
     },
     {
       "id": "ueber-geschichte-mobil",
