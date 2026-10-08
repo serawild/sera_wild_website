@@ -1437,6 +1437,25 @@
       "deckungsfaktor": 2.16
     },
     {
+      "id": "ueber-geschichte-mobil",
+      "figmaEbene": "ueber-geschichte-hoch.jpg",
+      "baustein": "Geschichte Seraina",
+      "seite": "Über",
+      "anzeige": {
+        "breite": 560,
+        "hoehe": 740
+      },
+      "verhaeltnis": "0.76 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Seraina Wild mit Brille im dunkelgrünen Blazer hält lachend ihre Kamera hoch, Holzkisten im Hintergrund",
+      "aktiv": true,
+      "datei": "src/assets/images/Galerie_4-5/ueber-geschichte-hoch.jpg",
+      "dateiMasse": {
+        "breite": 1007,
+        "hoehe": 1331
+      }
+    },
+    {
       "id": "ueber-geschichte-unten-01",
       "figmaEbene": "ueber-geschichte-unten-01.jpg",
       "baustein": "Geschichte Seraina unten",
