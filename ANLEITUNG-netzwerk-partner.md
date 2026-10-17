@@ -29,6 +29,8 @@ Alle Inhalte stehen in `spec/seiten/netzwerk.json` → Abschnitt `partner` → `
 
 ### 3. Foto ablegen
 - Datei: `src/assets/images/Galerie_3-2/netzwerk-<kurzname>.jpg` — Name ist verbindlich.
+- **Grösse prüfen:** grösser als 2400 px Breite (z. B. Kamera-Original) → auf 2400 × 1600
+  verkleinern, JPG Qualität 85. Original nach `_to_delete/`. Ziel: unter 1 MB.
 - Eintrag in `spec/bilder.json` nach dem Muster der bestehenden `netzwerk-*`-Einträge:
   `figmaEbene`, `baustein: "Netzwerk-Eintrag"`, `seite: "Netzwerk"`, Anzeige 700 × 500,
   `verhaeltnis: "7 : 5"`, `aktiv: true`, `datei` mit dem Pfad oben.

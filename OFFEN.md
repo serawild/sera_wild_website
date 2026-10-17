@@ -559,3 +559,10 @@ plus 160 px Vorlauf für das W. Zur Kontrolle dieselbe Messung für «Momänt» 
 gegen Figmas 539) und «Erläbnis» (536 gegen 532) — die Abweichung von 2 bis 4 px
 stammt aus dem Kerning und ist im Satz nicht zu sehen. Werte in
 `src/components/Wortmarke.astro` → `REF`.
+
+## Netzwerk: Esmeralda-Foto ersetzt (17.10.2026)
+
+Neues Motiv: Teamfoto statt Empfangsbereich. Datei `Galerie_3-2/netzwerk-esmeralda.jpg`,
+ALT-Text angepasst. Altes Bild liegt in `_to_delete/netzwerk-esmeralda-alt-empfang.jpg`.
+Seraina hat danach das Original (5992 × 3995, 26 MB) abgelegt. Auf 2400 × 1600 verkleinert
+wie die anderen Partnerfotos. Original in `_to_delete/netzwerk-esmeralda-original-6000px.jpg`.
