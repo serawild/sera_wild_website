@@ -49,6 +49,29 @@ const andereSprache = sprache === 'de' ? 'en' : 'de';
 const uebersetzungUrl = uebersetzung
   ? new URL(uebersetzung, 'https://serawild.com').href
   : undefined;
+
+// Strukturierte Daten für Google: verknüpft Website, Firma und Instagram-Konto (sameAs).
+const strukturierteDaten = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://serawild.com/#firma',
+  name: 'sera Wild',
+  description: 'Prozessorientierte Porträt- und Reportagefotografie im Aareland.',
+  url: 'https://serawild.com/',
+  image: 'https://serawild.com/og-default.jpg',
+  telephone: '+41 79 790 57 01',
+  email: 'info@serawild.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Pfarrmattstrasse 9',
+    postalCode: '5014',
+    addressLocality: 'Gretzenbach',
+    addressCountry: 'CH',
+  },
+  areaServed: 'Aareland',
+  founder: { '@type': 'Person', name: 'Seraina Wild' },
+  sameAs: ['https://www.instagram.com/serawild/'],
+};
 ---
 
 <!doctype html>
@@ -80,6 +103,8 @@ const uebersetzungUrl = uebersetzung
     }
 
     <title>{seitenTitel}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(strukturierteDaten)} />
   </head>
   <body class="flex min-h-screen flex-col overflow-x-hidden pb-[82px] md:pb-0">
     <Loader />
