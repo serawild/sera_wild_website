@@ -1431,10 +1431,10 @@
       "aktiv": true,
       "datei": "src/assets/images/Galerie_4-5/ueber-geschichte-kamera.jpg",
       "dateiMasse": {
-        "breite": 1007,
-        "hoehe": 1331
+        "breite": 1513,
+        "hoehe": 2000
       },
-      "deckungsfaktor": 1.8
+      "deckungsfaktor": 2.7
     },
     {
       "id": "ueber-geschichte-mobil",
@@ -1451,8 +1451,8 @@
       "aktiv": true,
       "datei": "src/assets/images/Galerie_4-5/ueber-geschichte-hoch.jpg",
       "dateiMasse": {
-        "breite": 1007,
-        "hoehe": 1331
+        "breite": 1513,
+        "hoehe": 2000
       }
     },
     {
