@@ -22,7 +22,7 @@ const faktenAbschluss = 'Ein gerader Lebenslauf ist das nicht, eher ein Zickzack
 
 const meinWegH2   = 'Ich gehe meinen eigenen Weg. Und ich nehme dich gern mit.';
 const meinWegBold = 'Ich bin fröhlich, gern unter Leuten und liebe tiefgründige Gespräche.';
-const meinWegP    = 'Ich bin begeisterungsfähig, manchmal etwas chaotisch und habe meistens mehrere Projekte am Laufen. Neben der Fotografie arbeite ich in der Kommunikation und im Management einer Eventlocation. Zum Ausgleich schreibe ich eigene Songs und spiele sie mit meiner Band <a href="https://www.flexibelle.live" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-orange">Flexibelle</a> ein. Und mit meinen zwei Töchtern sehe ich die Welt jeden Tag neu.';
+const meinWegP    = 'Ich bin begeisterungsfähig, manchmal etwas chaotisch und habe meistens mehrere Projekte am Laufen. Neben der Fotografie arbeite ich in der Kommunikation und im Management einer Eventlocation. Zum Ausgleich schreibe ich eigene Songs und spiele sie mit meiner Band <a href="https://www.flexibelle.live" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-orange">flexiBelle</a> ein. Und mit meinen zwei Töchtern sehe ich die Welt jeden Tag neu.';
 
 const aufgabeH2 = 'Ich möchte sichtbar machen, was in dir steckt.';
 const aufgabeP2 = 'Ich bin überzeugt, dass jeder Mensch eine Wahnsinnsstärke in sich hat. Die darf ans Tageslicht. Bei mir darfst du erleben, wie du selbst strahlst. Und das steckt an.';
@@ -36,6 +36,7 @@ const echtesP1 = 'Ein Shooting ist für mich ein gemeinsames Erlebnis. Wir lasse
 const kontaktH2 = 'Für alle, die zu sich zurückfinden möchten.';
 const kontaktP1 = 'Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt. Oder ruf an, wenn du das bevorzugst.';
 const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest du in Ruhe, ohne Anzahlung und ohne Druck.';
+import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
 ---
 
 <Base
@@ -180,6 +181,7 @@ const kontaktP2 = 'Wir telefonieren kurz und unverbindlich. Danach entscheidest 
         <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-normal font-semibold italic">{meinWegH2}</h2>
         <p class="font-body text-[1.0625rem] md:text-body font-bold leading-[1.68] md:leading-[1.65]">{meinWegBold}</p>
         <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.65]" set:html={meinWegP}></p>
+        <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="260" height="83" class="mt-2 h-auto w-[11rem] md:w-[15rem] -rotate-[8deg]" />
       </div>
     </div>
   </section>
