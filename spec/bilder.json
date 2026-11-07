@@ -2322,16 +2322,16 @@
       "seite": "Reportage",
       "anzeige": {
         "breite": 2500,
-        "hoehe": 1664
+        "hoehe": 1663
       },
       "verhaeltnis": "1.50 : 1",
       "ausrichtung": "quer",
-      "alt": "Sängerin auf der Bühne über dem Publikum, erhobene Hände, Rauch und Scheinwerfer",
+      "alt": "Markt in einer Industriehalle, Besucherinnen im Gespräch an einem Stand mit Keramik",
       "aktiv": true,
       "datei": "src/assets/images/Hero_Bilder/hero-reportage.jpg",
       "dateiMasse": {
         "breite": 2500,
-        "hoehe": 1664
+        "hoehe": 1663
       }
     },
     {
