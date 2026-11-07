@@ -85,8 +85,8 @@ function isExactActive(href: string): boolean {
     </a>
 
     <!-- Desktop Navigation -->
-    <nav aria-label="Hauptnavigation" class="hidden items-center gap-[3.75rem] md:flex">
-      <ul class="flex items-center gap-[3.75rem]" role="list">
+    <nav aria-label="Hauptnavigation" class="hidden items-center gap-[3rem] md:flex">
+      <ul class="flex items-center gap-[3rem]" role="list">
         {menu.map((item) => {
           const topActive  = isTopActive(item);
           const exactMatch = isExactActive(item.href);
@@ -95,14 +95,14 @@ function isExactActive(href: string): boolean {
             <li class="relative" data-nav-item>
               <a
                 href={item.href}
-                class:list={['nav-main-link relative flex items-center gap-[0.375rem] font-body text-cta uppercase', topActive && 'nav-active']}
+                class:list={['nav-main-link relative flex items-center gap-[0.375rem] font-body text-[1.25rem] leading-none tracking-[0.06em] uppercase', topActive && 'nav-active']}
                 aria-expanded={hasSub ? 'false' : undefined}
                 aria-current={exactMatch ? 'page' : undefined}
               >
                 <span>{item.label}</span>
 
                 {topActive && (
-                  <svg class="nav-blume absolute -top-[1.4375rem] left-full h-[3.75rem] w-[2.375rem] shrink-0" viewBox="0 0 260 415" fill="currentColor" aria-hidden="true">
+                  <svg class="nav-blume absolute -top-[1rem] left-full h-[2.75rem] w-[1.75rem] shrink-0" viewBox="0 0 260 415" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d={MOHN_PATH} />
                   </svg>
                 )}
@@ -139,7 +139,7 @@ function isExactActive(href: string): boolean {
 
       <a
         href="/kontakt"
-        class="inline-flex items-center justify-center rounded-[1.0625rem] bg-rust px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange"
+        class="inline-flex items-center justify-center rounded-[0.875rem] bg-rust px-[1.75rem] py-[0.875rem] font-body text-[1.25rem] leading-none tracking-[0.06em] uppercase text-cream transition-colors hover:bg-orange"
         aria-current={isExactActive('/kontakt') ? 'page' : undefined}
       >
         Kontakt

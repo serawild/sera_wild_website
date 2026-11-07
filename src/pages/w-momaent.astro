@@ -8,14 +8,14 @@ import KulissenWaehler from '../components/KulissenWaehler.astro';
 import Wortmarke from '../components/Wortmarke.astro';
 
 const raumH2   = 'Ein Raum mit Geschichte.';
-const raumBold = 'Alte Steinwände, antike Objekte, neue Energie - gebaut auf dem was war, offen für das was kommt.';
-const raumP1   = 'Hier darfst du dich austoben – mit deinen Lieblingsoutfits, deinen Ideen, deiner Energie. Es geht ums Ausprobieren: eine Viertelstunde, in der du herausfindest, wie es ist, vor einer Kamera zu stehen, ohne etwas darstellen zu müssen. Und wer weiss – vielleicht entdeckst du dabei den Wunsch nach mehr. Nach Bildern, die nicht nur zeigen wie du aussiehst, sondern wer du bist.';
-const raumP2   = 'Eines vorweg, damit du weisst worauf du dich einlässt: Die Scheune ist kein Studio im klassischen Sinn. Sie ist nicht isoliert – im Sommer ist es warm, im Winter frisch. Genau diese Unperfektheit macht die Bilder aus: Keine künstliche Kulisse, sondern ein einzigartiger Ort  - mit Stil.';
+const raumBold = 'Alte Steinwände und antike Objekte. Gebaut auf dem, was war, offen für das, was kommt.';
+const raumP1   = 'Hier darfst du dich austoben, mit deinen Lieblingsoutfits und deinen Ideen. Du probierst aus, wie es ist, vor einer Kamera zu stehen, ohne etwas darstellen zu müssen. Vielleicht bekommst du dabei Lust auf mehr.';
+const raumP2   = 'Eines vorweg: Die Scheune ist kein Studio im klassischen Sinn. Sie ist nicht isoliert, im Sommer ist es warm und im Winter frisch. Dafür hat sie Charakter, und das sieht man auf den Bildern.';
 
 const zitatText = 'Manchmal braucht es keinen Plan. Nur einen Ort, an dem du dich ausprobieren darfst.';
 
 const kulissenH2   = 'Wähle deine Kulisse vor Ort:';
-const kulissenBold = 'Wir treffen uns direkt bei der Scheune. Ein kurzer Schwatz, dann legen wir los – unkompliziert, locker, du.';
+const kulissenBold = 'Wir treffen uns direkt bei der Scheune. Ein kurzer Schwatz, dann legen wir los.';
 
 // Nur die Wischleiste stellt Bild und Name nebeneinander; die Desktop-Collage
 // weiter unten setzt ihre Bilder selbst und bleibt davon unberührt.
@@ -61,7 +61,7 @@ const neugierH2 = 'Neugierig auf mehr?';
       <h1 aria-label="W-Momänt">
         <Wortmarke wort="Momänt" breite={15.1875} klasse="text-cream" />
       </h1>
-      <p class="font-body text-[1.125rem] leading-[1.6] text-cream mt-[1.125rem]">Vier Kulissen, eine Stimmung, ganz du.</p>
+      <p class="font-body text-[1.125rem] leading-[1.6] text-cream mt-[1.125rem]">Vier einzigartige Kulissen in einer alten Scheune.</p>
     </div>
   </section>
 
@@ -82,7 +82,7 @@ const neugierH2 = 'Neugierig auf mehr?';
       <h1 class="mb-[0.75rem]" aria-label="W-Momänt">
         <Wortmarke wort="Momänt" breite={27.875} klasse="text-cream" />
       </h1>
-      <p class="font-display text-h2 font-semibold leading-normal text-cream">Vier Kulissen, eine Stimmung, ganz du.</p>
+      <p class="font-display text-h2 font-semibold leading-normal text-cream">Vier einzigartige Kulissen in einer alten Scheune.</p>
     </div>
   </section>
 
@@ -146,10 +146,10 @@ const neugierH2 = 'Neugierig auf mehr?';
     </h2>
     <div class="flex flex-col">
       <div class="border-t border-beige/50 py-4">
-        <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">Du willst wissen, wie sich das anfühlt – ohne dich gleich auf einen halben Tag einzulassen.</p>
+        <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">Du willst wissen, wie sich das anfühlt, ohne dich gleich auf einen halben Tag einzulassen.</p>
       </div>
       <div class="border-t border-beige/50 py-4">
-        <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">Für dein Profil, als Geschenk, oder gar deine Website.</p>
+        <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">Du brauchst ein Bild für dein Profil oder deine Website. Oder du suchst ein Geschenk.</p>
       </div>
       <div class="border-t border-beige/50 py-4">
         <p class="font-body text-[1.0625rem] leading-[1.68] text-dark/85">Du liebäugelst mit dem W-Erläbnis und möchtest mich vorher kennenlernen.</p>
@@ -169,10 +169,10 @@ const neugierH2 = 'Neugierig auf mehr?';
       </h2>
       <div class="flex flex-col max-w-[44rem]">
         <div class="border-t border-beige/50 py-5">
-          <p class="font-body text-body leading-[1.65] text-dark/85">Du willst wissen, wie sich das anfühlt – ohne dich gleich auf einen halben Tag einzulassen.</p>
+          <p class="font-body text-body leading-[1.65] text-dark/85">Du willst wissen, wie sich das anfühlt, ohne dich gleich auf einen halben Tag einzulassen.</p>
         </div>
         <div class="border-t border-beige/50 py-5">
-          <p class="font-body text-body leading-[1.65] text-dark/85">Für dein Profil, als Geschenk, oder gar deine Website.</p>
+          <p class="font-body text-body leading-[1.65] text-dark/85">Du brauchst ein Bild für dein Profil oder deine Website. Oder du suchst ein Geschenk.</p>
         </div>
         <div class="border-t border-beige/50 py-5">
           <p class="font-body text-body leading-[1.65] text-dark/85">Du liebäugelst mit dem W-Erläbnis und möchtest mich vorher kennenlernen.</p>
@@ -240,7 +240,7 @@ const neugierH2 = 'Neugierig auf mehr?';
       </p>
       <p class="font-body text-[1.0625rem] leading-[1.68]">
         <span class="font-bold">Als Geschenk: </span>
-        Alle drei Pakete gibt es auch als Gutschein — ohne festes Datum, eingelöst wird, wann es passt.
+        Alle drei Pakete gibt es auch als Gutschein. Eingelöst wird, wann es passt.
       </p>
       <a
         href="/w-gutschein"
@@ -277,7 +277,7 @@ const neugierH2 = 'Neugierig auf mehr?';
         </p>
         <p>
           <span class="font-bold">Als Geschenk: </span>
-          Alle drei Pakete gibt es auch als Gutschein — ohne festes Datum, eingelöst wird, wann es passt.
+          Alle drei Pakete gibt es auch als Gutschein. Eingelöst wird, wann es passt.
         </p>
         <a
           href="/w-gutschein"
@@ -297,9 +297,8 @@ const neugierH2 = 'Neugierig auf mehr?';
     <div class="flex flex-col items-center gap-[1.125rem] text-center">
       <h2 class="font-display text-[1.6875rem] leading-[1.28] font-semibold text-cream">{neugierH2}</h2>
       <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/90">
-        <span>Manche merken nach fünfzehn Minuten, dass sie mehr Zeit wollen. </span>
-        <span class="font-display font-semibold italic text-[1.375rem] leading-[1.6]">Nicht mehr Bilder – mehr Zeit. </span>
-        <span>Dafür gibt es das W-Erläbnis: zwei bis drei Stunden, draussen, an einem Ort, der dir etwas bedeutet.</span>
+        <span>Manche merken nach einer halben Stunde, dass sie gern mehr Zeit hätten. </span>
+        <span>Dafür gibt es das W-Erläbnis, zwei bis drei Stunden an einem Ort, der dir etwas bedeutet.</span>
       </p>
       <a
         href="/w-erlaebnis"
@@ -316,9 +315,8 @@ const neugierH2 = 'Neugierig auf mehr?';
     <div class="mx-auto flex max-w-inhalt flex-col items-center gap-[1.75rem] px-[15rem] text-center">
       <h2 class="font-display text-[2.75rem] font-semibold leading-normal text-cream">{neugierH2}</h2>
       <p class="font-body text-small leading-[2] text-cream/90">
-        <span>Manche merken nach fünfzehn Minuten, dass sie mehr Zeit wollen. </span>
-        <span class="font-display font-semibold italic text-h3 leading-[2]">Nicht mehr Bilder – mehr Zeit. </span>
-        <span>Dafür gibt es das W-Erläbnis: zwei bis drei Stunden, draussen, an einem Ort, der dir etwas bedeutet.</span>
+        <span>Manche merken nach einer halben Stunde, dass sie gern mehr Zeit hätten. </span>
+        <span>Dafür gibt es das W-Erläbnis, zwei bis drei Stunden an einem Ort, der dir etwas bedeutet.</span>
       </p>
       <a
         href="/w-erlaebnis"

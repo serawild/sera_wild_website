@@ -30,7 +30,7 @@ const W_PATH =
 const heroSubZ1 = 'Wenn du weisst, wer du bist,';
 const heroSubZ2 = 'kannst du sein, wer du willst.';
 
-const begegnungH2 = 'Das W-Erläbnis ist mehr als ein Fotoshooting. Es ist eine Begegnung.';
+const begegnungH2 = 'Beim W-Erläbnis geht es um mehr als um schöne Fotos.';
 const begegnungP1 = 'Ich habe viele Jahre in einem klassischen Fotostudio gearbeitet. Dort habe ich mein Handwerk gelernt und gemerkt, was mich wirklich berührt: Bilder, die nicht gestellt sind.';
 const begegnungP2 = 'Darum fotografiere ich heute am liebsten Reportagen. Das W-Erläbnis verbindet beides: Ich setze dich ins Spotlight wie im Studio und fotografiere dich echt wie bei einer Reportage.';
 const begegnungP3 = 'Wir suchen einen Ort, der zu dir gehört. Du tust, was du liebst: Geige spielen, im Garten wühlen, auf dem Velo sitzen oder einfach in den Tag träumen. Ich bin dabei und halte fest, was passiert.';
@@ -41,24 +41,23 @@ const dasWFragen = [
   { w: 'Welche', rest: ' Teile von dir hätten gerne mehr Raum?' },
   { w: 'Wenn',   rest: ' du keine Angst hättest: Was würdest du beginnen?' },
 ];
-const dasWFussnote = 'Vier Fragen, auf die es keine schnelle Antwort gibt. Genau deshalb nehmen wir uns zwei bis drei Stunden Zeit.';
+const dasWFussnote = 'Darauf gibt es keine schnelle Antwort. Darum nehmen wir uns zwei bis drei Stunden Zeit.';
 
-const angebotH2  = 'Ein Preis, keine Überraschungen';
-const angebotSub = 'Alles, was dazugehört, ist drin. Was mehr wird, siehst du hier – nicht erst auf der Rechnung.';
+const angebotH2  = 'Ein Preis, alles drin';
+const angebotSub = 'Extras wie eine zweite Session siehst du gleich darunter.';
 const angebotLeistungen = [
   'Vorbereitungsgespräch und gemeinsame Planung',
   '2–3 Stunden fotografieren, mit Pause',
   'Reportage statt Posieren',
-  'Deine Bilderreise: mindestens 40 Bilder, die dich nicht abbilden, sondern zeigen',
-  'Licht, Farbe und Ausschnitt – bei jedem einzelnen Bild',
+  'Deine Bilderreise: mindestens 40 Bilder',
+  'Jedes Bild einzeln bearbeitet',
   'Alle Bilder ohne Wasserzeichen',
   'Leichte Hautretusche, wo sie guttut',
-  'Deine Favoriten gedruckt, in einer Leinenschachtel',
-  'Persönliche Übergabe statt Downloadlink',
+  'Ich übergebe dir die Bilder persönlich',
 ];
 const angebotExtras = [
   { text: 'Eine zweite Session später',                       preis: 'CHF 450.–' },
-  { text: 'Zusätzliche Prints oder ein grösseres Format',     preis: 'auf Anfrage' },
+  { text: 'Prints oder ein grösseres Format',     preis: 'auf Anfrage' },
 ];
 const angebotFN = 'Fahrspesen im Raum Aareland sind inbegriffen. Shooting auf dem Berg, in der Stadt oder im Ausland? Das sprechen wir individuell ab.';
 
@@ -66,13 +65,13 @@ const timelineSchritte = [
   {
     nr: 1, icon: '01-telefon', titel: 'Wir reden',
     label: 'Telefon · ca. 15 Minuten',
-    text: 'Wo stehst du gerade? Was möchtest du sichtbar machen? Wir klären in Ruhe, ob es passt – und finden einen Termin.',
+    text: 'Wo stehst du gerade? Was möchtest du sichtbar machen? Wir klären in Ruhe, ob es passt, und suchen einen Termin.',
     extra: null as string | null,
   },
   {
     nr: 2, icon: '02-brief', titel: 'Du denkst nach',
     label: 'In deinem Tempo · zu Hause',
-    text: 'Du bekommst von mir ein paar Fragen zu dir selbst. Keine Prüfung, kein Aufwand – einfach Zeit für dich, bevor wir uns treffen.',
+    text: 'Du bekommst von mir ein paar Fragen zu dir selbst. Nimm dir dafür einfach etwas Zeit, bevor wir uns treffen.',
     extra: null as string | null,
   },
   {
@@ -84,27 +83,27 @@ const timelineSchritte = [
   {
     nr: 4, icon: '04-kamera', titel: 'Dein W-Erläbnis',
     label: 'Vor Ort · 2–3 Stunden',
-    text: 'Dein Lieblingsplatz, eine Pause, viel Raum. Die Kamera ist Begleiterin – kein Star.',
-    extra: 'Viel länger fotografieren wir bewusst nicht: Es geht in die Tiefe, und das braucht Kraft.' as string | null,
+    text: 'Dein Lieblingsplatz, eine Pause, viel Raum.',
+    extra: 'Länger nicht, weil es in die Tiefe geht. Das braucht Kraft.' as string | null,
   },
   {
     nr: 5, icon: '05-bilder', titel: 'Deine Bilder',
     label: 'Persönlich · ca. 2 Wochen später',
-    text: 'Wir treffen uns noch einmal. Deine Lieblingsbilder liegen gedruckt vor dir – und deine ganze Bilderreise nimmst du digital mit nach Hause.',
+    text: 'Wir treffen uns noch einmal, und ich übergebe dir deine Bilder persönlich.',
     extra: null as string | null,
   },
 ];
 
 const orteH2  = 'Wo wir fotografieren könnten';
-const orteSub = 'Der Ort ist nicht Kulisse, sondern Teil deiner Geschichte. Am schönsten wird es dort, wo du dich lebendig fühlst – wo dich etwas inspiriert oder deine Leidenschaft weckt. Hier ein paar Vorschläge. Vielleicht fällt dir beim Lesen längst ein anderer ein.';
+const orteSub = 'Am schönsten wird es dort, wo du dich wohl fühlst und gern bist. Hier ein paar Vorschläge. Vielleicht fällt dir beim Lesen längst ein anderer ein.';
 const orteList = [
-  { id: 'orte-aare',    titel: 'Aare',                text: 'Wasser, Weite, Bewegung. Kiesbank, Uferweg oder Auenwald – das Wasser nimmt dir einen Teil des Gesprächs ab.' },
-  { id: 'orte-feld',       titel: 'Feld',        text: 'Offener Himmel, hohe Gräser, Licht bis zum Horizont. Für alle, die Weite brauchen statt Wände.' },
-  { id: 'orte-stadt',   titel: 'Stadt',               text: 'Mauern, Gassen, Fenster, Reflexe. Der Gegenpol zur Natur – klarer, direkter, wacher.' },
-  { id: 'orte-atelier', titel: 'Atelier oder zu Hause', text: 'Der eigene Sessel, die eigene Küche, dein Arbeitsplatz. Für alle, die sich dort am ehesten wie sich selbst fühlen.' },
-  { id: 'orte-scheune', titel: 'Scheune',         text: 'Vier Kulissen, viel Holz, Licht von der Seite. Wetterunabhängig – und trotzdem alles andere als ein Studio.' },
-  { id: 'orte-wald',    titel: 'Wald',                text: 'Gedämpftes Licht, viel Grün, kaum Publikum. Für alle, die etwas Zeit brauchen, bis sie auftauen.' },
-  { id: 'orte-sportplatz', titel: 'Sportplatz',  text: 'Linien, Rasen, leere Ränge. Ungewohnt für Porträts – und gerade darum stark, wenn Bewegung zu dir gehört.' },
+  { id: 'orte-aare',    titel: 'Aare',                text: 'Am Wasser, auf der Kiesbank oder im Auenwald.' },
+  { id: 'orte-feld',       titel: 'Feld',        text: 'Offener Himmel und hohe Gräser. Für alle, die gern Weite um sich haben.' },
+  { id: 'orte-stadt',   titel: 'Stadt',               text: 'Mauern, Gassen, Fenster.' },
+  { id: 'orte-atelier', titel: 'Atelier oder zu Hause', text: 'Dein Sessel, deine Küche oder dein Arbeitsplatz. Für alle, die sich zu Hause am wohlsten fühlen.' },
+  { id: 'orte-scheune', titel: 'Scheune',         text: 'Viel Holz und professionelles Studiolicht. Geht auch bei Regen.' },
+  { id: 'orte-wald',    titel: 'Wald',                text: 'Viel Grün und kaum Leute. Für alle, die etwas Zeit brauchen, bis sie auftauen.' },
+  { id: 'orte-sportplatz', titel: 'Sportplatz',  text: 'Für alle, die gern in Bewegung sind.' },
 ];
 
 const richtigH2    = 'Du bist hier richtig wenn,';
@@ -118,22 +117,21 @@ const richtigItems = [
 const richtigBold  = 'Viele kommen zu mir, wenn sich gerade etwas verändert. Neuer Job, Kinder aus dem Haus, ein Kapitel zu Ende.';
 
 const ctaH2 = 'Noch nicht sicher, ob das W-Erläbnis das Richtige ist?';
-const ctaP1 = 'Dann fangen wir kleiner an – in einer alten Scheune, vier Kulissen, viel Holz und Licht von der Seite. 15 bis 60 Minuten statt einem halben Tag.';
-const ctaP2 = 'Kein Studio im klassischen Sinn: keine weisse Wand, keine Heizung. Im Sommer warm, im Winter frisch. Genau das macht die Bilder aus.';
+const ctaP1 = 'Dann fangen wir kleiner an, in meiner alten rustikal eingerichteten Scheune in Gretzenbach. 15 bis 60 Minuten. Es gibt keine Heizung, im Sommer ist es warm und im Winter frisch.';
 
 const simonaH2 = 'So sah ein ganzes W-Erläbnis aus';
-const simonaP  = 'Simona hatte schon Bilder – und hat sich auf keinem davon wiedererkannt. Ihre Geschichte, und was an diesem Nachmittag entstanden ist.';
+const simonaP  = 'Simona hatte schon Bilder, aber erkannt hat sie sich darauf nicht wirklich. Ihre Geschichte, und was an diesem Nachmittag entstanden ist.';
 
 const faqFragen = [
-  { q: 'Muss ich Erfahrung vor der Kamera haben?',       a: 'Überhaupt nicht – die meisten meiner Kundinnen stehen zum ersten Mal bewusst vor einer Kamera. Genau dafür bin ich da.' },
-  { q: 'Wie viel kostet ein Shooting?',                  a: 'Das W-Momänt startet bei CHF 149. Das W-Erläbnis kostet CHF 950 – alles inbegriffen, Fahrspesen im Raum Aareland eingerechnet.' },
+  { q: 'Muss ich Erfahrung vor der Kamera haben?',       a: 'Überhaupt nicht. Die meisten stehen zum ersten Mal bewusst vor einer Kamera. Dafür bin ich ja da.' },
+  { q: 'Wie viel kostet ein Shooting?',                  a: 'Der W-Momänt startet bei CHF 149. Das W-Erläbnis kostet CHF 950. Da ist alles drin, auch die Fahrspesen im Aareland.' },
   { q: 'Wie viel Zeit sollte ich einplanen?',            a: 'Für das W-Erläbnis zwei bis drei Stunden vor Ort, mit Pause. Beim W-Momänt je nach Paket 15 bis 60 Minuten. Sei bitte 15 Minuten vor dem Start da, damit wir in Ruhe ankommen.' },
-  { q: 'Wo findet das Shooting statt?',                  a: 'Das W-Momänt findet in 5014 Gretzenbach statt. Für das W-Erläbnis fahren wir zu deinem Lieblingsort oder finden gemeinsam ein oder mehrere Fotospots.' },
+  { q: 'Wo findet das Shooting statt?',                  a: 'Der W-Momänt findet in 5014 Gretzenbach statt. Für das W-Erläbnis fahren wir zu deinem Lieblingsort oder finden gemeinsam ein oder mehrere Fotospots.' },
   { q: 'Was soll ich anziehen?',                         a: 'Du erhältst nach der Buchung meinen persönlichen Guide mit Tipps zu Kleidung und Vorbereitung.' },
-  { q: 'Was passiert bei schlechtem Wetter?',            a: 'Wir verschieben kostenlos, auch kurzfristig. Bei leichtem Regen frage ich dich vorher – manchmal entstehen dann die ruhigsten Bilder. In der Scheune sind wir vom Wetter unabhängig.' },
-  { q: 'Wann bekomme ich meine Bilder?',                 a: 'In der Regel ca. 2 Wochen nach dem Shooting. Du bekommst deine ganze Bilderreise – und deine Favoriten zusätzlich gedruckt, persönlich übergeben in einer Leinenschachtel.' },
-  { q: 'Wie weit im Voraus soll ich mich melden?',       a: 'Vier bis sechs Wochen sind ideal. Fragen ist immer erlaubt - vielleicht finden wir sogar ganz kurzfristig und spontan einen Termin.' },
-  { q: 'Für wen ist das W-Erläbnis nicht das Richtige?', a: 'Wenn du klassische Bewerbungsfotos brauchst, bist du woanders besser aufgehoben. Und wenn du Bilder willst, auf denen du perfekt aussiehst statt wie du selbst, passen wir nicht zusammen.' },
+  { q: 'Was passiert bei schlechtem Wetter?',            a: 'Wir verschieben kostenlos, auch kurzfristig. Bei leichtem Regen frage ich dich vorher. Manchmal entstehen gerade dann die ruhigsten Bilder. In der Scheune sind wir vom Wetter unabhängig.' },
+  { q: 'Wann bekomme ich meine Bilder?',                 a: 'In der Regel ca. 2 Wochen nach dem Shooting. Ich übergebe sie dir persönlich.' },
+  { q: 'Wie weit im Voraus soll ich mich melden?',       a: 'Vier bis sechs Wochen sind ideal. Fragen ist immer erlaubt. Vielleicht finden wir sogar ganz kurzfristig einen Termin.' },
+  { q: 'Für wen ist das W-Erläbnis nicht das Richtige?', a: 'Wenn du klassische Bewerbungsfotos brauchst, bist du woanders besser aufgehoben. Und wenn auf den Bildern alles perfekt sein muss, passen wir nicht zusammen.' },
 ];
 ---
 
@@ -350,7 +348,7 @@ const faqFragen = [
     <div class="mb-6 rounded-[8px] bg-cream px-5 py-6 text-center shadow-sm">
       <p class="font-display text-[2rem] font-semibold text-dark">CHF 950.–</p>
       <p class="mt-1 font-body text-[0.875rem] font-medium text-beige">2–3 Fotospots · 2–3 Stunden</p>
-      <p class="mt-2 font-display text-[1rem] italic text-dark">Ein Ort, den du liebst – und vielleicht noch einer gleich um die Ecke.</p>
+      <p class="mt-2 font-display text-[1rem] italic text-dark">Ein Ort, den du liebst, und vielleicht noch einer gleich um die Ecke.</p>
     </div>
 
     <!-- Das ist immer dabei -->
@@ -399,10 +397,10 @@ const faqFragen = [
     <div class="mb-6 rounded-[8px] bg-cream px-6 py-6 flex flex-col gap-[0.75rem]">
       <p class="font-display text-[1.125rem] font-semibold">Was ist dir ein Wochenende wert?</p>
       <p class="font-body text-[1rem] leading-[1.65]">
-        Ein Wellness-Weekend zu zweit kostet in der Schweiz rasch CHF 900–1'000. Das ist schön, doch am Montag ist es vorbei.
+        Ein Wellness-Weekend zu zweit kostet in der Schweiz rasch CHF 900–1'000. Schön, aber am Montag ist es vorbei.
       </p>
       <p class="font-body text-[1rem] leading-[1.65]">
-        Das W-Erläbnis kostet gleich viel. Es bleibt: als Bilder, in denen du dich wiedererkennst, und als Erinnerung daran, wie es sich anfühlt, ganz du zu sein.
+        Das W-Erläbnis kostet etwa gleich viel, und die Bilder bleiben.
       </p>
     </div>
 
@@ -427,7 +425,7 @@ const faqFragen = [
           <div class="flex flex-col items-center gap-[0.75rem] bg-cream px-[2rem] py-[2.5rem] text-center shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
             <p class="font-display text-h2 font-semibold text-dark">CHF 950.–</p>
             <p class="font-body text-[1rem] font-medium text-[#b08257]">2–3 Fotospots · 2–3 Stunden</p>
-            <p class="font-display text-[1.125rem] italic text-dark">Ein Ort, den du liebst – und vielleicht noch einer gleich um die Ecke.</p>
+            <p class="font-display text-[1.125rem] italic text-dark">Ein Ort, den du liebst, und vielleicht noch einer gleich um die Ecke.</p>
           </div>
           <p class="font-display text-[1.75rem] font-semibold text-dark">Wenn du mehr möchtest</p>
           <div class="flex flex-col">
@@ -469,10 +467,10 @@ const faqFragen = [
       <div class="mx-auto flex w-full max-w-[56.25rem] flex-col gap-[1rem] rounded-[8px] bg-cream px-[2.5rem] py-[2.5rem]">
         <p class="font-display text-h3 font-semibold">Was ist dir ein Wochenende wert?</p>
         <p class="font-body text-body-klein leading-[1.7]">
-          Ein Wellness-Weekend zu zweit kostet in der Schweiz rasch CHF 900–1'000. Das ist schön, doch am Montag ist es vorbei.
+          Ein Wellness-Weekend zu zweit kostet in der Schweiz rasch CHF 900–1'000. Schön, aber am Montag ist es vorbei.
         </p>
         <p class="font-body text-body-klein leading-[1.7]">
-          Das W-Erläbnis kostet gleich viel. Es bleibt: als Bilder, in denen du dich wiedererkennst, und als Erinnerung daran, wie es sich anfühlt, ganz du zu sein.
+          Das W-Erläbnis kostet etwa gleich viel, und die Bilder bleiben.
         </p>
       </div>
       <p class="font-display text-[1.25rem] text-center text-cream/90">{angebotFN}</p>
@@ -561,7 +559,7 @@ const faqFragen = [
     <DekoIllustration motiv="eukalyptus" farbe="#BC541F" breite={140} cssRotate={-33} obenAbAnkerAnteil={-0.08} seite="rechts" abstand={-64} mobil={true} deckkraft={0.5} />
     <div class="mx-auto max-w-inhalt text-center">
       <p class="font-display text-[1.6875rem] font-semibold leading-[1.3] text-cream md:text-h2 md:font-bold md:leading-[1.5]">
-        Lebendigkeit ist keine Pose, sondern ein Puls.
+        Lebendigkeit ist keine Pose. Man strahlt sie aus.
       </p>
     </div>
   </section>
@@ -602,7 +600,7 @@ const faqFragen = [
         <!-- 6. Karte: Dein eigener Ort (kein Bild) -->
         <div class="relative shrink-0 overflow-hidden rounded-[8px] bg-rust px-5 py-5 flex flex-col justify-center gap-3" style="width:260px;min-height:358px">
           <p class="font-display text-[1.125rem] font-semibold text-cream">Dein eigener Ort</p>
-          <p class="font-body text-[0.9375rem] leading-[1.55] text-cream/85">Der Platz, an den du immer wieder zurückkehrst. Wo du zur Ruhe kommst, wo etwas angefangen hat oder wo deine Leidenschaft wohnt. Erzähl mir davon – wir gehen hin.</p>
+          <p class="font-body text-[0.9375rem] leading-[1.55] text-cream/85">Der Platz, an den du immer wieder zurückkehrst. Wo du zur Ruhe kommst, wo etwas angefangen hat oder wo deine Leidenschaft wohnt. Erzähl mir davon, dann gehen wir hin.</p>
         </div>
       </div>
     </div>
@@ -636,7 +634,7 @@ const faqFragen = [
         ))}
         <div class="flex flex-col justify-center gap-[1rem] self-stretch rounded-[8px] bg-rust px-[2rem] py-[2.5rem] text-cream">
           <p class="font-display text-[1.75rem] font-semibold">Dein eigener Ort</p>
-          <p class="font-body text-body-klein leading-[1.7]">Der Platz, an den du immer wieder zurückkehrst. Wo du zur Ruhe kommst, wo etwas angefangen hat oder wo deine Leidenschaft wohnt. Erzähl mir davon – wir gehen hin.</p>
+          <p class="font-body text-body-klein leading-[1.7]">Der Platz, an den du immer wieder zurückkehrst. Wo du zur Ruhe kommst, wo etwas angefangen hat oder wo deine Leidenschaft wohnt. Erzähl mir davon, dann gehen wir hin.</p>
         </div>
       </div>
     </div>
@@ -740,7 +738,6 @@ const faqFragen = [
     <h2 class="mb-[18px] font-display text-[1.6875rem] font-semibold leading-[1.28] text-cream">{ctaH2}</h2>
     <div class="mb-6 flex flex-col gap-[14px]">
       <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/80">{ctaP1}</p>
-      <p class="font-body text-[1.0625rem] leading-[1.68] text-cream/80">{ctaP2}</p>
     </div>
     <a href="/w-momaent" class="inline-flex items-center justify-center rounded-[8px] bg-beige px-7 py-[0.9375rem] font-body text-[0.875rem] uppercase tracking-[0.088em] text-cream transition-colors hover:bg-orange">
       Zum W-Momänt
@@ -754,7 +751,6 @@ const faqFragen = [
       <h2 class="font-display text-h2 font-semibold leading-normal max-w-[75rem]">{ctaH2}</h2>
       <div class="flex flex-col gap-[0] max-w-[75rem]">
         <p class="font-body text-body leading-[1.65]">{ctaP1}</p>
-        <p class="font-body text-body leading-[1.65] mt-[2em]">{ctaP2}</p>
       </div>
       <a href="/w-momaent" class="rounded-[17px] bg-beige px-md py-sm font-body text-small font-medium text-cream">
         Zum W-Momänt
