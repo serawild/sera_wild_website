@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import BildPicture from '../components/BildPicture.astro';
 import bilderSpec from '../../spec/bilder.json';
 import { Image } from 'astro:assets';
-import heroMesse from '../assets/images/Reportage_Messe/messe-07.jpg';
+import heroMesse from '../assets/images/Reportage_Messe/messe-64.jpg';
 // Titelbild: Design Messe Schweiz 2026 in der Aeschbachhalle (AHA). Die übrigen
 // Messebilder stehen im Bildstreifen weiter unten (spec/bilder.json, «reportage-galerie-00-messe-…»).
 
@@ -80,16 +80,16 @@ const ablaufSchritte = [
   <section class="relative h-[43.75rem] overflow-hidden bg-dark md:h-[100svh] md:min-h-[600px]">
     <Image
       src={heroMesse}
-      alt="Design Messe Schweiz 2026 in der Aeschbachhalle Aarau: Besucherinnen und Besucher zwischen den Ständen"
-      class="absolute inset-0 h-full w-full object-cover object-[50%_60%]"
+      alt="Design Messe Schweiz 2026: Eine Besucherin probiert ein Armband an, die Ausstellerin hilft beim Verschluss"
+      class="absolute inset-0 h-full w-full object-cover object-[45%_55%]"
       widths={[390, 780, 1280, 1920]}
       sizes="100vw"
       loading="eager"
       fetchpriority="high"
     />
-    <div class="pointer-events-none absolute inset-0" style="background:linear-gradient(to top, rgba(47,50,45,0.9) 0%, rgba(47,50,45,0.65) 35%, rgba(47,50,45,0.2) 70%, rgba(47,50,45,0.35) 100%);" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-0" style="background:linear-gradient(to top, rgba(47,50,45,0.55) 0%, rgba(47,50,45,0.3) 40%, rgba(47,50,45,0) 70%, rgba(47,50,45,0.2) 100%);" aria-hidden="true"></div>
 
-    <div class="absolute bottom-[5.5rem] left-6 right-6 md:bottom-[10rem] md:left-[7.5rem] md:right-auto md:max-w-[50rem]">
+    <div class="absolute bottom-[5.5rem] left-6 right-6 md:bottom-[10rem] md:left-[7.5rem] md:right-auto md:max-w-[50rem]" style="text-shadow:0 1px 14px rgba(0,0,0,0.45)">
       <p class="mb-2 font-body text-[0.75rem] font-bold uppercase tracking-[0.15em] text-cream/70 md:mb-4 md:text-label md:tracking-normal">EVENT-REPORTAGE</p>
       <h1 class="font-display text-[1.9375rem] font-semibold leading-[1.3] text-cream md:text-h1 md:leading-tight">
         Ich fotografiere, was passiert.

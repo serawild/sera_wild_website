@@ -2487,7 +2487,7 @@
       }
     },
     {
-      "id": "reportage-galerie-13",
+      "id": "reportage-galerie-00-n1-13",
       "figmaEbene": "",
       "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
@@ -2506,7 +2506,7 @@
       }
     },
     {
-      "id": "reportage-galerie-14",
+      "id": "reportage-galerie-00-n2-14",
       "figmaEbene": "",
       "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
@@ -2525,7 +2525,7 @@
       }
     },
     {
-      "id": "reportage-galerie-15",
+      "id": "reportage-galerie-00-n3-15",
       "figmaEbene": "",
       "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
@@ -2544,7 +2544,7 @@
       }
     },
     {
-      "id": "reportage-galerie-16",
+      "id": "reportage-galerie-00-n4-16",
       "figmaEbene": "",
       "baustein": "Bildstreifen Reportage",
       "seite": "Reportage",
@@ -3016,25 +3016,6 @@
       }
     },
     {
-      "id": "reportage-galerie-00-messe-64",
-      "figmaEbene": "",
-      "baustein": "Bildstreifen Reportage",
-      "seite": "Reportage",
-      "anzeige": {
-        "breite": 2000,
-        "hoehe": 1334
-      },
-      "verhaeltnis": "1.50 : 1",
-      "ausrichtung": "quer",
-      "alt": "Design Messe Schweiz 2026: Hände probieren ein Armband an",
-      "aktiv": true,
-      "datei": "src/assets/images/Reportage_Messe/messe-64.jpg",
-      "dateiMasse": {
-        "breite": 2000,
-        "hoehe": 1334
-      }
-    },
-    {
       "id": "reportage-galerie-00-messe-17",
       "figmaEbene": "",
       "baustein": "Bildstreifen Reportage",
@@ -3219,6 +3200,25 @@
       "alt": "Design Messe Schweiz 2026: Weinflaschen auf einer beleuchteten Theke",
       "aktiv": true,
       "datei": "src/assets/images/Reportage_Messe/messe-34.jpg",
+      "dateiMasse": {
+        "breite": 1333,
+        "hoehe": 2000
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-07",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1333,
+        "hoehe": 2000
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Design Messe Schweiz 2026: Besucherinnen und Besucher zwischen den Ständen in der Aeschbachhalle",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-07.jpg",
       "dateiMasse": {
         "breite": 1333,
         "hoehe": 2000
