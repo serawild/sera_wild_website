@@ -8,7 +8,7 @@ import BildPicture from '../components/BildPicture.astro';
 import DekoIllustration from '../components/DekoIllustration.astro';
 
 const heroAlt      = 'Seraina Wild mit Brille hält die Kamera vors Gesicht und lächelt';
-const heroSubtitel = 'Für alle, die mehr vom Leben wollen und sich trauen, es zu leben.';
+const heroSubtitel = 'Für alle, die mehr vom Leben wollen<br /> und sich trauen, es zu leben.';
 
 const faktenStationen = [
   { name: '10 Jahre',      desc: ['Fotografie draussen,', 'an Events und im Studio'],  svgContent: `<rect x="31.0" y="41.0" width="42" height="30" rx="5" stroke="currentColor" stroke-width="2"/><ellipse cx="52.0" cy="56.0" rx="8.0" ry="8.0" stroke="currentColor" stroke-width="2"/><rect x="39.0" y="35.0" width="12" height="4" rx="2" stroke="currentColor" stroke-width="2"/>`, desktopOffset: false },
@@ -62,7 +62,7 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
     <div class="absolute inset-0 bg-black/30 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute bottom-10 left-6 max-w-[21rem]">
       <h1 class="font-display text-[1.9375rem] leading-[1.3] font-semibold text-cream">Meine Geschichte</h1>
-      <p class="font-body text-[1.125rem] leading-[1.6] text-cream mt-[0.5rem]">{heroSubtitel}</p>
+      <p class="font-body text-[1.125rem] leading-[1.6] text-cream mt-[0.5rem]" set:html={heroSubtitel}></p>
     </div>
   </section>
 
@@ -78,7 +78,7 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
     <div class="absolute inset-0 bg-black/40 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute bottom-[10rem] right-[7.5rem] max-w-[73.4375rem] text-right">
       <h1 class="font-display text-h1 font-semibold leading-normal text-cream">Meine Geschichte</h1>
-      <p class="font-display text-h2 font-semibold leading-normal text-cream">{heroSubtitel}</p>
+      <p class="font-display text-h2 font-semibold leading-normal text-cream" set:html={heroSubtitel}></p>
     </div>
   </section>
 
