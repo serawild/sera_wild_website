@@ -66,7 +66,7 @@
         },
         "absaetze": [
           {
-            "text": "Hinter jedem Namen auf dieser Seite steht eine Begegnung, aus der etwas geworden ist – eine Zusammenarbeit, ein Auftrag, manchmal eine Freundschaft. Ich stelle sie dir vor, weil gute Arbeit weiterempfohlen gehört.",
+            "text": "Hinter jedem Namen hier steht eine Begegnung. Manchmal ist daraus eine Zusammenarbeit geworden, manchmal eine Freundschaft. Ich stelle sie dir vor, weil ich gute Arbeit gern weiterempfehle.",
             "stil": "normal",
             "breite": 1100,
             "farbe": "#5B5C4F",
@@ -170,8 +170,8 @@
           "bildSeite": "links",
           "logo": "/logo-partner/studio-benanti-dunkel.png",
           "foto": "netzwerk-studio-benanti",
-          "beschrieb": "Simona gestaltet Marken für Frauen, die mit Menschen arbeiten – Psychologinnen, Therapeutinnen, Coaches. Sie denkt sich in jede Personal Brand hinein und arbeitet die Idee ihrer Kundin mit einer extra Prise Herzblut aus – auch wenn Farben und Stil nicht ihre eigenen sind.",
-          "geschichte": "Kennengelernt haben wir uns an einem Networking-Anlass – sie setzt an der Marke an, ich am Bild. Aus der Zusammenarbeit ist eine Freundschaft geworden.",
+          "beschrieb": "Simona gestaltet Marken für Frauen, die mit Menschen arbeiten, zum Beispiel Psychologinnen oder Coaches. Sie denkt sich in jede Kundin hinein und steckt viel Herzblut in ihre Arbeit, auch wenn Farben und Stil nicht ihre eigenen sind.",
+          "geschichte": "Kennengelernt haben wir uns an einem Networking-Anlass. Sie kümmert sich um die Marke, ich um die Bilder. Aus der Zusammenarbeit ist eine Freundschaft geworden.",
           "platzhalter": false,
           "aktiv": true
         },
@@ -184,8 +184,8 @@
           "bildSeite": "rechts",
           "logo": "/logo-partner/baravital.png",
           "foto": "netzwerk-baravital",
-          "beschrieb": "Sara berät in Aarau Frauen rund um ihre Gesundheit, von der Rückbildung bis zum Training draussen. Sie sucht die Ursache, statt nur das Symptom zu behandeln.",
-          "geschichte": "Sara kenne ich, seit wir Teenager waren, und wir haben uns nie verloren. Unsere Treffen gehen tief, dauern länger als geplant – und wir lachen dabei unglaublich viel.",
+          "beschrieb": "Sara berät in Aarau Frauen rund um ihre Gesundheit, von der Rückbildung bis zum Training draussen. Dabei sucht sie immer nach der Ursache.",
+          "geschichte": "Sara kenne ich, seit wir Teenager waren, und wir haben uns nie verloren. Unsere Treffen gehen tief, dauern länger als geplant, und wir lachen dabei unglaublich viel.",
           "platzhalter": false,
           "aktiv": true
         },
@@ -199,7 +199,7 @@
           "logo": "/logo-partner/esmeralda.png",
           "foto": "netzwerk-esmeralda",
           "beschrieb": "Ein Kosmetikstudio in Melchnau für die Pflege von Kopf bis Fuss, von Gesichtsbehandlungen über Wimpern und Nägel bis zu Massagen. Für kleine Gruppen gibt es eine gemeinsame Wellness-Auszeit mit Behandlung und Apéro.",
-          "geschichte": "Entstanden über Vitamin B – wie so oft. Mich beeindruckt, wie viel Begeisterung und Können hinter diesem Angebot steckt.",
+          "geschichte": "Kennengelernt über Vitamin B, wie so oft. Mich beeindruckt, wie viel Begeisterung und Können hinter diesem Angebot steckt.",
           "platzhalter": false,
           "aktiv": true
         },
@@ -228,8 +228,8 @@
           "bildSeite": "links",
           "logo": "/logo-partner/fotostudio-fokus.png",
           "foto": "netzwerk-fotostudio-fokus",
-          "beschrieb": "Ein Fotostudio in Zofingen mit kleinem Team und grosser Bandbreite: Firmenporträts, Reportagen, Hochzeiten und Familien. Persönlich, unkompliziert und mit klarem Blick fürs starke Bild.",
-          "geschichte": "Hier habe ich rund fünf Jahre gearbeitet – von der klassischen Studiofotografie über Hochzeiten bis zum Familienporträt. Diese Jahre haben mein Handwerk geprägt.",
+          "beschrieb": "Ein Fotostudio in Zofingen mit kleinem Team und grosser Bandbreite: Firmenporträts, Reportagen, Hochzeiten und Familien. Persönlich und unkompliziert.",
+          "geschichte": "Hier habe ich rund fünf Jahre gearbeitet, im Studio, an Hochzeiten und bei Familienporträts. Diese Jahre haben mein Handwerk geprägt.",
           "platzhalter": false,
           "aktiv": true,
           "hinweis": "Von Seraina am 06.10.2026 wieder aufgenommen, Texte am selben Tag freigegeben.",
@@ -269,7 +269,7 @@
         },
         "absaetze": [
           {
-            "text": "Schreib mir und erzähl mir, was du tust. Ich schaue mir gerne an, was andere aufbauen – und wenn es passt, stehst du das nächste Mal hier.",
+            "text": "Schreib mir und erzähl mir, was du tust. Ich schaue mir gern an, was andere aufbauen. Wenn es passt, stehst du vielleicht bald auch hier.",
             "stil": "normal",
             "farbe": "#A0886D",
             "px": 22,
@@ -298,7 +298,7 @@
         "h2": "Für alle, \ndie sich selbst zurückfinden \nmöchten.",
         "absaetze": [
           {
-            "text": "Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt – oder ruf an, wenn dir das leichter fällt.",
+            "text": "Du musst noch nicht wissen, wie das aussehen soll. Schreib mir einfach, was dich gerade beschäftigt. Oder ruf an, wenn du das bevorzugst.",
             "stil": "normal"
           },
           {

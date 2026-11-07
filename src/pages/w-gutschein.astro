@@ -15,9 +15,9 @@ import Footer from '../components/Footer.astro';
 import BildPicture from '../components/BildPicture.astro';
 import DekoIllustration from '../components/DekoIllustration.astro';
 
-const introH2 = 'Verschenk keinen Gegenstand. Verschenk eine Begegnung.';
-const introP1 = 'Ein Gutschein von sera Wild ist eine Einladung: sich Zeit zu nehmen, sich zu zeigen und mit Bildern nach Hause zu gehen, auf denen man sich wiedererkennt.';
-const introP2 = 'Du wählst das Paket oder den Betrag, ich stelle den Gutschein aus — gedruckt oder als PDF, bereit zum Verschenken.';
+const introH2 = 'Schenk ein Erlebnis, das bleibt.';
+const introP1 = 'Mit einem Gutschein von sera Wild schenkst du Zeit für sich selbst und Bilder, auf denen man sich wiedererkennt.';
+const introP2 = 'Du wählst das Paket oder den Betrag. Ich stelle den Gutschein aus und schicke ihn dir als PDF.';
 
 const gutscheine = [
   { buchstabe: 'S', name: 'Kennenlern-Shooting', dauer: '15 Min | 1 Hintergrund',    bilder: '3 Bilder inkl. Bearbeitung', preis: 'CHF 149' },
@@ -27,7 +27,7 @@ const gutscheine = [
 
 const schritte = [
   { nr: '1', titel: 'Du schreibst mir',   text: 'Welches Paket oder welcher Betrag, für wen, und bis wann du ihn brauchst.' },
-  { nr: '2', titel: 'Ich stelle ihn aus', text: 'Du bekommst ihn als PDF zum Ausdrucken oder gedruckt auf festem Papier, A5.' },
+  { nr: '2', titel: 'Ich stelle ihn aus', text: 'Du bekommst ihn als PDF, zum Ausdrucken oder Weiterschicken.' },
   { nr: '3', titel: 'Ihr meldet euch',    text: 'Die beschenkte Person meldet sich mit dem Code, und wir suchen einen Termin.' },
 ];
 ---
@@ -68,7 +68,7 @@ const schritte = [
       <p class="font-body text-[0.75rem] md:text-label font-bold uppercase tracking-[0.15em] text-cream/60 mb-3 md:mb-4">GUTSCHEIN</p>
       <h1 class="font-display text-[2rem] md:text-h1 font-semibold leading-[1.2] md:leading-normal text-cream">W-Gutschein</h1>
       <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.8] text-cream/80 mt-4 md:mt-6 max-w-[40rem]">
-        Zeit statt Ding. Ohne Ablaufdatum, eingelöst wird, wann es passt.
+        Ein Erlebnis zum Verschenken. Eingelöst wird, wann es passt.
       </p>
     </div>
   </section>
@@ -142,7 +142,7 @@ const schritte = [
         <div class="flex flex-1 flex-col gap-[0.75rem] rounded-[0.5rem] bg-rust px-6 py-8 md:px-[2.5rem] md:py-10">
           <p class="font-display text-[1.25rem] font-semibold md:text-h3 text-cream">Ein freier Betrag</p>
           <p class="font-body text-[1rem] leading-[1.68] md:text-body-klein md:leading-[1.7] text-cream/85">
-            Du bestimmst die Summe, sie wird an jedes Shooting angerechnet. Bleibt etwas übrig, bleibt es bestehen.
+            Du bestimmst die Summe, sie wird an jedes Shooting angerechnet. Was übrig bleibt, gilt weiter.
           </p>
           <p class="mt-[0.5rem] font-display text-[1.75rem] font-semibold md:text-[2rem] text-cream">Nach Wunsch</p>
         </div>
@@ -178,7 +178,7 @@ const schritte = [
 
       <div class="border-l-[3px] border-rust pl-5">
         <p class="font-body text-[1.0625rem] md:text-body leading-[1.8]">
-          Der Gutschein hat kein Ablaufdatum. In der Schweiz verjähren Gutscheine erst nach zehn Jahren — es muss also niemand hetzen.
+          Der Gutschein hat kein Ablaufdatum. In der Schweiz verjähren Gutscheine erst nach zehn Jahren. Es muss also niemand hetzen.
         </p>
       </div>
     </div>
@@ -192,7 +192,7 @@ const schritte = [
         Bereit zum Verschenken?
       </h2>
       <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.8] text-cream/85 max-w-[44rem]">
-        Schreib mir, welches Paket und für wen. Brauchst du ihn eilig, sag es dazu — dann geht er wenn möglich noch am selben Tag raus.
+        Schreib mir, welches Paket und für wen. Wenn es eilt, sag es mir. Dann schicke ich ihn wenn möglich noch am selben Tag.
       </p>
       <a
         href="/kontakt"

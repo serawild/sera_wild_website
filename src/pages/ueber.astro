@@ -22,7 +22,7 @@ const faktenAbschluss = 'Ein gerader Lebenslauf ist das nicht, eher ein Zickzack
 
 const meinWegH2   = 'Ich gehe meinen eigenen Weg. Und ich nehme dich gern mit.';
 const meinWegBold = 'Ich bin fröhlich, gern unter Leuten und liebe tiefgründige Gespräche.';
-const meinWegP    = 'Ich bin begeisterungsfähig, manchmal etwas chaotisch und habe meistens mehrere Projekte am Laufen. Neben der Fotografie arbeite ich in der Kommunikation und im Management einer Eventlocation. Zum Ausgleich schreibe ich eigene Songs und spiele sie mit meiner Band <a href="https://www.flexibelle.live" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-orange">flexiBelle</a> ein. Und mit meinen zwei Töchtern sehe ich die Welt jeden Tag neu.';
+const meinWegP    = 'Mich packt schnell etwas Neues. Manchmal bin ich dabei etwas chaotisch und habe meistens mehrere Projekte am Laufen. Neben der Fotografie arbeite ich in der Kommunikation und im Management einer Eventlocation. Zum Ausgleich schreibe ich eigene Songs und spiele sie mit meiner Band <a href="https://www.flexibelle.live" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-orange">flexiBelle</a> ein. Und mit meinen zwei Töchtern sehe ich die Welt jeden Tag neu.';
 
 const aufgabeH2 = 'Ich möchte sichtbar machen, was in dir steckt.';
 const aufgabeP2 = 'Ich bin überzeugt, dass jeder Mensch eine Wahnsinnsstärke in sich hat. Die darf ans Tageslicht. Bei mir darfst du erleben, wie du selbst strahlst. Und das steckt an.';
@@ -144,7 +144,7 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
 
   <!-- ===== 02 MEIN WEG (Geschichte Seraina) ===== -->
   <!-- cream-warm bg, responsive layout -->
-  <section class="relative isolate overflow-visible bg-cream-warm py-12 md:py-xl">
+  <section class="relative isolate overflow-visible bg-cream-warm py-12 md:pt-xl md:pb-[1.5rem]">
     <div class="hidden md:block">
       <DekoIllustration motiv="mohn" farbe="#A0886D" breite={259} cssRotate={29} top={-80} seite="links" abstand={-121} />
     </div>
@@ -167,13 +167,16 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
           sizes="100vw"
         />
       </div>
-      <div class="hidden md:block w-[35rem] shrink-0 overflow-hidden" style="aspect-ratio:560/740;">
-        <BildPicture
-          id="ueber-geschichte"
-          class="h-full w-full object-cover"
-          widths={[560, 1120]}
-          sizes="560px"
-        />
+      <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="260" height="83" class="-mt-2 h-auto w-[11rem] self-center md:hidden" />
+      <div class="hidden md:flex w-[35rem] shrink-0 flex-col">
+        <div class="w-full overflow-hidden" style="aspect-ratio:560/740;">
+          <BildPicture
+            id="ueber-geschichte"
+            class="h-full w-full object-cover"
+            widths={[560, 1120]}
+            sizes="560px"
+          />
+        </div>
       </div>
 
       <!-- Text -->
@@ -181,8 +184,11 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
         <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-normal font-semibold italic">{meinWegH2}</h2>
         <p class="font-body text-[1.0625rem] md:text-body font-bold leading-[1.68] md:leading-[1.65]">{meinWegBold}</p>
         <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.65]" set:html={meinWegP}></p>
-        <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="260" height="83" class="mt-2 h-auto w-[11rem] md:w-[15rem] -rotate-[8deg]" />
       </div>
+    </div>
+    <!-- Desktop: Läb DIS Läbe gross über die ganze Breite, ohne Pinsel-Optik -->
+    <div class="mx-auto hidden max-w-inhalt md:block">
+      <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="1280" height="408" class="mx-auto mt-[2.5rem] h-auto w-[42rem]" />
     </div>
   </section>
 
@@ -212,7 +218,7 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
   </section>
 
   <!-- Desktop: cream-warm -->
-  <section class="hidden md:block relative isolate overflow-visible bg-cream-warm py-xl">
+  <section class="hidden md:block relative isolate overflow-visible bg-cream-warm pt-[1rem] pb-xl">
     <DekoIllustration motiv="blattzweig" farbe="#5B5C4F" breite={226} cssRotate={-30} top={-80} seite="rechts" abstand={-144} />
     <div class="mx-auto flex max-w-inhalt flex-col gap-[5rem] md:flex-row md:items-end md:justify-between md:px-0">
       <div class="flex flex-col gap-[2.5rem] md:w-[49.875rem] md:shrink-0">
