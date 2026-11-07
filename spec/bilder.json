@@ -2335,44 +2335,6 @@
       }
     },
     {
-      "id": "reportage-galerie-01",
-      "figmaEbene": "",
-      "baustein": "Bildstreifen Reportage",
-      "seite": "Reportage",
-      "anzeige": {
-        "breite": 2500,
-        "hoehe": 1663
-      },
-      "verhaeltnis": "1.50 : 1",
-      "ausrichtung": "quer",
-      "alt": "Publikum von hinten, auf der Bühne ein Podium zwischen orangen Stelen",
-      "aktiv": true,
-      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-01.jpg",
-      "dateiMasse": {
-        "breite": 2500,
-        "hoehe": 1663
-      }
-    },
-    {
-      "id": "reportage-galerie-02",
-      "figmaEbene": "",
-      "baustein": "Bildstreifen Reportage",
-      "seite": "Reportage",
-      "anzeige": {
-        "breite": 2500,
-        "hoehe": 1663
-      },
-      "verhaeltnis": "1.50 : 1",
-      "ausrichtung": "quer",
-      "alt": "Podiumsgespräch auf der Bühne, davor das Publikum von hinten",
-      "aktiv": true,
-      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-02.jpg",
-      "dateiMasse": {
-        "breite": 2500,
-        "hoehe": 1663
-      }
-    },
-    {
       "id": "reportage-galerie-03",
       "figmaEbene": "",
       "baustein": "Bildstreifen Reportage",
@@ -2389,25 +2351,6 @@
       "dateiMasse": {
         "breite": 1663,
         "hoehe": 2500
-      }
-    },
-    {
-      "id": "reportage-galerie-04",
-      "figmaEbene": "",
-      "baustein": "Bildstreifen Reportage",
-      "seite": "Reportage",
-      "anzeige": {
-        "breite": 2500,
-        "hoehe": 1663
-      },
-      "verhaeltnis": "1.50 : 1",
-      "ausrichtung": "quer",
-      "alt": "Volles Publikum von hinten, auf der Bühne eine Rednerin zwischen orangen Stelen",
-      "aktiv": true,
-      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-04.jpg",
-      "dateiMasse": {
-        "breite": 2500,
-        "hoehe": 1663
       }
     },
     {
@@ -2503,25 +2446,6 @@
       "dateiMasse": {
         "breite": 1663,
         "hoehe": 2500
-      }
-    },
-    {
-      "id": "reportage-galerie-10",
-      "figmaEbene": "",
-      "baustein": "Bildstreifen Reportage",
-      "seite": "Reportage",
-      "anzeige": {
-        "breite": 2500,
-        "hoehe": 1406
-      },
-      "verhaeltnis": "1.78 : 1",
-      "ausrichtung": "quer",
-      "alt": "Volle Industriehalle mit grosser Bühne und Leinwand, dichtes Publikum davor",
-      "aktiv": true,
-      "datei": "src/assets/images/Galerie_3-2/reportage-galerie-10.jpg",
-      "dateiMasse": {
-        "breite": 2500,
-        "hoehe": 1406
       }
     },
     {
@@ -3033,6 +2957,272 @@
         "hoehe": 1165
       },
       "hinweis": "Kein Foto, sondern der gerenderte Gutschein aus ~/gutscheine. Ändert sich die Vorlage dort, dieses Bild neu erzeugen."
+    },
+    {
+      "id": "reportage-galerie-00-messe-85",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1333,
+        "hoehe": 2000
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Design Messe Schweiz 2026: Musiker mit Kontrabass und Saxofon zwischen Kleiderständern",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-85.jpg",
+      "dateiMasse": {
+        "breite": 1333,
+        "hoehe": 2000
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-20",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1333
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Tisch mit Ledertaschen und Accessoires",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-20.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1333
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-46",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1333
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Besucherinnen an einem Stand mit Postkarten",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-46.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1333
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-64",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1334
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Hände probieren ein Armband an",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-64.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1334
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-17",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1333
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Blick über die Halle mit vielen Ständen",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-17.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1333
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-49",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1333
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Ohrringe an einem Schmuckstand, Besucherinnen unscharf im Hintergrund",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-49.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1333
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-25",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1333,
+        "hoehe": 2000
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Design Messe Schweiz 2026: Halle mit Pflanzen und Hängelampen, AHA-Schriftzug im Hintergrund",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-25.jpg",
+      "dateiMasse": {
+        "breite": 1333,
+        "hoehe": 2000
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-58",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1333
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Ringe unter Tischlampen an einem Schmuckstand",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-58.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1333
+      }
+    },
+    {
+      "id": "reportage-galerie-00-a-messe-48",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1333
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Ausstellerin im Gespräch an ihrem Stand",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-48.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1333
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-31",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1333,
+        "hoehe": 2000
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Design Messe Schweiz 2026: Lange Halle mit Oberlichtern und Besuchern",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-31.jpg",
+      "dateiMasse": {
+        "breite": 1333,
+        "hoehe": 2000
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-09",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1333
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Modestand mit Kleiderständern in der Halle",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-09.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1333
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-54",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 2000,
+        "hoehe": 1333
+      },
+      "verhaeltnis": "1.50 : 1",
+      "ausrichtung": "quer",
+      "alt": "Design Messe Schweiz 2026: Jacken an einem Kleiderständer",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-54.jpg",
+      "dateiMasse": {
+        "breite": 2000,
+        "hoehe": 1333
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-53",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1333,
+        "hoehe": 2000
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Design Messe Schweiz 2026: Kleiderständer unter dem Dach der Halle",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-53.jpg",
+      "dateiMasse": {
+        "breite": 1333,
+        "hoehe": 2000
+      }
+    },
+    {
+      "id": "reportage-galerie-00-messe-34",
+      "figmaEbene": "",
+      "baustein": "Bildstreifen Reportage",
+      "seite": "Reportage",
+      "anzeige": {
+        "breite": 1333,
+        "hoehe": 2000
+      },
+      "verhaeltnis": "0.67 : 1",
+      "ausrichtung": "hoch",
+      "alt": "Design Messe Schweiz 2026: Weinflaschen auf einer beleuchteten Theke",
+      "aktiv": true,
+      "datei": "src/assets/images/Reportage_Messe/messe-34.jpg",
+      "dateiMasse": {
+        "breite": 1333,
+        "hoehe": 2000
+      }
     }
   ],
   "mobil": {
