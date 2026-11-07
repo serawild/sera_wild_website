@@ -2430,25 +2430,6 @@
       }
     },
     {
-      "id": "reportage-galerie-09",
-      "figmaEbene": "",
-      "baustein": "Bildstreifen Reportage",
-      "seite": "Reportage",
-      "anzeige": {
-        "breite": 1663,
-        "hoehe": 2500
-      },
-      "verhaeltnis": "0.67 : 1",
-      "ausrichtung": "hoch",
-      "alt": "Blick von oben in die Halle: lange Tischreihen, Pflanzen und Lichterketten",
-      "aktiv": true,
-      "datei": "src/assets/images/Galerie_2-3/reportage-galerie-09.jpg",
-      "dateiMasse": {
-        "breite": 1663,
-        "hoehe": 2500
-      }
-    },
-    {
       "id": "reportage-galerie-11",
       "figmaEbene": "",
       "baustein": "Bildstreifen Reportage",
