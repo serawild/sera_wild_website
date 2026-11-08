@@ -12,6 +12,21 @@ import heroMesse from '../assets/images/Reportage_Messe/messe-64.jpg';
 const phone = '+41 79 790 57 01';
 const phoneHref = 'tel:+41797905701';
 const email = 'info@serawild.com';
+// Alle Anfrage-Buttons öffnen direkt das Mailprogramm, mit Betreff und einer kleinen Vorlage.
+const anfrageBetreff = 'Anfrage Event-Reportage';
+const anfrageText = `Guten Tag Frau Wild
+
+Wir möchten gerne eine Offerte für eine Event-Reportage.
+
+Anlass:
+Datum und Zeit:
+Ort:
+Ungefähre Dauer:
+Ansprechperson und Telefon:
+
+Freundliche Grüsse
+`;
+const anfrageMail = `mailto:${email}?subject=${encodeURIComponent(anfrageBetreff)}&body=${encodeURIComponent(anfrageText)}`;
 
 const anlassTags = [
   'Öffentliche Events',
@@ -98,7 +113,7 @@ const ablaufSchritte = [
         Reportage für Firmen, öffentliche Events und private Feste.
       </p>
       <a
-        href="/kontakt"
+        href={anfrageMail}
         class="mt-5 inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange md:mt-8"
       >
         Anfrage senden
@@ -248,7 +263,7 @@ const ablaufSchritte = [
               Jeder Anlass ist anders. Sagen Sie mir Datum, Ort und Dauer. Dann bekommen Sie eine Offerte, in der alles steht.
             </p>
             <a
-              href="/kontakt"
+              href={anfrageMail}
               class="mt-6 inline-flex items-center justify-center rounded-[0.875rem] bg-cream px-[1.75rem] py-[0.875rem] font-body text-[1rem] uppercase leading-none tracking-[0.06em] text-dark transition-colors hover:bg-cream-warm md:text-[1.125rem]"
             >
               Jetzt Offerte anfragen
@@ -382,7 +397,7 @@ const ablaufSchritte = [
       Sie können mich auch gern anrufen. Am Telefon ist vieles schneller geklärt.
     </p>
     <a
-      href="/kontakt"
+      href={anfrageMail}
       class="inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream mb-7"
     >
       Anfrage senden
@@ -419,7 +434,7 @@ const ablaufSchritte = [
             Sie können mich auch gern anrufen. Am Telefon ist vieles schneller geklärt.
           </p>
           <a
-            href="/kontakt"
+            href={anfrageMail}
             class="self-start inline-flex items-center justify-center rounded-[1.0625rem] bg-beige px-md py-sm font-body text-cta uppercase text-cream transition-colors hover:bg-orange"
           >
             Anfrage senden
