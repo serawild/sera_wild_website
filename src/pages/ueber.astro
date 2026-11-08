@@ -144,7 +144,7 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
 
   <!-- ===== 02 MEIN WEG (Geschichte Seraina) ===== -->
   <!-- cream-warm bg, responsive layout -->
-  <section class="relative isolate overflow-visible bg-cream-warm py-12 md:pt-xl md:pb-[1.5rem]">
+  <section class="relative isolate overflow-visible bg-cream-warm py-12 md:pt-xl md:pb-[3rem]">
     <div class="hidden md:block">
       <DekoIllustration motiv="mohn" farbe="#A0886D" breite={259} cssRotate={29} top={-80} seite="links" abstand={-121} />
     </div>
@@ -167,7 +167,7 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
           sizes="100vw"
         />
       </div>
-      <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="260" height="83" class="-mt-2 h-auto w-[11rem] self-center md:hidden" />
+      <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="260" height="83" class="-mt-2 h-auto w-[9rem] rotate-[4deg] self-center md:hidden" />
       <div class="hidden md:flex w-[35rem] shrink-0 flex-col">
         <div class="w-full overflow-hidden" style="aspect-ratio:560/740;">
           <BildPicture
@@ -184,11 +184,15 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
         <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-normal font-semibold italic">{meinWegH2}</h2>
         <p class="font-body text-[1.0625rem] md:text-body font-bold leading-[1.68] md:leading-[1.65]">{meinWegBold}</p>
         <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.65]" set:html={meinWegP}></p>
+        <!-- Desktop: Läb DIS Läbe als Unterschrift, rechts unter dem Text, mit
+             einer handgezeichneten Linie über drei Viertel der Textbreite -->
+        <div class="mt-[1rem] hidden w-3/4 flex-col items-end self-end md:flex">
+          <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="1280" height="408" class="mr-[2rem] h-auto w-[12rem] -rotate-[4deg]" />
+          <svg viewBox="0 0 600 18" preserveAspectRatio="none" class="-mt-[0.5rem] h-[0.9rem] w-full text-dark" aria-hidden="true">
+            <path d="M3 11 C 70 7, 140 13, 215 10 S 360 6, 430 9.5 S 540 13, 597 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+          </svg>
+        </div>
       </div>
-    </div>
-    <!-- Desktop: Läb DIS Läbe gross über die ganze Breite, ohne Pinsel-Optik -->
-    <div class="mx-auto hidden max-w-inhalt md:block">
-      <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="1280" height="408" class="mx-auto mt-[2.5rem] h-auto w-[30rem]" />
     </div>
   </section>
 
