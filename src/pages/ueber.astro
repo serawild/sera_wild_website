@@ -184,13 +184,9 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
         <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-normal font-semibold italic">{meinWegH2}</h2>
         <p class="font-body text-[1.0625rem] md:text-body font-bold leading-[1.68] md:leading-[1.65]">{meinWegBold}</p>
         <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.65]" set:html={meinWegP}></p>
-        <!-- Desktop: Läb DIS Läbe als Unterschrift, rechts unter dem Text, mit
-             einer handgezeichneten Linie über drei Viertel der Textbreite -->
+        <!-- Desktop: Läb DIS Läbe als Unterschrift, rechts unter dem Text -->
         <div class="mt-[1rem] hidden w-3/4 flex-col items-end self-end md:flex">
           <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="1280" height="408" class="mr-[2rem] h-auto w-[12rem] -rotate-[4deg]" />
-          <svg viewBox="0 0 600 18" preserveAspectRatio="none" class="-mt-[0.5rem] h-[0.9rem] w-full text-dark" aria-hidden="true">
-            <path d="M3 11 C 70 7, 140 13, 215 10 S 360 6, 430 9.5 S 540 13, 597 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-          </svg>
         </div>
       </div>
     </div>
