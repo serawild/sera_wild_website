@@ -22,7 +22,13 @@ const faktenAbschluss = 'Ein gerader Lebenslauf ist das nicht, eher ein Zickzack
 
 const meinWegH2   = 'Ich gehe meinen eigenen Weg. Und ich nehme dich gern mit.';
 const meinWegBold = 'Ich bin fröhlich, gern unter Leuten und liebe tiefgründige Gespräche.';
-const meinWegP    = 'Mich packt schnell etwas Neues. Manchmal bin ich dabei etwas chaotisch und habe meistens mehrere Projekte am Laufen. Neben der Fotografie arbeite ich in der Kommunikation und im Management einer Eventlocation. Zum Ausgleich schreibe ich eigene Songs und spiele sie mit meiner Band <a href="https://www.flexibelle.live" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-orange">flexiBelle</a> ein. Und mit meinen zwei Töchtern sehe ich die Welt jeden Tag wieder neu.';
+// Absätze «Mein Weg» (zusammengeführt aus ueber-mich-text.md, freigegeben)
+const meinWegAbsaetze = [
+  'Langweilig wird es mir selten. Neben der Fotografie arbeite ich in der Kommunikation und im Management einer Eventlocation, schreibe eigene Songs und spiele sie mit meiner Band <a href="https://www.flexibelle.live" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-orange">flexiBelle</a> ein. Mittendrin sind meine zwei Töchter, mit denen ich die Welt jeden Tag wieder neu sehe.',
+  'Rund fünf Jahre habe ich im Fotostudio Fokus in Zofingen fotografiert, von Hochzeiten über Babybäuche bis zu Familienporträts. Dort habe ich mein Handwerk gelernt und gemerkt, dass mir die Bilder am meisten bedeuten, die entstehen, wenn gerade niemand posiert.',
+  'Aus Studio und Reportage ist mein Angebot entstanden: eine Reportage über einen einzigen Menschen. Ich nehme mir Zeit nur für dich, posieren musst du aber nicht. Du machst etwas, das zu deinem Leben gehört, und ich fotografiere, was passiert.',
+  'Ich glaube, dass jeder Mensch etwas mitbringt, das die anderen brauchen. Die eine spielt Geige, der andere kann gut zuhören. Darum wünsche ich mir, dass du dich mit dem zeigst, was du hast, ohne zuerst beweisen zu müssen, dass es gut genug ist. Vielleicht siehst du auf den Bildern, wie viel schon da ist.',
+];
 
 const aufgabeH2 = 'Ich möchte sichtbar machen, was in dir steckt.';
 const aufgabeP2 = 'Ich bin überzeugt, dass jeder Mensch eine Wahnsinnsstärke in sich hat. Die darf ans Tageslicht. Bei mir darfst du erleben, wie du selbst strahlst. Und das steckt an.';
@@ -183,7 +189,9 @@ import laebDisLaebe from '../assets/laeb-dis-laebe-dunkel.svg';
       <div class="flex flex-col gap-[1.5rem] md:w-[51.25rem] md:shrink-0">
         <h2 class="font-display text-[1.6875rem] md:text-h2 leading-[1.28] md:leading-normal font-semibold italic">{meinWegH2}</h2>
         <p class="font-body text-[1.0625rem] md:text-body font-bold leading-[1.68] md:leading-[1.65]">{meinWegBold}</p>
-        <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.65]" set:html={meinWegP}></p>
+        {meinWegAbsaetze.map((absatz) => (
+          <p class="font-body text-[1.0625rem] md:text-body leading-[1.68] md:leading-[1.65]" set:html={absatz}></p>
+        ))}
         <!-- Desktop: Läb DIS Läbe als Unterschrift, rechts unter dem Text -->
         <div class="mt-[1rem] hidden w-3/4 flex-col items-end self-end md:flex">
           <img src={laebDisLaebe.src} alt="Läb DIS Läbe" width="1280" height="408" class="mr-[2rem] h-auto w-[12rem] -rotate-[4deg]" />
